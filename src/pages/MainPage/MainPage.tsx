@@ -1,3 +1,5 @@
+import { DevelopSection } from '@/modules/main/DevelopSection'
+import { FAQSection } from '@/modules/main/FAQSection'
 import { GoalSection } from '@/modules/main/GoalSection'
 import { HeroSection } from '@/modules/main/HeroSection'
 import { MePegasusSection } from '@/modules/main/MePegasusSection'
@@ -10,6 +12,8 @@ export const MainPage = () => {
       <MePegasusSection />
       <GoalSection />
       <SystemSection />
+      <DevelopSection />
+      <FAQSection />
     </main>
   )
 }

@@ -1,4 +1,4 @@
-import { PrimaryButton } from '@/components/buttons/PrimaryButton'
+import { ButtonLink } from '@/components/buttons/ButtonLink'
 import { SectionContainer } from '@/components/container/SectionContainer/SectionContainer'
 import { useTranslation } from 'react-i18next'
 
@@ -19,7 +19,9 @@ export const HeroSection = () => {
           <p className="font[300] text-[white] text-[16px] text-left uppercase">
             {t('heroMain.description')}
           </p>
-          <PrimaryButton>{t('heroMain.buttons.learnMore')}</PrimaryButton>
+          <ButtonLink to="/system">
+            {t('heroMain.buttons.learnMore')}
+          </ButtonLink>
         </div>
       </div>
     </SectionContainer>

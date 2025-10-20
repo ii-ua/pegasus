@@ -1,14 +1,16 @@
-export interface PrimaryButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+import { Link, LinkProps } from '@tanstack/react-router'
+// або з react-router-dom
+// import { Link } from 'react-router-dom'
 
-export const PrimaryButton = ({
-  className = '',
-  type = 'button',
-  ...rest
-}: PrimaryButtonProps) => {
+export interface ButtonLinkProps
+  extends LinkProps,
+    React.RefAttributes<HTMLAnchorElement> {
+  className?: string
+}
+
+export const ButtonLink = ({ className = '', ...rest }: ButtonLinkProps) => {
   return (
-    <button
-      type={type}
+    <Link
       {...rest}
       className={`
         min-w-[148px] max-w-fit py-3 px-6 font-[600] uppercase
@@ -24,6 +26,6 @@ export const PrimaryButton = ({
       }}
     >
       {rest.children}
-    </button>
+    </Link>
   )
 }
