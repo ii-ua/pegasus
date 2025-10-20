@@ -11,3 +11,51 @@ code {
   font-family:
     source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+/* елемент-обгортка секції */
+.hero-bg {
+  position: relative;
+  background-color: #150f08; /* базовий фон */
+}
+
+/* лише фон + маска */
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  /* фон */
+  background-image: image-set(
+    url('/images/hero/desktop/hero@1x.png') 1x,
+    url('/images/hero/desktop/hero@2x.png') 2x
+  );
+  background-size: cover; /* або contain — як потрібно */
+  background-position: 60% center; /* зсув уліво/управо */
+  background-repeat: no-repeat;
+
+  /* маска: чорний = видно, прозорий = ховаємо */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+/* увесь контент поверх фону/маски */
+.hero-bg > * {
+  position: relative;
+  z-index: 1;
+}

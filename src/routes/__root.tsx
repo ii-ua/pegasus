@@ -1,12 +1,12 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
-// Supports weights 100-900
+import '../common/localization/i18n'
 
-import Header from '../pages/main/common/Header'
+import Header from '../pages/common/Header'
 
 import appCss from '../styles.css?url'
-import { Container } from '@/components/Container'
+import { MainContainer } from '@/components/container'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -57,7 +57,7 @@ export const Route = createRootRoute({
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Tektur:wght@400..900&display=swap',
       },
     ],
   }),
@@ -71,11 +71,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
-        <Container>
+      <body className="bg-[#150F08]">
+        <MainContainer>
           <Header />
           {children}
-        </Container>
+        </MainContainer>
 
         <TanStackDevtools
           config={{
