@@ -1,4 +1,9 @@
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import {
+  HeadContent,
+  Scripts,
+  createRootRoute,
+  redirect,
+} from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 import '../common/localization/i18n'
@@ -9,6 +14,10 @@ import appCss from '../styles.css?url'
 import { MainContainer } from '@/components/container'
 
 export const Route = createRootRoute({
+  notFoundComponent: () => {
+    // при будь-якому 404 одразу редіректить на головну
+    throw redirect({ to: '/' })
+  },
   head: () => ({
     meta: [
       {

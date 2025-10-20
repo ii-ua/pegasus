@@ -11,10 +11,10 @@ export const MePegasusSection = () => {
     >
       <div className="flex flex-col max-w-[957px] gap-6">
         <SectionTitle
-          title={t('mePegasusMain.title')}
+          title={`// ${t('mePegasusMain.title')}`}
           className="text-center"
         />
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 items-center">
           {t('mePegasusMain.paragraphs', { returnObjects: true }).map(
             (text: string) => (
               <p
@@ -25,8 +25,16 @@ export const MePegasusSection = () => {
               </p>
             ),
           )}
+          <img
+            src="/images/main/mePegasus/d_drone@1x.png"
+            srcSet="/images/main/mePegasus/d_drone@1x.png 1x, /images/main/mePegasus/d_drone@2x.png 2x"
+            alt="БпЛА"
+            width={203}
+            height={203}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
-        <img width="203" height="203" alt="drone" />
       </div>
     </SectionContainer>
   )
