@@ -9,8 +9,38 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SystemsRouteImport } from './routes/systems'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CareerRouteImport } from './routes/career'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AboutPegasusRouteImport } from './routes/about-pegasus'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SystemsRoute = SystemsRouteImport.update({
+  id: '/systems',
+  path: '/systems',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareerRoute = CareerRouteImport.update({
+  id: '/career',
+  path: '/career',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutPegasusRoute = AboutPegasusRouteImport.update({
+  id: '/about-pegasus',
+  path: '/about-pegasus',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +49,96 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about-pegasus': typeof AboutPegasusRoute
+  '/blog': typeof BlogRoute
+  '/career': typeof CareerRoute
+  '/contact': typeof ContactRoute
+  '/systems': typeof SystemsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about-pegasus': typeof AboutPegasusRoute
+  '/blog': typeof BlogRoute
+  '/career': typeof CareerRoute
+  '/contact': typeof ContactRoute
+  '/systems': typeof SystemsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about-pegasus': typeof AboutPegasusRoute
+  '/blog': typeof BlogRoute
+  '/career': typeof CareerRoute
+  '/contact': typeof ContactRoute
+  '/systems': typeof SystemsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about-pegasus'
+    | '/blog'
+    | '/career'
+    | '/contact'
+    | '/systems'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/about-pegasus' | '/blog' | '/career' | '/contact' | '/systems'
+  id:
+    | '__root__'
+    | '/'
+    | '/about-pegasus'
+    | '/blog'
+    | '/career'
+    | '/contact'
+    | '/systems'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutPegasusRoute: typeof AboutPegasusRoute
+  BlogRoute: typeof BlogRoute
+  CareerRoute: typeof CareerRoute
+  ContactRoute: typeof ContactRoute
+  SystemsRoute: typeof SystemsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/systems': {
+      id: '/systems'
+      path: '/systems'
+      fullPath: '/systems'
+      preLoaderRoute: typeof SystemsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/career': {
+      id: '/career'
+      path: '/career'
+      fullPath: '/career'
+      preLoaderRoute: typeof CareerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about-pegasus': {
+      id: '/about-pegasus'
+      path: '/about-pegasus'
+      fullPath: '/about-pegasus'
+      preLoaderRoute: typeof AboutPegasusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +151,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutPegasusRoute: AboutPegasusRoute,
+  BlogRoute: BlogRoute,
+  CareerRoute: CareerRoute,
+  ContactRoute: ContactRoute,
+  SystemsRoute: SystemsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
