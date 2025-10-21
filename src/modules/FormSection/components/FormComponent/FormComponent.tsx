@@ -6,6 +6,7 @@ import { FormInput } from '../FormInput'
 import { FormField } from '../FormField'
 import { FormWrapper } from '../FormWrapper'
 import { FormTextarea } from '../FormTextarea'
+import { ButtonPrimary } from '@/components/buttons/ButtonPrimary'
 export const FormComponent = () => {
   const { t } = useTranslation()
   return (
@@ -133,7 +134,11 @@ export const FormComponent = () => {
           />
         </FormField>
         <Form.Submit asChild>
-          <button className="text-white">{t('formSection.form.button')}</button>
+          <div className="flex justify-center">
+            <ButtonPrimary className="text-white">
+              {t('formSection.form.button')}
+            </ButtonPrimary>
+          </div>
         </Form.Submit>
       </Form.Root>
     </div>
