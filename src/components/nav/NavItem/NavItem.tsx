@@ -14,6 +14,7 @@ export const NavItem = ({
       <Link
         to={href}
         hash={hash}
+        activeOptions={{ includeHash: true }}
         className="group relative z-10 flex items-center gap-[3px] px-2.5 py-1.5 rounded-md
                    font-medium text-[20px] uppercase transition-colors duration-200 text-white"
         activeProps={{

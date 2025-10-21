@@ -22,7 +22,7 @@ export const SystemSection = ({ id }: { id?: string }) => {
           image1x="/images/main/system/d_education@1x.jpg"
           image2x="/images/main/system/d_education@2x.jpg"
           description={t('systemMain.cards.education.description')}
-          href="/education"
+          href="systems/education"
         />
         <div className="flex gap-6">
           <ImageCard
@@ -30,14 +30,14 @@ export const SystemSection = ({ id }: { id?: string }) => {
             image1x="/images/main/system/d_bpla@1x.jpg"
             image2x="/images/main/system/d_bpla@2x.jpg"
             description={t('systemMain.cards.bpla.description')}
-            href="/bpla"
+            href="systems/bpla"
           />
           <ImageCard
             title={t('systemMain.cards.bpak.title')}
             image1x="/images/main/system/d_bpka@1x.jpg"
             image2x="/images/main/system/d_bpka@2x.jpg"
             description={t('systemMain.cards.bpak.description')}
-            href="/bpka"
+            href="systems/bpka"
           />
         </div>
       </div>
