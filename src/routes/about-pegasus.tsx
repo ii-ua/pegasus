@@ -1,3 +1,4 @@
+import { AboutPegasusPage } from '@/pages/AboutPegasusPage/AboutPegasusPage'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/about-pegasus')({
@@ -5,5 +6,5 @@ export const Route = createFileRoute('/about-pegasus')({
 })
 
 function RouteComponent() {
-  return <div>Hello "/about-pegasus"!</div>
+  return <AboutPegasusPage />
 }

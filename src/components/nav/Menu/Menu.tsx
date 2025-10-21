@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { NavItem } from '../NavItem'
 import { cn } from '@/common/utils/cn'
 export interface MenuProps {
-  navItems?: Array<{ label: string; href: string }>
+  navItems?: Array<{ label: string; href?: string; hash?: string }>
   ariaLabel?: string
   className?: string
 }
@@ -14,7 +14,7 @@ export const Menu = ({ navItems, ariaLabel, className }: MenuProps) => {
         <ul className={cn('flex gap-[42px]', className)}>
           {navItems?.map((item) => (
             <NavItem
-              key={item.href}
+              key={item?.href ?? item?.hash}
               label={t(`navMain.${item.label}`)}
               href={item.href}
             />

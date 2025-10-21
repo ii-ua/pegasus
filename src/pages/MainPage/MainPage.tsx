@@ -1,5 +1,5 @@
 import { FormSection } from '@/modules/FormSection'
-import { DevelopSection } from '@/modules/main/DevelopSection'
+import { DevelopSection } from '@/modules/common/DevelopSection'
 import { FAQSection } from '@/modules/main/FAQSection'
 import { GoalSection } from '@/modules/main/GoalSection'
 import { HeroSection } from '@/modules/main/HeroSection'
@@ -12,7 +12,7 @@ export const MainPage = () => {
       <HeroSection />
       <MePegasusSection />
       <GoalSection />
-      <SystemSection />
+      <SystemSection id="systems" />
       <DevelopSection />
       <FAQSection />
       <FormSection />

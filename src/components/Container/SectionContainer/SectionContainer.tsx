@@ -7,6 +7,11 @@ type SectionContainerProps = React.HTMLAttributes<HTMLElement> & {
 export const SectionContainer = ({
   children,
   className,
+  id,
 }: SectionContainerProps) => {
-  return <section className={`py-[82px] ${className}`}>{children}</section>
+  return (
+    <section id={id} className={`py-[82px] ${className}`}>
+      {children}
+    </section>
+  )
 }

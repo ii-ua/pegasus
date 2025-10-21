@@ -4,7 +4,7 @@ import { LangSelect } from '@/components/select'
 
 const NAV_ITEMS = [
   { label: 'aboutPegasus', href: '/about-pegasus' },
-  { label: 'systems', href: '/systems' },
+  { label: 'systems', href: '/#systems' },
   { label: 'career', href: '/career' },
   { label: 'blog', href: '/blog' },
   { label: 'contact', href: '/contact' },

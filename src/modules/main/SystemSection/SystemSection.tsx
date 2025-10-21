@@ -3,10 +3,10 @@ import { SectionContainer } from '@/components/container'
 import { SectionTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 
-export const SystemSection = () => {
+export const SystemSection = ({ id }: { id?: string }) => {
   const { t } = useTranslation()
   return (
-    <SectionContainer as="section" className="flex flex-col gap-[42px]">
+    <SectionContainer id={id} as="section" className="flex flex-col gap-[42px]">
       <div className="flex">
         <SectionTitle
           title={`// ${t('systemMain.title')}`}

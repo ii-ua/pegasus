@@ -15,6 +15,9 @@ import { Route as CareerRouteImport } from './routes/career'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutPegasusRouteImport } from './routes/about-pegasus'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SystemsEducationRouteImport } from './routes/systems/education'
+import { Route as SystemsBplaRouteImport } from './routes/systems/bpla'
+import { Route as SystemsBpakRouteImport } from './routes/systems/bpak'
 
 const SystemsRoute = SystemsRouteImport.update({
   id: '/systems',
@@ -46,6 +49,21 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SystemsEducationRoute = SystemsEducationRouteImport.update({
+  id: '/education',
+  path: '/education',
+  getParentRoute: () => SystemsRoute,
+} as any)
+const SystemsBplaRoute = SystemsBplaRouteImport.update({
+  id: '/bpla',
+  path: '/bpla',
+  getParentRoute: () => SystemsRoute,
+} as any)
+const SystemsBpakRoute = SystemsBpakRouteImport.update({
+  id: '/bpak',
+  path: '/bpak',
+  getParentRoute: () => SystemsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -53,7 +71,10 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRoute
   '/career': typeof CareerRoute
   '/contact': typeof ContactRoute
-  '/systems': typeof SystemsRoute
+  '/systems': typeof SystemsRouteWithChildren
+  '/systems/bpak': typeof SystemsBpakRoute
+  '/systems/bpla': typeof SystemsBplaRoute
+  '/systems/education': typeof SystemsEducationRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -61,7 +82,10 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRoute
   '/career': typeof CareerRoute
   '/contact': typeof ContactRoute
-  '/systems': typeof SystemsRoute
+  '/systems': typeof SystemsRouteWithChildren
+  '/systems/bpak': typeof SystemsBpakRoute
+  '/systems/bpla': typeof SystemsBplaRoute
+  '/systems/education': typeof SystemsEducationRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -70,7 +94,10 @@ export interface FileRoutesById {
   '/blog': typeof BlogRoute
   '/career': typeof CareerRoute
   '/contact': typeof ContactRoute
-  '/systems': typeof SystemsRoute
+  '/systems': typeof SystemsRouteWithChildren
+  '/systems/bpak': typeof SystemsBpakRoute
+  '/systems/bpla': typeof SystemsBplaRoute
+  '/systems/education': typeof SystemsEducationRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,8 +108,20 @@ export interface FileRouteTypes {
     | '/career'
     | '/contact'
     | '/systems'
+    | '/systems/bpak'
+    | '/systems/bpla'
+    | '/systems/education'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about-pegasus' | '/blog' | '/career' | '/contact' | '/systems'
+  to:
+    | '/'
+    | '/about-pegasus'
+    | '/blog'
+    | '/career'
+    | '/contact'
+    | '/systems'
+    | '/systems/bpak'
+    | '/systems/bpla'
+    | '/systems/education'
   id:
     | '__root__'
     | '/'
@@ -91,6 +130,9 @@ export interface FileRouteTypes {
     | '/career'
     | '/contact'
     | '/systems'
+    | '/systems/bpak'
+    | '/systems/bpla'
+    | '/systems/education'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -99,7 +141,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRoute
   CareerRoute: typeof CareerRoute
   ContactRoute: typeof ContactRoute
-  SystemsRoute: typeof SystemsRoute
+  SystemsRoute: typeof SystemsRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -146,8 +188,44 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/systems/education': {
+      id: '/systems/education'
+      path: '/education'
+      fullPath: '/systems/education'
+      preLoaderRoute: typeof SystemsEducationRouteImport
+      parentRoute: typeof SystemsRoute
+    }
+    '/systems/bpla': {
+      id: '/systems/bpla'
+      path: '/bpla'
+      fullPath: '/systems/bpla'
+      preLoaderRoute: typeof SystemsBplaRouteImport
+      parentRoute: typeof SystemsRoute
+    }
+    '/systems/bpak': {
+      id: '/systems/bpak'
+      path: '/bpak'
+      fullPath: '/systems/bpak'
+      preLoaderRoute: typeof SystemsBpakRouteImport
+      parentRoute: typeof SystemsRoute
+    }
   }
 }
+
+interface SystemsRouteChildren {
+  SystemsBpakRoute: typeof SystemsBpakRoute
+  SystemsBplaRoute: typeof SystemsBplaRoute
+  SystemsEducationRoute: typeof SystemsEducationRoute
+}
+
+const SystemsRouteChildren: SystemsRouteChildren = {
+  SystemsBpakRoute: SystemsBpakRoute,
+  SystemsBplaRoute: SystemsBplaRoute,
+  SystemsEducationRoute: SystemsEducationRoute,
+}
+
+const SystemsRouteWithChildren =
+  SystemsRoute._addFileChildren(SystemsRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -155,7 +233,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRoute,
   CareerRoute: CareerRoute,
   ContactRoute: ContactRoute,
-  SystemsRoute: SystemsRoute,
+  SystemsRoute: SystemsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
