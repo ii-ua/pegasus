@@ -6,11 +6,13 @@ import systemMain from './systemMain'
 import developMain from './developMain'
 import faqMain from './faqMain'
 import formSection from './formSection'
+import footer from './footer'
 const uk = {
   navMain,
   heroMain,
   mePegasusMain,
   goalMain,
+  footer,
   faqMain,
   systemMain,
   developMain,

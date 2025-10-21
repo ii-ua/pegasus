@@ -8,10 +8,11 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 import '../common/localization/i18n'
 
-import Header from '../pages/common/Header'
+import Header from '../modules/common/Header/Header'
 
 import appCss from '../styles.css?url'
 import { MainContainer } from '@/components/container'
+import { Footer } from '@/modules/common/Footer/Footer'
 
 export const Route = createRootRoute({
   notFoundComponent: () => {
@@ -84,6 +85,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <MainContainer>
           <Header />
           {children}
+          <Footer />
         </MainContainer>
 
         <TanStackDevtools
