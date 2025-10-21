@@ -5,6 +5,7 @@ import goalMain from './goalMain'
 import systemMain from './systemMain'
 import developMain from './developMain'
 import faqMain from './faqMain'
+import formSection from './formSection'
 const uk = {
   navMain,
   heroMain,
@@ -13,6 +14,7 @@ const uk = {
   faqMain,
   systemMain,
   developMain,
+  formSection,
 }
 
 export default uk

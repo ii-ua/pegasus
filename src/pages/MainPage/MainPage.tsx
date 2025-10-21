@@ -1,3 +1,4 @@
+import { FormSection } from '@/modules/FormSection'
 import { DevelopSection } from '@/modules/main/DevelopSection'
 import { FAQSection } from '@/modules/main/FAQSection'
 import { GoalSection } from '@/modules/main/GoalSection'
@@ -14,6 +15,7 @@ export const MainPage = () => {
       <SystemSection />
       <DevelopSection />
       <FAQSection />
+      <FormSection />
     </main>
   )
 }
