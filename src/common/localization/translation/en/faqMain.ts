@@ -1,5 +1,5 @@
 const faqMain = {
-  title: 'Frequently Asked Questions',
+  title: 'FAQs',
   faqs: {
     aboutProduct: {
       title: '/ About the Product',
