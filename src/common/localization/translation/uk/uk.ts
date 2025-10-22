@@ -7,6 +7,7 @@ import developMain from './developMain'
 import faqMain from './faqMain'
 import formSection from './formSection'
 import footer from './footer'
+import heroAboutPegasus from './heroAboutPegasus'
 const uk = {
   navMain,
   heroMain,
@@ -17,6 +18,7 @@ const uk = {
   systemMain,
   developMain,
   formSection,
+  heroAboutPegasus,
 }
 
 export default uk

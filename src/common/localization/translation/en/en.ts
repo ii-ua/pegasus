@@ -7,11 +7,13 @@ import developMain from './developMain'
 import faqMain from './faqMain'
 import formSection from './formSection'
 import footer from './footer'
+import heroAboutPegasus from './heroAboutPegasus'
 const en = {
   navMain,
   heroMain,
   mePegasusMain,
   goalMain,
+  heroAboutPegasus,
   footer,
   formSection,
   faqMain,
