@@ -8,6 +8,7 @@ import faqMain from './faqMain'
 import formSection from './formSection'
 import footer from './footer'
 import heroAboutPegasus from './heroAboutPegasus'
+import oursAboutPegasus from './oursAboutPegasus'
 const uk = {
   navMain,
   heroMain,
@@ -19,6 +20,7 @@ const uk = {
   developMain,
   formSection,
   heroAboutPegasus,
+  oursAboutPegasus,
 }
 
 export default uk
