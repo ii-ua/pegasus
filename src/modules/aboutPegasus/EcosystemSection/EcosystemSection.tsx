@@ -10,13 +10,10 @@ import { ArrowCard } from '@/components/cards'
 export const EcosystemSection = () => {
   const { t } = useTranslation()
   return (
-    <SectionContainer
-      as="section"
-      className="flex pt-[139px] flex-col justify-center items-center"
-    >
+    <SectionContainer as="section" className="flex pt-[139px] flex-col">
       <SectionTitle
-        title={`// ${t('oursAboutPegasus.title')}`}
-        className="text-left w-full"
+        title={`// ${t('ecosystemAboutPegasus.title')}`}
+        className="text-left w-[700px]"
       />
       <div className="w-full mt-[42px]">
         <div className="flex justify-between w-full">
