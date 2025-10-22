@@ -30,7 +30,6 @@ i18next
   .init({
     lng: detectedLang,
     fallbackLng: 'en',
-    debug: true,
     load: 'languageOnly',
     defaultNS,
     interpolation: { escapeValue: false },

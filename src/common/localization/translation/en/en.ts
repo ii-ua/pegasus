@@ -9,11 +9,13 @@ import formSection from './formSection'
 import footer from './footer'
 import heroAboutPegasus from './heroAboutPegasus'
 import oursAboutPegasus from './oursAboutPegasus'
+import ecosystemAboutPegasus from './ecosystemAboutPegasus'
 const en = {
   navMain,
   heroMain,
   mePegasusMain,
   goalMain,
+  ecosystemAboutPegasus,
   oursAboutPegasus,
   heroAboutPegasus,
   footer,
