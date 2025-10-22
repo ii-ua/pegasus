@@ -135,9 +135,7 @@ export const FormComponent = () => {
         </FormField>
         <Form.Submit asChild>
           <div className="flex justify-center">
-            <ButtonPrimary className="text-white">
-              {t('formSection.form.button')}
-            </ButtonPrimary>
+            <ButtonPrimary>{t('formSection.form.button')}</ButtonPrimary>
           </div>
         </Form.Submit>
       </Form.Root>

@@ -20,7 +20,7 @@ export const DevelopSection = () => {
             <p className="font-[300] text-[#FDFFFF] max-w-[665px] text-2xl uppercase text-left">
               {t('developMain.description')}
             </p>
-            <ButtonLink>{t('developMain.button')}</ButtonLink>
+            <ButtonLink to="/career">{t('developMain.button')}</ButtonLink>
           </div>
         </div>
       </div>

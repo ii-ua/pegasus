@@ -19,7 +19,7 @@ export const HeroSection = () => {
           <p className="font[300] text-[white] text-[16px] text-left uppercase">
             {t('heroMain.description')}
           </p>
-          <ButtonLink to="/system">
+          <ButtonLink to="/systems/bpla">
             {t('heroMain.buttons.learnMore')}
           </ButtonLink>
         </div>
