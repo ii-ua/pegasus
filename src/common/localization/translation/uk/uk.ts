@@ -10,6 +10,7 @@ import footer from './footer'
 import heroAboutPegasus from './heroAboutPegasus'
 import oursAboutPegasus from './oursAboutPegasus'
 import ecosystemAboutPegasus from './ecosystemAboutPegasus'
+import systems from './systems'
 const uk = {
   navMain,
   heroMain,
@@ -23,6 +24,7 @@ const uk = {
   heroAboutPegasus,
   oursAboutPegasus,
   ecosystemAboutPegasus,
+  systems,
 }
 
 export default uk

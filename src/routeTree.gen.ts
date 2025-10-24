@@ -9,21 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SystemsRouteImport } from './routes/systems'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CareerRouteImport } from './routes/career'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutPegasusRouteImport } from './routes/about-pegasus'
+import { Route as SystemsRouteRouteImport } from './routes/systems/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SystemsEducationRouteImport } from './routes/systems/education'
 import { Route as SystemsBplaRouteImport } from './routes/systems/bpla'
 import { Route as SystemsBpakRouteImport } from './routes/systems/bpak'
 
-const SystemsRoute = SystemsRouteImport.update({
-  id: '/systems',
-  path: '/systems',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -44,6 +39,11 @@ const AboutPegasusRoute = AboutPegasusRouteImport.update({
   path: '/about-pegasus',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SystemsRouteRoute = SystemsRouteRouteImport.update({
+  id: '/systems',
+  path: '/systems',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -52,37 +52,37 @@ const IndexRoute = IndexRouteImport.update({
 const SystemsEducationRoute = SystemsEducationRouteImport.update({
   id: '/education',
   path: '/education',
-  getParentRoute: () => SystemsRoute,
+  getParentRoute: () => SystemsRouteRoute,
 } as any)
 const SystemsBplaRoute = SystemsBplaRouteImport.update({
   id: '/bpla',
   path: '/bpla',
-  getParentRoute: () => SystemsRoute,
+  getParentRoute: () => SystemsRouteRoute,
 } as any)
 const SystemsBpakRoute = SystemsBpakRouteImport.update({
   id: '/bpak',
   path: '/bpak',
-  getParentRoute: () => SystemsRoute,
+  getParentRoute: () => SystemsRouteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/systems': typeof SystemsRouteRouteWithChildren
   '/about-pegasus': typeof AboutPegasusRoute
   '/blog': typeof BlogRoute
   '/career': typeof CareerRoute
   '/contact': typeof ContactRoute
-  '/systems': typeof SystemsRouteWithChildren
   '/systems/bpak': typeof SystemsBpakRoute
   '/systems/bpla': typeof SystemsBplaRoute
   '/systems/education': typeof SystemsEducationRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/systems': typeof SystemsRouteRouteWithChildren
   '/about-pegasus': typeof AboutPegasusRoute
   '/blog': typeof BlogRoute
   '/career': typeof CareerRoute
   '/contact': typeof ContactRoute
-  '/systems': typeof SystemsRouteWithChildren
   '/systems/bpak': typeof SystemsBpakRoute
   '/systems/bpla': typeof SystemsBplaRoute
   '/systems/education': typeof SystemsEducationRoute
@@ -90,11 +90,11 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/systems': typeof SystemsRouteRouteWithChildren
   '/about-pegasus': typeof AboutPegasusRoute
   '/blog': typeof BlogRoute
   '/career': typeof CareerRoute
   '/contact': typeof ContactRoute
-  '/systems': typeof SystemsRouteWithChildren
   '/systems/bpak': typeof SystemsBpakRoute
   '/systems/bpla': typeof SystemsBplaRoute
   '/systems/education': typeof SystemsEducationRoute
@@ -103,33 +103,33 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/systems'
     | '/about-pegasus'
     | '/blog'
     | '/career'
     | '/contact'
-    | '/systems'
     | '/systems/bpak'
     | '/systems/bpla'
     | '/systems/education'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/systems'
     | '/about-pegasus'
     | '/blog'
     | '/career'
     | '/contact'
-    | '/systems'
     | '/systems/bpak'
     | '/systems/bpla'
     | '/systems/education'
   id:
     | '__root__'
     | '/'
+    | '/systems'
     | '/about-pegasus'
     | '/blog'
     | '/career'
     | '/contact'
-    | '/systems'
     | '/systems/bpak'
     | '/systems/bpla'
     | '/systems/education'
@@ -137,22 +137,15 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SystemsRouteRoute: typeof SystemsRouteRouteWithChildren
   AboutPegasusRoute: typeof AboutPegasusRoute
   BlogRoute: typeof BlogRoute
   CareerRoute: typeof CareerRoute
   ContactRoute: typeof ContactRoute
-  SystemsRoute: typeof SystemsRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/systems': {
-      id: '/systems'
-      path: '/systems'
-      fullPath: '/systems'
-      preLoaderRoute: typeof SystemsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -181,6 +174,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutPegasusRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/systems': {
+      id: '/systems'
+      path: '/systems'
+      fullPath: '/systems'
+      preLoaderRoute: typeof SystemsRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -193,47 +193,48 @@ declare module '@tanstack/react-router' {
       path: '/education'
       fullPath: '/systems/education'
       preLoaderRoute: typeof SystemsEducationRouteImport
-      parentRoute: typeof SystemsRoute
+      parentRoute: typeof SystemsRouteRoute
     }
     '/systems/bpla': {
       id: '/systems/bpla'
       path: '/bpla'
       fullPath: '/systems/bpla'
       preLoaderRoute: typeof SystemsBplaRouteImport
-      parentRoute: typeof SystemsRoute
+      parentRoute: typeof SystemsRouteRoute
     }
     '/systems/bpak': {
       id: '/systems/bpak'
       path: '/bpak'
       fullPath: '/systems/bpak'
       preLoaderRoute: typeof SystemsBpakRouteImport
-      parentRoute: typeof SystemsRoute
+      parentRoute: typeof SystemsRouteRoute
     }
   }
 }
 
-interface SystemsRouteChildren {
+interface SystemsRouteRouteChildren {
   SystemsBpakRoute: typeof SystemsBpakRoute
   SystemsBplaRoute: typeof SystemsBplaRoute
   SystemsEducationRoute: typeof SystemsEducationRoute
 }
 
-const SystemsRouteChildren: SystemsRouteChildren = {
+const SystemsRouteRouteChildren: SystemsRouteRouteChildren = {
   SystemsBpakRoute: SystemsBpakRoute,
   SystemsBplaRoute: SystemsBplaRoute,
   SystemsEducationRoute: SystemsEducationRoute,
 }
 
-const SystemsRouteWithChildren =
-  SystemsRoute._addFileChildren(SystemsRouteChildren)
+const SystemsRouteRouteWithChildren = SystemsRouteRoute._addFileChildren(
+  SystemsRouteRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SystemsRouteRoute: SystemsRouteRouteWithChildren,
   AboutPegasusRoute: AboutPegasusRoute,
   BlogRoute: BlogRoute,
   CareerRoute: CareerRoute,
   ContactRoute: ContactRoute,
-  SystemsRoute: SystemsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

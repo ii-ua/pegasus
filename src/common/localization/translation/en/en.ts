@@ -10,6 +10,7 @@ import footer from './footer'
 import heroAboutPegasus from './heroAboutPegasus'
 import oursAboutPegasus from './oursAboutPegasus'
 import ecosystemAboutPegasus from './ecosystemAboutPegasus'
+import systems from './systems'
 const en = {
   navMain,
   heroMain,
@@ -23,6 +24,7 @@ const en = {
   faqMain,
   developMain,
   systemMain,
+  systems,
 }
 
 export default en

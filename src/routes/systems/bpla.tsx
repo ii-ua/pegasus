@@ -1,3 +1,4 @@
+import { BplaPage } from '@/pages/systems'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/systems/bpla')({
@@ -5,5 +6,5 @@ export const Route = createFileRoute('/systems/bpla')({
 })
 
 function RouteComponent() {
-  return <div>Hello "/systems/bpla"!</div>
+  return <BplaPage />
 }
