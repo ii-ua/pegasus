@@ -1,3 +1,4 @@
+import { BpakPage } from '@/pages/systems/BpakPage'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/systems/bpak')({
@@ -5,5 +6,5 @@ export const Route = createFileRoute('/systems/bpak')({
 })
 
 function RouteComponent() {
-  return <div>Hello "/systems/bpak"!</div>
+  return <BpakPage />
 }

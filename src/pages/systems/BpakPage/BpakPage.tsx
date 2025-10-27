@@ -1,12 +1,11 @@
 import { FormSection } from '@/modules/common/FormSection'
-import { BplaHero, ResultsSection } from '@/modules/systems/bpla'
 import { IntegrationSection } from '@/modules/common/IntegrationSection'
+import { BpakHero } from '@/modules/systems/bpak/BpakHero'
 
-export const BplaPage = () => {
+export const BpakPage = () => {
   return (
     <main>
-      <BplaHero />
-      <ResultsSection />
+      <BpakHero />
       <IntegrationSection />
       <FormSection />
     </main>

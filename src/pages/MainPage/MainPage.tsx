@@ -1,4 +1,4 @@
-import { FormSection } from '@/modules/FormSection'
+import { FormSection } from '@/modules/common/FormSection'
 import { DevelopSection } from '@/modules/common/DevelopSection'
 import { FAQSection } from '@/modules/main/FAQSection'
 import { GoalSection } from '@/modules/main/GoalSection'

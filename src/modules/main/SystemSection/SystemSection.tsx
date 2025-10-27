@@ -37,7 +37,7 @@ export const SystemSection = ({ id }: { id?: string }) => {
             image1x="/images/main/system/d_bpka@1x.jpg"
             image2x="/images/main/system/d_bpka@2x.jpg"
             description={t('systemMain.cards.bpak.description')}
-            href="systems/bpka"
+            href="systems/bpak"
           />
         </div>
       </div>
