@@ -18,7 +18,7 @@ export const BplaHero = () => {
           className="font-light bg-[linear-gradient(90.79deg,#F5F5F5_0.08%,#FDFFFF_100%)] bg-clip-text text-transparent uppercase tex-[32px]
   "
         >
-          {t('navMain.systems')}
+          {t('navMain.systems')} / {t('navMain.bpla')}
         </p>
         <SectionTitle
           title={`// ${t('systems.bpla.hero.title')}`}

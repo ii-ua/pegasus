@@ -4,5 +4,8 @@ const navMain = {
   blog: 'Blog',
   career: 'Career',
   contact: 'Contacts',
+  bpla: 'UAV',
+  bpak: 'UAS',
+  education: 'UAV OPERATOR TRAINING',
 }
 export default navMain
