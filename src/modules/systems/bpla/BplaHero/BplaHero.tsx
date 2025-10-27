@@ -1,13 +1,17 @@
+import { StatCard } from '@/components/cards'
 import { SectionContainer } from '@/components/container'
 import { SectionTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
+import Mina from '@/assets/icons/mina.svg?react'
+import Munitions from '@/assets/icons/munitions.svg?react'
+import Delivery from '@/assets/icons/delivery.svg?react'
 
 export const BplaHero = () => {
   const { t } = useTranslation()
   return (
     <SectionContainer
       as="section"
-      className="flex pt-[139px] flex-col justify-center items-center"
+      className="flex pt-[139px] flex-col justify-center items-center gap-[42px]"
     >
       <div className="w-full flex flex-col gap-6">
         <p
@@ -43,6 +47,31 @@ export const BplaHero = () => {
             </p>
           ),
         )}
+      </div>
+      <div className="flex justify-between w-full">
+        <div className="flex gap-6">
+          <StatCard
+            className="gap-0"
+            iconClassName="flex justify-center"
+            value={<Mina />}
+            description={t('systems.bpla.hero.cards.0')}
+            highlight={false}
+          />
+          <StatCard
+            className="gap-0"
+            iconClassName="flex justify-center"
+            value={<Munitions />}
+            description={t('systems.bpla.hero.cards.1')}
+            highlight={false}
+          />
+        </div>
+        <StatCard
+          className="gap-0"
+          iconClassName="flex justify-center"
+          value={<Delivery />}
+          description={t('systems.bpla.hero.cards.2')}
+          highlight={false}
+        />
       </div>
     </SectionContainer>
   )
