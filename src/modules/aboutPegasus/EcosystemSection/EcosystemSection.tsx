@@ -6,7 +6,7 @@ import { ScrollTimeline } from '@/components/ScrollTimeline'
 export const EcosystemSection = () => {
   const { t } = useTranslation()
   return (
-    <SectionContainer as="section" className="flex pt-[139px] flex-col">
+    <SectionContainer as="section" className="flex flex-col">
       <SectionTitle
         title={`// ${t('ecosystemAboutPegasus.title')}`}
         className="text-left w-[700px]"

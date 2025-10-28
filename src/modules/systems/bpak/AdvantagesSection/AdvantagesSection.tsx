@@ -6,7 +6,7 @@ import { ScrollTimeline } from '@/components/ScrollTimeline'
 export const AdvantagesSection = () => {
   const { t } = useTranslation()
   return (
-    <SectionContainer as="section" className="flex pt-[139px] flex-col">
+    <SectionContainer as="section" className="flex flex-col">
       <SectionTitle
         title={`// ${t('systems.bpak.advantages.title')}`}
         className="text-left max-w-[800px]"

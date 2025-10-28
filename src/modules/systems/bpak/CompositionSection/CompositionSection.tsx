@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 export const CompositionSection = () => {
   const { t } = useTranslation()
   return (
-    <SectionContainer as="section" className="flex pt-[139px] gap-6 flex-col">
+    <SectionContainer as="section" className="flex  gap-6 flex-col">
       <div className="flex">
         <SectionTitle
           title={`// ${t('systems.bpak.composition.title')}`}

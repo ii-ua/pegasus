@@ -8,7 +8,7 @@ export const OfferSection = () => {
   return (
     <SectionContainer
       as="section"
-      className="flex pt-[139px] flex-col justify-center items-left gap-[82px]"
+      className="flex flex-col justify-center items-left gap-[82px]"
     >
       <div className="flex">
         <SectionTitle

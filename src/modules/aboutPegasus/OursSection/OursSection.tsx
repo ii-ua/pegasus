@@ -12,7 +12,7 @@ export const OursSection = () => {
   return (
     <SectionContainer
       as="section"
-      className="flex pt-[139px] flex-col justify-center items-center"
+      className="flex flex-col justify-center items-center"
     >
       <SectionTitle
         title={`// ${t('oursAboutPegasus.title')}`}

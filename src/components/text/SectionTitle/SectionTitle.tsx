@@ -4,10 +4,10 @@ export interface SectionTitleProps {
 }
 export const SectionTitle = ({ title, className }: SectionTitleProps) => {
   return (
-    <h2
+    <h3
       className={`font-[Tektur] font-bold text-[90px] text-[#FDFFFF] uppercase ${className}`}
     >
       {title}
-    </h2>
+    </h3>
   )
 }
