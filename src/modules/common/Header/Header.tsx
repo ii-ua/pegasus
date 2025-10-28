@@ -13,9 +13,9 @@ const NAV_ITEMS = [
 export default function Header() {
   return (
     <>
-      <header className="fixed top-[42px] left-0 right-0 z-50 px-8">
-        <MainContainer className="flex items-center justify-between">
-          <a href="/">
+      <header className="fixed top-[42px] left-0 right-0 z-50 px-8 ">
+        <MainContainer className="flex items-center justify-between backdrop-blur-sm ">
+          <a href="/" className="p-1.5">
             <img width={64} height={64} src="/logo.png" alt="Logo" />
           </a>
           <Menu navItems={NAV_ITEMS} />
