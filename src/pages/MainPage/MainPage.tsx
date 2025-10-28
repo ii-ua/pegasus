@@ -5,17 +5,25 @@ import { GoalSection } from '@/modules/main/GoalSection'
 import { HeroSection } from '@/modules/main/HeroSection'
 import { MePegasusSection } from '@/modules/main/MePegasusSection'
 import { SystemSection } from '@/modules/main/SystemSection'
+import { MainContainer } from '@/components/container'
 
 export const MainPage = () => {
   return (
     <main>
-      <HeroSection />
-      <MePegasusSection />
-      <GoalSection />
-      <SystemSection id="systems" />
-      <DevelopSection />
-      <FAQSection />
-      <FormSection />
+      <MainContainer>
+        <HeroSection />
+      </MainContainer>
+
+      <div className="main-page-bg">
+        <MainContainer>
+          <MePegasusSection />
+          <GoalSection />
+          <SystemSection id="systems" />
+          <DevelopSection />
+          <FAQSection />
+          <FormSection />
+        </MainContainer>
+      </div>
     </main>
   )
 }
