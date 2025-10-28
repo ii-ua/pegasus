@@ -10,23 +10,19 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CareerRouteImport } from './routes/career'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutPegasusRouteImport } from './routes/about-pegasus'
 import { Route as SystemsRouteRouteImport } from './routes/systems/route'
+import { Route as CareerRouteRouteImport } from './routes/career/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SystemsEducationRouteImport } from './routes/systems/education'
 import { Route as SystemsBplaRouteImport } from './routes/systems/bpla'
 import { Route as SystemsBpakRouteImport } from './routes/systems/bpak'
+import { Route as CareerCareerIdRouteRouteImport } from './routes/career/$careerId/route'
 
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CareerRoute = CareerRouteImport.update({
-  id: '/career',
-  path: '/career',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogRoute = BlogRouteImport.update({
@@ -42,6 +38,11 @@ const AboutPegasusRoute = AboutPegasusRouteImport.update({
 const SystemsRouteRoute = SystemsRouteRouteImport.update({
   id: '/systems',
   path: '/systems',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareerRouteRoute = CareerRouteRouteImport.update({
+  id: '/career',
+  path: '/career',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -64,25 +65,32 @@ const SystemsBpakRoute = SystemsBpakRouteImport.update({
   path: '/bpak',
   getParentRoute: () => SystemsRouteRoute,
 } as any)
+const CareerCareerIdRouteRoute = CareerCareerIdRouteRouteImport.update({
+  id: '/$careerId',
+  path: '/$careerId',
+  getParentRoute: () => CareerRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/career': typeof CareerRouteRouteWithChildren
   '/systems': typeof SystemsRouteRouteWithChildren
   '/about-pegasus': typeof AboutPegasusRoute
   '/blog': typeof BlogRoute
-  '/career': typeof CareerRoute
   '/contact': typeof ContactRoute
+  '/career/$careerId': typeof CareerCareerIdRouteRoute
   '/systems/bpak': typeof SystemsBpakRoute
   '/systems/bpla': typeof SystemsBplaRoute
   '/systems/education': typeof SystemsEducationRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/career': typeof CareerRouteRouteWithChildren
   '/systems': typeof SystemsRouteRouteWithChildren
   '/about-pegasus': typeof AboutPegasusRoute
   '/blog': typeof BlogRoute
-  '/career': typeof CareerRoute
   '/contact': typeof ContactRoute
+  '/career/$careerId': typeof CareerCareerIdRouteRoute
   '/systems/bpak': typeof SystemsBpakRoute
   '/systems/bpla': typeof SystemsBplaRoute
   '/systems/education': typeof SystemsEducationRoute
@@ -90,11 +98,12 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/career': typeof CareerRouteRouteWithChildren
   '/systems': typeof SystemsRouteRouteWithChildren
   '/about-pegasus': typeof AboutPegasusRoute
   '/blog': typeof BlogRoute
-  '/career': typeof CareerRoute
   '/contact': typeof ContactRoute
+  '/career/$careerId': typeof CareerCareerIdRouteRoute
   '/systems/bpak': typeof SystemsBpakRoute
   '/systems/bpla': typeof SystemsBplaRoute
   '/systems/education': typeof SystemsEducationRoute
@@ -103,33 +112,36 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/career'
     | '/systems'
     | '/about-pegasus'
     | '/blog'
-    | '/career'
     | '/contact'
+    | '/career/$careerId'
     | '/systems/bpak'
     | '/systems/bpla'
     | '/systems/education'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/career'
     | '/systems'
     | '/about-pegasus'
     | '/blog'
-    | '/career'
     | '/contact'
+    | '/career/$careerId'
     | '/systems/bpak'
     | '/systems/bpla'
     | '/systems/education'
   id:
     | '__root__'
     | '/'
+    | '/career'
     | '/systems'
     | '/about-pegasus'
     | '/blog'
-    | '/career'
     | '/contact'
+    | '/career/$careerId'
     | '/systems/bpak'
     | '/systems/bpla'
     | '/systems/education'
@@ -137,10 +149,10 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CareerRouteRoute: typeof CareerRouteRouteWithChildren
   SystemsRouteRoute: typeof SystemsRouteRouteWithChildren
   AboutPegasusRoute: typeof AboutPegasusRoute
   BlogRoute: typeof BlogRoute
-  CareerRoute: typeof CareerRoute
   ContactRoute: typeof ContactRoute
 }
 
@@ -151,13 +163,6 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/career': {
-      id: '/career'
-      path: '/career'
-      fullPath: '/career'
-      preLoaderRoute: typeof CareerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog': {
@@ -179,6 +184,13 @@ declare module '@tanstack/react-router' {
       path: '/systems'
       fullPath: '/systems'
       preLoaderRoute: typeof SystemsRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/career': {
+      id: '/career'
+      path: '/career'
+      fullPath: '/career'
+      preLoaderRoute: typeof CareerRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -209,8 +221,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SystemsBpakRouteImport
       parentRoute: typeof SystemsRouteRoute
     }
+    '/career/$careerId': {
+      id: '/career/$careerId'
+      path: '/$careerId'
+      fullPath: '/career/$careerId'
+      preLoaderRoute: typeof CareerCareerIdRouteRouteImport
+      parentRoute: typeof CareerRouteRoute
+    }
   }
 }
+
+interface CareerRouteRouteChildren {
+  CareerCareerIdRouteRoute: typeof CareerCareerIdRouteRoute
+}
+
+const CareerRouteRouteChildren: CareerRouteRouteChildren = {
+  CareerCareerIdRouteRoute: CareerCareerIdRouteRoute,
+}
+
+const CareerRouteRouteWithChildren = CareerRouteRoute._addFileChildren(
+  CareerRouteRouteChildren,
+)
 
 interface SystemsRouteRouteChildren {
   SystemsBpakRoute: typeof SystemsBpakRoute
@@ -230,10 +261,10 @@ const SystemsRouteRouteWithChildren = SystemsRouteRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CareerRouteRoute: CareerRouteRouteWithChildren,
   SystemsRouteRoute: SystemsRouteRouteWithChildren,
   AboutPegasusRoute: AboutPegasusRoute,
   BlogRoute: BlogRoute,
-  CareerRoute: CareerRoute,
   ContactRoute: ContactRoute,
 }
 export const routeTree = rootRouteImport
