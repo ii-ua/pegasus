@@ -111,3 +111,52 @@ code {
   position: relative;
   z-index: 1; /* щоб контент був поверх */
 }
+.about-page-bg {
+  position: relative;
+  background-size: cover; /* або contain — як потрібно */
+  background-position: 60% center; /* зсув уліво/управо */
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-image: image-set(
+    url('/images/main/bg/d_about_bg@1x.png') 1x,
+    url('/images/main/bg/d_about_bg@2x.png') 2x
+  );
+}
+
+.about-page-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 0.5 = 50% opacity */
+  z-index: 0;
+}
+
+.about-page-bg > * {
+  position: relative;
+  z-index: 1; /* щоб контент був поверх */
+}
+
+.bpla-page-bg {
+  position: relative;
+  background-size: cover; /* або contain — як потрібно */
+  background-position: 60% center; /* зсув уліво/управо */
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-image: image-set(
+    url('/images/main/bg/d_bpla_bg@1x.png') 1x,
+    url('/images/main/bg/d_bpla_bg@2x.png') 2x
+  );
+}
+
+.bpla-page-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 0.5 = 50% opacity */
+  z-index: 0;
+}
+
+.bpla-page-bg > * {
+  position: relative;
+  z-index: 1; /* щоб контент був поверх */
+}
