@@ -29,7 +29,7 @@ i18next
   .use(initReactI18next)
   .init({
     lng: detectedLang,
-    fallbackLng: 'en',
+    fallbackLng: 'uk',
     load: 'languageOnly',
     defaultNS,
     interpolation: { escapeValue: false },
