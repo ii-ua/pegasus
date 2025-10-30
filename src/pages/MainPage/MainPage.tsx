@@ -14,7 +14,7 @@ export const MainPage = () => {
         <HeroSection />
       </MainContainer>
 
-      <div className="main-page-bg">
+      <div className="page-bg bg-main">
         <MainContainer>
           <MePegasusSection />
           <GoalSection />

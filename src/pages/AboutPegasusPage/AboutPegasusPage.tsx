@@ -6,7 +6,7 @@ import { DevelopSection } from '@/modules/common/DevelopSection'
 
 export const AboutPegasusPage = () => {
   return (
-    <main className="about-page-bg">
+    <main className="page-bg bg-about">
       <MainContainer>
         <HeroSection />
         <OursSection />

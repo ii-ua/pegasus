@@ -87,76 +87,94 @@ code {
   z-index: 1;
 }
 
-.main-page-bg {
+/* База для будь-якої сторінки з фоном */
+.page-bg {
   position: relative;
-  background-size: cover; /* або contain — як потрібно */
-  background-position: 60% center; /* зсув уліво/управо */
-  background-repeat: no-repeat;
-  background-origin: content-box;
-  background-image: image-set(
-    url('/images/main/bg/d_main_bg@1x.png') 1x,
-    url('/images/main/bg/d_main_bg@2x.png') 2x
-  );
+  isolation: isolate; /* щоб псевдоелементи не змішувались */
+  background-color: #150f08; /* базовий фон під зображення */
 }
 
-.main-page-bg::before {
+/* Саме зображення */
+.page-bg::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* 0.5 = 50% opacity */
   z-index: 0;
-}
+  pointer-events: none;
 
-.main-page-bg > * {
-  position: relative;
-  z-index: 1; /* щоб контент був поверх */
-}
-.about-page-bg {
-  position: relative;
-  background-size: cover; /* або contain — як потрібно */
-  background-position: 60% center; /* зсув уліво/управо */
+  /* береться з CSS-змінної */
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: 60% center;
   background-repeat: no-repeat;
-  background-origin: content-box;
-  background-image: image-set(
-    url('/images/main/bg/d_about_bg@1x.png') 1x,
-    url('/images/main/bg/d_about_bg@2x.png') 2x
-  );
+
+  /* якщо треба «згладжувати» краї маскою — лишай */
+  /* -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%); */
+  /* mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%); */
 }
 
-.about-page-bg::before {
+/* Темний шар над зображенням (налаштовується через змінну) */
+.page-bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* 0.5 = 50% opacity */
   z-index: 0;
+  pointer-events: none;
+  background: var(--bg-overlay, rgba(0, 0, 0, 0.5)); /* дефолт 50% */
 }
 
-.about-page-bg > * {
+/* Контент поверх фону */
+.page-bg > * {
   position: relative;
-  z-index: 1; /* щоб контент був поверх */
+  z-index: 1;
 }
 
-.bpla-page-bg {
-  position: relative;
-  background-size: cover; /* або contain — як потрібно */
-  background-position: 60% center; /* зсув уліво/управо */
-  background-repeat: no-repeat;
-  background-origin: content-box;
-  background-image: image-set(
-    url('/images/main/bg/d_bpla_bg@1x.png') 1x,
-    url('/images/main/bg/d_bpla_bg@2x.png') 2x
+/* Опційно: модифікатори, що задають конкретні картинки */
+.bg-main {
+  --bg-image: image-set(
+    url('/images/bg/d_main_bg@1x.png') 1x,
+    url('/images/bg/d_main_bg@2x.png') 2x
+  );
+}
+.bg-about {
+  --bg-image: image-set(
+    url('/images/bg/d_about_bg@1x.png') 1x,
+    url('/images/bg/d_about_bg@2x.png') 2x
+  );
+}
+.bg-bpla {
+  --bg-image: image-set(
+    url('/images/bg/d_bpla_bg@1x.png') 1x,
+    url('/images/bg/d_bpla_bg@2x.png') 2x
+  );
+}
+.bg-edu {
+  --bg-image: image-set(
+    url('/images/bg/d_education_bg@1x.png') 1x,
+    url('/images/bg/d_education_bg@2x.png') 2x
+  );
+}
+.bg-bpak {
+  --bg-image: image-set(
+    url('/images/bg/d_bpak_bg@1x.png') 1x,
+    url('/images/bg/d_bpak_bg@2x.png') 2x
   );
 }
 
-.bpla-page-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* 0.5 = 50% opacity */
-  z-index: 0;
+.bg-careers {
+  --bg-image: image-set(
+    url('/images/bg/d_careers_bg@1x.png') 1x,
+    url('/images/bg/d_careers_bg@2x.png') 2x
+  );
 }
 
-.bpla-page-bg > * {
-  position: relative;
-  z-index: 1; /* щоб контент був поверх */
+/* Опційні швидкі пресети для затемнення */
+.overlay-30 {
+  --bg-overlay: rgba(0, 0, 0, 0.3);
+}
+.overlay-50 {
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+}
+.overlay-70 {
+  --bg-overlay: rgba(0, 0, 0, 0.7);
 }

@@ -5,7 +5,7 @@ import { MainContainer } from '@/components/container'
 
 export const BplaPage = () => {
   return (
-    <main className="bpla-page-bg">
+    <main className="page-bg bg-bpla">
       <MainContainer>
         <BplaHero />
         <ResultsSection />

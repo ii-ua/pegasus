@@ -1,3 +1,4 @@
+import { MainContainer } from '@/components/container'
 import { FormSection } from '@/modules/common/FormSection'
 import { IntegrationSection } from '@/modules/common/IntegrationSection'
 import { AdvantagesSection } from '@/modules/systems/bpak/AdvantagesSection'
@@ -6,12 +7,14 @@ import { CompositionSection } from '@/modules/systems/bpak/CompositionSection'
 
 export const BpakPage = () => {
   return (
-    <main>
-      <BpakHero />
-      <AdvantagesSection />
-      <CompositionSection />
-      <IntegrationSection />
-      <FormSection />
+    <main className="page-bg bg-bpak">
+      <MainContainer>
+        <BpakHero />
+        <AdvantagesSection />
+        <CompositionSection />
+        <IntegrationSection />
+        <FormSection />
+      </MainContainer>
     </main>
   )
 }
