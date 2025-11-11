@@ -8,7 +8,7 @@ export const EcosystemSection = () => {
   return (
     <SectionContainer as="section" className="flex flex-col">
       <SectionTitle
-        title={`// ${t('ecosystemAboutPegasus.title')}`}
+        title={`${t('ecosystemAboutPegasus.title')}`}
         className="text-left w-[700px]"
       />
       <ScrollTimeline

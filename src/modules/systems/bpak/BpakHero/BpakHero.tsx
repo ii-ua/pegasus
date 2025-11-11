@@ -17,7 +17,7 @@ export const BpakHero = () => {
           {t('navMain.systems')} / {t('navMain.bpak')}
         </p>
         <SectionTitle
-          title={`// ${t('systems.bpak.hero.title')}`}
+          title={`${t('systems.bpak.hero.title')}`}
           className="text-left w-full"
         />
         <Paragraph text={t('systems.bpak.hero.paragraphs.0')} />

@@ -13,7 +13,7 @@ export const FormSection = () => {
     >
       <div className="flex items-center">
         <SectionTitle
-          title={`// ${t('formSection.title')}`}
+          title={`${t('formSection.title')}`}
           className="text-left flex-2"
         />
         <p className="text-white font[300] text-[24px] uppercase flex-1">

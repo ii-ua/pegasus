@@ -9,7 +9,7 @@ export const CompositionSection = () => {
     <SectionContainer as="section" className="flex  gap-6 flex-col">
       <div className="flex">
         <SectionTitle
-          title={`// ${t('systems.bpak.composition.title')}`}
+          title={`${t('systems.bpak.composition.title')}`}
           className="text-left max-w-[852px]"
         />
         <div className="flex flex-col flex-1/3 justify-between pb-[31px]">

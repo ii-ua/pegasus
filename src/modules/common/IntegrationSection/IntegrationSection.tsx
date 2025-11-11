@@ -13,7 +13,7 @@ export const IntegrationSection = () => {
     >
       <div className="flex flex-col w-full">
         <SectionTitle
-          title={`// ${t('systems.bpla.integration.title')}`}
+          title={`${t('systems.bpla.integration.title')}`}
           className="text-left max-w-[600px]"
         />
         <div className="w-full flex justify-end">

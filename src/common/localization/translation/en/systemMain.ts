@@ -4,7 +4,7 @@ const systemMain = {
     'We deliver the full lifecycle of UAV deployment — from development and integration into tactical missions to operator training and 24/7 technical support — ensuring stability on the battlefield.',
   cards: {
     education: {
-      title: 'UAV OPERATOR TRAINING',
+      title: 'OPERATOR TRAINING',
       description:
         'A comprehensive training course with drills based on real combat scenarios.',
     },

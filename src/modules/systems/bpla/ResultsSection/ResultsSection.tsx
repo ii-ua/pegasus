@@ -10,7 +10,7 @@ export const ResultsSection = () => {
       className="flex flex-col justify-center items-center gap-[42px]"
     >
       <SectionTitle
-        title={`// ${t('systems.bpla.results.title')}`}
+        title={`${t('systems.bpla.results.title')}`}
         className="text-left w-full"
       />
       <div className="flex gap-6 w-full">

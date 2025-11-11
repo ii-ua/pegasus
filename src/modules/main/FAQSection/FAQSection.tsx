@@ -12,7 +12,7 @@ export const FAQSection = () => {
     <SectionContainer as="section" className="flex flex-col gap-[42px]">
       <div className="flex flex-col gap-6">
         <SectionTitle
-          title={`// ${t('faqMain.title')}`}
+          title={`${t('faqMain.title')}`}
           className="text-left max-w-[1000px]"
         />
         <Tabs.Root

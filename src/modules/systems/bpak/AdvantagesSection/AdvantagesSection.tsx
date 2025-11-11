@@ -8,7 +8,7 @@ export const AdvantagesSection = () => {
   return (
     <SectionContainer as="section" className="flex flex-col">
       <SectionTitle
-        title={`// ${t('systems.bpak.advantages.title')}`}
+        title={`${t('systems.bpak.advantages.title')}`}
         className="text-left max-w-[800px]"
       />
       <ScrollTimeline

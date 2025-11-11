@@ -15,7 +15,7 @@ export const OursSection = () => {
       className="flex flex-col justify-center items-center"
     >
       <SectionTitle
-        title={`// ${t('oursAboutPegasus.title')}`}
+        title={`${t('oursAboutPegasus.title')}`}
         className="text-left w-full"
       />
       <div className="w-full mt-[42px]">

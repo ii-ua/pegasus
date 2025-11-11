@@ -1,3 +1,7 @@
+import arrowDownRight from '@/assets/icons/arrow-down-right.svg'
+import arrowDownRightActive from '@/assets/icons/arrow-down-right-active.svg'
+import { motion } from 'motion/react'
+
 interface ImageCardProps {
   image1x: string
   image2x: string
@@ -14,42 +18,94 @@ export const ImageCard = ({
   href,
 }: ImageCardProps) => {
   return (
-    <a
+    <motion.a
       href={href}
       aria-label={title}
-      className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6600]"
+      className="
+        group/ImageCard block cursor-pointer
+        border-[2px] border-[#FDFFFF]
+        p-[16px]
+        max-w-[321px] h-[377px]
+        focus:outline-none
+        focus:ring-2 focus:ring-[#FF6600]
+      "
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      whileHover={{ y: -8, scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
     >
-      <article
-        className="
-          relative border-[2px] max-w-[321px] h-[437px]
-          transition-all duration-300 
-          group-hover:scale-[1.02]
-          [--border-gradient:linear-gradient(90deg,#F5F5F5_0%,#FDFFFF_100%)]
-          group-hover:[--border-gradient:linear-gradient(90deg,#CE4906_0%,#FF6600_50.48%,#FF8B20_100%)]
-          p-[21px] cursor-pointer
-          flex flex-col justify-between
-        "
-        style={{
-          borderImage: 'var(--border-gradient) 1',
-          borderStyle: 'solid',
-        }}
-      >
-        <img
-          src={image1x}
-          srcSet={`${image1x} 1x, ${image2x} 2x`}
-          sizes="(min-width: 768px) 321px, 100vw"
-          alt={title}
-          className="absolute inset-0 w-full h-full object-cover -z-10 opacity-80 transition-opacity duration-300 group-hover:opacity-100"
-          loading="lazy"
-        />
+      <article className="flex h-full flex-col justify-between">
+        {/* картинка фіксованої висоти — без змін при hover */}
+        <div className="relative w-full h-[240px] overflow-hidden">
+          <img
+            src={image1x}
+            srcSet={`${image1x} 1x, ${image2x} 2x`}
+            sizes="(min-width: 768px) 321px, 100vw"
+            alt={title}
+            className="h-full w-full"
+            loading="lazy"
+          />
+        </div>
 
-        <h3 className="text-white font-[Tektur] font-semibold text-[36px] uppercase leading-tight">
-          {title}
-        </h3>
-        <p className="text-white font-light text-[16px] uppercase">
-          {description}
-        </p>
+        {/* низ: тайтл + опис + стрілки */}
+        <div className="pt-5 flex gap-3 items-end">
+          <div className="flex flex-col gap-3">
+            <h3
+              className="
+                text-white text-left font-[Tektur] font-semibold text-[36px] uppercase leading-tight
+                transition-all duration-300 ease-out
+                group-hover/ImageCard:text-[24px] group-focus/ImageCard:text-[24px]
+              "
+            >
+              {title}
+            </h3>
+
+            <p
+              className="
+                font-[400] text-[#FDFFFF] text-[16px] uppercase
+                max-h-0 overflow-hidden opacity-0 translate-y-2
+                transition-all duration-300 ease-out
+                group-hover/ImageCard:max-h-24 group-hover/ImageCard:opacity-100 group-hover/ImageCard:translate-y-0
+                group-focus/ImageCard:max-h-24 group-focus/ImageCard:opacity-100 group-focus/ImageCard:translate-y-0
+              "
+            >
+              {description}
+            </p>
+          </div>
+
+          {/* базова стрілка */}
+          <img
+            src={arrowDownRight}
+            width={32}
+            height={32}
+            className="
+              block
+              group-hover/ImageCard:hidden
+              group-focus/ImageCard:hidden
+              max-w-[32px] max-h-[32px]
+            "
+            alt=""
+          />
+
+          {/* активна стрілка з легким зміщенням на hover */}
+          <motion.img
+            src={arrowDownRightActive}
+            width={32}
+            height={32}
+            className="
+              hidden
+              group-hover/ImageCard:block
+              group-focus/ImageCard:block
+              max-w-[32px] max-h-[32px]
+            "
+            alt=""
+            whileHover={{ x: 4, y: -4 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+          />
+        </div>
       </article>
-    </a>
+    </motion.a>
   )
 }

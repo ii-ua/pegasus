@@ -17,7 +17,7 @@ export const EducationHero = () => {
           {t('navMain.systems')} / {t('navMain.education')}
         </p>
         <SectionTitle
-          title={`// ${t('systems.education.hero.title')}`}
+          title={`${t('systems.education.hero.title')}`}
           className="text-left w-full"
         />
         <Paragraph text={t('systems.education.hero.description')} />

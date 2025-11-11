@@ -21,7 +21,7 @@ export const BplaHero = () => {
           {t('navMain.systems')} / {t('navMain.bpla')}
         </p>
         <SectionTitle
-          title={`// ${t('systems.bpla.hero.title')}`}
+          title={`${t('systems.bpla.hero.title')}`}
           className="text-left w-full"
         />
         <p className="font-light uppercase max-w-[1011px] bg-[linear-gradient(90.79deg,#F5F5F5_0.08%,#FDFFFF_100%)] bg-clip-text text-transparent text-[24px]">

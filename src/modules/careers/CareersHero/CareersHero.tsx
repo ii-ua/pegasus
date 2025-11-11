@@ -17,7 +17,7 @@ export const CareersHero = () => {
           {t('navMain.career')}
         </p>
         <SectionTitle
-          title={`// ${t('career.title')}`}
+          title={`${t('career.title')}`}
           className="text-left w-full"
         />
         <ul className="flex flex-col gap-5">

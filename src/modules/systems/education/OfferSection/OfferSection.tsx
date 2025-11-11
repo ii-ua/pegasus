@@ -12,7 +12,7 @@ export const OfferSection = () => {
     >
       <div className="flex">
         <SectionTitle
-          title={`// ${t('systems.education.offer.title')}`}
+          title={`${t('systems.education.offer.title')}`}
           className="text-left w-full flex-2"
         />
         <ul className="flex flex-col gap-5 flex-1/8">
