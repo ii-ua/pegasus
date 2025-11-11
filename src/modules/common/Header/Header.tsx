@@ -3,8 +3,8 @@ import { Menu } from '@/components/nav'
 import { LangSelect } from '@/components/select'
 
 const NAV_ITEMS = [
-  { label: 'aboutPegasus', href: '/about-pegasus' },
   { label: 'systems', href: '/#systems', hash: 'systems' },
+  { label: 'aboutUs', href: '/about-us' },
   { label: 'career', href: '/career' },
   { label: 'blog', href: '/blog' },
   { label: 'contact', href: '/#contacts' },

@@ -13,7 +13,7 @@ export const ButtonLink = ({ className = '', ...rest }: ButtonLinkProps) => {
     <Link
       {...rest}
       className={`
-        min-w-[148px] max-w-fit py-3 px-6 font-[600] uppercase
+        min-w-[148px] max-w-fit py-3 px-6 font-[500] uppercase text-[20px]
         text-[#101010] cursor-pointer transition-transform duration-200
         hover:scale-[1.02] focus:bg-none hover:bg-none
         hover:bg-[#FF6600] focus:bg-[#FF6600]

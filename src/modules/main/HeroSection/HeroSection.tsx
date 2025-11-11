@@ -1,5 +1,6 @@
 import { ButtonLink } from '@/components/buttons/ButtonLink'
 import { SectionContainer } from '@/components/container/SectionContainer/SectionContainer'
+import { Paragraph } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 
 export const HeroSection = () => {
@@ -15,10 +16,12 @@ export const HeroSection = () => {
         >
           {t('heroMain.title')}
         </h1>
-        <div className="flex flex-col max-w-[410px] gap-9">
-          <p className="font[300] text-[white] text-[16px] text-left uppercase">
-            {t('heroMain.description')}
-          </p>
+        <div className="flex flex-col max-w-[465px] gap-9">
+          <Paragraph
+            className="font-normal text-[20px] text-[#D9D9D9] text-left"
+            text={t('heroMain.description')}
+          />
+
           <ButtonLink to="/systems/bpla">
             {t('heroMain.buttons.learnMore')}
           </ButtonLink>

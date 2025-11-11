@@ -11,7 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogRouteImport } from './routes/blog'
-import { Route as AboutPegasusRouteImport } from './routes/about-pegasus'
+import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as SystemsRouteRouteImport } from './routes/systems/route'
 import { Route as CareerRouteRouteImport } from './routes/career/route'
 import { Route as IndexRouteImport } from './routes/index'
@@ -30,9 +30,9 @@ const BlogRoute = BlogRouteImport.update({
   path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutPegasusRoute = AboutPegasusRouteImport.update({
-  id: '/about-pegasus',
-  path: '/about-pegasus',
+const AboutUsRoute = AboutUsRouteImport.update({
+  id: '/about-us',
+  path: '/about-us',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SystemsRouteRoute = SystemsRouteRouteImport.update({
@@ -75,7 +75,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/career': typeof CareerRouteRouteWithChildren
   '/systems': typeof SystemsRouteRouteWithChildren
-  '/about-pegasus': typeof AboutPegasusRoute
+  '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/career/$careerId': typeof CareerCareerIdRouteRoute
@@ -87,7 +87,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/career': typeof CareerRouteRouteWithChildren
   '/systems': typeof SystemsRouteRouteWithChildren
-  '/about-pegasus': typeof AboutPegasusRoute
+  '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/career/$careerId': typeof CareerCareerIdRouteRoute
@@ -100,7 +100,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/career': typeof CareerRouteRouteWithChildren
   '/systems': typeof SystemsRouteRouteWithChildren
-  '/about-pegasus': typeof AboutPegasusRoute
+  '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/career/$careerId': typeof CareerCareerIdRouteRoute
@@ -114,7 +114,7 @@ export interface FileRouteTypes {
     | '/'
     | '/career'
     | '/systems'
-    | '/about-pegasus'
+    | '/about-us'
     | '/blog'
     | '/contact'
     | '/career/$careerId'
@@ -126,7 +126,7 @@ export interface FileRouteTypes {
     | '/'
     | '/career'
     | '/systems'
-    | '/about-pegasus'
+    | '/about-us'
     | '/blog'
     | '/contact'
     | '/career/$careerId'
@@ -138,7 +138,7 @@ export interface FileRouteTypes {
     | '/'
     | '/career'
     | '/systems'
-    | '/about-pegasus'
+    | '/about-us'
     | '/blog'
     | '/contact'
     | '/career/$careerId'
@@ -151,7 +151,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CareerRouteRoute: typeof CareerRouteRouteWithChildren
   SystemsRouteRoute: typeof SystemsRouteRouteWithChildren
-  AboutPegasusRoute: typeof AboutPegasusRoute
+  AboutUsRoute: typeof AboutUsRoute
   BlogRoute: typeof BlogRoute
   ContactRoute: typeof ContactRoute
 }
@@ -172,11 +172,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/about-pegasus': {
-      id: '/about-pegasus'
-      path: '/about-pegasus'
-      fullPath: '/about-pegasus'
-      preLoaderRoute: typeof AboutPegasusRouteImport
+    '/about-us': {
+      id: '/about-us'
+      path: '/about-us'
+      fullPath: '/about-us'
+      preLoaderRoute: typeof AboutUsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/systems': {
@@ -263,7 +263,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CareerRouteRoute: CareerRouteRouteWithChildren,
   SystemsRouteRoute: SystemsRouteRouteWithChildren,
-  AboutPegasusRoute: AboutPegasusRoute,
+  AboutUsRoute: AboutUsRoute,
   BlogRoute: BlogRoute,
   ContactRoute: ContactRoute,
 }

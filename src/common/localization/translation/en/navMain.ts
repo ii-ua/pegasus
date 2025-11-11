@@ -1,6 +1,6 @@
 const navMain = {
   systems: 'Systems',
-  aboutPegasus: 'About PEGASUS',
+  aboutUs: 'About Us',
   blog: 'Blog',
   career: 'Career',
   contact: 'Contacts',

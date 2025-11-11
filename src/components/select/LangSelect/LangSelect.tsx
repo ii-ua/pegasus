@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 
 const defaultStyles =
-  'text-white font-[300] text-[20px] px-4 py-2 cursor-pointer transition-colors duration-200 border border-transparent '
+  'text-white font-normal text-[20px] px-4 py-2 cursor-pointer transition-colors duration-200 border border-transparent '
 const activeStyles = 'border-white'
 
 export const LangSelect = () => {
