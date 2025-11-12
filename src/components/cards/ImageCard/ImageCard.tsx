@@ -25,7 +25,7 @@ export const ImageCard = ({
         group/ImageCard block cursor-pointer
         border-[2px] border-[#FDFFFF]
         p-[16px]
-        max-w-[321px] h-[377px]
+        max-w-[321px] h-[415px]
         focus:outline-none
         focus:ring-2 focus:ring-[#FF6600]
       "
@@ -44,7 +44,7 @@ export const ImageCard = ({
             srcSet={`${image1x} 1x, ${image2x} 2x`}
             sizes="(min-width: 768px) 321px, 100vw"
             alt={title}
-            className="h-full w-full"
+            className=" w-full"
             loading="lazy"
           />
         </div>
