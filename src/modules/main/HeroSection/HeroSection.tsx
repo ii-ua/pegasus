@@ -23,7 +23,7 @@ export const HeroSection = () => {
       <div className="flex flex-col justify-between h-full relative z-30">
         {/* заголовок */}
         <motion.h1
-          className="font-[Tektur] font-bold text-[128px] text-white w-full text-center tracking-widest z-30"
+          className="font-[Univermag]  tracking-normal font-normal text-[128px] text-white w-full text-center z-30"
           initial={{ opacity: 0, scale: 0.9, y: 40 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeOut' }}

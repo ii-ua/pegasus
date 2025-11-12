@@ -5,7 +5,7 @@ export interface SectionTitleProps {
 export const SectionTitle = ({ title, className }: SectionTitleProps) => {
   return (
     <h3
-      className={`font-[Tektur] font-bold text-[90px] text-[#FDFFFF] uppercase ${className}`}
+      className={`font-[Univermag] font-normal text-[90px] text-[#FDFFFF] uppercase ${className}`}
     >
       {title}
     </h3>

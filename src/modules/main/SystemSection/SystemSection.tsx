@@ -10,7 +10,7 @@ export const SystemSection = ({ id }: { id?: string }) => {
   return (
     <SectionContainer id={id} as="section" className="flex flex-col gap-[42px]">
       <motion.div
-        className="flex"
+        className="flex items-center"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
