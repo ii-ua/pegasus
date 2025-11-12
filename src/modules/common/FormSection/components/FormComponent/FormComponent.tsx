@@ -56,38 +56,7 @@ export const FormComponent = () => {
             />
           </FormField>
         </FormWrapper>
-        <FormWrapper>
-          <FormField name="company">
-            <FormLabel>{t('formSection.form.inputs.company.label')}</FormLabel>
-            <Form.Message match="valueMissing" className="text-white">
-              Please enter your company name
-            </Form.Message>
-            <Form.Message match="typeMismatch" className="text-white">
-              Please provide a valid company name
-            </Form.Message>
-            <FormInput
-              type="text"
-              required
-              asChild
-              placeholder={t('formSection.form.inputs.company.placeholder')}
-            />
-          </FormField>
-          <FormField name="position">
-            <FormLabel>{t('formSection.form.inputs.position.label')}</FormLabel>
-            <Form.Message match="valueMissing" className="text-white">
-              Please enter your position
-            </Form.Message>
-            <Form.Message match="typeMismatch" className="text-white">
-              Please provide a valid position
-            </Form.Message>
-            <FormInput
-              type="text"
-              required
-              asChild
-              placeholder={t('formSection.form.inputs.position.placeholder')}
-            />
-          </FormField>
-        </FormWrapper>
+
         <FormWrapper>
           <FormField name="email">
             <FormLabel>{t('formSection.form.inputs.email.label')}</FormLabel>
