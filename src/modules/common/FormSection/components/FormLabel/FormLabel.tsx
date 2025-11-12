@@ -6,7 +6,7 @@ export const FormLabel = ({ children, ...props }: Form.FormLabelProps) => {
     <label
       {...props}
       className={cn(
-        'font-[Tektur] min-w-[136px] font-normal text-[24px] text-white uppercase',
+        'min-w-[136px] font-normal text-[24px] text-white uppercase',
         props.className,
       )}
     >

@@ -34,7 +34,7 @@ export function CustomAccordion({
               className="h-full w-full block"
             />
             <div className="absolute inset-0 flex items-center justify-between pl-9 pr-[18px] py-[18px]">
-              <h3 className="text-white  m-0 font-[Tektur] uppercase font-normal text-[24px]">
+              <h3 className="text-white  m-0 font-[] uppercase font-normal text-[24px]">
                 {title}
               </h3>
 
