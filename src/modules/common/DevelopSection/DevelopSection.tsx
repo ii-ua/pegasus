@@ -1,4 +1,5 @@
 import { ButtonLink } from '@/components/buttons/ButtonLink'
+import { ButtonPrimary } from '@/components/buttons/ButtonPrimary'
 import { SectionContainer } from '@/components/container'
 import { SectionTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
@@ -20,7 +21,14 @@ export const DevelopSection = () => {
             <p className="font-[300] text-[#FDFFFF] max-w-[665px] text-2xl uppercase text-left">
               {t('developMain.description')}
             </p>
-            <ButtonLink to="/career">{t('developMain.button')}</ButtonLink>
+            <div className="flex gap-8">
+              <ButtonLink to="/career">
+                {t('developMain.button.team')}
+              </ButtonLink>
+              <ButtonPrimary variant="secondary" to="#contacts">
+                {t('developMain.button.partner')}
+              </ButtonPrimary>
+            </div>
           </div>
         </div>
       </div>
