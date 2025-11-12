@@ -1,9 +1,9 @@
 import * as Accordion from '@radix-ui/react-accordion'
 import CutAccordionTopLeft from '@/assets/shapes/cut-accordion-top-left.svg?react'
 import CutAccordionBottomRight from '@/assets/shapes/cut-accordion-bottom-right.svg?react'
-import ArrowDownRight from '@/assets/icons/arrow-down-right.svg?react'
-import ArrowDownRightActive from '@/assets/icons/arrow-down-right-active.svg?react'
-import ArrowUpRight from '@/assets/icons/arrow-up-right.svg?react'
+import arrowDownRight from '@/assets/icons/arrow-down-right.svg'
+import arrowDownRightActive from '@/assets/icons/arrow-down-right-active.svg'
+import arrowUpRight from '@/assets/icons/arrow-up-right.svg'
 
 type Item = {
   value: string
@@ -41,11 +41,29 @@ export function CustomAccordion({
               {/* ІКОНКИ */}
               <span className="inline-flex items-center">
                 {/* ↓ Закрито (дефолт) */}
-                <ArrowDownRight className="block group-hover:hidden group-focus:hidden group-data-[state=open]:hidden" />
+                <img
+                  src={arrowDownRight}
+                  width={42}
+                  height={42}
+                  alt=""
+                  className="block group-hover:hidden group-focus:hidden group-data-[state=open]:hidden"
+                />
                 {/* ↓ Закрито + hover */}
-                <ArrowDownRightActive className="hidden group-hover:block group-focus:block group-data-[state=open]:hidden" />
+                <img
+                  src={arrowDownRightActive}
+                  width={42}
+                  height={42}
+                  alt=""
+                  className="hidden group-hover:block group-focus:block group-data-[state=open]:hidden"
+                />
                 {/* ↑ Відкрито */}
-                <ArrowUpRight className="hidden group-data-[state=open]:block" />
+                <img
+                  src={arrowUpRight}
+                  width={42}
+                  height={42}
+                  alt=""
+                  className="hidden group-data-[state=open]:block"
+                />
               </span>
             </div>
           </Accordion.Trigger>

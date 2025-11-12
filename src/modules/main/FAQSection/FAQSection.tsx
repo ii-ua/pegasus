@@ -21,7 +21,7 @@ export const FAQSection = () => {
           orientation="vertical"
         >
           <Tabs.List
-            className="flex flex-col w-[321px] gap-4"
+            className="flex flex-col w-[300px] gap-4"
             aria-label={t('faqMain.title')}
           >
             <TabTrigger value="aboutProduct">
