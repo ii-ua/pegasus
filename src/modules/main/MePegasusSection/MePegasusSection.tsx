@@ -19,7 +19,7 @@ export const MePegasusSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: 'easeOut' }}
         viewport={{ once: true }}
-        className="flex flex-col max-w-[957px] gap-6 relative z-10"
+        className="flex flex-col tablet:max-w-[795px] desktop:max-w-[957px] gap-6 relative z-10"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -37,7 +37,7 @@ export const MePegasusSection = () => {
           {paragraphs.map((text, i) => (
             <motion.p
               key={text}
-              className="font-normal text-[#D9D9D9] text-2xl uppercase text-center"
+              className="font-normal text-[#FDFFFF] text-[16px] tablet:text-[20px] desktop:text-[24px] uppercase text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{

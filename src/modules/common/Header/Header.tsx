@@ -14,9 +14,15 @@ export default function Header() {
   return (
     <>
       <header className="fixed top-[42px] left-0 right-0 z-50 px-8 ">
-        <MainContainer className="flex items-center justify-between backdrop-blur-sm ">
+        <MainContainer className="flex items-center px-0 sm:px-0 lg:px-0 xl:px-0 justify-between backdrop-blur-sm ">
           <a href="/" className="p-1.5">
-            <img width={64} height={64} src="/logo.png" alt="Logo" />
+            <img
+              className="w-[54px] h-[54px] desktop:w-[64px] desktop:h-[64px]"
+              width={64}
+              height={64}
+              src="/logo.png"
+              alt="Logo"
+            />
           </a>
           <Menu navItems={NAV_ITEMS} />
           <LangSelect />

@@ -1,5 +1,12 @@
 @import 'tailwindcss';
 
+@theme {
+  /* Кастомні брейкпоінти */
+  --breakpoint-mobile: 24.375rem; /* 390px */
+  --breakpoint-tablet: 70.8125rem; /* 1133px */
+  --breakpoint-desktop: 90rem; /* 1440px */
+}
+
 @font-face {
   font-family: 'Univermag';
   src:

@@ -26,7 +26,7 @@ export const GoalSection = () => {
           {paragraphs.map((text, i) => (
             <motion.p
               key={text}
-              className="font-[300] text-[#FDFFFF] max-w-[665px] text-2xl uppercase text-left"
+              className="font-normal text-[#FDFFFF] text-[16px] tablet:text-[20px] desktop:text-[24px] tablet:max-w-[526px] desktop:max-w-[665px] uppercase text-left"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{

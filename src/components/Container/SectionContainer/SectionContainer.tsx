@@ -10,7 +10,10 @@ export const SectionContainer = ({
   id,
 }: SectionContainerProps) => {
   return (
-    <section id={id} className={`py-[82px] ${className}`}>
+    <section
+      id={id}
+      className={`py-[54px] desktop:py-[82px] tablet:py-[64px] ${className}`}
+    >
       {children}
     </section>
   )

@@ -15,7 +15,7 @@ export const Menu = ({ navItems, ariaLabel, className }: MenuProps) => {
   return (
     <nav aria-label={ariaLabel ?? 'Основна навігація'}>
       <motion.ul
-        className={cn('flex gap-[42px]', className)}
+        className={cn('flex gap-2.5 lg:gap-[42px]', className)}
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
