@@ -34,7 +34,7 @@ export function CustomAccordion({
               className="h-full w-full block"
             />
             <div className="absolute inset-0 flex items-center justify-between pl-9 pr-[18px] py-[18px]">
-              <h3 className="text-white  m-0 font-[] uppercase font-normal text-[24px]">
+              <h3 className=" m-0 uppercase text-[#FDFFFF] font-normal text-[16px] tablet:text-[20px] desktop:text-[24px]">
                 {title}
               </h3>
 
@@ -80,7 +80,7 @@ export function CustomAccordion({
             </span>
 
             {/* контент формує висоту */}
-            <div className="relative z-10 p-[22px] text-white/80">
+            <div className="relative z-10 p-[22px] text-[#FDFFFF] font-normal text-[16px] tablet:text-[20px] desktop:text-[24px]">
               {content}
             </div>
           </Accordion.Content>

@@ -6,8 +6,8 @@ export const TabTrigger = ({ className, ...props }: Tabs.TabsTriggerProps) => (
   <Tabs.Trigger
     {...props}
     className={cn(
-      'text-left text-[#939393] font-medium text-2xl uppercase cursor-pointer',
-      'data-[state=active]:text-white data-[state=active]:border-white',
+      'text-left text-[#939393] font-medium text-[16px] tablet:text-[20px] desktop:text-[24px] uppercase cursor-pointer',
+      'data-[state=active]:text-[#FDFFFF] data-[state=active]:border-white',
       className,
     )}
   />
