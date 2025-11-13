@@ -12,7 +12,7 @@ export const FormSection = () => {
           title={`${t('formSection.title')}`}
           className="text-left flex-2"
         />
-        <p className="text-white font[300] text-[24px] uppercase flex-1">
+        <p className="text-[#D9D9D9] font-normal text-[16px] tablet:text-[20px] desktop:text-[24px] uppercase flex-1">
           {t('formSection.description')}
         </p>
       </div>

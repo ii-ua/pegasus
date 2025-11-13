@@ -37,7 +37,7 @@ export const MePegasusSection = () => {
           {paragraphs.map((text, i) => (
             <motion.p
               key={text}
-              className="font-normal text-[#FDFFFF] text-[16px] tablet:text-[20px] desktop:text-[24px] uppercase text-center"
+              className="font-normal text-[#D9D9D9] text-[16px] tablet:text-[20px] desktop:text-[24px] uppercase text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{

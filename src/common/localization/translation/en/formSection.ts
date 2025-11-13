@@ -34,6 +34,28 @@ const formSection = {
         placeholder: '',
       },
     },
+    validations: {
+      email: {
+        valueMissing: 'Please enter your email',
+        typeMismatch: 'Please provide a valid email',
+      },
+      name: {
+        valueMissing: 'Please enter your first name',
+        typeMismatch: 'Please provide a valid first name',
+      },
+      lastName: {
+        valueMissing: 'Please enter your last name',
+        typeMismatch: 'Please provide a valid last name',
+      },
+      tel: {
+        valueMissing: 'Please enter your phone number',
+        typeMismatch: 'Please provide a valid phone number',
+      },
+      message: {
+        valueMissing: 'Please enter your message',
+        typeMismatch: 'Please provide a valid message',
+      },
+    },
     button: 'SEND',
   },
 }

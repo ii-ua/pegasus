@@ -80,7 +80,7 @@ export function CustomAccordion({
             </span>
 
             {/* контент формує висоту */}
-            <div className="relative z-10 p-[22px] text-[#FDFFFF] font-normal text-[16px] tablet:text-[20px] desktop:text-[24px]">
+            <div className="relative z-10 p-[22px] text-[#FDFFFF] font-normal text-[14px] tablet:text-[20px] desktop:text-[20px]">
               {content}
             </div>
           </Accordion.Content>

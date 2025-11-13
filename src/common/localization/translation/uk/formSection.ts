@@ -34,6 +34,28 @@ const formSection = {
         placeholder: 'Щоб ви хотіли дізнатись?',
       },
     },
+    validations: {
+      email: {
+        valueMissing: 'Введіть ваш email',
+        typeMismatch: 'Введіть коректний email',
+      },
+      name: {
+        valueMissing: 'Введіть ваше ім’я',
+        typeMismatch: 'Введіть коректне ім’я',
+      },
+      lastName: {
+        valueMissing: 'Введіть ваше прізвище',
+        typeMismatch: 'Введіть коректне прізвище',
+      },
+      tel: {
+        valueMissing: 'Введіть ваш телефон',
+        typeMismatch: 'Введіть коректний телефон',
+      },
+      message: {
+        valueMissing: 'Введіть ваше повідомлення',
+        typeMismatch: 'Введіть коректне повідомлення',
+      },
+    },
     button: 'ВІДПРАВИТИ',
   },
 }

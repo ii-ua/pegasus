@@ -21,7 +21,7 @@ export const SystemSection = ({ id }: { id?: string }) => {
           className="text-left flex-2"
         />
         <motion.p
-          className=" text-[#FDFFFF] text-[16px] tablet:text-[20px] desktop:text-[24px] uppercase flex-1"
+          className=" text-[#D9D9D9] text-[16px] tablet:text-[20px] desktop:text-[24px] uppercase flex-1"
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.4 }}

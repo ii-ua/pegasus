@@ -36,7 +36,7 @@ export const StatCard = ({
           {value}
           {highlight && <span className="text-[#FF6600]">{highlightText}</span>}
         </span>
-        <p className="text-[#FDFFFF] font-normal text-[14px] uppercase">
+        <p className="text-[#D9D9D9] font-normal text-[14px] uppercase">
           {description}
         </p>
       </div>

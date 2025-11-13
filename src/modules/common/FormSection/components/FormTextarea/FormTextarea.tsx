@@ -18,7 +18,7 @@ export const FormTextarea: React.FC<FormTextareaProps> = ({
         className={cn(
           'flex-1 bg-transparent outline-none',
           'border-b text-white placeholder-[#939393] placeholder:uppercase',
-          'text-[20px] font-medium p-3',
+          'text-[14px] tablet:text-[16px] desktop:text-[20px] font-normal p-3',
           className,
         )}
         style={{
