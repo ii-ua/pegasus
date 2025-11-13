@@ -11,14 +11,14 @@ export const GoalSection = () => {
   }) as string[]
 
   return (
-    <SectionContainer as="section" className="flex flex-col gap-[42px]">
+    <SectionContainer as="section" className="flex flex-col">
       {/* верхній блок: заголовок + текст, вʼїзд зліва */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.9, ease: 'easeOut' }}
         viewport={{ once: true, amount: 0.3 }}
-        className="flex flex-col gap-6"
+        className="flex flex-col gap-4 tablet:gap-6 desktop:gap-8"
       >
         <SectionTitle title={`${t('goalMain.title')}`} className="text-left" />
 

@@ -6,11 +6,7 @@ import { FormComponent } from './components/FormComponent'
 export const FormSection = () => {
   const { t } = useTranslation()
   return (
-    <SectionContainer
-      id="contacts"
-      as="section"
-      className="flex flex-col gap-[42px]"
-    >
+    <SectionContainer id="contacts" as="section" className="flex flex-col">
       <div className="flex items-center">
         <SectionTitle
           title={`${t('formSection.title')}`}

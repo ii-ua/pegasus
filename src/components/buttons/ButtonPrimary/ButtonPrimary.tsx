@@ -4,7 +4,7 @@ import CutButton from '@/assets/shapes/cut-button.svg?react'
 import { Link } from '@tanstack/react-router'
 
 const baseStyles = `
-  min-w-[148px] max-w-fit py-3 px-6 font-[500] uppercase text-[20px]
+  min-w-[148px] max-w-fit py-3 px-6 font-[500] uppercase text-[16px] desktop:text-[20px]
   cursor-pointer transition-transform duration-200 relative inline-flex justify-center items-center
   focus:outline-none clip-path-[polygon(0_10px,10px_0,100%_0,100%_calc(100%-10px),calc(100%-10px)_100%,0_100%)]
 `

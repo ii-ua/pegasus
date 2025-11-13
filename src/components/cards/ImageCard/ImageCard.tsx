@@ -25,7 +25,7 @@ export const ImageCard = ({
         group/ImageCard block cursor-pointer
         border-[2px] border-[#FDFFFF]
         p-[16px]
-         tablet:max-w-[255px] desktop:max-w-[321px] tablet:h-[370px] desktop:h-[410px]
+         tablet:max-w-[285px] desktop:max-w-[321px] tablet:h-[385px] desktop:h-[410px]
         focus:outline-none
         focus:ring-2 focus:ring-[#FF6600]
       "

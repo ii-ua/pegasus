@@ -10,7 +10,7 @@ export const DevelopSection = () => {
   return (
     <SectionContainer
       as="section"
-      className="flex flex-col gap-0 develop-bg relative"
+      className="flex flex-col gap-0 tablet:gap-0 desktop:gap-0 develop-bg relative"
     >
       {/* мʼякий чорний фейд для “проявлення” секції */}
       <motion.div

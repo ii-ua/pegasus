@@ -8,7 +8,7 @@ export const SystemSection = ({ id }: { id?: string }) => {
   const { t } = useTranslation()
 
   return (
-    <SectionContainer id={id} as="section" className="flex flex-col gap-[42px]">
+    <SectionContainer id={id} as="section" className="flex flex-col">
       <motion.div
         className="flex items-center"
         initial={{ opacity: 0, y: 30 }}

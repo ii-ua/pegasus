@@ -10,7 +10,7 @@ import { motion } from 'motion/react'
 export const FAQSection = () => {
   const { t } = useTranslation()
   return (
-    <SectionContainer as="section" className="flex flex-col gap-[42px]">
+    <SectionContainer as="section" className="flex flex-col">
       <motion.div
         className="flex flex-col gap-6"
         initial={{ opacity: 0, y: 30 }}

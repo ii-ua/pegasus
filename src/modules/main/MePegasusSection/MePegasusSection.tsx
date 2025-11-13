@@ -19,7 +19,7 @@ export const MePegasusSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: 'easeOut' }}
         viewport={{ once: true }}
-        className="flex flex-col tablet:max-w-[795px] desktop:max-w-[957px] gap-6 relative z-10"
+        className="flex flex-col tablet:max-w-[795px] desktop:max-w-[957px] gap-4 tablet:gap-6 desktop:gap-8 relative z-10"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
