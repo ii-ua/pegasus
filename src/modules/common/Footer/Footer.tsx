@@ -126,36 +126,38 @@ export const Footer = () => {
     <footer className="py-[82px] flex gap-[65px]">
       {/* Ліва колонка: поява знизу */}
       <motion.div
-        className="max-w-[667px] uppercase text-white font-light text-[16px]"
+        className="max-w-[610px] uppercase text-[#D9D9D9] font-normal tablet:text-[14px] desktop:text-[16px] flex flex-col justify-between"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
         <img
-          className="mb-[42px]"
           width={124}
           height={124}
+          className="mobile:w-[100px] mobile:h-[100px] tablet:w-[124px] tablet:h-[124px]"
           src="/logo.png"
           alt="Logo"
         />
-        <p>{t('footer.copyright')}</p>
-        <p>
-          {t('footer.terms.text')}
-          <a
-            href="/terms"
-            className="inline-block underline decoration-[#FF6600] decoration-1 underline-offset-1 bg-gradient-to-r from-[#CE4906] via-[#FF6600] to-[#FF8B20] bg-clip-text text-transparent"
-          >
-            {t('footer.terms.links.terms')}
-          </a>
-          {t('footer.terms.and')}
-          <a
-            href="/privacy"
-            className="inline-block underline decoration-[#FF6600] decoration-1 underline-offset-1 bg-gradient-to-r from-[#CE4906] via-[#FF6600] to-[#FF8B20] bg-clip-text text-transparent"
-          >
-            {t('footer.terms.links.privacy')}
-          </a>
-        </p>
+        <div>
+          <p>{t('footer.copyright')}</p>
+          <p>
+            {t('footer.terms.text')}
+            <a
+              href="/terms"
+              className="inline-block underline decoration-[#FF6600] decoration-1 underline-offset-1 bg-gradient-to-r from-[#CE4906] via-[#FF6600] to-[#FF8B20] bg-clip-text text-transparent"
+            >
+              {t('footer.terms.links.terms')}
+            </a>
+            {t('footer.terms.and')}
+            <a
+              href="/privacy"
+              className="inline-block underline decoration-[#FF6600] decoration-1 underline-offset-1 bg-gradient-to-r from-[#CE4906] via-[#FF6600] to-[#FF8B20] bg-clip-text text-transparent"
+            >
+              {t('footer.terms.links.privacy')}
+            </a>
+          </p>
+        </div>
       </motion.div>
 
       {/* Права колонка: поява знизу з невеликою затримкою */}
@@ -169,13 +171,13 @@ export const Footer = () => {
         <Menu
           navItems={NAV_ITEMS}
           ariaLabel={t('footer.navigationAriaLabel')}
-          className="flex-col gap-4"
+          className="flex-col gap-6 lg:gap-6"
         />
 
         <div className="flex flex-col justify-between">
           {/* Контакти: м'яка поява */}
           <motion.ul
-            className="text-white font-medium text-[20px] uppercase flex flex-col gap-6"
+            className="text-[#FDFFFF] font-normal text-[16px] desktop:text-[20px] uppercase flex flex-col gap-7"
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -183,7 +185,7 @@ export const Footer = () => {
           >
             <li>
               <a
-                className="flex gap-3"
+                className="flex gap-3 items-center"
                 type="tel"
                 target="_blank"
                 href="tel:+380986146177"
@@ -194,7 +196,7 @@ export const Footer = () => {
             </li>
             <li>
               <a
-                className="flex gap-3"
+                className="flex gap-3 items-center"
                 type="email"
                 href="mailto:p.info@pegasusarms.com.ua"
               >
