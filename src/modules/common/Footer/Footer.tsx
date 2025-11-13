@@ -52,8 +52,9 @@ function GlowIcon({
       whileTap={{ scale: 0.98, rotate: 0 }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       className={`
-        relative block rounded-[4px] border border-white/40 p-1.5
+        relative block rounded-[4px] border border-[#FDFFFF] p-[3px]
         overflow-hidden
+        
         transition-[border-color,box-shadow] duration-300
         hover:border-[#FF6600]/60
         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6600]
@@ -68,9 +69,7 @@ function GlowIcon({
         ['--y' as any]: '50%',
       }}
     >
-      <div className="grid place-items-center w-[42px] h-[42px]">
-        {children}
-      </div>
+      <div className="grid place-items-center">{children}</div>
     </motion.a>
   )
 }
@@ -89,7 +88,7 @@ function SocialIcons() {
           href="https://www.facebook.com/profile.php?id=61559913531013&locale=uk_UA"
           label="facebook"
         >
-          <Facebook width={42} height={42} />
+          <Facebook />
         </GlowIcon>
       </li>
       <li>
@@ -97,7 +96,7 @@ function SocialIcons() {
           href="https://www.instagram.com/drone.pegasusarms?igsh=MXVyYzV3aGVlbWRoNg%3D%3D&utm_source=qr"
           label="instagram"
         >
-          <Instagram width={42} height={42} />
+          <Instagram />
         </GlowIcon>
       </li>
       <li>
@@ -105,7 +104,7 @@ function SocialIcons() {
           href="https://youtube.com/@pegasusarmsukraine?si=phZUjIuPs0lCvMd_"
           label="youtube"
         >
-          <Youtube width={42} height={42} />
+          <Youtube />
         </GlowIcon>
       </li>
       <li>
@@ -113,7 +112,7 @@ function SocialIcons() {
           href="https://www.tiktok.com/@drone.pegasusarms?_t=ZM-8vlt5EPwJHD"
           label="tiktok"
         >
-          <Tiktok width={42} height={42} />
+          <Tiktok />
         </GlowIcon>
       </li>
     </motion.ul>
@@ -177,7 +176,7 @@ export const Footer = () => {
         <div className="flex flex-col justify-between">
           {/* Контакти: м'яка поява */}
           <motion.ul
-            className="text-[#FDFFFF] font-normal text-[16px] desktop:text-[20px] uppercase flex flex-col gap-7"
+            className="text-[#FDFFFF] font-normal text-[16px] desktop:text-[20px] uppercase flex flex-col gap-4 tablet:gap-6"
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
