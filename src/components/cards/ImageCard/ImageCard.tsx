@@ -25,7 +25,7 @@ export const ImageCard = ({
         group/ImageCard block cursor-pointer
         border-[2px] border-[#FDFFFF]
         p-[16px]
-        max-w-[321px] h-[415px]
+         tablet:max-w-[255px] desktop:max-w-[321px] tablet:h-[370px] desktop:h-[410px]
         focus:outline-none
         focus:ring-2 focus:ring-[#FF6600]
       "
@@ -38,7 +38,7 @@ export const ImageCard = ({
     >
       <article className="flex h-full flex-col justify-between">
         {/* картинка фіксованої висоти — без змін при hover */}
-        <div className="relative w-full h-[240px] overflow-hidden">
+        <div className="relative w-full max-h-[240px] overflow-hidden">
           <img
             src={image1x}
             srcSet={`${image1x} 1x, ${image2x} 2x`}
@@ -50,11 +50,11 @@ export const ImageCard = ({
         </div>
 
         {/* низ: тайтл + опис + стрілки */}
-        <div className="pt-5 flex gap-3 items-end">
+        <div className="desktop:pt-[17px] flex gap-3 items-end">
           <div className="flex flex-col gap-3">
             <h3
               className="
-                text-white text-left font-[Univermag] font-normal text-[36px] uppercase leading-tight
+                text-[#FDFFFF] text-left font-[Univermag] font-normal text-[24px] tablet:text-[32px] desktop:text-[36px] uppercase leading-tight
                 transition-all duration-300 ease-out
                 group-hover/ImageCard:text-[24px] group-focus/ImageCard:text-[24px]
               "
