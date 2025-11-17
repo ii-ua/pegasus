@@ -122,10 +122,10 @@ function SocialIcons() {
 export const Footer = () => {
   const { t } = useTranslation()
   return (
-    <footer className="py-[54px] desktop:py-[82px] tablet:py-[64px] flex flex-col gap-[65px]">
+    <footer className="py-[54px] desktop:py-[82px] tablet:py-[64px] flex flex-col gap-[54px] tablet:gap-[65px]">
       {/* Ліва колонка: поява знизу */}
       <motion.div
-        className="max-w-[610px] order-2 tablet:order-0 uppercase text-[#D9D9D9] font-normal tablet:text-[14px] desktop:text-[16px] flex flex-col justify-between"
+        className="max-w-[610px] order-2 tablet:order-0 uppercase text-[#D9D9D9] font-normal text-[14px] desktop:text-[16px] flex gap-8 flex-col justify-between"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
@@ -161,7 +161,7 @@ export const Footer = () => {
 
       {/* Права колонка: поява знизу з невеликою затримкою */}
       <motion.div
-        className="flex justify-between w-full"
+        className="flex gap-8 flex-col tablet:flex-row justify-between w-full"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
@@ -170,10 +170,10 @@ export const Footer = () => {
         <Menu
           navItems={NAV_ITEMS}
           ariaLabel={t('footer.navigationAriaLabel')}
-          className="flex-col gap-6 lg:gap-6"
+          className="flex-col block gap-6 lg:gap-6"
         />
 
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col justify-between gap-8">
           {/* Контакти: м'яка поява */}
           <motion.ul
             className="text-[#FDFFFF] font-normal text-[16px] desktop:text-[20px] uppercase flex flex-col gap-4 tablet:gap-6"

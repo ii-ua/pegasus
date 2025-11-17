@@ -26,7 +26,7 @@ export default function Header() {
             />
           </a>
           <MobileMenu navItems={NAV_ITEMS} />
-          <Menu navItems={NAV_ITEMS} />
+          <Menu classNameContainer="hidden tablet:block" navItems={NAV_ITEMS} />
           <LangSelect className="hidden tablet:block" />
         </MainContainer>
       </header>

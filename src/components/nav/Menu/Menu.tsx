@@ -7,14 +7,20 @@ export interface MenuProps {
   navItems?: Array<{ label: string; href?: string; hash?: string }>
   ariaLabel?: string
   className?: string
+  classNameContainer?: string
 }
 
-export const Menu = ({ navItems, ariaLabel, className }: MenuProps) => {
+export const Menu = ({
+  navItems,
+  ariaLabel,
+  className,
+  classNameContainer,
+}: MenuProps) => {
   const { t } = useTranslation()
 
   return (
     <nav
-      className="hidden tablet:block"
+      className={cn('', classNameContainer)}
       aria-label={ariaLabel ?? 'Основна навігація'}
     >
       <motion.ul
