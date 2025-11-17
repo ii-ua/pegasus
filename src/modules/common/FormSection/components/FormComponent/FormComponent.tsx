@@ -1,4 +1,5 @@
 import FormRectangle from '@/assets/shapes/form-rectangle.svg?react'
+import MFormRectangle from '@/assets/shapes/m-form-rectangle.svg?react'
 import { Form } from 'radix-ui'
 import { useTranslation } from 'react-i18next'
 import { FormLabel } from '../FormLabel'
@@ -16,7 +17,7 @@ export const FormComponent = () => {
   const { t } = useTranslation()
   return (
     <motion.div
-      className="relative w-full p-8 flex flex-col gap-6 tablet:gap-[43px] desktop:gap-[53px]"
+      className="relative w-full p-4 tablet:p-8 flex flex-col gap-6 tablet:gap-[43px] desktop:gap-[53px]"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
@@ -30,7 +31,11 @@ export const FormComponent = () => {
         transition={{ duration: 1.2, ease: 'easeOut', delay: 0.1 }}
       >
         <FormRectangle
-          className="block w-full h-full bg-none"
+          className="w-full h-full bg-none hidden tablet:block"
+          preserveAspectRatio="none"
+        />
+        <MFormRectangle
+          className="block w-full h-full bg-none tablet:hidden"
           preserveAspectRatio="none"
         />
       </motion.span>
@@ -55,18 +60,26 @@ export const FormComponent = () => {
               <FormLabel isRequired>
                 {t('formSection.form.inputs.name.label')}
               </FormLabel>
-              <Form.Message match="valueMissing" className={errorMessagesStyle}>
-                {t('formSection.form.validations.name.valueMissing')}
-              </Form.Message>
-              <Form.Message match="typeMismatch" className={errorMessagesStyle}>
-                {t('formSection.form.validations.name.typeMismatch')}
-              </Form.Message>
-              <FormInput
-                type="text"
-                required
-                asChild
-                placeholder={t('formSection.form.inputs.name.placeholder')}
-              />
+              <div className="flex flex-col gap-3.5 w-full">
+                <FormInput
+                  type="text"
+                  required
+                  asChild
+                  placeholder={t('formSection.form.inputs.name.placeholder')}
+                />
+                <Form.Message
+                  match="valueMissing"
+                  className={errorMessagesStyle}
+                >
+                  {t('formSection.form.validations.name.valueMissing')}
+                </Form.Message>
+                <Form.Message
+                  match="typeMismatch"
+                  className={errorMessagesStyle}
+                >
+                  {t('formSection.form.validations.name.typeMismatch')}
+                </Form.Message>
+              </div>
             </FormField>
             <FormField name="lastName">
               <FormLabel>
@@ -93,35 +106,51 @@ export const FormComponent = () => {
               <FormLabel isRequired>
                 {t('formSection.form.inputs.email.label')}
               </FormLabel>
-              <Form.Message match="valueMissing" className={errorMessagesStyle}>
-                {t('formSection.form.validations.email.valueMissing')}
-              </Form.Message>
-              <Form.Message match="typeMismatch" className={errorMessagesStyle}>
-                {t('formSection.form.validations.email.typeMismatch')}
-              </Form.Message>
-              <FormInput
-                type="email"
-                required
-                asChild
-                placeholder={t('formSection.form.inputs.email.placeholder')}
-              />
+              <div className="flex flex-col gap-3.5 w-full">
+                <FormInput
+                  type="email"
+                  required
+                  asChild
+                  placeholder={t('formSection.form.inputs.email.placeholder')}
+                />
+                <Form.Message
+                  match="valueMissing"
+                  className={errorMessagesStyle}
+                >
+                  {t('formSection.form.validations.email.valueMissing')}
+                </Form.Message>
+                <Form.Message
+                  match="typeMismatch"
+                  className={errorMessagesStyle}
+                >
+                  {t('formSection.form.validations.email.typeMismatch')}
+                </Form.Message>
+              </div>
             </FormField>
             <FormField name="tel">
               <FormLabel isRequired>
                 {t('formSection.form.inputs.tel.label')}
               </FormLabel>
-              <Form.Message match="valueMissing" className={errorMessagesStyle}>
-                {t('formSection.form.validations.tel.valueMissing')}
-              </Form.Message>
-              <Form.Message match="typeMismatch" className={errorMessagesStyle}>
-                {t('formSection.form.validations.tel.typeMismatch')}
-              </Form.Message>
-              <FormInput
-                type="tel"
-                required
-                asChild
-                placeholder={t('formSection.form.inputs.tel.placeholder')}
-              />
+              <div className="flex flex-col gap-3.5 w-full">
+                <FormInput
+                  type="tel"
+                  required
+                  asChild
+                  placeholder={t('formSection.form.inputs.tel.placeholder')}
+                />
+                <Form.Message
+                  match="valueMissing"
+                  className={errorMessagesStyle}
+                >
+                  {t('formSection.form.validations.tel.valueMissing')}
+                </Form.Message>
+                <Form.Message
+                  match="typeMismatch"
+                  className={errorMessagesStyle}
+                >
+                  {t('formSection.form.validations.tel.typeMismatch')}
+                </Form.Message>
+              </div>
             </FormField>
           </FormWrapper>
         </motion.div>
@@ -135,16 +164,18 @@ export const FormComponent = () => {
             <FormLabel isRequired>
               {t('formSection.form.inputs.message.label')}
             </FormLabel>
-            <Form.Message match="valueMissing" className={errorMessagesStyle}>
-              {t('formSection.form.validations.message.valueMissing')}
-            </Form.Message>
-            <Form.Message match="typeMismatch" className={errorMessagesStyle}>
-              {t('formSection.form.validations.message.typeMismatch')}
-            </Form.Message>
-            <FormTextarea
-              required
-              placeholder={t('formSection.form.inputs.message.placeholder')}
-            />
+            <div className="flex flex-col gap-3.5 w-full">
+              <FormTextarea
+                required
+                placeholder={t('formSection.form.inputs.message.placeholder')}
+              />
+              <Form.Message match="valueMissing" className={errorMessagesStyle}>
+                {t('formSection.form.validations.message.valueMissing')}
+              </Form.Message>
+              <Form.Message match="typeMismatch" className={errorMessagesStyle}>
+                {t('formSection.form.validations.message.typeMismatch')}
+              </Form.Message>
+            </div>
           </FormField>
         </motion.div>
 
