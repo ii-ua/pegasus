@@ -39,7 +39,7 @@ export const HeroSection = () => {
           className="flex flex-col max-w-[465px] gap-9"
         >
           <Paragraph
-            className="font-normal text-[20px] text-[#D9D9D9] text-left"
+            className="font-normal text-[#D9D9D9] text-left"
             text={t('heroMain.description')}
           />
 
