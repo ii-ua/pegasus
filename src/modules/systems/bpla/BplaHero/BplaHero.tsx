@@ -11,7 +11,7 @@ export const BplaHero = () => {
   return (
     <SectionContainer
       as="section"
-      className="flex pt-[139px] flex-col justify-center items-center gap-[42px]"
+      className="flex pt-[90px] tablet:pt-[64px] flex-col justify-center items-center gap-[42px]"
     >
       <div className="w-full flex flex-col gap-6">
         <p

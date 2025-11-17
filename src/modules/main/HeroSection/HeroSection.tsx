@@ -10,7 +10,7 @@ export const HeroSection = () => {
   return (
     <SectionContainer
       as="section"
-      className="relative pt-[139px] hero-bg h-svh overflow-hidden"
+      className="relative pt-[90px] tablet:pt-[64px] hero-bg h-svh overflow-hidden"
     >
       {/* чорний фейд як ефект вмикання */}
       <motion.div

@@ -7,7 +7,7 @@ export const HeroSection = () => {
   return (
     <SectionContainer
       as="section"
-      className="flex pt-[139px] flex-col justify-center items-center"
+      className="flex pt-[90px] tablet:pt-[64px] flex-col justify-center items-center"
     >
       <div className="w-full flex flex-col gap-6">
         <p

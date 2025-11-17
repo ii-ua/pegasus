@@ -7,7 +7,7 @@ export const CareersHero = () => {
   return (
     <SectionContainer
       as="section"
-      className="flex pt-[139px] flex-col justify-center items-left gap-[82px]"
+      className="flex pt-[90px] tablet:pt-[64px] flex-col justify-center items-left gap-[82px]"
     >
       <div className="flex flex-col gap-6 max-w-[1051px] items-start">
         <p
