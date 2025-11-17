@@ -1,5 +1,5 @@
 import { SectionContainer } from '@/components/container/SectionContainer/SectionContainer'
-import { SectionTitle } from '@/components/text'
+import { Paragraph, SectionTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 
 export const HeroSection = () => {
@@ -7,28 +7,31 @@ export const HeroSection = () => {
   return (
     <SectionContainer
       as="section"
-      className="flex pt-[90px] tablet:pt-[64px] flex-col justify-center items-center"
+      className="flex pt-[104px] tablet:pt-[122px] desktop:pt-[166px] flex-col justify-center gap-[54px] tablet:gap-[65px] desktop:gap-[82px] items-center"
     >
-      <div className="w-full flex flex-col gap-6">
-        <p
-          className="font-light bg-[linear-gradient(90.79deg,#F5F5F5_0.08%,#FDFFFF_100%)] bg-clip-text text-transparent uppercase tex-[32px]
-"
-        >
-          {t('navMain.aboutPegasus')}
-        </p>
+      <div className="w-full flex flex-col gap-5 desktop:gap-6">
+        <Paragraph
+          className="font-light"
+          variant="grey"
+          text={t('navMain.aboutUs')}
+        />
         <SectionTitle
           title={`${t('heroAboutPegasus.title')}`}
           className="text-left w-full"
         />
-        <p className="font-light uppercase max-w-[1011px] bg-[linear-gradient(90.79deg,#F5F5F5_0.08%,#FDFFFF_100%)] bg-clip-text text-transparent text-[24px]">
-          {t('heroAboutPegasus.paragraphs.0')}
-        </p>
+        <Paragraph
+          className="w-full tablet:max-w-[798px] desktop:max-w-[1011px]"
+          variant="grey"
+          text={t('heroAboutPegasus.paragraphs.0')}
+        />
       </div>
-      <img src="plug.png" className="my-[82px]" />
+      <img src="plug.png" />
       <div className="w-full flex justify-end">
-        <p className="font-light uppercase max-w-[1011px] bg-[linear-gradient(90.79deg,#F5F5F5_0.08%,#FDFFFF_100%)] bg-clip-text text-transparent text-[24px]">
-          {t('heroAboutPegasus.paragraphs.1')}
-        </p>
+        <Paragraph
+          className="w-full tablet:max-w-[798px] desktop:max-w-[1011px]"
+          variant="grey"
+          text={t('heroAboutPegasus.paragraphs.1')}
+        />
       </div>
     </SectionContainer>
   )

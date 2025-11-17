@@ -19,7 +19,7 @@ export const OursSection = () => {
         className="text-left w-full"
       />
       <div className="w-full mt-[42px]">
-        <div className="flex justify-between w-full">
+        <div className="flex flex-col tablet:flex-row justify-between w-full">
           <ArrowCard
             title={t('oursAboutPegasus.cards.reliability.title')}
             description={t('oursAboutPegasus.cards.reliability.description')}
@@ -35,7 +35,7 @@ export const OursSection = () => {
         <div className="w-full flex justify-center">
           <img src="big_logo.svg" />
         </div>
-        <div className="flex justify-between w-full">
+        <div className="flex flex-col tablet:flex-row justify-between w-full">
           <ArrowCard
             title={t('oursAboutPegasus.cards.stability.title')}
             description={t('oursAboutPegasus.cards.stability.description')}
