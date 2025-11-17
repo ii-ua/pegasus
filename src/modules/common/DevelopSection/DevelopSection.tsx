@@ -47,7 +47,7 @@ export const DevelopSection = () => {
             </motion.p>
 
             <motion.div
-              className="flex gap-8"
+              className="flex flex-col tablet:flex-row gap-3 tablet:gap-8"
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: 'easeOut', delay: 0.16 }}
@@ -57,7 +57,11 @@ export const DevelopSection = () => {
                 {t('developMain.button.team')}
               </ButtonLink>
 
-              <ButtonPrimary variant="secondary" to="#contacts">
+              <ButtonPrimary
+                className="min-w-[247px]"
+                variant="secondary"
+                to="#contacts"
+              >
                 {t('developMain.button.partner')}
               </ButtonPrimary>
             </motion.div>
