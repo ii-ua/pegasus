@@ -65,10 +65,15 @@ export const ImageCard = ({
             <p
               className="
                 font-[400] text-[#FDFFFF] text-[16px] uppercase
-                max-h-0 overflow-hidden opacity-0 translate-y-2
+                max-h-24 overflow-hidden opacity-100 translate-y-0
                 transition-all duration-300 ease-out
-                group-hover/ImageCard:max-h-24 group-hover/ImageCard:opacity-100 group-hover/ImageCard:translate-y-0
-                group-focus/ImageCard:max-h-24 group-focus/ImageCard:opacity-100 group-focus/ImageCard:translate-y-0
+                 tablet:max-h-0 tablet:opacity-0 tablet:translate-y-2
+    tablet:group-hover/ImageCard:max-h-24 
+    tablet:group-hover/ImageCard:opacity-100 
+    tablet:group-hover/ImageCard:translate-y-0
+    tablet:group-focus/ImageCard:max-h-24 
+    tablet:group-focus/ImageCard:opacity-100 
+    tablet:group-focus/ImageCard:translate-y-0
               "
             >
               {description}
