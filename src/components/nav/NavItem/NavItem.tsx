@@ -4,15 +4,18 @@ export const NavItem = ({
   label,
   href,
   hash,
+  onClick,
 }: {
   label: string
   href?: string
   hash?: string
+  onClick?: () => void
 }) => {
   return (
-    <li>
+    <>
       <Link
         to={href}
+        onClick={onClick}
         hash={hash}
         activeOptions={{ includeHash: true }}
         className="group relative z-10 flex items-center gap-[3px] px-2.5 py-1.5 rounded-md
@@ -33,6 +36,6 @@ export const NavItem = ({
         />
         {label}
       </Link>
-    </li>
+    </>
   )
 }

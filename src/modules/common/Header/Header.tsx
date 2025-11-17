@@ -1,5 +1,6 @@
 import { MainContainer } from '@/components/container'
 import { Menu } from '@/components/nav'
+import { MobileMenu } from '@/components/nav/MobileMenu/MobileMenu'
 import { LangSelect } from '@/components/select'
 
 const NAV_ITEMS = [
@@ -13,7 +14,7 @@ const NAV_ITEMS = [
 export default function Header() {
   return (
     <>
-      <header className="fixed top-[42px] left-0 right-0 z-50 px-8 ">
+      <header className="fixed top-[14px] tablet:top-[42px] left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 xl:px-[42px] ">
         <MainContainer className="flex items-center px-0 sm:px-0 lg:px-0 xl:px-0 justify-between backdrop-blur-sm ">
           <a href="/" className="p-1.5">
             <img
@@ -24,8 +25,9 @@ export default function Header() {
               alt="Logo"
             />
           </a>
-          <Menu navItems={NAV_ITEMS} />
-          <LangSelect />
+          <MobileMenu navItems={NAV_ITEMS} />
+          {/* <Menu navItems={NAV_ITEMS} /> */}
+          {/* <LangSelect /> */}
         </MainContainer>
       </header>
     </>
