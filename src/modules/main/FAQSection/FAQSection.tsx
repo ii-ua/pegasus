@@ -35,24 +35,28 @@ export const FAQSection = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <Tabs.Root
-            className="flex gap-6"
+            className="flex flex-col tablet:flex-row gap-6"
             defaultValue="aboutProduct"
             orientation="vertical"
           >
             <Tabs.List
-              className="flex flex-col tablet:w-[215px] desktop:w-[300px] gap-4"
+              className="
+    grid grid-cols-2 items-start gap-4 w-full
+    tablet:flex tablet:flex-col tablet:w-[215px]
+    desktop:w-[300px]
+  "
               aria-label={t('faqMain.title')}
             >
-              <TabTrigger value="aboutProduct">
+              <TabTrigger className="" value="aboutProduct">
                 {t('faqMain.faqs.aboutProduct.title')}
               </TabTrigger>
-              <TabTrigger value="manufacturing">
+              <TabTrigger className="flex-1" value="manufacturing">
                 {t('faqMain.faqs.manufacturing.title')}
               </TabTrigger>
-              <TabTrigger value="training">
+              <TabTrigger className="flex-1" value="training">
                 {t('faqMain.faqs.training.title')}
               </TabTrigger>
-              <TabTrigger value="order">
+              <TabTrigger className="flex-1" value="order">
                 {t('faqMain.faqs.order.title')}
               </TabTrigger>
             </Tabs.List>
