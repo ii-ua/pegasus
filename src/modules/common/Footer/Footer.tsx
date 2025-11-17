@@ -122,7 +122,7 @@ function SocialIcons() {
 export const Footer = () => {
   const { t } = useTranslation()
   return (
-    <footer className="py-[54px] desktop:py-[82px] tablet:py-[64px] flex flex-col gap-[54px] tablet:gap-[65px]">
+    <footer className="py-[54px] desktop:py-[82px] tablet:py-[64px] flex flex-col tablet:flex-row gap-[54px] tablet:gap-[65px]">
       {/* Ліва колонка: поява знизу */}
       <motion.div
         className="max-w-[610px] order-2 tablet:order-0 uppercase text-[#D9D9D9] font-normal text-[14px] desktop:text-[16px] flex gap-8 flex-col justify-between"
