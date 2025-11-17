@@ -13,7 +13,10 @@ export const Menu = ({ navItems, ariaLabel, className }: MenuProps) => {
   const { t } = useTranslation()
 
   return (
-    <nav aria-label={ariaLabel ?? 'Основна навігація'}>
+    <nav
+      className="hidden tablet:block"
+      aria-label={ariaLabel ?? 'Основна навігація'}
+    >
       <motion.ul
         className={cn('flex gap-2.5 lg:gap-[42px]', className)}
         initial={{ opacity: 0, y: -10 }}

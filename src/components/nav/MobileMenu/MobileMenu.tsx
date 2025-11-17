@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link } from '@tanstack/react-router'
 import { Dialog } from 'radix-ui'
 import { motion, AnimatePresence } from 'motion/react'
 import { useTranslation } from 'react-i18next'
@@ -22,7 +21,7 @@ export const MobileMenu = ({ navItems }: MobileMenuProps) => {
           type="button"
           aria-label="Відкрити меню"
           className="
-            flex h-10 w-10 items-center justify-center lg:hidden 
+            flex h-10 w-10 items-center justify-center tablet:hidden 
             hover:bg-white/10 transition-colors
           "
         >

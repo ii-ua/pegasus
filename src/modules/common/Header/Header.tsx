@@ -26,8 +26,8 @@ export default function Header() {
             />
           </a>
           <MobileMenu navItems={NAV_ITEMS} />
-          {/* <Menu navItems={NAV_ITEMS} /> */}
-          {/* <LangSelect /> */}
+          <Menu navItems={NAV_ITEMS} />
+          <LangSelect className="hidden tablet:block" />
         </MainContainer>
       </header>
     </>
