@@ -18,35 +18,50 @@ export const OursSection = () => {
         title={`${t('oursAboutPegasus.title')}`}
         className="text-left w-full"
       />
-      <div className="w-full mt-[42px]">
-        <div className="flex flex-col tablet:flex-row justify-between w-full">
+      <div className="w-full flex flex-col gap-[77px]">
+        <div className="flex flex-col tablet:flex-row gap-4 justify-between w-full">
           <ArrowCard
             title={t('oursAboutPegasus.cards.reliability.title')}
             description={t('oursAboutPegasus.cards.reliability.description')}
-            icon={<Reliability width={100} height={100} />}
+            arrowClassName="hidden tablet:block"
+            icon={
+              <Reliability
+                className="w-full h-full"
+                preserveAspectRatio="none"
+              />
+            }
           />
           <ArrowCard
             title={t('oursAboutPegasus.cards.fast.title')}
             description={t('oursAboutPegasus.cards.fast.description')}
+            arrowClassName=" max-tablet:rotate-[0deg] max-tablet:left-0 max-tablet:top-[100%]"
             arrowPosition="bottomLeft"
-            icon={<Fast width={100} height={100} />}
+            className="ml-8 tablet:ml-0"
+            icon={<Fast className="w-full h-full" preserveAspectRatio="none" />}
           />
         </div>
         <div className="w-full flex justify-center">
           <img src="big_logo.svg" />
         </div>
-        <div className="flex flex-col tablet:flex-row justify-between w-full">
+        <div className="flex flex-col tablet:flex-row gap-4 justify-between w-full">
           <ArrowCard
             title={t('oursAboutPegasus.cards.stability.title')}
+            className="ml-8 tablet:ml-0"
             description={t('oursAboutPegasus.cards.stability.description')}
+            arrowClassName="max-tablet:rotate-[180deg] max-tablet:top-[-17] max-tablet:right-0"
             arrowPosition="topRight"
-            icon={<Stability width={100} height={100} />}
+            icon={
+              <Stability className="w-full h-full" preserveAspectRatio="none" />
+            }
           />
           <ArrowCard
             title={t('oursAboutPegasus.cards.locked.title')}
             description={t('oursAboutPegasus.cards.locked.description')}
+            arrowClassName="hidden tablet:block"
             arrowPosition="topLeft"
-            icon={<Locked width={100} height={100} />}
+            icon={
+              <Locked className="w-full h-full" preserveAspectRatio="none" />
+            }
           />
         </div>
       </div>
