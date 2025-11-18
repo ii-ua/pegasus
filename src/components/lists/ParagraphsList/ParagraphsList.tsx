@@ -5,11 +5,13 @@ import { motion } from 'framer-motion'
 export interface ParagraphsListProps {
   paragraphs: string[]
   className?: string
+  classNameItem?: string
 }
 
 export const ParagraphsList = ({
   paragraphs,
   className,
+  classNameItem,
 }: ParagraphsListProps) => {
   const fadeUp = {
     hidden: { opacity: 0, y: 12 },
@@ -34,7 +36,10 @@ export const ParagraphsList = ({
       {paragraphs.map((paragraph, index) => (
         <motion.li
           key={index}
-          className="py-3.5 tablet:py-4 desktop:py-5 flex gap-3.5 border-b-2 border-dashed items-center border-[#5A5A5A] last:border-none last:pb-0 first:pt-0"
+          className={cn(
+            'py-3.5 tablet:py-4 desktop:py-5 flex gap-3.5 border-b-2 border-dashed items-center border-[#5A5A5A] last:border-none last:pb-0 first:pt-0',
+            classNameItem,
+          )}
           variants={fadeUp}
           custom={index}
           initial="hidden"

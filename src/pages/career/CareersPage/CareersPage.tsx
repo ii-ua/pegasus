@@ -7,7 +7,7 @@ export const CareersPage = () => {
     <main className="page-bg bg-careers">
       <MainContainer>
         <CareersHero />
-        <CareersListSection />
+        {/* <CareersListSection /> */}
       </MainContainer>
     </main>
   )

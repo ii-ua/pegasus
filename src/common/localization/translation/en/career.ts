@@ -1,12 +1,54 @@
 const career = {
-  title: 'Careers at PEGASUS',
-  paragraphs: [
-    'Pegasus Arms is a team of engineers, operators, and developers creating next-generation combat systems. We are looking for specialists capable of working in rapidly evolving technological environments, making real-time decisions, and implementing solutions proven on the battlefield.',
-    'Join us to help advance Ukrainian technology that strengthens the nation’s defense capabilities.',
-  ],
-  buttons: {
-    more: 'Learn more',
-    apply: 'Apply now',
+  hero: {
+    title: 'Вакансії в PEGASUS arms',
+    paragraphs: [
+      'Pegasus Arms — це УКРАЇНСЬКА MILTECH-КОМПАНІЯ ЗАМКНУТОГО ЦИКЛУ, ЯКА ПОСТАЧАЄ ДЛЯ СИЛ ОБОРОНИ УДАРНІ БПЛА',
+      'Ставай частиною команди, яка працює на Перемогу!',
+    ],
+    adventages: {
+      title: 'НАШІ ПЕРЕВАГИ:',
+      items: [
+        'Офіційне працевлаштування',
+        'Бронювання співробітників',
+        'Гідна заробітна плата',
+        'Комфортні умови праці',
+        'Навчання та підтримка',
+        'Відпустка 24 календарних дні',
+        'Оплата лікарняних',
+      ],
+    },
+  },
+  lookingFor: {
+    title: 'ми шукаємо',
+    paragraphs: [
+      'фахівців у команду, які створюють, обслуговують і вдосконалюють ударні БПЛА Pegasus Arms. Обери напрям, який ближчий саме тобі.',
+      'Детальні описи вакансій та умови роботи доступні на наших сторінках у партнерських сервісах з працевлаштування — знайди напрям, який підходить саме тобі.',
+    ],
+    cards: [
+      {
+        title: 'Інженерія та розробка',
+        description:
+          'інженер, електротехнік, програмувальник, тестувальник, розробник.',
+        count: '11 вакансій',
+      },
+      {
+        title: 'Виробництво',
+        description: 'монтажник, технік, механік, випробувач.',
+        count: '5 вакансій',
+      },
+      {
+        title: 'Сервіс',
+        description:
+          'сервісний спеціаліст, оператор, пілот, інструктор, технік з обслуговування.',
+        count: '4 вакансій',
+      },
+      {
+        title: 'Управління',
+        description:
+          'менеджер, бухгалтер, фінансист, економіст, юрист, HR, методист, асистент.',
+        count: '10 вакансій',
+      },
+    ],
   },
 }
 export default career
