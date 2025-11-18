@@ -64,19 +64,12 @@ export const EducationHero = () => {
         }}
         viewport={{ once: true, amount: 0.4 }}
       >
-        <motion.img
+        <img
           className="w-full"
           src="/plug.png"
           alt="Bpla pegasus arms 25"
           loading="lazy"
           decoding="async"
-          initial={{ scale: 0.97, opacity: 0 }}
-          whileInView={{
-            scale: 1,
-            opacity: 1,
-            transition: { duration: 0.5, ease: 'easeOut', delay: 0.15 },
-          }}
-          viewport={{ once: true, amount: 0.4 }}
         />
       </motion.div>
     </SectionContainer>
