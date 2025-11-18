@@ -1,54 +1,59 @@
 const career = {
   hero: {
-    title: 'Вакансії в PEGASUS arms',
+    title: 'Careers at PEGASUS Arms',
     paragraphs: [
-      'Pegasus Arms — це УКРАЇНСЬКА MILTECH-КОМПАНІЯ ЗАМКНУТОГО ЦИКЛУ, ЯКА ПОСТАЧАЄ ДЛЯ СИЛ ОБОРОНИ УДАРНІ БПЛА',
-      'Ставай частиною команди, яка працює на Перемогу!',
+      'Pegasus Arms is a UKRAINIAN FULL-CYCLE MILTECH COMPANY THAT SUPPLIES STRIKE UAVs TO THE DEFENSE FORCES.',
+      'Join the team that works for Victory!',
     ],
     adventages: {
-      title: 'НАШІ ПЕРЕВАГИ:',
+      title: 'OUR ADVANTAGES:',
       items: [
-        'Офіційне працевлаштування',
-        'Бронювання співробітників',
-        'Гідна заробітна плата',
-        'Комфортні умови праці',
-        'Навчання та підтримка',
-        'Відпустка 24 календарних дні',
-        'Оплата лікарняних',
+        'Official employment',
+        'Employee reservation',
+        'Competitive salary',
+        'Comfortable working conditions',
+        'Training and support',
+        '24 calendar days of annual leave',
+        'Paid sick leave',
       ],
     },
   },
   lookingFor: {
-    title: 'ми шукаємо',
+    title: 'we are looking for',
     paragraphs: [
-      'фахівців у команду, які створюють, обслуговують і вдосконалюють ударні БПЛА Pegasus Arms. Обери напрям, який ближчий саме тобі.',
-      'Детальні описи вакансій та умови роботи доступні на наших сторінках у партнерських сервісах з працевлаштування — знайди напрям, який підходить саме тобі.',
+      'specialists to join the team that creates, maintains, and improves Pegasus Arms strike UAVs. Choose the direction that fits you best.',
+      'Detailed job descriptions and working conditions are available on our pages on partner employment platforms — find the position that suits you.',
     ],
     cards: [
       {
-        title: 'Інженерія та розробка',
+        title: 'Engineering & Development',
         description:
-          'інженер, електротехнік, програмувальник, тестувальник, розробник.',
-        count: '11 вакансій',
+          'engineer, electrical technician, programmer, tester, developer.',
+        count: '11 positions',
+        icon: 'engineering',
       },
       {
-        title: 'Виробництво',
-        description: 'монтажник, технік, механік, випробувач.',
-        count: '5 вакансій',
+        title: 'Production',
+        description: 'assembly technician, technician, mechanic, tester.',
+        count: '5 positions',
+        icon: 'production',
       },
       {
-        title: 'Сервіс',
+        title: 'Service',
         description:
-          'сервісний спеціаліст, оператор, пілот, інструктор, технік з обслуговування.',
-        count: '4 вакансій',
+          'service specialist, operator, pilot, instructor, maintenance technician.',
+        count: '4 positions',
+        icon: 'service',
       },
       {
-        title: 'Управління',
+        title: 'Management',
         description:
-          'менеджер, бухгалтер, фінансист, економіст, юрист, HR, методист, асистент.',
-        count: '10 вакансій',
+          'manager, accountant, financial specialist, economist, lawyer, HR, methodologist, assistant.',
+        count: '10 positions',
+        icon: 'management',
       },
     ],
   },
 }
+
 export default career

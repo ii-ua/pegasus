@@ -1,16 +1,32 @@
-import LocationIcon from '@/assets/icons/location.svg?react'
-import { ButtonPrimary } from '@/components/buttons/ButtonPrimary'
-import { Paragraph, SubTitle } from '@/components/text'
-import { useTranslation } from 'react-i18next'
-export interface CareerCardProps {
-  location?: string
+import { Paragraph } from '@/components/text'
+import { motion } from 'framer-motion'
+
+import Management from '@/assets/icons/management.svg?react'
+import Engineering from '@/assets/icons/engineering.svg?react'
+import Production from '@/assets/icons/production.svg?react'
+import Service from '@/assets/icons/service.svg?react'
+
+export interface CareerCardItem {
+  description: string
   title: string
+  count: string
+  icon: 'engineering' | 'production' | 'service' | 'management'
 }
-export const CareerCard = ({ location, title }: CareerCardProps) => {
-  const { t } = useTranslation()
+export interface CareerCardProps {
+  item: CareerCardItem
+  className?: string
+}
+
+export const CareerCard = ({ item }: CareerCardProps) => {
+  const { description, title, count, icon } = item
+
   return (
-    <li
-      className="p-6 flex flex-col gap-6 w-full"
+    <motion.li
+      initial={{ opacity: 0, y: 28, scale: 0.96 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.55, ease: 'easeOut' }}
+      className="p-4 desktop:p-6 flex gap-6 tablet:gap-4 w-full justify-between"
       style={{
         border: '2px solid',
         borderImageSource:
@@ -19,21 +35,40 @@ export const CareerCard = ({ location, title }: CareerCardProps) => {
         borderRadius: '8px',
       }}
     >
-      {location && (
-        <div className="flex ">
-          <LocationIcon className="w-[42px] h-[42px]" />
-          <Paragraph text={location} />
-        </div>
-      )}
-      <SubTitle title={title} />
-      <div className="flex gap-6 w-full">
-        <ButtonPrimary variant="secondary" className="flex-1  max-w-full">
-          {t('career.buttons.more')}
-        </ButtonPrimary>
-        <ButtonPrimary className="flex-1 max-w-full">
-          {t('career.buttons.apply')}
-        </ButtonPrimary>
+      <div className="flex flex-col gap-4 justify-between max-w-[229px] tablet:max-w-[138px]">
+        <Paragraph variant="light" text={title} />
+        <Paragraph variant="grey" text={description} />
+        <Paragraph variant="grey" text={count} />
       </div>
-    </li>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.45, ease: 'easeOut', delay: 0.15 }}
+      >
+        {icon === 'engineering' && (
+          <Engineering
+            preserveAspectRatio="none"
+            className="w-[72px] h-[72px]"
+          />
+        )}
+        {icon === 'production' && (
+          <Production
+            preserveAspectRatio="none"
+            className="w-[72px] h-[72px]"
+          />
+        )}
+        {icon === 'service' && (
+          <Service preserveAspectRatio="none" className="w-[72px] h-[72px]" />
+        )}
+        {icon === 'management' && (
+          <Management
+            preserveAspectRatio="none"
+            className="size-[72px] desktop:size-[100px]"
+          />
+        )}
+      </motion.div>
+    </motion.li>
   )
 }
