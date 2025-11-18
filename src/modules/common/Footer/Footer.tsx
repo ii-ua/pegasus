@@ -135,7 +135,7 @@ export const Footer = () => {
           width={124}
           height={124}
           className="mobile:w-[100px] mobile:h-[100px] tablet:w-[124px] tablet:h-[124px]"
-          src="/logo.png"
+          src="/big_logo.svg"
           alt="Logo"
         />
         <div>

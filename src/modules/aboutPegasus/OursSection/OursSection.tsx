@@ -18,7 +18,7 @@ export const OursSection = () => {
         title={`${t('oursAboutPegasus.title')}`}
         className="text-left w-full"
       />
-      <div className="w-full flex flex-col gap-[77px]">
+      <div className="w-full flex flex-col gap-[60px]">
         <div className="flex flex-col tablet:flex-row gap-4 justify-between w-full">
           <ArrowCard
             title={t('oursAboutPegasus.cards.reliability.title')}

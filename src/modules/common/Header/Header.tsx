@@ -21,7 +21,7 @@ export default function Header() {
               className="w-[54px] h-[54px] desktop:w-[64px] desktop:h-[64px]"
               width={64}
               height={64}
-              src="/logo.png"
+              src="/big_logo.svg"
               alt="Logo"
             />
           </a>
