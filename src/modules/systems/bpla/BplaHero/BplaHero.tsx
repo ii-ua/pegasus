@@ -49,7 +49,7 @@ export const BplaHero = () => {
   return (
     <SectionContainer
       as="section"
-      className="flex pt-[90px] tablet:pt-[64px] flex-col justify-center items-center gap-[54px] tablet:gap-[64px] desktop:gap-[82px]"
+      className="flex pt-[104px] tablet:pt-[122px] desktop:pt-[166px] flex-col justify-center items-center gap-[54px] tablet:gap-[64px] desktop:gap-[82px]"
     >
       {/* ===== TEXT BLOCK ===== */}
       <motion.div
