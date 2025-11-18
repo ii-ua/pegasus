@@ -57,7 +57,6 @@ export const EducationHero = () => {
       {/* === IMAGE — shutter reveal === */}
       <motion.div
         className="w-full"
-        initial={{ clipPath: 'inset(0 100% 0 0)' }}
         whileInView={{
           clipPath: 'inset(0 0% 0 0)',
           transition: { duration: 0.65, ease: 'easeOut' },
@@ -65,7 +64,6 @@ export const EducationHero = () => {
         viewport={{ once: true, amount: 0.4 }}
       >
         <img
-          className="w-full"
           src="/plug.png"
           alt="Bpla pegasus arms 25"
           loading="lazy"
