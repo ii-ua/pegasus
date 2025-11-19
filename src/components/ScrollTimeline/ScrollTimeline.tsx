@@ -31,8 +31,8 @@ export const ScrollTimeline = ({ items }: { items: Item[] }) => {
             {/* Верхня частина лінії тільки для першого */}
             {index === 0 && (
               <>
-                <div className="bg-[linear-gradient(90deg,#CE4906_0%,#FF6600_50.48%,#FF8B20_100%)] h-[18px] tablet:h-[11px] desktop:h-[32px] w-[2px]" />
-                <div className="bg-[linear-gradient(90deg,#CE4906_0%,#FF6600_50.48%,#FF8B20_100%)]  w-[2px]" />
+                <div className="bg-[linear-gradient(90deg,#CE4906_0%,#FF6600_50.48%,#FF8B20_100%)] h-[18px] tablet:h-[11px] desktop:h-8 w-0.5" />
+                <div className="bg-[linear-gradient(90deg,#CE4906_0%,#FF6600_50.48%,#FF8B20_100%)]  w-0.5" />
               </>
             )}
 
@@ -46,7 +46,7 @@ export const ScrollTimeline = ({ items }: { items: Item[] }) => {
             {/* Пунктирна лінія */}
             {index < items.length && (
               <div
-                className="w-[2px] flex-1 bg-repeat-y"
+                className="w-0.5 flex-1 bg-repeat-y"
                 style={{
                   backgroundImage:
                     'linear-gradient(to bottom, #ffffff 60%, transparent 0%)',
@@ -66,7 +66,7 @@ export const ScrollTimeline = ({ items }: { items: Item[] }) => {
               ease: 'easeOut',
             }}
             viewport={{ once: true, amount: 0.3 }}
-            className="flex flex-col tablet:flex-row gap-3 tablet:gap-4 desktop:gap-6 w-full pb-[32px] tablet:pb-[42px] justify-between"
+            className="flex flex-col md:flex-row gap-3 tablet:gap-4 desktop:gap-6 w-full pb-8 tablet:pb-[42px] justify-between"
           >
             <h3 className="text-white flex-1 font-medium uppercase text-[20px] tablet:text-[24px] desktop:text-[32px] leading-tight">
               {item.title}

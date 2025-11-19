@@ -20,7 +20,7 @@ export const CompositionSection = () => {
     <SectionContainer as="section" className="flex gap-6 flex-col">
       {/* ===== TOP BLOCK ===== */}
       <motion.div
-        className="flex flex-col tablet:flex-row gap-6"
+        className="flex flex-col md:flex-row gap-6"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -47,7 +47,7 @@ export const CompositionSection = () => {
 
       {/* ===== LIST + IMAGE BLOCK ===== */}
       <motion.div
-        className="flex flex-col tablet:flex-row gap-6 items-start"
+        className="flex flex-col lg:flex-row gap-6 items-start"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.25 }}
@@ -56,7 +56,7 @@ export const CompositionSection = () => {
         <motion.div
           variants={fadeUp}
           custom={2}
-          className="flex-1 order-1 tablet:order-0"
+          className="flex-1 order-1 lg:order-0"
         >
           <ParagraphsList
             className="flex-1"

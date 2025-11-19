@@ -19,11 +19,11 @@ export const OfferSection = () => {
   return (
     <SectionContainer
       as="section"
-      className="flex flex-col justify-center items-left gap-[24px]"
+      className="flex flex-col justify-center items-left gap-6"
     >
       {/* === TITLE + SMALL PARAGRAPHS === */}
       <motion.div
-        className="flex flex-col tablet:flex-row gap-6 items-center"
+        className="flex flex-col md:flex-row gap-6 items-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -52,7 +52,7 @@ export const OfferSection = () => {
 
       {/* === LIST + IMAGE === */}
       <motion.div
-        className="flex flex-col tablet:flex-row gap-8 tablet:gap-4 desktop:gap-6 items-start"
+        className="flex flex-col lg:flex-row gap-8 tablet:gap-4 desktop:gap-6 items-start"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.35 }}
@@ -60,10 +60,10 @@ export const OfferSection = () => {
         <motion.div
           variants={fadeUp}
           custom={2}
-          className="flex-1 order-1 tablet:order-0"
+          className="flex-1 order-1 lg:order-0"
         >
           <ParagraphsList
-            className="flex-1 order-1 tablet:order-0"
+            className="flex-1 order-1 lg:order-0"
             paragraphs={t('systems.education.offer.items', {
               returnObjects: true,
             })}
