@@ -5,7 +5,6 @@ import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 import svgr from 'vite-plugin-svgr'
 import { nitro } from 'nitro/vite'
-import path from 'path'
 
 const config = defineConfig({
   plugins: [
@@ -42,19 +41,6 @@ const config = defineConfig({
       include: '**/*.svg?react',
     }),
   ],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-    },
-  },
-  ssr: {
-    resolve: {
-      extensions: ['.tsx', '.ts', '.jsx', '.js'],
-      alias: {
-        '@': path.resolve(__dirname, 'src'),
-      },
-    },
-  },
 })
 
 export default config
