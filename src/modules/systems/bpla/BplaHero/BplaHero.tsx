@@ -49,7 +49,7 @@ export const BplaHero = () => {
   return (
     <SectionContainer
       as="section"
-      className="flex pt-[104px] tablet:pt-[122px] desktop:pt-[166px] flex-col justify-center items-center gap-[54px] tablet:gap-[64px] desktop:gap-[82px]"
+      className="flex pt-[104px] tablet:pt-[122px] desktop:pt-[166px] flex-col justify-center items-center gap-[54px] tablet:gap-16 desktop:gap-[82px]"
     >
       {/* ===== TEXT BLOCK ===== */}
       <motion.div
@@ -74,7 +74,11 @@ export const BplaHero = () => {
         </motion.div>
 
         <motion.div variants={fadeUp} custom={2}>
-          <Paragraph variant="grey" text={t('systems.bpla.hero.description')} />
+          <Paragraph
+            className="max-w-3xl desktop:max-w-[1011px]"
+            variant="grey"
+            text={t('systems.bpla.hero.description')}
+          />
         </motion.div>
 
         <motion.video
@@ -139,9 +143,14 @@ export const BplaHero = () => {
       >
         {t('systems.bpla.hero.paragraphs', { returnObjects: true }).map(
           (text: string, index: number) => (
-            <motion.div key={index} variants={fadeUp} custom={3 + index}>
+            <motion.div
+              className="max-w-[798px] desktop:max-w-[1011px]"
+              key={index}
+              variants={fadeUp}
+              custom={3 + index}
+            >
               <Paragraph
-                className="max-w-full tablet:max-w-[798px] desktop:max-w-[1011px]"
+                className=" w-full block text-left"
                 variant="grey"
                 text={text}
               />
@@ -152,12 +161,12 @@ export const BplaHero = () => {
 
       {/* ===== STAT CARDS WITH 3D + SVG ANIM ===== */}
       <motion.div
-        className="flex flex-col tablet:flex-row gap-4 desktop:gap-6 justify-between w-full"
+        className="flex flex-col lg:flex-row gap-4 desktop:gap-6 items-center justify-between w-full"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="flex flex-col tablet:flex-row gap-4 desktop:gap-6">
+        <div className="flex flex-col lg:flex-row gap-4 desktop:gap-6">
           <motion.div variants={fadeUp} custom={5}>
             <ArrowStat
               icon={

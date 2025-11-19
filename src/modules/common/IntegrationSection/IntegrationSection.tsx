@@ -20,7 +20,7 @@ export const IntegrationSection = () => {
   return (
     <SectionContainer
       as="section"
-      className="flex flex-col tablet:flex-row justify-center items-center gap-[24px]"
+      className="flex flex-col sm:flex-row justify-center items-center gap-6"
     >
       <div className="flex flex-col w-full gap-4 tablet:gap-6">
         <motion.div

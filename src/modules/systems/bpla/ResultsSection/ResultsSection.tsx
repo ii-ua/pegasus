@@ -71,7 +71,7 @@ export const ResultsSection = () => {
 
       {/* === DESKTOP/TABLET === */}
       <motion.div
-        className="hidden tablet:flex gap-6 w-full"
+        className="hidden lg:flex gap-6 w-full"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.25 }}
@@ -105,7 +105,7 @@ export const ResultsSection = () => {
 
       {/* === MOBILE === */}
       <motion.div
-        className="flex tablet:hidden flex-col gap-6 w-full"
+        className="flex lg:hidden flex-col gap-6 w-full"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.25 }}
