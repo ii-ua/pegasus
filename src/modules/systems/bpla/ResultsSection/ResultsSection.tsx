@@ -88,6 +88,8 @@ export const ResultsSection = () => {
           autoPlay
           loop
           muted
+          playsInline
+          preload="auto"
           className="flex-1 w-full h-auto object-cover max-w-[600px]"
           src="/video/bpla_use.mp4"
           initial={{ opacity: 0, scale: 0.97 }}
@@ -123,6 +125,8 @@ export const ResultsSection = () => {
                   autoPlay
                   loop
                   muted
+                  playsInline
+                  preload="auto"
                   className="flex-1 w-full h-auto object-cover"
                   src="/video/bpla_use.mp4"
                   initial={{ opacity: 0, scale: 0.97 }}

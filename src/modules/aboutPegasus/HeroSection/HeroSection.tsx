@@ -58,8 +58,10 @@ export const HeroSection = () => {
       {/* ======= КАРТИНКА ======= */}
       <motion.video
         autoPlay
+        playsInline
         loop
         muted
+        preload="auto"
         className="w-full object-cover"
         src="/video/about_us.mp4"
         initial={{ opacity: 0, scale: 0.97 }}

@@ -67,6 +67,8 @@ export const BpakHero = () => {
         autoPlay
         loop
         muted
+        playsInline
+        preload="auto"
         className="w-full h-auto object-cover"
         src="/video/bpak.mp4"
         initial={{ opacity: 0, scale: 0.97 }}
