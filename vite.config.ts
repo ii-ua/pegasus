@@ -4,16 +4,16 @@ import viteReact from '@vitejs/plugin-react'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 import svgr from 'vite-plugin-svgr'
-import netlify from '@netlify/vite-plugin'
 import path from 'node:path'
 import url from 'node:url'
+import { nitro } from 'nitro/vite'
 
 const _dirname = path.dirname(url.fileURLToPath(import.meta.url))
 
 const config = defineConfig({
   plugins: [
     // this is the plugin that enables path aliases
-    netlify(),
+    nitro(),
     viteTsConfigPaths({
       projects: ['./tsconfig.json'],
     }),
