@@ -4,9 +4,7 @@ import viteReact from '@vitejs/plugin-react'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 import svgr from 'vite-plugin-svgr'
-import { cloudflare } from '@cloudflare/vite-plugin'
-import netlify from '@netlify/vite-plugin-tanstack-start'
-import path from 'path'
+import { nitro } from 'nitro/vite'
 
 const config = defineConfig({
   plugins: [
@@ -15,10 +13,7 @@ const config = defineConfig({
       projects: ['./tsconfig.json'],
     }),
     tailwindcss(),
-    cloudflare({ viteEnvironment: { name: 'ssr' } }),
-    netlify({
-      edgeSSR: true,
-    }),
+    nitro(),
     tanstackStart(),
     viteReact(),
     svgr({
