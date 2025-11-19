@@ -21,37 +21,31 @@ const config = defineConfig({
 
     tanstackStart(),
     viteReact(),
-    svgr({
-      svgrOptions: {
-        svgo: true,
-        svgoConfig: {
-          plugins: [
-            {
-              name: 'preset-default',
-              params: {
-                overrides: {
-                  removeUnknownsAndDefaults: false,
-                  removeUselessDefs: false,
-                  cleanupIDs: false,
-                  convertShapeToPath: false,
-                  removeViewBox: false,
-                  // не чіпаємо fill/stroke, залишаємо градієнти
-                  removeAttrs: false,
-                },
-              },
-            },
-          ],
-        },
-      },
-      include: '**/*.svg?react',
-    }),
+    // svgr({
+    //   svgrOptions: {
+    //     svgo: true,
+    //     svgoConfig: {
+    //       plugins: [
+    //         {
+    //           name: 'preset-default',
+    //           params: {
+    //             overrides: {
+    //               removeUnknownsAndDefaults: false,
+    //               removeUselessDefs: false,
+    //               cleanupIDs: false,
+    //               convertShapeToPath: false,
+    //               removeViewBox: false,
+    //               // не чіпаємо fill/stroke, залишаємо градієнти
+    //               removeAttrs: false,
+    //             },
+    //           },
+    //         },
+    //       ],
+    //     },
+    //   },
+    //   include: '**/*.svg?react',
+    // }),
   ],
-  resolve: {
-    alias: {
-      src: path.resolve(_dirname, 'src'),
-      '@': path.resolve(_dirname, 'src'),
-    },
-  },
 })
 
 export default config
