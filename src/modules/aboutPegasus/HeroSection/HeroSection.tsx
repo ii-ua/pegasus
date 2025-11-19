@@ -56,8 +56,12 @@ export const HeroSection = () => {
       </motion.div>
 
       {/* ======= КАРТИНКА ======= */}
-      <motion.img
-        src="plug.png"
+      <motion.video
+        autoPlay
+        loop
+        muted
+        className="w-full object-cover"
+        src="/video/about_us.mp4"
         initial={{ opacity: 0, scale: 0.97 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{

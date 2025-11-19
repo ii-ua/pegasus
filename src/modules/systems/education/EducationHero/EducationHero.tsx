@@ -63,11 +63,20 @@ export const EducationHero = () => {
         }}
         viewport={{ once: true, amount: 0.4 }}
       >
-        <img
-          src="/plug.png"
-          alt="Bpla pegasus arms 25"
-          loading="lazy"
-          decoding="async"
+        <motion.video
+          autoPlay
+          loop
+          muted
+          className="w-full h-auto object-cover"
+          src="/video/education.mp4"
+          initial={{ opacity: 0, scale: 0.97 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.6,
+            ease: 'easeOut',
+            delay: 0.25,
+          }}
+          viewport={{ once: true, amount: 0.3 }}
         />
       </motion.div>
     </SectionContainer>

@@ -84,15 +84,20 @@ export const ResultsSection = () => {
           ))}
         </motion.ul>
 
-        <motion.img
-          variants={imageReveal}
-          className="flex-1"
-          width={666}
-          src="/images/systems/bpla/d_bpla_results@1x.jpg"
-          alt={t('systems.bpla.results.title')}
-          srcSet="/images/systems/bpla/d_bpla_results@1x.jpg 1x, /images/systems/bpla/d_bpla_results@2x.jpg 2x"
-          loading="lazy"
-          decoding="async"
+        <motion.video
+          autoPlay
+          loop
+          muted
+          className="flex-1 w-full h-auto object-cover max-w-[600px]"
+          src="/video/bpla_use.mp4"
+          initial={{ opacity: 0, scale: 0.97 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.6,
+            ease: 'easeOut',
+            delay: 0.25,
+          }}
+          viewport={{ once: true, amount: 0.3 }}
         />
       </motion.div>
 
@@ -114,14 +119,20 @@ export const ResultsSection = () => {
               <Paragraph text={text} variant="grey" />
 
               {index === Math.floor(paragraphs.length / 2) - 1 && (
-                <motion.img
-                  variants={imageRevealMobile}
-                  className="w-full"
-                  src="/images/systems/bpla/d_bpla_results@1x.jpg"
-                  alt={t('systems.bpla.results.title')}
-                  srcSet="/images/systems/bpla/d_bpla_results@1x.jpg 1x, /images/systems/bpla/d_bpla_results@2x.jpg 2x"
-                  loading="lazy"
-                  decoding="async"
+                <motion.video
+                  autoPlay
+                  loop
+                  muted
+                  className="flex-1 w-full h-auto object-cover"
+                  src="/video/bpla_use.mp4"
+                  initial={{ opacity: 0, scale: 0.97 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.6,
+                    ease: 'easeOut',
+                    delay: 0.25,
+                  }}
+                  viewport={{ once: true, amount: 0.3 }}
                 />
               )}
             </motion.li>

@@ -76,6 +76,22 @@ export const BplaHero = () => {
         <motion.div variants={fadeUp} custom={2}>
           <Paragraph variant="grey" text={t('systems.bpla.hero.description')} />
         </motion.div>
+
+        <motion.video
+          autoPlay
+          loop
+          muted
+          className="w-full object-cover"
+          src="/video/bpla.mp4"
+          initial={{ opacity: 0, scale: 0.97 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.6,
+            ease: 'easeOut',
+            delay: 0.25,
+          }}
+          viewport={{ once: true, amount: 0.3 }}
+        />
       </motion.div>
 
       {/* ===== PARALLAX IMAGE ===== */}
