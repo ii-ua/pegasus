@@ -12,6 +12,7 @@ import oursAboutPegasus from './oursAboutPegasus'
 import ecosystemAboutPegasus from './ecosystemAboutPegasus'
 import systems from './systems'
 import career from './career'
+import contacts from './contacts'
 const uk = {
   navMain,
   heroMain,
@@ -27,6 +28,7 @@ const uk = {
   ecosystemAboutPegasus,
   systems,
   career,
+  contacts,
 }
 
 export default uk

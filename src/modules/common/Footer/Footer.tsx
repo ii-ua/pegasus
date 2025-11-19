@@ -12,10 +12,10 @@ import { useRef } from 'react'
 
 const NAV_ITEMS = [
   { label: 'aboutUs', href: '/about-us' },
-  { label: 'systems', href: '/systems' },
+  { label: 'systems', href: '/#systems' },
   { label: 'career', href: '/career' },
   { label: 'blog', href: '/blog' },
-  { label: 'contact', href: '/contact' },
+  { label: 'contact', href: '/contacts' },
 ]
 
 // Локальна кнопка-обгортка з “spotlight” ефектом і мікро-анімацією

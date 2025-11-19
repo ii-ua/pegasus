@@ -8,7 +8,7 @@ const NAV_ITEMS = [
   { label: 'aboutUs', href: '/about-us' },
   { label: 'career', href: '/career' },
   { label: 'blog', href: '/blog' },
-  { label: 'contact', href: '/#contacts' },
+  { label: 'contact', href: '/contacts' },
 ]
 
 export default function Header() {
