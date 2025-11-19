@@ -19,7 +19,7 @@ export const StatCard = ({
   iconClassName,
 }: StatCardProps) => {
   return (
-    <div className=" relative h-fit">
+    <div className=" relative h-fit max-w-[430px]">
       <CutCard className="w-full h-full" />
       <div
         className={cn(

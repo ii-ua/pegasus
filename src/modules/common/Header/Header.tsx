@@ -14,11 +14,11 @@ const NAV_ITEMS = [
 export default function Header() {
   return (
     <>
-      <header className="fixed top-[14px] tablet:top-[42px] left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 xl:px-[42px] ">
+      <header className="fixed top-3.5 tablet:top-[42px] left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 xl:px-[42px] ">
         <MainContainer className="flex items-center px-0 sm:px-0 lg:px-0 xl:px-0 justify-between backdrop-blur-sm ">
           <a href="/" className="p-1.5">
             <img
-              className="w-[54px] h-[54px] desktop:w-[64px] desktop:h-[64px]"
+              className="w-[54px] h-[54px] desktop:w-16 desktop:h-16"
               width={64}
               height={64}
               src="/big_logo.svg"
@@ -26,8 +26,8 @@ export default function Header() {
             />
           </a>
           <MobileMenu navItems={NAV_ITEMS} />
-          <Menu classNameContainer="hidden tablet:block" navItems={NAV_ITEMS} />
-          <LangSelect className="hidden tablet:block" />
+          <Menu classNameContainer="hidden md:block" navItems={NAV_ITEMS} />
+          <LangSelect className="hidden md:block" />
         </MainContainer>
       </header>
     </>

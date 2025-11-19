@@ -23,9 +23,9 @@ export const ImageCard = ({
       aria-label={title}
       className="
         group/ImageCard block cursor-pointer
-        border-[2px] border-[#FDFFFF]
-        p-[16px]
-         tablet:max-w-[285px] desktop:max-w-[321px] tablet:h-[385px] desktop:h-[410px]
+        border-2 border-[#FDFFFF]
+        p-4
+         max-w-[400px] md:max-w-[285px] desktop:max-w-[321px] h-[385px] desktop:h-[410px]
         focus:outline-none
         focus:ring-2 focus:ring-[#FF6600]
       "

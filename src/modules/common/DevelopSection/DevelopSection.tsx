@@ -31,12 +31,12 @@ export const DevelopSection = () => {
         >
           <SectionTitle
             title={`${t('developMain.title')}`}
-            className="text-left tablet:max-w-[798px] desktop:max-w-[1000px]"
+            className="text-left max-w-[598px] desktop:max-w-[1000px]"
           />
         </motion.div>
 
         <div className="flex flex-col items-center">
-          <div className="flex flex-col gap-4 tablet:gap-6 desktop:gap-8">
+          <div className="flex max-w-[527px] desktop:max-w-[665px] flex-col gap-4 tablet:gap-6 desktop:gap-8">
             <motion.p
               className="text-[#D9D9D9] text-[16px] tablet:text-[20px] desktop:text-[24px] tablet:max-w-[527px] desktop:max-w-[665px]  uppercase text-left"
               initial={{ opacity: 0, y: 14 }}

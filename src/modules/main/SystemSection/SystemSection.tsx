@@ -10,7 +10,7 @@ export const SystemSection = ({ id }: { id?: string }) => {
   return (
     <SectionContainer id={id} as="section" className="flex gap-8 flex-col">
       <motion.div
-        className="flex flex-col gap-4 tablet:flex-row items-center"
+        className="flex flex-col gap-4 sm:flex-row items-center"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
@@ -21,7 +21,7 @@ export const SystemSection = ({ id }: { id?: string }) => {
           className="text-left flex-2"
         />
         <motion.p
-          className=" text-[#D9D9D9] text-[16px] tablet:text-[20px] desktop:text-[24px] uppercase flex-1"
+          className=" text-[#D9D9D9] sm:max-w-[526px] desktop:max-w-[665px] text-[16px] tablet:text-[20px] desktop:text-[24px] uppercase flex-1"
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.4 }}
@@ -32,13 +32,13 @@ export const SystemSection = ({ id }: { id?: string }) => {
       </motion.div>
 
       <motion.div
-        className="flex justify-between gap-4 flex-col tablet:flex-row"
+        className="flex justify-between gap-4 flex-col md:flex-row"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
       >
-        <div className="flex gap-4 tablet:gap-6 flex-col tablet:flex-row">
+        <div className="flex gap-4 tablet:gap-6 flex-col md:flex-row">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}

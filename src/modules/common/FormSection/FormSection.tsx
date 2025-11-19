@@ -7,12 +7,12 @@ export const FormSection = () => {
   const { t } = useTranslation()
   return (
     <SectionContainer id="contacts" as="section" className="flex flex-col">
-      <div className="flex flex-col tablet:flex-row items-center">
+      <div className="flex flex-col sm:flex-row items-center">
         <SectionTitle
           title={`${t('formSection.title')}`}
           className="text-left flex-2"
         />
-        <p className="text-[#D9D9D9] font-normal text-[16px] tablet:text-[20px] desktop:text-[24px] uppercase flex-1">
+        <p className="text-[#D9D9D9] sm:max-w-[320px] font-normal text-[16px] tablet:text-[20px] desktop:text-[24px] uppercase flex-1">
           {t('formSection.description')}
         </p>
       </div>

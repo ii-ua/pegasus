@@ -21,14 +21,14 @@ export const MobileMenu = ({ navItems }: MobileMenuProps) => {
           type="button"
           aria-label="Відкрити меню"
           className="
-            flex h-10 w-10 items-center justify-center tablet:hidden 
+            flex h-10 w-10 items-center justify-center md:hidden 
             hover:bg-white/10 transition-colors
           "
         >
           <div className="space-y-[5px]">
-            <span className="block h-[2px] w-6 bg-white" />
-            <span className="block h-[2px] w-6 bg-white" />
-            <span className="block h-[2px] w-6 bg-white" />
+            <span className="block h-0.5 w-6 bg-white" />
+            <span className="block h-0.5 w-6 bg-white" />
+            <span className="block h-0.5 w-6 bg-white" />
           </div>
         </button>
       </Dialog.Trigger>

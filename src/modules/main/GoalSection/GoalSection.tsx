@@ -26,7 +26,7 @@ export const GoalSection = () => {
           {paragraphs.map((text, i) => (
             <motion.p
               key={text}
-              className="font-normal text-[#D9D9D9] text-[16px] tablet:text-[20px] desktop:text-[24px] tablet:max-w-[526px] desktop:max-w-[665px] uppercase text-left"
+              className="font-normal text-[#D9D9D9] text-[16px] tablet:text-[20px] desktop:text-[24px] max-w-[526px] desktop:max-w-[665px] uppercase text-left"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
@@ -44,14 +44,14 @@ export const GoalSection = () => {
 
       {/* нижній блок: картки з різним рухом */}
       <motion.div
-        className="flex gap-4 tablet:gap-0 flex-col tablet:flex-row justify-between"
+        className="flex gap-4 tablet:gap-0 flex-col items-center lg:flex-row justify-between"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
         viewport={{ once: true, amount: 0.2 }}
       >
         <motion.div
-          className="flex gap-4 tablet:gap-6 flex-col tablet:flex-row"
+          className="flex gap-4 tablet:gap-6 flex-col lg:flex-row"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}

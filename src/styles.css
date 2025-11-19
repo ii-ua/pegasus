@@ -29,6 +29,40 @@ body {
   font-optical-sizing: auto;
 }
 
+.hero-bg[data-lang='uk'] {
+  --hero-mobile: image-set(
+    url('/images/main/hero/m_hero_ua@1x.png') 1x,
+    url('/images/main/hero/m_hero_ua@2x.png') 2x
+  );
+
+  --hero-tablet: image-set(
+    url('/images/main/hero/t_hero_ua@1x.png') 1x,
+    url('/images/main/hero/t_hero_ua@2x.png') 2x
+  );
+
+  --hero-desktop: image-set(
+    url('/images/main/hero/d_hero_ua@1x.png') 1x,
+    url('/images/main/hero/d_hero_ua@2x.png') 2x
+  );
+}
+
+.hero-bg[data-lang='en'] {
+  --hero-mobile: image-set(
+    url('/images/main/hero/m_hero_en@1x.png') 1x,
+    url('/images/main/hero/m_hero_en@2x.png') 2x
+  );
+
+  --hero-tablet: image-set(
+    url('/images/main/hero/t_hero_en@1x.png') 1x,
+    url('/images/main/hero/t_hero_en@2x.png') 2x
+  );
+
+  --hero-desktop: image-set(
+    url('/images/main/hero/d_hero_en@1x.png') 1x,
+    url('/images/main/hero/d_hero_en@2x.png') 2x
+  );
+}
+
 /* елемент-обгортка секції */
 .hero-bg {
   position: relative;
@@ -44,23 +78,17 @@ body {
   pointer-events: none;
 
   /* MOBILE IMAGE */
-  background-image: image-set(
-    url('/images/main/hero/m_hero@1x.jpg') 1x,
-    url('/images/main/hero/m_hero@2x.jpg') 2x
-  );
+  background-image: var(--hero-mobile);
 
-  background-size: cover;
+  background-size: 100% auto;
   background-position: center;
   background-repeat: no-repeat;
 
   /* ------------------------------------------ */
   /* 📲 TABLET (від 1133px)                      */
   /* ------------------------------------------ */
-  @media (min-width: 1133px) {
-    background-image: image-set(
-      url('/images/main/hero/t_hero@1x.jpg') 1x,
-      url('/images/main/hero/t_hero@2x.jpg') 2x
-    );
+  @media (min-width: 710px) {
+    background-image: var(--hero-tablet);
     background-position: 60% center;
   }
 
@@ -68,10 +96,7 @@ body {
   /* 🖥️ DESKTOP (від 1440px)                    */
   /* ------------------------------------------ */
   @media (min-width: 1440px) {
-    background-image: image-set(
-      url('/images/main/hero/d_hero@1x.jpg') 1x,
-      url('/images/main/hero/d_hero@2x.jpg') 2x
-    );
+    background-image: var(--hero-desktop);
     background-position: 55% center;
   }
 

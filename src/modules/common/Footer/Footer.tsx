@@ -52,7 +52,7 @@ function GlowIcon({
       whileTap={{ scale: 0.98, rotate: 0 }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       className={`
-        relative block rounded-[4px] border border-[#FDFFFF] p-[3px]
+        relative block rounded-sm border border-[#FDFFFF] p-[3px]
         overflow-hidden
         
         transition-[border-color,box-shadow] duration-300
@@ -122,10 +122,10 @@ function SocialIcons() {
 export const Footer = () => {
   const { t } = useTranslation()
   return (
-    <footer className="py-[54px] desktop:py-[82px] tablet:py-[64px] flex flex-col tablet:flex-row gap-[54px] tablet:gap-[65px]">
+    <footer className="py-[54px] desktop:py-[82px] tablet:py-16 flex flex-col md:flex-row gap-[54px] tablet:gap-[65px]">
       {/* Ліва колонка: поява знизу */}
       <motion.div
-        className="max-w-[610px] order-2 tablet:order-0 uppercase text-[#D9D9D9] font-normal text-[14px] desktop:text-[16px] flex gap-8 flex-col justify-between"
+        className="max-w-[610px] order-1 md:order-0 uppercase text-[#D9D9D9] font-normal text-[14px] desktop:text-[16px] flex gap-8 flex-col justify-between"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
@@ -144,7 +144,7 @@ export const Footer = () => {
             {t('footer.terms.text')}
             <a
               href="/terms"
-              className="inline-block underline decoration-[#FF6600] decoration-1 underline-offset-1 bg-gradient-to-r from-[#CE4906] via-[#FF6600] to-[#FF8B20] bg-clip-text text-transparent"
+              className="inline-block underline decoration-[#FF6600] decoration-1 underline-offset-1 bg-linear-to-r from-[#CE4906] via-[#FF6600] to-[#FF8B20] bg-clip-text text-transparent"
             >
               {t('footer.terms.links.terms')}
             </a>
@@ -161,7 +161,7 @@ export const Footer = () => {
 
       {/* Права колонка: поява знизу з невеликою затримкою */}
       <motion.div
-        className="flex gap-8 flex-col tablet:flex-row justify-between w-full"
+        className="flex gap-8 order-0 md:order-1 flex-col md:flex-row justify-between w-full"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}

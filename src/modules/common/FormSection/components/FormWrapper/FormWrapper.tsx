@@ -4,7 +4,7 @@ export interface FormWrapperProps {
 
 export const FormWrapper = ({ children }: FormWrapperProps) => {
   return (
-    <div className="flex flex-col tablet:flex-row w-full gap-y-8 gap-x-[30px]">
+    <div className="flex flex-col sm:flex-row w-full gap-y-8 gap-x-[30px]">
       {children}
     </div>
   )
