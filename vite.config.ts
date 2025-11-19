@@ -4,8 +4,11 @@ import viteReact from '@vitejs/plugin-react'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 import svgr from 'vite-plugin-svgr'
-import path from 'path'
 import netlify from '@netlify/vite-plugin'
+import path from 'node:path'
+import url from 'node:url'
+
+const _dirname = path.dirname(url.fileURLToPath(import.meta.url))
 
 const config = defineConfig({
   plugins: [
@@ -45,8 +48,8 @@ const config = defineConfig({
   ],
   resolve: {
     alias: {
-      src: path.resolve(__dirname, 'src'),
-      '@/': path.resolve(__dirname, 'src'),
+      src: path.resolve(_dirname, 'src'),
+      '@': path.resolve(_dirname, 'src'),
     },
   },
 })
