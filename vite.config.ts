@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 import svgr from 'vite-plugin-svgr'
 import { cloudflare } from '@cloudflare/vite-plugin'
 import netlify from '@netlify/vite-plugin-tanstack-start'
+import path from 'path'
 
 const config = defineConfig({
   plugins: [
@@ -43,6 +44,11 @@ const config = defineConfig({
       include: '**/*.svg?react',
     }),
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
 })
 
 export default config
