@@ -16,7 +16,9 @@ const config = defineConfig({
     }),
     tailwindcss(),
     cloudflare({ viteEnvironment: { name: 'ssr' } }),
-    netlify(),
+    netlify({
+      edgeSSR: true,
+    }),
     tanstackStart(),
     viteReact(),
     svgr({
