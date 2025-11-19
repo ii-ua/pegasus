@@ -1,4 +1,4 @@
-import { MainContainer } from '@/components/container'
+import MainContainer from '@/components/container/MainContainer'
 import { CareersHero } from '@/modules/careers/CareersHero'
 import { CareersListSection } from '@/modules/careers/CareersListSection'
 

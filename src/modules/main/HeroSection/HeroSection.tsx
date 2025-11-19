@@ -1,5 +1,5 @@
 import { ButtonLink } from '@/components/buttons/ButtonLink'
-import { SectionContainer } from '@/components/container/SectionContainer/SectionContainer'
+import SectionContainer from '@/components/container/SectionContainer'
 import { Paragraph } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'

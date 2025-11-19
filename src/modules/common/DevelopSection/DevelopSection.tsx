@@ -1,9 +1,10 @@
 import { ButtonLink } from '@/components/buttons/ButtonLink'
 import { ButtonPrimary } from '@/components/buttons/ButtonPrimary'
-import { SectionContainer } from '@/components/container'
+
 import { SectionTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'motion/react'
+import SectionContainer from '@/components/container/SectionContainer'
 
 export const DevelopSection = () => {
   const { t } = useTranslation()

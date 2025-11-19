@@ -6,7 +6,7 @@ type SectionContainerProps = React.HTMLAttributes<HTMLElement> & {
   children: React.ReactNode
 }
 
-export const SectionContainer = ({
+const SectionContainer = ({
   children,
   className,
   id,
@@ -23,3 +23,5 @@ export const SectionContainer = ({
     </section>
   )
 }
+
+export default SectionContainer

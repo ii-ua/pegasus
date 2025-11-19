@@ -1,8 +1,8 @@
 import { CareerCard } from '@/components/cards'
-import { SectionContainer } from '@/components/container'
 import { Paragraph, SectionTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
+import SectionContainer from '@/components/container/SectionContainer'
 
 export const CareersListSection = () => {
   const { t } = useTranslation()

@@ -1,6 +1,6 @@
 import { cn } from '@/common/utils/cn'
 
-export const MainContainer = ({
+const MainContainer = ({
   children,
   className,
 }: {
@@ -18,3 +18,4 @@ export const MainContainer = ({
     </div>
   )
 }
+export default MainContainer

@@ -1,4 +1,4 @@
-import { SectionContainer } from '@/components/container'
+import SectionContainer from '@/components/container/SectionContainer'
 import { Paragraph, SectionTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import Brave from '@/assets/logos/brave.svg?react'

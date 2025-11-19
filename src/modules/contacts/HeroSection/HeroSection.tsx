@@ -1,4 +1,4 @@
-import { SectionContainer } from '@/components/container'
+import SectionContainer from '@/components/container/SectionContainer'
 import { ContactList } from '@/components/lists/ContactList/ContactList'
 import { Paragraph } from '@/components/text'
 import { useTranslation } from 'react-i18next'

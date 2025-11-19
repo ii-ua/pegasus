@@ -1,8 +1,8 @@
-import { SectionContainer } from '@/components/container'
 import { ParagraphsList } from '@/components/lists/ParagraphsList'
 import { Paragraph, SectionTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
+import SectionContainer from '@/components/container/SectionContainer'
 
 export const OfferSection = () => {
   const { t } = useTranslation()

@@ -1,4 +1,4 @@
-import { MainContainer } from '@/components/container'
+import MainContainer from '@/components/container/MainContainer'
 import { Menu } from '@/components/nav'
 import { MobileMenu } from '@/components/nav/MobileMenu/MobileMenu'
 import { LangSelect } from '@/components/select'

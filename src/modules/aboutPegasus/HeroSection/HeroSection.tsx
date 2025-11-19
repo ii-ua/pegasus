@@ -1,7 +1,7 @@
-import { SectionContainer } from '@/components/container/SectionContainer/SectionContainer'
 import { Paragraph, SectionTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
+import SectionContainer from '@/components/container/SectionContainer'
 
 export const HeroSection = () => {
   const { t } = useTranslation()

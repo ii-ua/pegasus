@@ -1,4 +1,4 @@
-import { MainContainer } from '@/components/container'
+import MainContainer from '@/components/container/MainContainer'
 import { FormSection } from '@/modules/common/FormSection'
 import { EducationHero } from '@/modules/systems/education/EducationHero'
 import { OfferSection } from '@/modules/systems/education/OfferSection'

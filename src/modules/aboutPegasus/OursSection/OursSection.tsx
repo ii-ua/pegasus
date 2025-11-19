@@ -1,4 +1,3 @@
-import { SectionContainer } from '@/components/container/SectionContainer/SectionContainer'
 import { SectionTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import Reliability from '@/assets/icons/reliability.svg?react'
@@ -7,6 +6,7 @@ import Stability from '@/assets/icons/stability.svg?react'
 import Locked from '@/assets/icons/locked.svg?react'
 import { ArrowCard } from '@/components/cards'
 import { motion } from 'framer-motion'
+import SectionContainer from '@/components/container/SectionContainer'
 
 export const OursSection = () => {
   const { t } = useTranslation()

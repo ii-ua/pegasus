@@ -1,5 +1,5 @@
 import { ImageCard } from '@/components/cards'
-import { SectionContainer } from '@/components/container'
+import SectionContainer from '@/components/container/SectionContainer'
 import { SectionTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'motion/react'

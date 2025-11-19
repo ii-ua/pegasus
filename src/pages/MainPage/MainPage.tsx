@@ -5,7 +5,7 @@ import { GoalSection } from '@/modules/main/GoalSection'
 import { HeroSection } from '@/modules/main/HeroSection'
 import { MePegasusSection } from '@/modules/main/MePegasusSection'
 import { SystemSection } from '@/modules/main/SystemSection'
-import { MainContainer } from '@/components/container'
+import MainContainer from '@/components/container/MainContainer'
 
 export const MainPage = () => {
   return (
