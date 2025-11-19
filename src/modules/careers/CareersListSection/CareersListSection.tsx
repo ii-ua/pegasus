@@ -50,7 +50,10 @@ export const CareersListSection = () => {
 
       {/* ==== CARDS ==== */}
       <motion.ul
-        className="flex gap-4 flex-col tablet:flex-row"
+        className="grid gap-4 
+    mobile:grid-cols-1 
+    sm:grid-cols-2 
+    tablet:grid-cols-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.25 }}
@@ -79,7 +82,7 @@ export const CareersListSection = () => {
 
       {/* ==== LINKS ==== */}
       <motion.ul
-        className="flex gap-4 desktop:gap-6 items-center flex-col tablet:flex-row"
+        className="flex gap-4 desktop:gap-6 items-center flex-col sm:flex-row"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.25 }}
