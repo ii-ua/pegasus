@@ -5,6 +5,7 @@ import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 import svgr from 'vite-plugin-svgr'
 import { nitro } from 'nitro/vite'
+import path from 'path'
 
 const config = defineConfig({
   plugins: [
@@ -43,7 +44,14 @@ const config = defineConfig({
   ],
   resolve: {
     alias: {
-      '@': '/src',
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
+  ssr: {
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src'),
+      },
     },
   },
 })
