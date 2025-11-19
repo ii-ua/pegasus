@@ -11,8 +11,8 @@ import '../common/localization/i18n'
 import Header from '../modules/common/Header/Header'
 
 import appCss from '../styles.css?url'
-import { MainContainer } from '@/components/container'
 import { Footer } from '@/modules/common/Footer/Footer'
+import { MainContainer } from '@/components/container/MainContainer/MainContainer'
 
 export const Route = createRootRoute({
   notFoundComponent: () => {
