@@ -49,7 +49,12 @@ export const FormComponent = () => {
         {t('formSection.form.title')}
       </motion.h3>
 
-      <Form.Root netlify className="flex flex-col gap-8">
+      <Form.Root
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        className="flex flex-col gap-8"
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
