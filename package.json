@@ -3,13 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start:dev": "vite dev --port 3000",
+    "dev": "vite dev",
     "build": "vite build",
-    "serve": "vite preview",
-    "test": "vitest run",
-    "lint": "eslint",
-    "format": "prettier",
-    "check": "prettier --write . && eslint --fix"
+    "start": "node .output/server/index.mjs",
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@fontsource-variable/exo-2": "^5.2.8",
@@ -35,6 +34,7 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.15.0",
     "@tanstack/eslint-config": "^0.3.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.2.0",
@@ -48,6 +48,7 @@
     "vite": "^7.1.7",
     "vite-plugin-svgr": "^4.5.0",
     "vitest": "^3.0.5",
-    "web-vitals": "^5.1.0"
+    "web-vitals": "^5.1.0",
+    "wrangler": "^4.49.0"
   }
 }
