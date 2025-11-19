@@ -48,7 +48,7 @@ export const HeroSection = () => {
 
         <motion.div variants={fadeUp} custom={2}>
           <Paragraph
-            className="w-full tablet:max-w-[798px] desktop:max-w-[1011px]"
+            className="w-full max-w-[798px] desktop:max-w-[1011px]"
             variant="grey"
             text={t('heroAboutPegasus.paragraphs.0')}
           />
@@ -83,7 +83,7 @@ export const HeroSection = () => {
       >
         <motion.div variants={fadeUp} custom={3}>
           <Paragraph
-            className="w-full tablet:max-w-[798px] desktop:max-w-[1011px]"
+            className="w-full max-w-[798px] desktop:max-w-[1011px]"
             variant="grey"
             text={t('heroAboutPegasus.paragraphs.1')}
           />

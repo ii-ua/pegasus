@@ -47,7 +47,7 @@ export const OursSection = () => {
       <div className="w-full flex flex-col gap-[60px] ">
         {/* FIRST ROW */}
         <motion.div
-          className="flex flex-col tablet:flex-row gap-4 justify-between items-end w-full"
+          className="flex flex-col sm:flex-row gap-4 justify-between items-end w-full"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -56,7 +56,7 @@ export const OursSection = () => {
             <ArrowCard
               title={t('oursAboutPegasus.cards.reliability.title')}
               description={t('oursAboutPegasus.cards.reliability.description')}
-              arrowClassName="hidden tablet:block"
+              arrowClassName="hidden sm:block"
               icon={
                 <Reliability
                   className="w-full h-full"
@@ -70,9 +70,9 @@ export const OursSection = () => {
             <ArrowCard
               title={t('oursAboutPegasus.cards.fast.title')}
               description={t('oursAboutPegasus.cards.fast.description')}
-              arrowClassName=" max-tablet:rotate-[0deg] max-tablet:left-0 max-tablet:top-[100%]"
+              arrowClassName=" max-sm:rotate-[0deg] max-sm:left-0 max-sm:top-[100%]"
               arrowPosition="bottomLeft"
-              className="ml-8 tablet:ml-0"
+              className="ml-8 sm:ml-0"
               icon={
                 <Fast className="w-full h-full" preserveAspectRatio="none" />
               }
@@ -93,7 +93,7 @@ export const OursSection = () => {
 
         {/* SECOND ROW */}
         <motion.div
-          className="flex flex-col tablet:flex-row gap-4 justify-between w-full"
+          className="flex flex-col sm:flex-row gap-4 justify-between w-full"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
@@ -101,9 +101,9 @@ export const OursSection = () => {
           <motion.div variants={fadeUp} custom={3}>
             <ArrowCard
               title={t('oursAboutPegasus.cards.stability.title')}
-              className="ml-8 tablet:ml-0"
+              className="ml-8 sm:ml-0"
               description={t('oursAboutPegasus.cards.stability.description')}
-              arrowClassName="max-tablet:rotate-[180deg] max-tablet:top-[-17] max-tablet:right-0"
+              arrowClassName="max-sm:rotate-[180deg] max-sm:top-[-17] max-sm:right-0"
               arrowPosition="topRight"
               icon={
                 <Stability
@@ -118,7 +118,7 @@ export const OursSection = () => {
             <ArrowCard
               title={t('oursAboutPegasus.cards.locked.title')}
               description={t('oursAboutPegasus.cards.locked.description')}
-              arrowClassName="hidden tablet:block"
+              arrowClassName="hidden sm:block"
               arrowPosition="topLeft"
               icon={
                 <Locked className="w-full h-full" preserveAspectRatio="none" />
