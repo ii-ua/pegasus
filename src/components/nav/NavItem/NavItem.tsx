@@ -27,7 +27,7 @@ export const NavItem = ({
         {/* градієнтний ромб */}
         <span
           className={`
-            w-[5px] h-[5px] rotate-45 bg-gradient-to-br
+            w-[5px] h-[5px] rotate-45 bg-linear-to-br
             from-[#CE4906] via-[#FF6600] to-[#FF8B20]
             transition-opacity duration-300
             opacity-0 group-hover:opacity-100

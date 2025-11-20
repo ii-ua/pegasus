@@ -10,7 +10,7 @@ export const HeroSection = () => {
   return (
     <SectionContainer
       as="section"
-      className="relative pt-[90px] tablet:pt-16 hero-bg h-svh overflow-hidden"
+      className="relative pt-[90px] tablet:pt-24 desktop:pt-[122px] hero-bg h-svh overflow-hidden"
     >
       {/* чорний фейд як ефект вмикання */}
       <motion.div
@@ -23,7 +23,7 @@ export const HeroSection = () => {
       <div className="flex flex-col justify-between h-full relative z-30">
         {/* заголовок */}
         <motion.h1
-          className="font-[Namu]  tracking-normal font-normal text-[64px] lg:text-[100px] [@media(min-width:1326px)]:text-[128px] text-white w-full text-center z-30"
+          className="font-[Namu] font-bold text-[64px] tablet:text-[100px] desktop:text-[120px] text-white w-full text-center z-30"
           initial={{ opacity: 0, scale: 0.9, y: 40 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeOut' }}
@@ -36,7 +36,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-          className="flex flex-col max-w-[465px] gap-9"
+          className="flex flex-col max-w-[465px] gap-6 desktop:gap-8"
         >
           <Paragraph
             className="font-normal text-[#D9D9D9] text-left"

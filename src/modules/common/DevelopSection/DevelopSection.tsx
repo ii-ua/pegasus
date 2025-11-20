@@ -59,7 +59,7 @@ export const DevelopSection = () => {
               </ButtonLink>
 
               <ButtonPrimary
-                className="min-w-[247px]"
+                className="min-w-[200px]"
                 variant="secondary"
                 to="#contacts"
               >

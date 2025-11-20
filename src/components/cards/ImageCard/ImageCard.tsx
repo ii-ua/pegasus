@@ -38,7 +38,7 @@ export const ImageCard = ({
     >
       <article className="flex h-full flex-col justify-between">
         {/* картинка фіксованої висоти — без змін при hover */}
-        <div className="relative w-full max-h-[240px] overflow-hidden">
+        <div className="relative w-full max-h-60 overflow-hidden">
           <img
             src={image1x}
             srcSet={`${image1x} 1x, ${image2x} 2x`}
@@ -54,7 +54,7 @@ export const ImageCard = ({
           <div className="flex flex-col gap-3">
             <h3
               className="
-                text-[#FDFFFF] text-left font-[Namu] font-normal text-[24px] tablet:text-[32px] desktop:text-[36px] uppercase leading-tight
+                text-[#FDFFFF] text-left font-[Namu] font-bold text-[24px] tablet:text-[26px] desktop:text-[32px] uppercase leading-tight
                 transition-all duration-300 ease-out
                 group-hover/ImageCard:text-[24px] group-focus/ImageCard:text-[24px]
               "
@@ -64,7 +64,7 @@ export const ImageCard = ({
 
             <p
               className="
-                font-[400] text-[#FDFFFF] text-[16px] uppercase
+                font-normal text-[#FDFFFF] text-[16px] uppercase
                 max-h-24 overflow-hidden opacity-100 translate-y-0
                 transition-all duration-300 ease-out
                  tablet:max-h-0 tablet:opacity-0 tablet:translate-y-2

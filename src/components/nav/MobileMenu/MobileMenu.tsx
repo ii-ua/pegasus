@@ -85,8 +85,8 @@ export const MobileMenu = ({ navItems }: MobileMenuProps) => {
                         "
                       >
                         <div className="relative h-5 w-5">
-                          <span className="absolute inset-0 block h-[2px] w-full bg-white rotate-45" />
-                          <span className="absolute inset-0 block h-[2px] w-full bg-white -rotate-45" />
+                          <span className="absolute inset-0 block h-0.5 w-full bg-white rotate-45" />
+                          <span className="absolute inset-0 block h-0.5 w-full bg-white -rotate-45" />
                         </div>
                       </button>
                     </Dialog.Close>

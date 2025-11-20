@@ -29,7 +29,7 @@ export const StatCard = ({
       >
         <span
           className={cn(
-            'font-[Namu] font-normal text-[64px] tablet:text-[48px] desktop:text-[64px] text-[#FDFFFF] w-full text-center uppercase',
+            'font-[Namu] font-bold text-[64px] tablet:text-[48px] desktop:text-[64px] text-[#FDFFFF] w-full text-center uppercase',
             iconClassName,
           )}
         >
