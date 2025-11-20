@@ -92,7 +92,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           </MainContainer>
         </div>
 
-        <TanStackDevtools
+        {/* <TanStackDevtools
           config={{
             position: 'bottom-right',
           }}
@@ -102,7 +102,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
               render: <TanStackRouterDevtoolsPanel />,
             },
           ]}
-        />
+        /> */}
         <Scripts />
       </body>
     </html>
