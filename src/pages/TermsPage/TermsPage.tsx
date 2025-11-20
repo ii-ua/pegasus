@@ -3,7 +3,7 @@ import { TermsSection } from '@/modules/security/TermsSection/TermsSection'
 
 export const TermsPage = () => {
   return (
-    <main className="page-bg">
+    <main className="page-bg bg-terms">
       <MainContainer>
         <TermsSection />
       </MainContainer>

@@ -201,45 +201,203 @@ body {
   z-index: 1;
 }
 
-/* Опційно: модифікатори, що задають конкретні картинки */
 .bg-main {
   --bg-image: image-set(
-    url('/images/bg/d_main_bg@1x.png') 1x,
-    url('/images/bg/d_main_bg@2x.png') 2x
+    url('/images/bg/m_main_bg@1x.png') 1x,
+    url('/images/bg/m_main_bg@2x.png') 2x
   );
 }
+
 .bg-about {
   --bg-image: image-set(
-    url('/images/bg/d_about_bg@1x.png') 1x,
-    url('/images/bg/d_about_bg@2x.png') 2x
+    url('/images/bg/m_about_bg@1x.png') 1x,
+    url('/images/bg/m_about_bg@2x.png') 2x
   );
 }
+
 .bg-bpla {
   --bg-image: image-set(
-    url('/images/bg/d_bpla_bg@1x.png') 1x,
-    url('/images/bg/d_bpla_bg@2x.png') 2x
+    url('/images/bg/m_bpla_bg@1x.png') 1x,
+    url('/images/bg/m_bpla_bg@2x.png') 2x
   );
 }
+
 .bg-edu {
   --bg-image: image-set(
-    url('/images/bg/d_education_bg@1x.png') 1x,
-    url('/images/bg/d_education_bg@2x.png') 2x
+    url('/images/bg/m_education_bg@1x.png') 1x,
+    url('/images/bg/m_education_bg@2x.png') 2x
   );
 }
+
 .bg-bpak {
   --bg-image: image-set(
-    url('/images/bg/d_bpak_bg@1x.png') 1x,
-    url('/images/bg/d_bpak_bg@2x.png') 2x
+    url('/images/bg/m_bpak_bg@1x.png') 1x,
+    url('/images/bg/m_bpak_bg@2x.png') 2x
   );
 }
 
 .bg-careers {
   --bg-image: image-set(
-    url('/images/bg/d_careers_bg@1x.png') 1x,
-    url('/images/bg/d_careers_bg@2x.png') 2x
+    url('/images/bg/m_careers_bg@1x.png') 1x,
+    url('/images/bg/m_careers_bg@2x.png') 2x
   );
 }
 
+.bg-contacts {
+  --bg-image: image-set(
+    url('/images/bg/m_contacts_bg@1x.png') 1x,
+    url('/images/bg/m_contacts_bg@2x.png') 2x
+  );
+}
+
+.bg-terms {
+  --bg-image: image-set(
+    url('/images/bg/m_terms_bg@1x.png') 1x,
+    url('/images/bg/m_terms_bg@2x.png') 2x
+  );
+}
+
+.bg-privacy {
+  --bg-image: image-set(
+    url('/images/bg/m_privacy_bg@1x.png') 1x,
+    url('/images/bg/m_privacy_bg@2x.png') 2x
+  );
+}
+/* ================================
+   📲 TABLET (>=1133px)
+================================ */
+@media (min-width: 600px) {
+  .bg-main {
+    --bg-image: image-set(
+      url('/images/bg/t_main_bg@1x.png') 1x,
+      url('/images/bg/t_main_bg@2x.png') 2x
+    );
+  }
+
+  .bg-about {
+    --bg-image: image-set(
+      url('/images/bg/t_about_bg@1x.png') 1x,
+      url('/images/bg/t_about_bg@2x.png') 2x
+    );
+  }
+
+  .bg-bpla {
+    --bg-image: image-set(
+      url('/images/bg/t_bpla_bg@1x.png') 1x,
+      url('/images/bg/t_bpla_bg@2x.png') 2x
+    );
+  }
+
+  .bg-edu {
+    --bg-image: image-set(
+      url('/images/bg/t_education_bg@1x.png') 1x,
+      url('/images/bg/t_education_bg@2x.png') 2x
+    );
+  }
+
+  .bg-bpak {
+    --bg-image: image-set(
+      url('/images/bg/t_bpak_bg@1x.png') 1x,
+      url('/images/bg/t_bpak_bg@2x.png') 2x
+    );
+  }
+
+  .bg-careers {
+    --bg-image: image-set(
+      url('/images/bg/t_careers_bg@1x.png') 1x,
+      url('/images/bg/t_careers_bg@2x.png') 2x
+    );
+  }
+
+  .bg-contacts {
+    --bg-image: image-set(
+      url('/images/bg/t_contacts_bg@1x.png') 1x,
+      url('/images/bg/t_contacts_bg@2x.png') 2x
+    );
+  }
+
+  .bg-terms {
+    --bg-image: image-set(
+      url('/images/bg/t_terms_bg@1x.png') 1x,
+      url('/images/bg/t_terms_bg@2x.png') 2x
+    );
+  }
+
+  .bg-privacy {
+    --bg-image: image-set(
+      url('/images/bg/t_privacy_bg@1x.png') 1x,
+      url('/images/bg/t_privacy_bg@2x.png') 2x
+    );
+  }
+}
+
+/* ================================
+   🖥️ DESKTOP (>=1440px)
+================================ */
+@media (min-width: 1440px) {
+  .bg-main {
+    --bg-image: image-set(
+      url('/images/bg/d_main_bg@1x.png') 1x,
+      url('/images/bg/d_main_bg@2x.png') 2x
+    );
+  }
+
+  .bg-about {
+    --bg-image: image-set(
+      url('/images/bg/d_about_bg@1x.png') 1x,
+      url('/images/bg/d_about_bg@2x.png') 2x
+    );
+  }
+
+  .bg-bpla {
+    --bg-image: image-set(
+      url('/images/bg/d_bpla_bg@1x.png') 1x,
+      url('/images/bg/d_bpla_bg@2x.png') 2x
+    );
+  }
+
+  .bg-edu {
+    --bg-image: image-set(
+      url('/images/bg/d_education_bg@1x.png') 1x,
+      url('/images/bg/d_education_bg@2x.png') 2x
+    );
+  }
+
+  .bg-bpak {
+    --bg-image: image-set(
+      url('/images/bg/d_bpak_bg@1x.png') 1x,
+      url('/images/bg/d_bpak_bg@2x.png') 2x
+    );
+  }
+
+  .bg-careers {
+    --bg-image: image-set(
+      url('/images/bg/d_careers_bg@1x.png') 1x,
+      url('/images/bg/d_careers_bg@2x.png') 2x
+    );
+  }
+
+  .bg-contacts {
+    --bg-image: image-set(
+      url('/images/bg/d_contacts_bg@1x.png') 1x,
+      url('/images/bg/d_contacts_bg@2x.png') 2x
+    );
+  }
+
+  .bg-terms {
+    --bg-image: image-set(
+      url('/images/bg/d_terms_bg@1x.png') 1x,
+      url('/images/bg/d_terms_bg@2x.png') 2x
+    );
+  }
+
+  .bg-privacy {
+    --bg-image: image-set(
+      url('/images/bg/d_privacy_bg@1x.png') 1x,
+      url('/images/bg/d_privacy_bg@2x.png') 2x
+    );
+  }
+}
 /* Опційні швидкі пресети для затемнення */
 .overlay-30 {
   --bg-overlay: rgba(0, 0, 0, 0.3);

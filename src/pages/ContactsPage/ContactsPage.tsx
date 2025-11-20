@@ -4,7 +4,7 @@ import { HeroSection } from '@/modules/contacts/HeroSection/HeroSection'
 
 export const ContactsPage = () => {
   return (
-    <main className="page-bg bg-about">
+    <main className="page-bg bg-contacts">
       <MainContainer>
         <HeroSection />
         <FormSection />
