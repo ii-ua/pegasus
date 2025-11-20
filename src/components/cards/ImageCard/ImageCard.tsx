@@ -54,7 +54,7 @@ export const ImageCard = ({
           <div className="flex flex-col gap-3">
             <h3
               className="
-                text-[#FDFFFF] text-left font-[Univermag] font-normal text-[24px] tablet:text-[32px] desktop:text-[36px] uppercase leading-tight
+                text-[#FDFFFF] text-left font-[Namu] font-normal text-[24px] tablet:text-[32px] desktop:text-[36px] uppercase leading-tight
                 transition-all duration-300 ease-out
                 group-hover/ImageCard:text-[24px] group-focus/ImageCard:text-[24px]
               "
