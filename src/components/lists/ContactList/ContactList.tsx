@@ -5,7 +5,9 @@ import { motion } from 'framer-motion'
 export interface ContactListItemProps {
   title: string
   href: string
+  hrefTel?: string
   description: string
+  descriptionTel?: string
 }
 
 export interface ContactListProps {
@@ -34,6 +36,8 @@ export const ContactList = ({ items }: ContactListProps) => {
 const ContactListItem = ({
   title,
   href,
+  hrefTel,
+  descriptionTel,
   description,
   index,
   fadeUp,
@@ -53,21 +57,55 @@ const ContactListItem = ({
       }}
     >
       <div className="flex flex-2 flex-col tablet:flex-row justify-between gap-3">
-        <Paragraph variant="grey" text={title} />
+        <Paragraph variant="grey" className="flex-1" text={title} />
+        {hrefTel && (
+          <div className="flex flex-col flex-1">
+            <motion.a
+              href={href}
+              whileHover={{
+                opacity: 1,
+                x: 2,
+              }}
+            >
+              <Paragraph
+                className="font-medium text-[20px] text-left tablet:text-[24px] desktop:text-[32px]"
+                variant="light"
+                text={description}
+              />
+            </motion.a>
+            <motion.a
+              href={hrefTel}
+              whileHover={{
+                opacity: 1,
+                x: 2,
+              }}
+            >
+              <Paragraph
+                className="font-medium text-[20px] text-left tablet:text-[24px] desktop:text-[32px]"
+                variant="light"
+                text={descriptionTel ?? ''}
+              />
+            </motion.a>
+          </div>
+        )}
 
-        <motion.a
-          href={href}
-          whileHover={{
-            opacity: 1,
-            x: 2,
-          }}
-        >
-          <Paragraph
-            className="font-medium text-[20px] text-left tablet:text-[24px] desktop:text-[32px]"
-            variant="light"
-            text={description}
-          />
-        </motion.a>
+        {!hrefTel && (
+          <div className="flex flex-col flex-1 items-start">
+            <motion.a
+              href={href}
+              whileHover={{
+                opacity: 1,
+                x: 2,
+              }}
+            >
+              <Paragraph
+                className="font-medium text-[20px] text-left tablet:text-[24px] desktop:text-[32px]"
+                variant="light"
+                text={description}
+              />
+            </motion.a>
+          </div>
+        )}
       </div>
 
       <motion.div

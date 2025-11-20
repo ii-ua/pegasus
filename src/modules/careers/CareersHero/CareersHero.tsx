@@ -1,4 +1,3 @@
-
 import { ParagraphsList } from '@/components/lists/ParagraphsList'
 import { Paragraph, SectionTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
@@ -88,8 +87,9 @@ export const CareersHero = () => {
       >
         <img
           className="w-full"
-          src="/plug.png"
-          alt="Bpla pegasus arms 25"
+          src="/images/careers/career_@1x.jpg"
+          srcSet="/images/career/career_@1x.jpg 1x, /images/career/career_@2x.jpg 2x"
+          alt="career pegasus arms 25"
           loading="lazy"
           decoding="async"
         />

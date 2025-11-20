@@ -6,14 +6,11 @@ const contacts = {
       description: '+380 (98) 614 61 77',
     },
     {
-      title: 'Партнерство:',
-      href: 'mailto:@pegasusarms.com.ua',
-      description: '@pegasusarms.com.ua',
-    },
-    {
       title: 'Долучайтеся до  команди:',
-      href: 'mailto:hiring@pegasusarms.com.ua',
-      description: 'hiring@pegasusarms.com.ua',
+      href: 'mailto:hr@pegasusarms.com.ua',
+      hrefTel: 'tel:+380754445583',
+      description: 'hr@pegasusarms.com.ua',
+      descriptionTel: '+380 (75) 444 55 83',
     },
     {
       title: 'Електронна пошта:',
