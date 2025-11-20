@@ -14,6 +14,7 @@ import systems from './systems'
 import career from './career'
 import contacts from './contacts'
 import terms from './terms'
+import privacy from './privacy'
 const uk = {
   navMain,
   heroMain,
@@ -31,6 +32,7 @@ const uk = {
   career,
   contacts,
   terms,
+  privacy,
 }
 
 export default uk

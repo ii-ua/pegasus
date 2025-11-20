@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ContactsRouteImport } from './routes/contacts'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutUsRouteImport } from './routes/about-us'
@@ -24,6 +25,11 @@ import { Route as CareerCareerIdRouteRouteImport } from './routes/career/$career
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactsRoute = ContactsRouteImport.update({
@@ -84,6 +90,7 @@ export interface FileRoutesByFullPath {
   '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/contacts': typeof ContactsRoute
+  '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/career/$careerId': typeof CareerCareerIdRouteRoute
   '/systems/bpak': typeof SystemsBpakRoute
@@ -97,6 +104,7 @@ export interface FileRoutesByTo {
   '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/contacts': typeof ContactsRoute
+  '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/career/$careerId': typeof CareerCareerIdRouteRoute
   '/systems/bpak': typeof SystemsBpakRoute
@@ -111,6 +119,7 @@ export interface FileRoutesById {
   '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/contacts': typeof ContactsRoute
+  '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/career/$careerId': typeof CareerCareerIdRouteRoute
   '/systems/bpak': typeof SystemsBpakRoute
@@ -126,6 +135,7 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/blog'
     | '/contacts'
+    | '/privacy'
     | '/terms'
     | '/career/$careerId'
     | '/systems/bpak'
@@ -139,6 +149,7 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/blog'
     | '/contacts'
+    | '/privacy'
     | '/terms'
     | '/career/$careerId'
     | '/systems/bpak'
@@ -152,6 +163,7 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/blog'
     | '/contacts'
+    | '/privacy'
     | '/terms'
     | '/career/$careerId'
     | '/systems/bpak'
@@ -166,6 +178,7 @@ export interface RootRouteChildren {
   AboutUsRoute: typeof AboutUsRoute
   BlogRoute: typeof BlogRoute
   ContactsRoute: typeof ContactsRoute
+  PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
 }
 
@@ -176,6 +189,13 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contacts': {
@@ -286,6 +306,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutUsRoute: AboutUsRoute,
   BlogRoute: BlogRoute,
   ContactsRoute: ContactsRoute,
+  PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
