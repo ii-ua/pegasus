@@ -1,3 +1,4 @@
+import { BlogPage } from '@/pages/BlogPage/BlogPage'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/blog')({
@@ -5,5 +6,5 @@ export const Route = createFileRoute('/blog')({
 })
 
 function RouteComponent() {
-  return <div>Hello "/blog"!</div>
+  return <BlogPage />
 }
