@@ -13,6 +13,7 @@ import ecosystemAboutPegasus from './ecosystemAboutPegasus'
 import systems from './systems'
 import career from './career'
 import contacts from './contacts'
+import terms from './terms'
 const uk = {
   navMain,
   heroMain,
@@ -29,6 +30,7 @@ const uk = {
   systems,
   career,
   contacts,
+  terms,
 }
 
 export default uk

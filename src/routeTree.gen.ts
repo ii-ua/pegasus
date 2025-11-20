@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ContactsRouteImport } from './routes/contacts'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutUsRouteImport } from './routes/about-us'
@@ -20,6 +21,11 @@ import { Route as SystemsBplaRouteImport } from './routes/systems/bpla'
 import { Route as SystemsBpakRouteImport } from './routes/systems/bpak'
 import { Route as CareerCareerIdRouteRouteImport } from './routes/career/$careerId/route'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactsRoute = ContactsRouteImport.update({
   id: '/contacts',
   path: '/contacts',
@@ -78,6 +84,7 @@ export interface FileRoutesByFullPath {
   '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/contacts': typeof ContactsRoute
+  '/terms': typeof TermsRoute
   '/career/$careerId': typeof CareerCareerIdRouteRoute
   '/systems/bpak': typeof SystemsBpakRoute
   '/systems/bpla': typeof SystemsBplaRoute
@@ -90,6 +97,7 @@ export interface FileRoutesByTo {
   '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/contacts': typeof ContactsRoute
+  '/terms': typeof TermsRoute
   '/career/$careerId': typeof CareerCareerIdRouteRoute
   '/systems/bpak': typeof SystemsBpakRoute
   '/systems/bpla': typeof SystemsBplaRoute
@@ -103,6 +111,7 @@ export interface FileRoutesById {
   '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/contacts': typeof ContactsRoute
+  '/terms': typeof TermsRoute
   '/career/$careerId': typeof CareerCareerIdRouteRoute
   '/systems/bpak': typeof SystemsBpakRoute
   '/systems/bpla': typeof SystemsBplaRoute
@@ -117,6 +126,7 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/blog'
     | '/contacts'
+    | '/terms'
     | '/career/$careerId'
     | '/systems/bpak'
     | '/systems/bpla'
@@ -129,6 +139,7 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/blog'
     | '/contacts'
+    | '/terms'
     | '/career/$careerId'
     | '/systems/bpak'
     | '/systems/bpla'
@@ -141,6 +152,7 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/blog'
     | '/contacts'
+    | '/terms'
     | '/career/$careerId'
     | '/systems/bpak'
     | '/systems/bpla'
@@ -154,10 +166,18 @@ export interface RootRouteChildren {
   AboutUsRoute: typeof AboutUsRoute
   BlogRoute: typeof BlogRoute
   ContactsRoute: typeof ContactsRoute
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contacts': {
       id: '/contacts'
       path: '/contacts'
@@ -266,6 +286,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutUsRoute: AboutUsRoute,
   BlogRoute: BlogRoute,
   ContactsRoute: ContactsRoute,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
