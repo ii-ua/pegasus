@@ -15,6 +15,7 @@ import career from './career'
 import contacts from './contacts'
 import terms from './terms'
 import privacy from './privacy'
+import blog from './blog'
 const uk = {
   navMain,
   heroMain,
@@ -33,6 +34,7 @@ const uk = {
   contacts,
   terms,
   privacy,
+  blog,
 }
 
 export default uk

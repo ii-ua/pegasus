@@ -14,6 +14,7 @@ import systems from './systems'
 import career from './career'
 import terms from './terms'
 import privacy from './privacy'
+import blog from './blog'
 const en = {
   navMain,
   heroMain,
@@ -31,6 +32,7 @@ const en = {
   career,
   terms,
   privacy,
+  blog,
 }
 
 export default en
