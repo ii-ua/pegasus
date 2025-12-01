@@ -1,6 +1,8 @@
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { Paragraph } from '@/components/text'
 import arrowDownRight from '@/assets/icons/arrow-down-right.svg'
-import { motion } from 'framer-motion'
+import arrowDownRightActive from '@/assets/icons/arrow-down-right-active.svg'
 
 export interface ContactListItemProps {
   title: string
@@ -42,6 +44,8 @@ const ContactListItem = ({
   index,
   fadeUp,
 }: ContactListItemProps & { index: number; fadeUp: any }) => {
+  const [isHover, setIsHover] = useState(false)
+
   return (
     <motion.li
       className="flex justify-between items-center"
@@ -50,36 +54,27 @@ const ContactListItem = ({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
+      // ❗ без scale
       whileHover={{
-        scale: 1.02,
-        x: 4,
         transition: { duration: 0.25, ease: 'easeOut' },
       }}
+      onHoverStart={() => setIsHover(true)}
+      onHoverEnd={() => setIsHover(false)}
     >
       <div className="flex flex-2 flex-col tablet:flex-row justify-between gap-3">
         <Paragraph variant="grey" className="flex-1" text={title} />
+
         {hrefTel && (
           <div className="flex flex-col flex-1">
-            <motion.a
-              href={href}
-              whileHover={{
-                opacity: 1,
-                x: 2,
-              }}
-            >
+            <motion.a href={href}>
               <Paragraph
                 className="font-medium text-[20px] text-left tablet:text-[24px] desktop:text-[32px]"
                 variant="light"
                 text={description}
               />
             </motion.a>
-            <motion.a
-              href={hrefTel}
-              whileHover={{
-                opacity: 1,
-                x: 2,
-              }}
-            >
+
+            <motion.a href={hrefTel}>
               <Paragraph
                 className="font-medium text-[20px] text-left tablet:text-[24px] desktop:text-[32px]"
                 variant="light"
@@ -91,13 +86,7 @@ const ContactListItem = ({
 
         {!hrefTel && (
           <div className="flex flex-col flex-1 items-start">
-            <motion.a
-              href={href}
-              whileHover={{
-                opacity: 1,
-                x: 2,
-              }}
-            >
+            <motion.a href={href}>
               <Paragraph
                 className="font-medium text-[20px] text-left tablet:text-[24px] desktop:text-[32px]"
                 variant="light"
@@ -108,20 +97,19 @@ const ContactListItem = ({
         )}
       </div>
 
+      {/* --- HOVER ARROW --- */}
       <motion.div
         className="flex-1 flex justify-end"
         whileHover={{
-          rotate: 18,
-          x: 4,
           transition: { duration: 0.25, ease: 'easeOut' },
         }}
       >
         <img
-          className="size-[42px]"
-          src={arrowDownRight}
+          className="size-[42px] transition-opacity duration-200"
+          src={isHover ? arrowDownRightActive : arrowDownRight}
           width={42}
           height={42}
-          alt=""
+          alt="Arrow"
         />
       </motion.div>
     </motion.li>
