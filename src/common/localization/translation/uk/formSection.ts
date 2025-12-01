@@ -18,7 +18,7 @@ const formSection = {
         placeholder: 'Введіть назву компанії',
       },
       email: {
-        label: 'email',
+        label: 'Email',
         placeholder: 'Введіть email',
       },
       position: {
