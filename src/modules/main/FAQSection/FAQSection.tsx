@@ -41,6 +41,7 @@ export const FAQSection = () => {
           >
             <Tabs.List
               className="
+              max-h-[279px]
     grid grid-cols-2 items-start gap-4 w-full
     tablet:flex tablet:flex-col tablet:w-[215px]
     desktop:w-[300px]

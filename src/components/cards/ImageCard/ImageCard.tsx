@@ -55,7 +55,7 @@ export const ImageCard = ({
             <h3
               className="
                 text-[#FDFFFF] text-left font-[Namu] font-bold text-[24px] tablet:text-[26px] desktop:text-[32px] uppercase leading-tight
-                transition-all duration-300 ease-out
+                transition-all duration-500 ease-out
                 group-hover/ImageCard:text-[24px] group-focus/ImageCard:text-[24px]
               "
             >
@@ -66,7 +66,7 @@ export const ImageCard = ({
               className="
                 font-normal text-[#FDFFFF] text-[16px] first-letter:uppercase 
                 max-h-24 overflow-hidden opacity-100 translate-y-0
-                transition-all duration-300 ease-out
+                transition-all duration-500 ease-out
                  tablet:max-h-0 tablet:opacity-0 tablet:translate-y-2
     tablet:group-hover/ImageCard:max-h-24 
     tablet:group-hover/ImageCard:opacity-100 
