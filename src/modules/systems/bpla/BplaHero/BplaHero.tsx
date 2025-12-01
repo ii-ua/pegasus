@@ -141,22 +141,21 @@ export const BplaHero = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.25 }}
       >
-        {t('systems.bpla.hero.paragraphs', { returnObjects: true }).map(
-          (text: string, index: number) => (
-            <motion.div
-              className="max-w-[798px] desktop:max-w-[1011px]"
-              key={index}
-              variants={fadeUp}
-              custom={3 + index}
-            >
+        <motion.div
+          className="max-w-[798px] desktop:max-w-[1011px] flex flex-col gap-5"
+          variants={fadeUp}
+        >
+          {t('systems.bpla.hero.paragraphs', { returnObjects: true }).map(
+            (text: string, index: number) => (
               <Paragraph
+                key={index}
                 className=" w-full block text-left"
                 variant="grey"
                 text={text}
               />
-            </motion.div>
-          ),
-        )}
+            ),
+          )}
+        </motion.div>
       </motion.div>
 
       {/* ===== STAT CARDS WITH 3D + SVG ANIM ===== */}

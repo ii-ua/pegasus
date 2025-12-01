@@ -31,7 +31,7 @@ export const DevelopSection = () => {
         >
           <SectionTitle
             title={`${t('developMain.title')}`}
-            className="text-left max-w-[598px] desktop:max-w-[1000px]"
+            className="text-left max-w-[598px] desktop:max-w-[1100px]"
           />
         </motion.div>
 

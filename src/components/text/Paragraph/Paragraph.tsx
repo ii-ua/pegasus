@@ -19,7 +19,7 @@ export const Paragraph = ({
   return (
     <p
       className={cn(
-        'font-normal uppercase text-[14px] tablet:text-[16px] desktop:text-[20px]',
+        'font-normal text-[14px] tablet:text-[16px] desktop:text-[20px]',
         variantStyles[variant],
         className,
       )}
