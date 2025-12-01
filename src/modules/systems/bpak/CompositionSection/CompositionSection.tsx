@@ -28,7 +28,7 @@ export const CompositionSection = () => {
         <motion.div variants={fadeUp} custom={0}>
           <SectionTitle
             title={t('systems.bpak.composition.title')}
-            className="text-left max-w-[852px]"
+            className="text-left max-w-[1000px]"
           />
         </motion.div>
 

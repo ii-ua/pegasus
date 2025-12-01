@@ -1,5 +1,5 @@
 const faqMain = {
-  title: 'Часті запитання',
+  title: 'Поширені запитання',
   faqs: {
     aboutProduct: {
       title: '/ Про продукт',

@@ -8,7 +8,7 @@ export const SectionTitle = ({ title, className }: SectionTitleProps) => {
   return (
     <h3
       className={cn(
-        'font-[Namu] font-normal text-[48px]  tablet:text-[72px] desktop:text-[90px] text-[#FDFFFF] uppercase',
+        'font-[Namu] font-bold text-[48px] leading-none   tablet:text-[72px] desktop:text-[90px] text-[#FDFFFF] uppercase',
         className,
       )}
     >

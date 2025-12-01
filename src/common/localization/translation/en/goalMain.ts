@@ -1,17 +1,17 @@
 const goalMain = {
   title: 'OUR MISSION',
   paragraphs: [
-    'To make Ukrainian technology a reliable weapon that helps preserve defenders’ lives and secure superiority on the battlefield.',
-    'We provide Ukrainian units with strike UAVs that effectively carry out combat tasks even under intensive EW conditions — without GPS or external control.',
+    'To turn Ukrainian technology into a reliable weapon that saves the lives of defenders and provides an advantage on the battlefield.',
+    'We supply Ukrainian units with strike UAVs that perform combat missions effectively even under active EW — without GPS or external control.',
   ],
   cards: {
     bpla: {
-      title: '500',
+      title: '1000',
       description: 'UAVs already performing combat missions',
     },
     defence: {
       title: '15M',
-      description: 'Allocated to the defense of Ukraine',
+      description: 'Value of the highest-value target destroyed by our drone',
     },
     team: {
       title: '50',
@@ -19,5 +19,4 @@ const goalMain = {
     },
   },
 }
-
 export default goalMain

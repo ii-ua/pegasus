@@ -9,7 +9,7 @@ export const AdvantagesSection = () => {
     <SectionContainer as="section" className="flex flex-col">
       <SectionTitle
         title={`${t('systems.bpak.advantages.title')}`}
-        className="text-left max-w-[800px]"
+        className="text-left max-w-[1100px]"
       />
       <ScrollTimeline
         items={t('systems.bpak.advantages.timeLine', { returnObjects: true })}

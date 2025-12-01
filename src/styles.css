@@ -408,3 +408,9 @@ body {
 .overlay-70 {
   --bg-overlay: rgba(0, 0, 0, 0.7);
 }
+
+@layer utilities {
+  .first-letter-cap::first-letter {
+    text-transform: uppercase;
+  }
+}
