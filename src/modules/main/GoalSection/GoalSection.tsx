@@ -66,6 +66,7 @@ export const GoalSection = () => {
 
           <motion.div transition={{ duration: 0.2 }}>
             <StatCard
+              highlightText="$"
               value={t('goalMain.cards.defence.title')}
               description={t('goalMain.cards.defence.description')}
             />

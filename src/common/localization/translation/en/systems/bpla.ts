@@ -1,31 +1,36 @@
 const bpla = {
   hero: {
     title:
-      'MADE IN UKRAINE. BATTLE-PROVEN. CERTIFIED BY THE MINISTRY OF DEFENSE.',
+      'MADE IN UKRAINE. BATTLE-PROVEN. CERTIFIED BY THE MINISTRY OF DEFENCE.',
     description:
-      'Pegasus Arms 25 — a next-generation strike quadcopter of Ukrainian design. Battle-proven, it features high resistance to electronic warfare, stable radio link and telemetry. Developed jointly by engineers and military specialists, the drone was approved for service by the Ministry of Defense in January 2024. Equipped with adaptive electronics and an autonomous return-to-base system in case of lost connection.',
+      'PEGASUS ARMS 25 is a next-generation Ukrainian strike quadcopter. Combat-tested, highly resistant to EW, with stable radio communication and telemetry. Co-designed by engineers and military specialists, the drone was officially approved for use by a Ministry of Defence order in January 2024. It is equipped with adaptive electronics and an autonomous return-to-base system in case of signal loss.',
     paragraphs: [
-      'The primary role of Pegasus Arms 25 is strike missions against enemy armor, vehicles and personnel. In addition, the UAV is used for neutralizing engineering structures, remote mining and logistics. Delivery of equipment, ammunition, medical supplies and provisions — all are within the capabilities of Pegasus Arms 25.',
-      'The UAV’s modular design allows it to carry a variety of combat payloads:',
+      'The primary mission of Pegasus Arms 25 is striking enemy armor, vehicles, and manpower. Additionally, the UAV is used to neutralize engineering structures, perform remote mining, and support logistics. Delivering equipment, ammunition, medical supplies, food — all of this is within the capability of Pegasus Arms 25.',
+      'Its modular architecture supports a wide range of payload options:',
     ],
     cards: [
       'Anti-tank mines',
       'Engineering munitions (remote mining)',
-      'Explosive and incendiary munitions',
-      'Specialized delivery payloads (medical supplies, water, ammunition)',
+      'WARHEAD MODULE FOR STRIKE MISSIONS',
+      'Specialized delivery systems (medical supplies, water, ammunition)',
     ],
   },
+
   results: {
-    title: 'COMBAT RESULTS',
+    title: 'COMBAT PERFORMANCE',
     paragraphs: [
-      'In February 2024 the Pegasus Arms 25 strike UAV was used to destroy the Russian heavy thermobaric system TOS-1A "Solntsepyok". This is not the only successful mission for this combat platform — Pegasus Arms 25 has proven effective in over 1,000 successful operations.',
-      'Pegasus Arms 25 is a Ukrainian combat drone proven on the frontline. It provides stable communications, resistance to EW and combat autonomy, adapting to unit tasks. More than 50 brigades of the Armed Forces use it to engage equipment, structures and personnel, increasing operational effectiveness on the battlefield.',
+      'In February 2024, the Pegasus Arms 25 strike UAV was used to destroy a Russian TOS-1A “Solntsepyok” heavy flamethrower system. But this was far from its only successful mission. Pegasus Arms 25 has proven its effectiveness in more than 1000 successfully completed combat tasks.',
+      'Pegasus Arms 25 is a Ukrainian-developed combat drone, field-tested at the frontline. It features stable communication, EW resistance, and operational autonomy, adapting to the needs of individual units. Over 50 brigades of the Defence Forces rely on it to destroy enemy equipment, fortifications, and manpower — enhancing battlefield effectiveness.',
     ],
   },
+
   integration: {
-    title: 'OFFICIAL INTEGRATION',
-    description:
-      'Our solutions are integrated into the national/state technological infrastructure, combining logistics management, data exchange and real-time control.',
+    title: 'GOVERNMENT PLATFORMS',
+    paragraphs: [
+      'The Pegasus Arms 25 UAV / UAS is officially listed on the defence marketplace,',
+      'where military units can order it within the “Army of Drones Bonus” program using awarded E-Points. Delivery and accounting are managed via the DOT-chain Defence digital logistics system.',
+    ],
+    link: 'Brave1Market.',
   },
 }
 

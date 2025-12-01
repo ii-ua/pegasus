@@ -32,7 +32,7 @@ export const IntegrationSection = () => {
         >
           <SectionTitle
             title={`${t('systems.bpla.integration.title')}`}
-            className="text-left max-w-[550px]"
+            className="text-left max-w-[660px] leading-none text-[42px]"
           />
         </motion.div>
 
@@ -45,10 +45,20 @@ export const IntegrationSection = () => {
           custom={1}
         >
           <Paragraph
-            text={t('systems.bpla.integration.description')}
             variant="grey"
-            className="max-w-[540px] desktop:max-w-[665px] block"
-          />
+            className="max-w-[540px] desktop:max-w-[630px] block"
+          >
+            {t('systems.bpla.integration.paragraphs.0')}{' '}
+            <a
+              href="https://market-brave1.delta.mil.gov.ua/pegasus-arms-25-bpla/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block underline decoration-[#FF6600] decoration-1 underline-offset-1 bg-gradient-to-r from-[#CE4906] via-[#FF6600] to-[#FF8B20] bg-clip-text text-transparent"
+            >
+              {t('systems.bpla.integration.link')}
+            </a>{' '}
+            {t('systems.bpla.integration.paragraphs.1')}
+          </Paragraph>
         </motion.div>
       </div>
 

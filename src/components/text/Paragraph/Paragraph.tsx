@@ -1,9 +1,10 @@
 import { cn } from '@/common/utils/cn'
 
 export interface ParagraphProps {
-  text: string
+  text?: string
   className?: string
   variant?: 'grey' | 'light'
+  children?: React.ReactNode
 }
 
 const variantStyles = {
@@ -15,16 +16,18 @@ export const Paragraph = ({
   text,
   className,
   variant = 'light',
+  children,
 }: ParagraphProps) => {
   return (
     <p
       className={cn(
-        'font-normal text-[14px] first-letter-cap tablet:text-[16px] desktop:text-[20px]',
+        'font-normal text-[16px] first-letter-cap tablet:text-[20px] desktop:text-[24px]',
         variantStyles[variant],
         className,
       )}
     >
       {text}
+      {children}
     </p>
   )
 }

@@ -8,6 +8,7 @@ export interface StatCardProps {
   highlightText?: string
   className?: string
   iconClassName?: string
+  descriptionClassName?: string
 }
 
 export const StatCard = ({
@@ -17,6 +18,7 @@ export const StatCard = ({
   highlightText = '+',
   className,
   iconClassName,
+  descriptionClassName,
 }: StatCardProps) => {
   return (
     <div className=" relative h-fit max-w-[430px]">
@@ -29,14 +31,19 @@ export const StatCard = ({
       >
         <span
           className={cn(
-            'font-[Namu] font-bold text-[64px] tablet:text-[48px] desktop:text-[64px] text-[#FDFFFF] w-full text-center uppercase',
+            'font-[Namu] font-bold text-[60px]  sm:text-[42px] desktop:text-[60px] text-[#FDFFFF] w-full text-center uppercase',
             iconClassName,
           )}
         >
           {value}
           {highlight && <span className="text-[#FF6600]">{highlightText}</span>}
         </span>
-        <p className="text-[#D9D9D9] font-normal text-[14px] uppercase">
+        <p
+          className={cn(
+            'text-[#D9D9D9] font-normal text-[14px] uppercase',
+            descriptionClassName,
+          )}
+        >
           {description}
         </p>
       </div>

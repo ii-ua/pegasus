@@ -7,6 +7,7 @@ import Munitions from '@/assets/icons/munitions.svg?react'
 import Delivery from '@/assets/icons/delivery.svg?react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
+import Bomb from '@/assets/icons/bomb.svg?react'
 
 export const BplaHero = () => {
   const { t } = useTranslation()
@@ -69,7 +70,7 @@ export const BplaHero = () => {
         <motion.div variants={fadeUp} custom={1}>
           <SectionTitle
             title={`${t('systems.bpla.hero.title')}`}
-            className="text-left text-[37px] w-full"
+            className="text-left text-[32px] w-full"
           />
         </motion.div>
 
@@ -160,17 +161,20 @@ export const BplaHero = () => {
 
       {/* ===== STAT CARDS WITH 3D + SVG ANIM ===== */}
       <motion.div
-        className="flex flex-col lg:flex-row gap-4 desktop:gap-6 items-center justify-between w-full"
+        className="flex flex-col tablet:flex-row gap-4 desktop:gap-6 items-center justify-between w-full"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="flex flex-col lg:flex-row gap-4 desktop:gap-6">
+        <div className="flex flex-col sm:flex-row gap-4 desktop:gap-6">
           <motion.div variants={fadeUp} custom={5}>
             <ArrowStat
               icon={
                 <motion.div variants={svgAnim}>
-                  <Mina />
+                  <Mina
+                    className="size-[120px] tablet:size-[100px] desktop:size-[120px]"
+                    preserveAspectRatio="none"
+                  />
                 </motion.div>
               }
               text={t('systems.bpla.hero.cards.0')}
@@ -181,24 +185,45 @@ export const BplaHero = () => {
             <ArrowStat
               icon={
                 <motion.div variants={svgAnim}>
-                  <Munitions />
+                  <Munitions
+                    className="size-[120px] tablet:size-[100px] desktop:size-[120px]"
+                    preserveAspectRatio="none"
+                  />
                 </motion.div>
               }
               text={t('systems.bpla.hero.cards.1')}
             />
           </motion.div>
         </div>
+        <div className="flex flex-col sm:flex-row gap-4 desktop:gap-6">
+          <motion.div variants={fadeUp} custom={7}>
+            <ArrowStat
+              icon={
+                <motion.div variants={svgAnim}>
+                  <Bomb
+                    className="size-[120px]tablet:size-[100px] desktop:size-[120px]"
+                    preserveAspectRatio="none"
+                  />
+                </motion.div>
+              }
+              text={t('systems.bpla.hero.cards.2')}
+            />
+          </motion.div>
 
-        <motion.div variants={fadeUp} custom={7}>
-          <ArrowStat
-            icon={
-              <motion.div variants={svgAnim}>
-                <Delivery />
-              </motion.div>
-            }
-            text={t('systems.bpla.hero.cards.2')}
-          />
-        </motion.div>
+          <motion.div variants={fadeUp} custom={8}>
+            <ArrowStat
+              icon={
+                <motion.div variants={svgAnim}>
+                  <Delivery
+                    className="size-[120px] tablet:size-[100px] desktop:size-[120px]"
+                    preserveAspectRatio="none"
+                  />
+                </motion.div>
+              }
+              text={t('systems.bpla.hero.cards.3')}
+            />
+          </motion.div>
+        </div>
       </motion.div>
     </SectionContainer>
   )
@@ -208,6 +233,7 @@ const ArrowStat = ({ icon, text }: any) => (
   <StatCard
     className="gap-0 pt-0 tablet:pt-0 desktop:pt-0"
     iconClassName="flex justify-center"
+    descriptionClassName="text-[14px] tablet:text-[12px] desktop:text-[14px]"
     value={icon}
     description={text}
     highlight={false}
