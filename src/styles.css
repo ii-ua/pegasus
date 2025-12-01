@@ -30,35 +30,35 @@ body {
 
 .hero-bg[data-lang='uk'] {
   --hero-mobile: image-set(
-    url('/images/main/hero/m_hero_ua@1x.png') 1x,
-    url('/images/main/hero/m_hero_ua@2x.png') 2x
+    url('/images/main/hero/m_hero_ua@1x.jpg') 1x,
+    url('/images/main/hero/m_hero_ua@2x.jpg') 2x
   );
 
   --hero-tablet: image-set(
-    url('/images/main/hero/t_hero_ua@1x.png') 1x,
-    url('/images/main/hero/t_hero_ua@2x.png') 2x
+    url('/images/main/hero/t_hero_ua@1x.jpg') 1x,
+    url('/images/main/hero/t_hero_ua@2x.jpg') 2x
   );
 
   --hero-desktop: image-set(
-    url('/images/main/hero/d_hero_ua@1x.png') 1x,
-    url('/images/main/hero/d_hero_ua@2x.png') 2x
+    url('/images/main/hero/d_hero_ua@1x.jpg') 1x,
+    url('/images/main/hero/d_hero_ua@2x.jpg') 2x
   );
 }
 
 .hero-bg[data-lang='en'] {
   --hero-mobile: image-set(
-    url('/images/main/hero/m_hero_en@1x.png') 1x,
-    url('/images/main/hero/m_hero_en@2x.png') 2x
+    url('/images/main/hero/m_hero_en@1x.jpg') 1x,
+    url('/images/main/hero/m_hero_en@2x.jpg') 2x
   );
 
   --hero-tablet: image-set(
-    url('/images/main/hero/t_hero_en@1x.png') 1x,
-    url('/images/main/hero/t_hero_en@2x.png') 2x
+    url('/images/main/hero/t_hero_en@1x.jpg') 1x,
+    url('/images/main/hero/t_hero_en@2x.jpg') 2x
   );
 
   --hero-desktop: image-set(
-    url('/images/main/hero/d_hero_en@1x.png') 1x,
-    url('/images/main/hero/d_hero_en@2x.png') 2x
+    url('/images/main/hero/d_hero_en@1x.jpg') 1x,
+    url('/images/main/hero/d_hero_en@2x.jpg') 2x
   );
 }
 

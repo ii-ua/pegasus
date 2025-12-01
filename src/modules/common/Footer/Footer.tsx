@@ -20,7 +20,7 @@ export const Footer = () => {
     <footer className="py-[54px] desktop:py-[82px] tablet:py-16 flex flex-col md:flex-row gap-[54px] tablet:gap-[65px]">
       {/* Ліва колонка: поява знизу */}
       <motion.div
-        className="max-w-[610px] order-1 md:order-0 uppercase text-[#D9D9D9] font-normal text-[14px] desktop:text-[16px] flex gap-8 flex-col justify-between"
+        className="max-w-[610px] order-1 md:order-0 text-[#D9D9D9] font-normal text-[14px] desktop:text-[16px] flex gap-8 flex-col justify-between"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}

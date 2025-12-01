@@ -13,7 +13,7 @@ export const FormLabel = ({
     <label
       {...props}
       className={cn(
-        'min-w-[91px] tablet:min-w-[113px] desktop:min-w-[136px] font-normal text-[16px] tablet:text-[20px] desktop:text-[24px] text-[#FDFFFF] uppercase',
+        'min-w-[91px] tablet:min-w-[113px] desktop:min-w-[136px] font-normal text-[16px] tablet:text-[20px] desktop:text-[24px] text-[#FDFFFF]',
         props.className,
       )}
     >

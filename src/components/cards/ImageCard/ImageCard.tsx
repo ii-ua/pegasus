@@ -64,7 +64,7 @@ export const ImageCard = ({
 
             <p
               className="
-                font-normal text-[#FDFFFF] text-[16px] uppercase
+                font-normal text-[#FDFFFF] text-[16px] first-letter:uppercase 
                 max-h-24 overflow-hidden opacity-100 translate-y-0
                 transition-all duration-300 ease-out
                  tablet:max-h-0 tablet:opacity-0 tablet:translate-y-2
