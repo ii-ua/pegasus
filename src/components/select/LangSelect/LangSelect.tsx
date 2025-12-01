@@ -19,7 +19,13 @@ export const LangSelect = ({ className }: LangSelectProps) => {
     setMounted(true)
   }, [])
 
-  const currentLang = i18n.language
+  // Нормалізація
+  const rawLang = i18n.language
+  const currentLang =
+    rawLang === 'ru' || rawLang === 'ru-RU' || rawLang.startsWith('ru')
+      ? 'uk'
+      : rawLang
+
   const onLang = (lang: string) => {
     i18n.changeLanguage(lang)
     localStorage.setItem('i18nextLng', lang)
