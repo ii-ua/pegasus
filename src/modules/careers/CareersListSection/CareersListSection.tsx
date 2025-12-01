@@ -115,6 +115,41 @@ export const CareersListSection = () => {
           </motion.li>
         ))}
       </motion.ul>
+      <div>
+        <Paragraph
+          variant="grey"
+          className="max-w-[1110px] mt-4"
+          text={t('career.questions.title')}
+        />
+        <Paragraph
+          variant="grey"
+          className="max-w-[540px] desktop:max-w-[630px] block"
+        >
+          {t('career.questions.contacts.email.text')}{' '}
+          <a
+            href="mailto:hr@pegasusarms.com.ua"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block underline decoration-[#FF6600] decoration-1 underline-offset-1 bg-gradient-to-r from-[#CE4906] via-[#FF6600] to-[#FF8B20] bg-clip-text text-transparent"
+          >
+            {t('career.questions.contacts.email.link')}
+          </a>
+        </Paragraph>
+        <Paragraph
+          variant="grey"
+          className="max-w-[540px] desktop:max-w-[630px] block"
+        >
+          {t('career.questions.contacts.tel.text')}{' '}
+          <a
+            href="tel:+380754445583"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block underline decoration-[#FF6600] decoration-1 underline-offset-1 bg-gradient-to-r from-[#CE4906] via-[#FF6600] to-[#FF8B20] bg-clip-text text-transparent"
+          >
+            {t('career.questions.contacts.tel.link')}
+          </a>
+        </Paragraph>
+      </div>
     </SectionContainer>
   )
 }
