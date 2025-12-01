@@ -54,5 +54,18 @@ const career = {
       },
     ],
   },
+  questions: {
+    title: 'Маєш питання щодо вакансій?',
+    contacts: {
+      email: {
+        text: 'Пиши в наш HR-відділ:',
+        link: 'hr@pegasusarms.com.ua',
+      },
+      tel: {
+        text: 'або телефонуй:',
+        link: '+380 (75) 444 55 83',
+      },
+    },
+  },
 }
 export default career

@@ -82,7 +82,7 @@ export const CareersListSection = () => {
 
       {/* ==== LINKS ==== */}
       <motion.ul
-        className="flex gap-4 desktop:gap-6 items-center flex-col sm:flex-row"
+        className="flex gap-4 desktop:gap-6 items-center justify-between flex-col sm:flex-row"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.25 }}
