@@ -42,7 +42,7 @@ export const CareersHero = () => {
         <motion.div variants={fadeUp} custom={0}>
           <Paragraph
             variant="grey"
-            className="font-light"
+            className="font-light uppercase"
             text={t('navMain.career')}
           />
         </motion.div>
@@ -50,7 +50,7 @@ export const CareersHero = () => {
         <motion.div variants={fadeUp} custom={1}>
           <SectionTitle
             title={`${t('career.hero.title')}`}
-            className="text-left max-w-[600px] desktop:max-w-[760px]"
+            className="text-left "
           />
         </motion.div>
 

@@ -11,7 +11,7 @@ export const HeroSection = () => {
       className="flex pt-[104px] tablet:pt-[122px] desktop:pt-[170px] flex-col justify-center items-left gap-6"
     >
       <Paragraph
-        className="font-light"
+        className="font-light uppercase"
         variant="grey"
         text={t('navMain.contact')}
       />

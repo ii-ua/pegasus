@@ -25,7 +25,7 @@ export const StatCard = ({
       <CutCard className="w-full h-full" />
       <div
         className={cn(
-          'absolute inset-0 flex flex-col p-4 tablet:p-6  desktop:p-4 justify-between',
+          'absolute inset-0 flex flex-col p-4 tablet:p-6  desktop:p-4 gap-3.5 justify-between sm:justify-start',
           className,
         )}
       >

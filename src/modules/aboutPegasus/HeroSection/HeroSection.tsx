@@ -33,7 +33,7 @@ export const HeroSection = () => {
       >
         <motion.div variants={fadeUp} custom={0}>
           <Paragraph
-            className="font-light"
+            className="font-light uppercase"
             variant="grey"
             text={t('navMain.aboutUs')}
           />

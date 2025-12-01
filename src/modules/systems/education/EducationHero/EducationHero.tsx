@@ -26,14 +26,14 @@ export const EducationHero = () => {
     >
       {/* === TEXT BLOCK === */}
       <motion.div
-        className="flex flex-col gap-5 desktop:gap-6 max-w-[780px] desktop:max-w-[940px] items-start"
+        className="flex flex-col gap-5 desktop:gap-6 max-w-[798px] desktop:max-w-[1100px] items-start"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.div variants={fadeUp} custom={0}>
           <Paragraph
-            className="font-ligh"
+            className="font-ligh uppercase"
             variant="grey"
             text={`${t('navMain.systems')} / ${t('navMain.education')}`}
           />
