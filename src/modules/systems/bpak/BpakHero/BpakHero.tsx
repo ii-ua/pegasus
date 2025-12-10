@@ -36,7 +36,7 @@ export const BpakHero = () => {
     >
       {/* === TEXT TOP === */}
       <motion.div
-        className="flex flex-col gap-5 desktop:gap-6 max-w-[811px] desktop:max-w-[1020px] items-start"
+        className="flex flex-col gap-5 desktop:gap-6 max-w-[811px] desktop:max-w-[1240px] items-start"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.25 }}

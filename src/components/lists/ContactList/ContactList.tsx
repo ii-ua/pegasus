@@ -66,19 +66,19 @@ const ContactListItem = ({
 
         {hrefTel && (
           <div className="flex flex-col flex-1">
-            <motion.a href={href}>
-              <Paragraph
-                className="font-medium text-[20px] text-left tablet:text-[24px] desktop:text-[32px]"
-                variant="light"
-                text={description}
-              />
-            </motion.a>
-
             <motion.a href={hrefTel}>
               <Paragraph
                 className="font-medium text-[20px] text-left tablet:text-[24px] desktop:text-[32px]"
                 variant="light"
                 text={descriptionTel ?? ''}
+              />
+            </motion.a>
+
+            <motion.a href={href}>
+              <Paragraph
+                className="font-medium text-[20px] text-left tablet:text-[24px] desktop:text-[32px]"
+                variant="light"
+                text={description}
               />
             </motion.a>
           </div>
