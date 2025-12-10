@@ -31,7 +31,7 @@ export const OfferSection = () => {
         <motion.div variants={fadeUp} custom={0} className="w-full flex-2">
           <SectionTitle
             title={t('systems.education.offer.title')}
-            className="text-left w-full flex-2"
+            className="text-left w-full flex-2 break-words"
           />
         </motion.div>
 

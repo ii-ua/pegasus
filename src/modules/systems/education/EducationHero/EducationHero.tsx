@@ -42,7 +42,7 @@ export const EducationHero = () => {
         <motion.div variants={fadeUp} custom={1}>
           <SectionTitle
             title={t('systems.education.hero.title')}
-            className="text-left w-full"
+            className="text-left w-full break-words"
           />
         </motion.div>
 

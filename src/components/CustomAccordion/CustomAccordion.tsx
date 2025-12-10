@@ -33,7 +33,7 @@ export function CustomAccordion({
               preserveAspectRatio="none"
               className="h-full w-full block min-h-[60px]"
             />
-            <div className="absolute inset-0 flex items-center justify-between pl-9 pr-[18px] py-[18px]">
+            <div className="absolute inset-0 flex items-center justify-between pl-4 tablet:pl-9 pr-[18px] py-[18px]">
               <h3 className=" m-0 text-left uppercase text-[#FDFFFF] font-normal text-[16px] tablet:text-[20px] desktop:text-[24px]">
                 {title}
               </h3>

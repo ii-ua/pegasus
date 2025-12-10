@@ -1,7 +1,7 @@
 const formSection = {
-  title: 'Have a question? Write to us.',
+  title: 'Got questions? Glad to help.',
   description:
-    'We’ll be happy to help. Fill out the form below if you want to learn more about the product, get a consultation, or discuss partnership opportunities.',
+    'Fill out the form below to learn more about our product, get a consultation, or discuss a partnership.',
   form: {
     title: '/ CONTACT US',
     inputs: {

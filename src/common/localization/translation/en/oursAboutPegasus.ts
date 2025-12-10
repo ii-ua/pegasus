@@ -1,8 +1,8 @@
 const oursAboutPegasus = {
-  title: 'OUR APPROACH IS',
+  title: 'OUR APPROACH',
   cards: {
     reliability: {
-      title: 'RELIABILITY ABOVE ALL',
+      title: 'RELIABILITY',
       description:
         'Every UAV undergoes strict testing before being deployed to the units.',
     },

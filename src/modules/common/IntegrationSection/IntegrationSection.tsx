@@ -32,12 +32,12 @@ export const IntegrationSection = () => {
         >
           <SectionTitle
             title={`${t('systems.bpla.integration.title')}`}
-            className="text-left max-w-[660px] leading-none text-[42px]"
+            className="text-left max-w-[660px] leading-none"
           />
         </motion.div>
 
         <motion.div
-          className="w-full flex justify-end"
+          className="flex justify-end"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -87,7 +87,7 @@ export const IntegrationSection = () => {
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.88 }}
-            animate={{ opacity: 1, scale: 1 }}
+            animate={{ opacity: 1, scale: 1.2 }}
             transition={{ duration: 0.55, ease: 'easeOut' }}
           >
             <Brave />
@@ -101,7 +101,7 @@ export const IntegrationSection = () => {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.45, ease: 'easeOut', delay: 0.2 }}
         >
-          <DotChain />
+          <DotChain className="scale-[1.1]" />
         </motion.div>
       </motion.div>
     </SectionContainer>

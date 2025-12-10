@@ -94,7 +94,7 @@ export const MobileMenu = ({ navItems }: MobileMenuProps) => {
 
                   {/* NAVIGATION */}
                   <nav>
-                    <ul className="flex flex-col gap-4 lg:gap-[42px]">
+                    <ul className="flex flex-col lg:gap-[42px]">
                       {navItems.map((item) => (
                         <li key={item.href ?? item.hash}>
                           <Dialog.Close asChild>

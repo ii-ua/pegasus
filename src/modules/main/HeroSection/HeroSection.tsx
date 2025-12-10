@@ -36,10 +36,10 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-          className="flex flex-col max-w-[465px] gap-6 desktop:gap-8"
+          className="flex flex-col max-w-[360px] desktop:max-w-[465px] gap-6 desktop:gap-8"
         >
           <Paragraph
-            className="font-normal text-[#D9D9D9] text-left"
+            className="font-normal text-[#D9D9D9] text-left text-[14px] tablet:text-[16px] desktop:text-[20px]"
             text={t('heroMain.description')}
           />
 

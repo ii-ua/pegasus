@@ -70,7 +70,7 @@ export const BplaHero = () => {
         <motion.div variants={fadeUp} custom={1}>
           <SectionTitle
             title={`${t('systems.bpla.hero.title')}`}
-            className="text-left text-[32px] w-full"
+            className="text-left w-full break-words"
           />
         </motion.div>
 
@@ -109,22 +109,6 @@ export const BplaHero = () => {
         transition={{ duration: 0.6, ease: 'easeOut' }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <source
-          media="(max-width: 639px)"
-          srcSet="
-            /images/systems/bpla/m_bpla_specifications@1x.png 1x,
-            /images/systems/bpla/m_bpla_specifications@2x.png 2x
-          "
-        />
-
-        <source
-          media="(max-width: 1133px)"
-          srcSet="
-            /images/systems/bpla/t_bpla_specifications@1x.png 1x,
-            /images/systems/bpla/t_bpla_specifications@2x.png 2x
-          "
-        />
-
         <img
           src="/images/systems/bpla/d_bpla_specifications@1x.png"
           srcSet="/images/systems/bpla/d_bpla_specifications@2x.png 2x"
@@ -231,9 +215,9 @@ export const BplaHero = () => {
 
 const ArrowStat = ({ icon, text }: any) => (
   <StatCard
-    className="gap-0 pt-0 tablet:pt-0 desktop:pt-0"
+    className="gap-0 pt-0 tablet:pt-0"
     iconClassName="flex justify-center"
-    descriptionClassName="text-[14px] tablet:text-[12px] desktop:text-[14px]"
+    descriptionClassName="text-[14px] tablet:text-[12px] desktop:text-[14px] text-center"
     value={icon}
     description={text}
     highlight={false}

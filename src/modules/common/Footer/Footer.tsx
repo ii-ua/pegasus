@@ -7,8 +7,8 @@ import Email from '@/assets/icons/email.svg?react'
 import { SocialIcons } from '@/components/lists/SocialIcons/SocialIcons'
 
 const NAV_ITEMS = [
-  { label: 'aboutUs', href: '/about-us' },
   { label: 'systems', href: '/#systems' },
+  { label: 'aboutUs', href: '/about-us' },
   { label: 'career', href: '/career' },
   { label: 'blog', href: '/blog' },
   { label: 'contact', href: '/contacts' },
@@ -71,7 +71,7 @@ export const Footer = () => {
         <div className="flex flex-col justify-between gap-8">
           {/* Контакти: м'яка поява */}
           <motion.ul
-            className="text-[#FDFFFF] font-normal text-[16px] desktop:text-[20px] uppercase flex flex-col gap-4 tablet:gap-6"
+            className="text-[#FDFFFF] font-normal text-[16px] desktop:text-[20px] uppercase flex flex-col gap-6"
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}

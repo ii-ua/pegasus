@@ -47,7 +47,7 @@ export const OursSection = () => {
       <div className="w-full flex flex-col gap-[60px] ">
         {/* FIRST ROW */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-between items-end w-full"
+          className="flex flex-col sm:flex-row gap-4 justify-between w-full"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}

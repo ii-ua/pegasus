@@ -4,8 +4,6 @@ import {
   createRootRoute,
   redirect,
 } from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
 import '../common/localization/i18n'
 
 import Header from '../modules/common/Header/Header'

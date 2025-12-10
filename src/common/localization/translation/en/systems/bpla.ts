@@ -28,7 +28,7 @@ const bpla = {
     title: 'GOVERNMENT PLATFORMS',
     paragraphs: [
       'The Pegasus Arms 25 UAV / UAS is officially listed on the defence marketplace,',
-      'where military units can order it within the “Army of Drones Bonus” program using awarded E-Points. Delivery and accounting are managed via the DOT-chain Defence digital logistics system.',
+      'where military units can order it within the “Army of Drones Bonus” program using awarded E-Points. Delivery and accounting are managed via the DOT-chain Defence.',
     ],
     link: 'Brave1Market.',
   },

@@ -9,7 +9,7 @@ export const EcosystemSection = () => {
     <SectionContainer as="section" className="flex flex-col">
       <SectionTitle
         title={`${t('ecosystemAboutPegasus.title')}`}
-        className="text-left text-[42px] tablet:w-[800px]"
+        className="text-left tablet:w-[800px] break-words"
       />
       <ScrollTimeline
         items={t('ecosystemAboutPegasus.timeLine', { returnObjects: true })}

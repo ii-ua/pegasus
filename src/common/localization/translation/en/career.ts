@@ -2,7 +2,7 @@ const career = {
   hero: {
     title: 'Careers at PEGASUS ARMS',
     paragraphs: [
-      'Pegasus Arms is a fully integrated Ukrainian MILTECH company delivering strike UAVs to the Defence Forces.',
+      'Pegasus Arms is a fully integrated Ukrainian MILTECH company delivering strike UAVs to the Defense Forces of Ukraine.',
       'Join the team that brings Victory closer!',
     ],
     adventages: {
@@ -22,34 +22,34 @@ const career = {
   lookingFor: {
     title: 'we are looking for',
     paragraphs: [
-      'specialists who create, maintain, and improve Pegasus Arms strike UAVs. Choose the direction that fits you best.',
+      'specialists who create, maintain, and improve Pegasus Arms strike UAVs. Choose the career path that suits you best.',
       'Detailed job descriptions and working conditions are available on our partner job platforms — find the position that suits you.',
     ],
     cards: [
       {
         title: 'Engineering & Development',
         description:
-          'engineer, electrical engineer, programmer, tester, developer.',
+          'Engineer, Electrical engineer, Programmer, Tester, Developer',
         count: '11 positions',
         icon: 'engineering',
       },
       {
         title: 'Production',
-        description: 'assembler, technician, mechanic, test operator.',
+        description: 'Assembler, Technician, Mechanic, Test operator',
         count: '5 positions',
         icon: 'production',
       },
       {
         title: 'Service',
         description:
-          'service specialist, operator, UAV pilot, instructor, maintenance technician.',
+          'Service specialist, Operator, UAV pilot, Instructor, Maintenance technician',
         count: '4 positions',
         icon: 'service',
       },
       {
         title: 'Management',
         description:
-          'manager, accountant, financial specialist, economist, lawyer, HR, methodologist, assistant.',
+          'Manager, Accountant, Financial specialist, Economist, Lawyer, HR, Methodologist, Assistant',
         count: '10 positions',
         icon: 'management',
       },

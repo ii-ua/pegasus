@@ -20,13 +20,15 @@ export interface CareerCardProps {
 export const CareerCard = ({ item }: CareerCardProps) => {
   const { description, title, count, icon } = item
 
+  const descriptionList = description.split(', ')
+
   return (
     <motion.li
       initial={{ opacity: 0, y: 28, scale: 0.96 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.55, ease: 'easeOut' }}
-      className="p-4 desktop:p-6 flex gap-6 tablet:gap-4 w-full justify-between"
+      className="p-4 desktop:p-6 flex gap-4 tablet:gap-4 w-full justify-between"
       style={{
         border: '2px solid',
         borderImageSource:
@@ -35,13 +37,9 @@ export const CareerCard = ({ item }: CareerCardProps) => {
         borderRadius: '8px',
       }}
     >
-      <div className="flex flex-col gap-4 justify-between max-w-[229px] tablet:max-w-[138px]">
-        <Paragraph variant="light" text={title} />
-        <Paragraph variant="grey" text={description} />
-        <Paragraph variant="grey" text={count} />
-      </div>
-
-      <motion.div
+      <div className="w-full flex flex-col gap-4 justify-between">
+        <Paragraph variant="light" text={title} className='uppercase flex items-center justify-between'>
+                <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, amount: 0.4 }}
@@ -50,25 +48,39 @@ export const CareerCard = ({ item }: CareerCardProps) => {
         {icon === 'engineering' && (
           <Engineering
             preserveAspectRatio="none"
-            className="w-[72px] h-[72px]"
+            className="w-[56px] h-[54px] desktop:w-[72px] desktop:h-[72px]"
           />
         )}
         {icon === 'production' && (
           <Production
             preserveAspectRatio="none"
-            className="w-[72px] h-[72px]"
+            className="w-[56px] h-[54px] desktop:w-[72px] desktop:h-[72px]"
           />
         )}
         {icon === 'service' && (
-          <Service preserveAspectRatio="none" className="w-[72px] h-[72px]" />
+          <Service preserveAspectRatio="none" className="w-[56px] h-[54px] desktop:w-[72px] desktop:h-[72px]" />
         )}
         {icon === 'management' && (
           <Management
             preserveAspectRatio="none"
-            className="size-[72px] desktop:size-[100px]"
+            className="w-[56px] h-[54px] desktop:w-[72px] desktop:h-[72px]"
           />
         )}
       </motion.div>
+        </Paragraph>
+        <Paragraph variant="grey" className='tablet:h-[272px] desktop:h-[328px] border-gradient pt-4 desktop:pt-6 pb-4 desktop:pb-6'>
+          <ol className='list-disc pl-6 desktop:pl-8'>
+            {descriptionList.map(item => 
+              <li key={item} className=''>
+                {item}
+              </li>
+            )}
+          </ol>
+        </Paragraph>
+        <Paragraph variant="grey" text={count} className='text-[#FF6600]' />
+      </div>
+
+
     </motion.li>
   )
 }
