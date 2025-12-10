@@ -10,8 +10,19 @@ import { useRef } from 'react'
 import Bomb from '@/assets/icons/bomb.svg?react'
 
 export const BplaHero = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const imageRef = useRef(null)
+
+  const isUkr = i18n.language === 'uk';
+
+
+  const techCharImg1x = isUkr
+    ? '/images/systems/bpla/d_bpla_specifications_ua@1x.png'
+    : '/images/systems/bpla/d_bpla_specifications_en@1x.png';
+
+  const techCharImg2x = isUkr
+    ? '/images/systems/bpla/d_bpla_specifications_ua@2x.png'
+    : '/images/systems/bpla/d_bpla_specifications_en@2x.png';
 
   // ==== ПАРАЛАКС ДЛЯ КАРТИНКИ ====
   const { scrollYProgress } = useScroll({
@@ -110,8 +121,8 @@ export const BplaHero = () => {
         viewport={{ once: true, amount: 0.3 }}
       >
         <img
-          src="/images/systems/bpla/d_bpla_specifications@1x.png"
-          srcSet="/images/systems/bpla/d_bpla_specifications@2x.png 2x"
+          src={techCharImg1x}
+          srcSet={`${techCharImg1x} 1x, ${techCharImg2x} 2x`}
           alt="Bpla pegasus arms 25"
           loading="lazy"
           decoding="async"
