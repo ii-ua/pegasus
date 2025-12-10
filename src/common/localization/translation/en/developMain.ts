@@ -1,7 +1,7 @@
 const developMain = {
-  title: 'DEVELOP UKRAINE WITH US',
+  title: 'ADVANCE UKRAINIAN DEFENCE WITH US',
   description:
-    'We are looking for those who want to develop Ukrainian defense technologies, create innovative solutions for defenders, and drive our shared victory forward.',
+    'We are looking for those who are keen to develop Ukrainian defense technologies, crave  innovative solutions for defenders, and are ready to drive our shared Victory forward.',
   button: {
     team: 'JOIN THE TEAM',
     partner: 'BECOME A PARTNER',

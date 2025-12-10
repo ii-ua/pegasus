@@ -13,12 +13,12 @@ const oursAboutPegasus = {
     stability: {
       title: 'EW RESISTANCE',
       description:
-        'We design solutions capable of operating in the most challenging conditions.',
+        'We provide solutions able to operate under the most adverse conditions.',
     },
     locked: {
       title: 'CLOSED ECOSYSTEM',
       description:
-        'From R&D and manufacturing to UAV/UAS operator training and 24/7 technical support.',
+        'End-to-end solutions: from R&D and production to UAV/UAS operator training and 24/7 technical support.',
     },
   },
 }

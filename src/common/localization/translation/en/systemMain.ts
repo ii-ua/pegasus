@@ -1,10 +1,10 @@
 const systemMain = {
-  title: 'A SYSTEM THAT WORKS IN COMBAT',
+  title: 'A COMBAT-OPERATIONAL SYSTEM',
   description:
-    'We deliver the full lifecycle of UAV deployment — from development and integration into tactical missions to operator training and 24/7 technical support — ensuring stability on the battlefield.',
+    'We deliver the full cycle of fielding a combat-operational UAS – from development and integration into tactical missions to training drone operators and 24/7 technical support – to ensure operational stability on the battlefield.',
   cards: {
     education: {
-      title: 'OPERATOR TRAINING',
+      title: 'UAV operator training',
       description:
         'A comprehensive training course with drills based on real combat scenarios.',
     },

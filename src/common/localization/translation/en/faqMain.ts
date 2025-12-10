@@ -1,16 +1,16 @@
 const faqMain = {
-  title: 'FAQs',
+  title: 'FAQ',
   faqs: {
     aboutProduct: {
       title: '/ About the Product',
       questions: {
         q1: {
-          question: 'IS THE PEGASUS ARMS 25 DRONE CERTIFIED?',
+          question: 'IS THE PEGASUS ARMS UAV CERTIFIED?',
           answer:
-            'Yes. Pegasus Arms 25 is codified (approved for operation) by the Ministry of Defense of Ukraine and included in the official list of recommended UAVs. This allows procurement through state structures, volunteer funds, military units, city councils, and targeted programs.',
+            'Yes, it is. Pegasus Arms 25 is codified (approved for operation) by the Ministry of Defense of Ukraine and officially recognized as a recommended UAV. This allows procurement via government agencies, volunteer funds, military units, city councils, and allocated funds.',
         },
         q2: {
-          question: 'WHAT ARE THE MAIN SPECIFICATIONS OF THE DRONE?',
+          question: 'What are the key performance parameters of the drone?',
           answer: [
             'Payload capacity: up to 14 kg',
             'Flight duration: up to 45 minutes',
@@ -18,7 +18,7 @@ const faqMain = {
             'Maximum speed: up to 110 km/h',
             'EW resistance: FHSS (stable)',
             'Wind resistance: up to 20 m/s',
-            'Reusable system',
+            'Reusable',
           ],
         },
       },
@@ -34,7 +34,7 @@ const faqMain = {
         q2: {
           question: 'DOES THE COMPANY PROVIDE MAINTENANCE SERVICE?',
           answer:
-            'Yes. The company provides 24/7 service and technical support, as well as consultations, repairs, and software updates for 12 months. An essential condition is the availability of a certified UAV operator training certificate.',
+            'Yes, it does. The company provides 24/7 service and technical support, as well as consultations, repairs, and software updates for 12 months. An essential condition is the availability of  a UAV operator certificate issued after training completion.',
         },
       },
     },
@@ -44,12 +44,12 @@ const faqMain = {
         q1: {
           question: 'DOES THE COMPANY PROVIDE UAV OPERATOR TRAINING?',
           answer:
-            'Yes. As a manufacturer, we provide a full training cycle for UAV/UAS operators — from theory to practical flights. We also cooperate with partners authorized to train on Pegasus Arms 25 UAVs, including Territorial Defense Forces, separate Territorial Defense Brigades, and Ground Forces. Training is conducted by specialists with real combat experience.',
+            'Yes, it does. As a manufacturer, we provide a full training cycle for UAV/UAS operators – from the theoretical course to actual flights. We also cooperate with partners authorized to train cadets to use the Pegasus Arms 25 UAVs, including Territorial Defense Forces, separate Territorial Defense Brigades, and Ground Forces. Training is given by veterans who are field-experienced professionals.',
         },
         q2: {
-          question: 'WHERE ARE PEGASUS ARMS 25 DRONES ALREADY USED?',
+          question: 'WHERE HAVE THE PEGASUS ARMS 25 UAVS BEEN USED? ',
           answer:
-            'The drones are actively used by Defense Forces units along the entire front line. In total, more than 50 brigades use our UAVs daily on the front.',
+            'Our drones are made active use of by units of Defense Forces along the entire front line. In total, more than 50 combat brigades use our UAVs on a daily basis.',
         },
       },
     },
@@ -57,14 +57,14 @@ const faqMain = {
       title: '/ Orders and Support',
       questions: {
         q1: {
-          question: 'CAN A VOLUNTEER OR FUND ORDER A DRONE?',
+          question: 'Can you order a drone as a volunteer or a fund?',
           answer:
-            'Yes. We also sign direct contracts with military units and government administrations.',
+            'Yes, you can. We also sign direct contracts with military units and government administrations.',
         },
         q2: {
           question: 'HOW CAN I GET A CONSULTATION WITH A SPECIALIST?',
           answer:
-            'Fill out the form on the website or send a request to the official company email p.info@pegasusarms.com.',
+            'Fill out the form on the website or send your inquiry to the company’s official email p.info@pegasusarms.com.',
         },
       },
     },

@@ -9,7 +9,7 @@ const career = {
       title: 'OUR BENEFITS:',
       items: [
         'Official employment',
-        'Employee reservation (military deferment)',
+        'Deferral of employees from military service',
         'Competitive salary',
         'Comfortable working environment',
         'Training and professional support',
@@ -29,28 +29,28 @@ const career = {
       {
         title: 'Engineering & Development',
         description:
-          'Engineer, Electrical engineer, Programmer, Tester, Developer',
-        count: '11 positions',
+          'Engineer, Electrical engineer, Software developer, Tester, Imbedded software developer',
+        count: '11 job vacancies',
         icon: 'engineering',
       },
       {
         title: 'Production',
         description: 'Assembler, Technician, Mechanic, Test operator',
-        count: '5 positions',
+        count: '5 job vacancies',
         icon: 'production',
       },
       {
         title: 'Service',
         description:
           'Service specialist, Operator, UAV pilot, Instructor, Maintenance technician',
-        count: '4 positions',
+        count: '4 job vacancies',
         icon: 'service',
       },
       {
         title: 'Management',
         description:
-          'Manager, Accountant, Financial specialist, Economist, Lawyer, HR, Methodologist, Assistant',
-        count: '10 positions',
+          'Manager, Accountant, Financial specialist, Economist, Lawyer, HR, Ed. supervisor, Assistant',
+        count: '10 job vacancies',
         icon: 'management',
       },
     ],

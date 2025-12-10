@@ -2,21 +2,21 @@ const education = {
   hero: {
     title: 'Pegasus Arms 25 UAV Operator Training Center',
     description:
-      'A place where we train those who change the course of war. We build a team of next-generation unmanned system operators. Our graduates are not just pilots — they are combat specialists capable of operating effectively in the most demanding conditions.',
+      'The place where we train those who change the course of war. We build a team of pilots who can operate advanced-generation UAVs. Our graduates are not just pilots – they are battle-proven specialists able to perform effectively in the toughest environments.',
   },
   offer: {
     title: 'What we offer',
     paragraphs: [
-      '3-week intensive course led by instructors with real combat experience.',
-      'The program combines theory, practical training, and exercises in conditions closely simulating the battlefield.',
+      'Three weeks of intensive course run by battle-proven instructors.',
+      'The program combines a theoretical course and hands-on training in highly realistic, combat-like conditions.',
     ],
     items: [
       '48 academic hours of theory and practice',
       '48 hours of flight training',
       'Operation of the PEGASUS ARMS 25 strike UAS with various combat payload configurations',
-      'Execution of combat missions and operations in harsh weather conditions',
-      'Counter-drone tactics and employment of EW/EPD and anti-drone measures',
-      'Comprehensive examination (theory + qualifying flight)',
+      'Accomplishment of battlefield missions and work in harsh weather conditions',
+      'Counter-UAS operations and employment of EW/ES and counter-UAS assets',
+      'Comprehensive examination (theory + test flight)',
       'Certificate authorizing combat use of Pegasus Arms 25',
     ],
   },

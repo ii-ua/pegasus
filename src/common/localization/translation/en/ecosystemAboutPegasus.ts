@@ -14,12 +14,12 @@ const ecosystemAboutPegasus = {
     {
       title: 'UAV/UAS OPERATOR TRAINING',
       description:
-        'A full training course from scratch or retraining for experienced UAV/UAS specialists of Pegasus Arms 25.',
+        'A full training course from scratch or retraining for experienced UAV/UAS specialists operating Pegasus Arms 25.',
     },
     {
       title: 'COMBAT PROVEN',
       description:
-        'Pegasus Arms 25 is a strike drone that operates on the frontlines and has real combat experience.',
+        'Pegasus Arms 25 is a strike drone that is constantly operating on the frontlines and has got the real combat experience.',
     },
   ],
 }

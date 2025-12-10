@@ -5,8 +5,8 @@ const bpla = {
     description:
       'PEGASUS ARMS 25 is a next-generation Ukrainian strike quadcopter. Combat-tested, highly resistant to EW, with stable radio communication and telemetry. Co-designed by engineers and military specialists, the drone was officially approved for use by a Ministry of Defence order in January 2024. It is equipped with adaptive electronics and an autonomous return-to-base system in case of signal loss.',
     paragraphs: [
-      'The primary mission of Pegasus Arms 25 is striking enemy armor, vehicles, and manpower. Additionally, the UAV is used to neutralize engineering structures, perform remote mining, and support logistics. Delivering equipment, ammunition, medical supplies, food — all of this is within the capability of Pegasus Arms 25.',
-      'Its modular architecture supports a wide range of payload options:',
+      'The primary mission of Pegasus Arms 25 is striking enemy armor, vehicles, and manpower. Besides, the UAV is used to neutralize engineering structures, perform remote mining, and do logistics. Pegasus Arms 25 is a versatile aerial vehicle that can do a lot of things. It can deliver equipment, ammunition, medical supplies, food, etc. You name it, Pegasus Arms 25  can do it!',
+      'Modular architecture of Pegasus Arms 25 supports a wide range of its payload options:',
     ],
     cards: [
       'Anti-tank mines',
@@ -19,8 +19,8 @@ const bpla = {
   results: {
     title: 'COMBAT PERFORMANCE',
     paragraphs: [
-      'In February 2024, the Pegasus Arms 25 strike UAV was used to destroy a Russian TOS-1A “Solntsepyok” heavy flamethrower system. But this was far from its only successful mission. Pegasus Arms 25 has proven its effectiveness in more than 1000 successfully completed combat tasks.',
-      'Pegasus Arms 25 is a Ukrainian-developed combat drone, field-tested at the frontline. It features stable communication, EW resistance, and operational autonomy, adapting to the needs of individual units. Over 50 brigades of the Defence Forces rely on it to destroy enemy equipment, fortifications, and manpower — enhancing battlefield effectiveness.',
+      'In February 2024, the Pegasus Arms 25 strike UAV was used to destroy a Russian TOS-1A “Solntsepyok” heavy flamethrower system. But this wasn’t the only mission this combat bird nailed. Pegasus Arms 25 has proven its effectiveness in more than 1000 successfully completed combat missions.',
+      'Pegasus Arms 25 is a combat drone developed in Ukraine and field-tested at the frontline. Able to adapt to the needs of individual units, it features stable communication, EW resistance, and operational autonomy. Over 50 brigades of the Defence Forces rely on this UAV to destroy enemy equipment, fortifications, and manpower thus enhancing battlefield effectiveness.',
     ],
   },
 
