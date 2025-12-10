@@ -27,6 +27,7 @@ body {
   font-family: 'Manrope', sans-serif;
   font-style: normal;
   font-optical-sizing: auto;
+  zoom: 0.9; /* 90% */
 }
 
 main {
@@ -423,6 +424,11 @@ main {
 .border-gradient {
   border-top: 1px solid;
   border-bottom: 1px solid;
-  border-image-source: linear-gradient(90deg, rgba(90, 90, 90, 0.4) 0%, #FFFFFF 49.98%, rgba(90, 90, 90, 0.4) 100%);
+  border-image-source: linear-gradient(
+    90deg,
+    rgba(90, 90, 90, 0.4) 0%,
+    #ffffff 49.98%,
+    rgba(90, 90, 90, 0.4) 100%
+  );
   border-image-slice: 1;
 }

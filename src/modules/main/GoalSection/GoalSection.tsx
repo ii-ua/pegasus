@@ -44,7 +44,7 @@ export const GoalSection = () => {
 
       {/* нижній блок: картки з різним рухом */}
       <motion.div
-        className="flex gap-4 tablet:gap-0 flex-col items-center lg:flex-row justify-between"
+        className="flex gap-4 tablet:gap-6 justify-center flex-col items-center lg:flex-row"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
