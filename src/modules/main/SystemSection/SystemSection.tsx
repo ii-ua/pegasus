@@ -32,7 +32,7 @@ export const SystemSection = ({ id }: { id?: string }) => {
       </motion.div>
 
       <motion.div
-        className="flex justify-between gap-4 flex-col items-center md:flex-row"
+        className="flex gap-4 tablet:gap-6 flex-col justify-center items-center md:flex-row"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
