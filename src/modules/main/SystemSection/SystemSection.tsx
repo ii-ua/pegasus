@@ -38,7 +38,6 @@ export const SystemSection = ({ id }: { id?: string }) => {
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
       >
-        <div className="flex gap-4 tablet:gap-6 flex-col md:flex-row items-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +67,6 @@ export const SystemSection = ({ id }: { id?: string }) => {
               href="systems/bpak"
             />
           </motion.div>
-        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}

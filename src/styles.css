@@ -140,7 +140,7 @@ main {
   content: '';
   position: absolute;
   top: 50%;
-  right: -110px;
+  right: -168px;
   transform: translateY(-50%);
   width: 325px;
   height: 325px;
@@ -151,7 +151,11 @@ main {
   @media (min-width: 1133px) {
     width: 356px;
     height: 356px;
-    right: -118px;
+    right: -180px;
+  }
+
+  @media (min-width: 1440px) {
+    right: -270px;
   }
   opacity: 1;
   pointer-events: none;

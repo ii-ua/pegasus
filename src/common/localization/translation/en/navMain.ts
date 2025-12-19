@@ -1,5 +1,5 @@
 const navMain = {
-  systems: 'Systems',
+  systems: 'Solutions',
   aboutUs: 'About Us',
   blog: 'Blog',
   career: 'Career',

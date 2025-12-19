@@ -1,5 +1,5 @@
 const formSection = {
-  title: 'Got questions? Glad to help.',
+  title: 'Got questions? Glad to help',
   description:
     'Fill out the form below to learn more about our product, get a consultation, or discuss a partnership.',
   form: {

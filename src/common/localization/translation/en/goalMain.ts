@@ -6,16 +6,16 @@ const goalMain = {
   ],
   cards: {
     bpla: {
-      title: '1000',
-      description: 'UAVs have been performing combat missions',
+      title: '1500',
+      description: 'UAVs carry out combat missions',
     },
     defence: {
       title: '15M',
-      description: 'Value of the highest-value target destroyed by our drone',
+      description: 'Cost of the most expensive destroyed target',
     },
     team: {
-      title: '50',
-      description: 'Brigades are using our technological solutions',
+      title: '100',
+      description: 'Units work with us',
     },
   },
 }

@@ -21,17 +21,17 @@ export const StatCard = ({
   descriptionClassName,
 }: StatCardProps) => {
   return (
-    <div className=" relative h-fit max-w-[430px]">
+    <div className=" relative h-fit max-w-[430px] tablet:max-w-[255px] desktop:max-w-[321px]">
       <CutCard className="w-full h-full" />
       <div
         className={cn(
-          'absolute inset-0 flex flex-col p-4 tablet:p-6  desktop:p-4 gap-3.5 justify-between sm:justify-start',
+          'absolute inset-0 flex flex-col p-4 gap-3.5 justify-between sm:justify-start',
           className,
         )}
       >
         <span
           className={cn(
-            'font-[Namu] font-bold text-[60px]  sm:text-[42px] desktop:text-[60px] text-[#FDFFFF] w-full text-center uppercase',
+            'font-[Namu] font-bold text-[64px]  tablet:text-[42px] desktop:text-[64px] text-[#FDFFFF] w-full text-center uppercase',
             iconClassName,
           )}
         >
@@ -40,7 +40,7 @@ export const StatCard = ({
         </span>
         <p
           className={cn(
-            'text-[#D9D9D9] font-normal text-[14px] uppercase',
+            'text-[#D9D9D9] font-normal uppercase text-center',
             descriptionClassName,
           )}
         >

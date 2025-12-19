@@ -6,16 +6,16 @@ const goalMain = {
   ],
   cards: {
     bpla: {
-      title: '1000',
-      description: 'БПЛА Уже виконують бойові завдання',
+      title: '1500',
+      description: 'БПЛА виконують бойові завдання',
     },
     defence: {
       title: '15 млн',
-      description: 'Вартість найбільшої цілі, яку знищив дрон',
+      description: 'Вартість найдорожчої знищеної цілі',
     },
     team: {
-      title: '50',
-      description: 'Бригад Працюють з нашими технологіями',
+      title: '100',
+      description: 'Підрозділів працюють з нами',
     },
   },
 }
