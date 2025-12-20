@@ -1,5 +1,7 @@
 import FormRectangle from '@/assets/shapes/form-rectangle.svg?react'
 import MFormRectangle from '@/assets/shapes/m-form-rectangle.svg?react'
+import VacancyRectangle from '@/assets/shapes/vacancy-rectangle.svg?react'
+import MVacancyRectangle from '@/assets/shapes/m-vacancy-rectangle.svg?react'
 import { Form } from 'radix-ui'
 import { useTranslation } from 'react-i18next'
 import { FormLabel } from '../FormLabel'
@@ -9,11 +11,14 @@ import { FormWrapper } from '../FormWrapper'
 import { FormTextarea } from '../FormTextarea'
 import { ButtonPrimary } from '@/components/buttons/ButtonPrimary'
 import { motion } from 'motion/react'
+import FormSelect from '../FormSelect'
+import { JOB_OPTIONS } from '@/common/constants/jobs'
+import FileUploadField from '../FormFileUploadField'
 
-const errorMessagesStyle =
+export const errorMessagesStyle =
   'text-[#FF6600] text-[12px] tablet:text-[14px] desktop:text-[16px] font-normal'
 
-export const FormComponent = () => {
+export const FormComponent = ({summary = false}: Readonly<{summary?: boolean}>) => {
   const { t } = useTranslation()
   return (
     <motion.div
@@ -30,14 +35,29 @@ export const FormComponent = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.2, ease: 'easeOut', delay: 0.1 }}
       >
-        <FormRectangle
-          className="w-full h-full bg-none hidden tablet:block"
-          preserveAspectRatio="none"
-        />
-        <MFormRectangle
-          className="block w-full h-full bg-none tablet:hidden"
-          preserveAspectRatio="none"
-        />
+        {summary ? (
+        <>
+          <VacancyRectangle
+            className="w-full h-full bg-none hidden tablet:block"
+            preserveAspectRatio="none"
+          />
+          <MVacancyRectangle
+            className="block w-full h-full bg-none tablet:hidden"
+            preserveAspectRatio="none"
+          />
+        </>
+      ) : (
+        <>
+          <FormRectangle
+            className="w-full h-full bg-none hidden tablet:block"
+            preserveAspectRatio="none"
+          />
+          <MFormRectangle
+            className="block w-full h-full bg-none tablet:hidden"
+            preserveAspectRatio="none"
+          />
+        </>
+      )}
       </motion.span>
 
       <motion.h3
@@ -46,7 +66,7 @@ export const FormComponent = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        {t('formSection.form.title')}
+        {summary ? t('career.form.title') : t('formSection.form.title')}
       </motion.h3>
 
       <Form.Root
@@ -87,22 +107,35 @@ export const FormComponent = () => {
               </div>
             </FormField>
             <FormField name="lastName">
-              <FormLabel>
+              <FormLabel isRequired={summary}>
                 {t('formSection.form.inputs.lastName.label')}
               </FormLabel>
-
-              <FormInput
-                type="text"
-                required
-                asChild
-                placeholder={t('formSection.form.inputs.lastName.placeholder')}
-              />
+              <div className="flex flex-col gap-3.5 w-full">
+                <FormInput
+                  type="text"
+                  required={summary}
+                  asChild
+                  placeholder={t('formSection.form.inputs.lastName.placeholder')}
+                />
+                <Form.Message
+                  match="valueMissing"
+                  className={errorMessagesStyle}
+                >
+                  {t('formSection.form.validations.lastName.valueMissing')}
+                </Form.Message>
+                <Form.Message
+                  match="typeMismatch"
+                  className={errorMessagesStyle}
+                >
+                  {t('formSection.form.validations.lastName.typeMismatch')}
+                </Form.Message>
+              </div>
             </FormField>
           </FormWrapper>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
@@ -133,13 +166,13 @@ export const FormComponent = () => {
               </div>
             </FormField>
             <FormField name="tel">
-              <FormLabel isRequired>
+              <FormLabel isRequired={!summary}>
                 {t('formSection.form.inputs.tel.label')}
               </FormLabel>
               <div className="flex flex-col gap-3.5 w-full">
                 <FormInput
                   type="tel"
-                  required
+                  required={!summary}
                   asChild
                   placeholder={t('formSection.form.inputs.tel.placeholder')}
                 />
@@ -160,10 +193,33 @@ export const FormComponent = () => {
           </FormWrapper>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+        {summary && <motion.div
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <FormWrapper>
+            <FormField name="vacancy">
+              <FormLabel isRequired>
+                {t('career.form.inputs.vacancy.label')}
+              </FormLabel>
+                <FormSelect
+                  name="vacancy"
+                  required
+                  placeholder={t('career.form.inputs.vacancy.placeholder')}
+                  options={JOB_OPTIONS.map(opt => ({
+                      label: t(opt.labelKey),
+                      value: opt.value,
+                    }))}
+                />
+            </FormField>
+          </FormWrapper>
+        </motion.div>}
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
         >
           <FormField name="message">
             <FormLabel isRequired>
@@ -172,7 +228,7 @@ export const FormComponent = () => {
             <div className="flex flex-col gap-3.5 w-full">
               <FormTextarea
                 required
-                placeholder={t('formSection.form.inputs.message.placeholder')}
+                placeholder={summary ? t('career.form.inputs.message.placeholder') : t('formSection.form.inputs.message.placeholder')}
               />
               <Form.Message match="valueMissing" className={errorMessagesStyle}>
                 {t('formSection.form.validations.message.valueMissing')}
@@ -184,17 +240,36 @@ export const FormComponent = () => {
           </FormField>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
+        {summary && <motion.div
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.7, delay: 0.6 }}
+        >
+          <FormWrapper>
+            <FormField name="summary">
+              <FormLabel isRequired>
+                {t('career.form.inputs.summary.label')}
+              </FormLabel>
+
+              <FileUploadField />
+              
+            </FormField>
+          </FormWrapper>
+        </motion.div>}
+
+        <motion.div
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
         >
           <Form.Submit asChild>
             <div className="flex justify-center">
-              <ButtonPrimary>{t('formSection.form.button')}</ButtonPrimary>
+              <ButtonPrimary>{summary ? t('career.form.button') : t('formSection.form.button')}</ButtonPrimary>
             </div>
           </Form.Submit>
         </motion.div>
+
+        
       </Form.Root>
     </motion.div>
   )

@@ -19,9 +19,9 @@ const bpla = {
   results: {
     title: 'COMBAT PERFORMANCE',
     paragraphs: [
-      'In February 2024, the Pegasus Arms 25 strike UAV was used to destroy a Russian TOS-1A “Solntsepyok” heavy flamethrower system. But this wasn’t the only mission this combat bird nailed. Pegasus Arms 25 has proven its effectiveness in more than 1000 successfully completed combat missions.',
-      'Pegasus Arms 25 is a combat drone developed in Ukraine and field-tested at the frontline. Able to adapt to the needs of individual units, it features stable communication, EW resistance, and operational autonomy. Over 50 brigades of the Defence Forces rely on this UAV to destroy enemy equipment, fortifications, and manpower thus enhancing battlefield effectiveness.',
-    ],
+    'In February 2024, the Pegasus Arms 25 strike UAV was used to destroy a Russian TOS-1A “Solntsepyok” heavy flamethrower system. But this was only the beginning of this combat bird’s successful missions. Pegasus Arms 25 has proven its effectiveness in more than one hundred thousand successfully completed missions.',
+    'Pegasus Arms 25 is a combat drone developed in Ukraine and field-tested at the frontline. Able to adapt to the needs of individual units, it features stable communication, EW resistance, and operational autonomy. More than 100 units of the Defence Forces use it to strike enemy equipment, fortifications, and manpower, increasing overall battlefield effectiveness.',
+  ],
   },
 
   integration: {

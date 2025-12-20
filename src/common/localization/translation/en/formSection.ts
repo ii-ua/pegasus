@@ -30,8 +30,8 @@ const formSection = {
         placeholder: '+380 __ ___ __ __',
       },
       message: {
-        label: 'What would you like to know?',
-        placeholder: '',
+        label: 'Comment',
+        placeholder: 'What would you like to know?',
       },
     },
     validations: {

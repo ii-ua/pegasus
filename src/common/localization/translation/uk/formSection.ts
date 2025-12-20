@@ -31,7 +31,7 @@ const formSection = {
       },
       message: {
         label: 'Коментар',
-        placeholder: 'Щоб ви хотіли дізнатись?',
+        placeholder: 'Що б ви хотіли дізнатись?',
       },
     },
     validations: {

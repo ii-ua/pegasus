@@ -1,9 +1,9 @@
 const career = {
   hero: {
-    title: 'Careers at PEGASUS ARMS',
+    title: 'Your career starts here',
     paragraphs: [
       'Pegasus Arms is a fully integrated Ukrainian MILTECH company delivering strike UAVs to the Defense Forces of Ukraine.',
-      'Join the team that brings Victory closer!',
+      'Fill out the form and join the team that brings Victory closer!',
     ],
     adventages: {
       title: 'OUR BENEFITS:',
@@ -67,6 +67,49 @@ const career = {
         text: 'or call us:',
         link: '+380 (75) 444 55 83',
       },
+    },
+  },
+
+  form: {
+    title: '/ APPLY FOR A POSITION',
+    inputs: {
+      vacancy: {
+        label: 'Position',
+        placeholder: 'Select a position',
+      },
+      message: {
+        label: 'Comment',
+        placeholder: 'Tell us about your experience',
+      },
+      summary: {
+        label: 'Resume',
+        placeholder: 'Upload a file',
+        placeholder2: '(PDF or DOCX, up to 10 MB)'
+      }
+    },
+    validations: {
+      vacancy: {
+        valueMissing: 'Please select a position',
+      },
+      message: {
+        valueMissing: 'Please enter your message',
+        typeMismatch: 'Please provide a valid message',
+      },
+      summary: {
+        valueMissing: 'Please upload a file',
+        sizeExceeded: "The file size must not exceed 10 MB"
+      },
+    },
+    button: 'Submit application',
+    jobs: {
+      pilotTester: 'Pilot Tester',
+      pilotInstructor: 'Pilot Instructor',
+      arduplaneEngineer: 'ArduPlane Engineer',
+      embeddedArdu: 'Embedded ArduCopter Engineer',
+      uavRepair: 'UAV Repair Engineers',
+      financeManager: 'Finance Manager (Loans/Grants)',
+      assembler: 'UAV Assemblers',
+      soldering: 'Soldering Specialists',
     },
   },
 }

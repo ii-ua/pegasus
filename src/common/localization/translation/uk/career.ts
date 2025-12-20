@@ -1,9 +1,9 @@
 const career = {
   hero: {
-    title: 'Вакансії в PEGASUS arms',
+    title: 'Твоя карʼєра тут',
     paragraphs: [
       'Pegasus arms — це українська miltech-компанія замкнутого циклу, яка постачає для Сил оборони України ударні БПЛА',
-      'Ставай частиною команди, яка працює на Перемогу!',
+      'Заповнюй форму та ставай частиною команди, яка працює на Перемогу!',
     ],
     adventages: {
       title: 'Наші переваги:',
@@ -67,5 +67,47 @@ const career = {
       },
     },
   },
+  form: {
+    title: '/ ПОДАТИСЯ НА ВАКАНСІЮ',
+    inputs: {
+      vacancy: {
+        label: 'Вакансія',
+        placeholder: 'Виберіть вакансію',
+      },
+      message: {
+        label: 'Коментар',
+        placeholder: 'Розкажіть нам про ваш досвід',
+      },
+      summary: {
+        label: 'Резюме',
+        placeholder: 'Завантажити файл',
+        placeholder2: '(PDF або DOCX, до  10 MB)'
+      }
+    },
+    button: 'Подати заявку',
+    jobs: {
+      pilotTester: 'Пілот-тестувальник',
+      pilotInstructor: 'Пілот-інструктор',
+      arduplaneEngineer: 'ArduPlane Engineer',
+      embeddedArdu: 'Embedded-інженер з ArduCopter',
+      uavRepair: 'Інженери з ремонту БПЛА',
+      financeManager: 'Фінансовий менеджер (кредитування/гранти)',
+      assembler: 'Збиральники БПЛА',
+      soldering: 'Пайщики',
+    },
+    validations: {
+      vacancy: {
+        valueMissing: 'Оберіть вакансію',
+      },
+      message: {
+        valueMissing: 'Введіть ваше повідомлення',
+        typeMismatch: 'Введіть коректне повідомлення',
+      },
+      summary: {
+        valueMissing: 'Завантажте файл',
+        sizeExceeded: 'Розмір файлу не повинен перевищувати 10 MB'
+      },
+    },
+  }
 }
 export default career

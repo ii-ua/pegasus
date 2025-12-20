@@ -20,17 +20,17 @@ export const CareersHero = () => {
     }),
   }
 
-  const imageReveal = {
-    visible: {
-      clipPath: 'inset(0 0 0 0)',
-      transition: { duration: 0.65, ease: 'easeOut' },
-    },
-  }
+  // const imageReveal = {
+  //   visible: {
+  //     clipPath: 'inset(0 0 0 0)',
+  //     transition: { duration: 0.65, ease: 'easeOut' },
+  //   },
+  // }
 
   return (
     <SectionContainer
       as="section"
-      className="flex pt-[106px] tablet:pt-[122px] desktop:pt-[170px] flex-col justify-center items-left gap-[54px] tablet:gap-[64px] desktop:gap-6"
+      className="flex pt-[106px] tablet:pt-[122px] desktop:pt-[170px] flex-col justify-center items-left gap-[54px] tablet:gap-[64px] desktop:gap-6 pb-0 tablet:pb-0 desktop:pb-0"
     >
       {/* TEXT BLOCK */}
       <motion.div
@@ -54,12 +54,8 @@ export const CareersHero = () => {
           />
         </motion.div>
 
-        <motion.div variants={fadeUp} custom={2}>
-          <Paragraph variant="grey" text={t('career.hero.paragraphs.0')} />
-        </motion.div>
-
         <motion.div variants={fadeUp} custom={3}>
-          <Paragraph variant="light" text={t('career.hero.adventages.title')} />
+          <Paragraph className='uppercase' variant="light" text={t('career.hero.adventages.title')} />
         </motion.div>
 
         <motion.div variants={fadeUp} custom={4}>
@@ -78,7 +74,7 @@ export const CareersHero = () => {
       </motion.div>
 
       {/* IMAGE REVEAL */}
-      <motion.div
+      {/* <motion.div
         className="w-full"
         initial="hidden"
         whileInView="visible"
@@ -93,7 +89,7 @@ export const CareersHero = () => {
           loading="lazy"
           decoding="async"
         />
-      </motion.div>
+      </motion.div> */}
     </SectionContainer>
   )
 }

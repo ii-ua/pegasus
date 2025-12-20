@@ -1,6 +1,6 @@
 const bpak = {
   hero: {
-    title: 'BPAK PEGASUS ARMS 25 — a reliable solution for combat missions',
+    title: 'UAS PEGASUS ARMS 25 — a reliable solution for combat missions',
     paragraphs: [
       'The Pegasus Arms 25 UAS is an unmanned aviation system engineered by Ukrainian specialists to meet the modern challenges of the battlefield. The system combines high strike effectiveness, strong EW resistance, and adaptability to tasks of varying complexity.',
       'With the Pegasus Arms 25 UAS, units gain an autonomous tool for striking enemy equipment, manpower, and engineering structures without exposing personnel to direct danger. It is a solution that saves lives, shortens mission execution time, and enables independent operation — day or night, in simple or complex weather conditions, with autonomous return-to-base and EW resilience.',
