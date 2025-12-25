@@ -9,6 +9,7 @@ import netlify from '@netlify/vite-plugin-tanstack-start'
 const config = defineConfig({
   server: {
     preset: 'netlify',
+    host: true,
   },
   plugins: [
     // this is the plugin that enables path aliases

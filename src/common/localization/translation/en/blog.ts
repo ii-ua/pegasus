@@ -1,7 +1,28 @@
 const blog = {
   title: 'PEGASUS ARMS Blog',
   socLinks: 'we are on social media',
-
+  articleZero: {
+    date: '25.12.2025',
+    title: 'A trained crew means effective sorties: how Pegasus Arms 25 drone operators are prepared',
+    paragraphs: [
+      'Learning to fly a drone isn’t difficult. What’s difficult is learning to fly in a way that ensures the number of takeoffs equals the number of landings—and that every sortie delivers results. That’s exactly what trainees are taught at NCVT MIST, a private training center that prepares pilots for heavy bomber drones such as the Pegasus Arms 25.',
+      'Becoming a certified heavy-drone pilot takes three weeks. During this time, the crew completes a comprehensive training program that includes:',
+      ],
+    lists: {
+      items: [
+        '▪️ 48 academic hours of theory and practical training;',
+        '▪️ 48 hours of flight training;',
+        '▪️ operating PEGASUS ARMS 25 strike UAVs with various types of payloads;',
+        '▪️ executing combat missions and operating in challenging weather conditions;',
+        '▪️ countering enemy drones and employing EW/ELINT and anti-drone systems.',
+      ],
+    },
+    links: {
+      title:
+        'Journalists from the ICTV “Fakty” program covered the training process in the following report:',
+      link: 'https://youtu.be/rm4wzWsdpsw?si=QqyU4k270yRlA02S',
+    },
+  },
   articleOne: {
     date: '23.10.2025',
     title: 'EVERY SCREW MATTERS. AND SO DO YOU - AT PEGASUS ARMS.',
@@ -14,7 +35,7 @@ const blog = {
       title: 'OUR BENEFITS:',
       items: [
         '▪️ Official employment',
-        '▪️ Employee military reservation (бронювання)',
+        '▪️ Deferral of employees from military service',
         '▪️ Competitive salary',
         '▪️ Comfortable working conditions',
         '▪️ Training and support',
@@ -33,7 +54,7 @@ const blog = {
     date: '23.10.2025',
     title: 'Why is the Pegasus Arms 25 EW resistant?',
     paragraphs: [
-      '”YOUR DRONE WILL BE GROUNDED BY THE FIRST EW SYSTEM!”, say those who only saw UAVs on social media and confuse Pegasus Arms 25 with other drones.',
+      '”YOUR DRONE WILL BE GROUNDED BY THE FIRST EW SYSTEM!”, say those who saw UAVs only on social media and confuse Pegasus Arms 25 with other drones.',
       'Actually, that’s not true.',
       'The operator does not lose control and our drone doesn’t “fall into a corn field” when exposed to EW.',
       'Why is the Pegasus Arms 25 EW resistant?',

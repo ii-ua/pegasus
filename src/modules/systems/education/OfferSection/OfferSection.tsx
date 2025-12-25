@@ -1,5 +1,5 @@
 import { ParagraphsList } from '@/components/lists/ParagraphsList'
-import { Paragraph, SectionTitle } from '@/components/text'
+import { Paragraph, SectionTitle, SubTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import SectionContainer from '@/components/container/SectionContainer'
@@ -29,9 +29,13 @@ export const OfferSection = () => {
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.div variants={fadeUp} custom={0} className="w-full flex-2">
+          <SubTitle
+            title={t('systems.education.offer.title')}
+            className="text-left font-bold w-full block tablet:hidden"
+          />
           <SectionTitle
             title={t('systems.education.offer.title')}
-            className="text-left w-full flex-2 break-words"
+            className="text-left w-full hidden tablet:block"
           />
         </motion.div>
 

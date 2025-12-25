@@ -1,28 +1,37 @@
 import { StatCard } from '@/components/cards'
 import SectionContainer from '@/components/container/SectionContainer'
-import { Paragraph, SectionTitle } from '@/components/text'
+import { Paragraph, SectionTitle, SubTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import Mina from '@/assets/icons/mina.svg?react'
 import Munitions from '@/assets/icons/munitions.svg?react'
 import Delivery from '@/assets/icons/delivery.svg?react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Bomb from '@/assets/icons/bomb.svg?react'
 
 export const BplaHero = () => {
   const { t, i18n } = useTranslation()
   const imageRef = useRef(null)
+  const [techChar, setTechChar] = useState({
+    '1x': "/images/systems/bpla/d_bpla_specifications_en@1x.png",
+    '2x': '/images/systems/bpla/d_bpla_specifications_en@2x.png'
+  });
 
   const isUkr = i18n.language === 'uk';
 
-
-  const techCharImg1x = isUkr
-    ? '/images/systems/bpla/d_bpla_specifications_ua@1x.png'
-    : '/images/systems/bpla/d_bpla_specifications_en@1x.png';
-
-  const techCharImg2x = isUkr
-    ? '/images/systems/bpla/d_bpla_specifications_ua@2x.png'
-    : '/images/systems/bpla/d_bpla_specifications_en@2x.png';
+  useEffect(() => {
+    if (isUkr) {
+      setTechChar({
+        '1x': "/images/systems/bpla/d_bpla_specifications_ua@1x.png",
+        '2x': '/images/systems/bpla/d_bpla_specifications_ua@2x.png'
+      })
+    } else {
+      setTechChar({
+        '1x': "/images/systems/bpla/d_bpla_specifications_en@1x.png",
+        '2x': '/images/systems/bpla/d_bpla_specifications_en@2x.png'
+      })
+    }
+  }, [isUkr])
 
   // ==== ПАРАЛАКС ДЛЯ КАРТИНКИ ====
   const { scrollYProgress } = useScroll({
@@ -79,9 +88,13 @@ export const BplaHero = () => {
         </motion.div>
 
         <motion.div variants={fadeUp} custom={1}>
+          <SubTitle
+            title={`${t('systems.bpla.hero.title')}`}
+            className="text-left font-bold w-full block tablet:hidden"
+          />
           <SectionTitle
             title={`${t('systems.bpla.hero.title')}`}
-            className="text-left w-full break-words"
+            className="text-left w-full hidden tablet:block"
           />
         </motion.div>
 
@@ -121,8 +134,8 @@ export const BplaHero = () => {
         viewport={{ once: true, amount: 0.3 }}
       >
         <img
-          src={techCharImg1x}
-          srcSet={`${techCharImg1x} 1x, ${techCharImg2x} 2x`}
+          src={techChar['1x']}
+          srcSet={`${techChar['1x']} 1x, ${techChar['2x']} 2x`}
           alt="Bpla pegasus arms 25"
           loading="lazy"
           decoding="async"

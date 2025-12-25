@@ -10,7 +10,7 @@ const goalMain = {
       description: 'БПЛА виконують бойові завдання',
     },
     defence: {
-      title: '15 млн',
+      title: '15М',
       description: 'Вартість найдорожчої знищеної цілі',
     },
     team: {
