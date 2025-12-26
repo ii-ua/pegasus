@@ -2,7 +2,7 @@ name: Auto Deploy to aaPanel
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 jobs:
   deploy:
