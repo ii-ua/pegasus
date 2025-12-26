@@ -15,7 +15,7 @@ jobs:
       - name: Deploy to aaPanel
         uses: tunnaduong/aapanel-deploy-action@main
         with:
-          panel_url: https://panel.ii-softlab.pp.ua
+          panel_url: https://panel.ii-softlab.pp.ua:13282
           webhook_key: ${{ secrets.AAPANEL_WEBHOOK_KEY }}
           ntfy_topic: your-ntfy-topic
         env:
