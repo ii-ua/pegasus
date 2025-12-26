@@ -10,7 +10,7 @@ import Header from '../modules/common/Header/Header'
 
 import appCss from '../styles.css?url'
 import { Footer } from '@/modules/common/Footer/Footer'
-import MainContainer from '@/components/container/MainContainer'
+import MainContainer from '@/components/containers/MainContainer'
 
 export const Route = createRootRoute({
   notFoundComponent: () => {

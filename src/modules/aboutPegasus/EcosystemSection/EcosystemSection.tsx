@@ -1,7 +1,7 @@
 import { SectionTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import { ScrollTimeline } from '@/components/ScrollTimeline'
-import SectionContainer from '@/components/container/SectionContainer'
+import SectionContainer from '@/components/containers/SectionContainer'
 
 export const EcosystemSection = () => {
   const { t } = useTranslation()

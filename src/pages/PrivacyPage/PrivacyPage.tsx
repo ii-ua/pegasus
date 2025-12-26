@@ -1,4 +1,4 @@
-import MainContainer from '@/components/container/MainContainer'
+import MainContainer from '@/components/containers/MainContainer'
 import { PrivacySection } from '@/modules/security/PrivacySection/PrivacySection'
 
 export const PrivacyPage = () => {

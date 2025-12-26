@@ -1,4 +1,4 @@
-import SectionContainer from '@/components/container/SectionContainer'
+import SectionContainer from '@/components/containers/SectionContainer'
 import { SectionTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import { Tabs } from 'radix-ui'

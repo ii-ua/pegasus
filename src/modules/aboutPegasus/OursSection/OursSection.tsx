@@ -6,7 +6,7 @@ import Stability from '@/assets/icons/stability.svg?react'
 import Locked from '@/assets/icons/locked.svg?react'
 import { ArrowCard } from '@/components/cards'
 import { motion } from 'framer-motion'
-import SectionContainer from '@/components/container/SectionContainer'
+import SectionContainer from '@/components/containers/SectionContainer'
 
 export const OursSection = () => {
   const { t } = useTranslation()

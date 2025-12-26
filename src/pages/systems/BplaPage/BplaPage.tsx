@@ -1,7 +1,7 @@
 import { FormSection } from '@/modules/common/FormSection'
 import { BplaHero, ResultsSection } from '@/modules/systems/bpla'
 import { IntegrationSection } from '@/modules/common/IntegrationSection'
-import MainContainer from '@/components/container/MainContainer'
+import MainContainer from '@/components/containers/MainContainer'
 
 export const BplaPage = () => {
   return (

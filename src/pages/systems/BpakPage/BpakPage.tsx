@@ -1,4 +1,4 @@
-import MainContainer from '@/components/container/MainContainer'
+import MainContainer from '@/components/containers/MainContainer'
 import { FormSection } from '@/modules/common/FormSection'
 import { IntegrationSection } from '@/modules/common/IntegrationSection'
 import { AdvantagesSection } from '@/modules/systems/bpak/AdvantagesSection'

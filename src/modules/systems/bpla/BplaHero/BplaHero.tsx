@@ -1,5 +1,5 @@
 import { StatCard } from '@/components/cards'
-import SectionContainer from '@/components/container/SectionContainer'
+import SectionContainer from '@/components/containers/SectionContainer'
 import { Paragraph, SectionTitle, SubTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import Mina from '@/assets/icons/mina.svg?react'
@@ -13,22 +13,22 @@ export const BplaHero = () => {
   const { t, i18n } = useTranslation()
   const imageRef = useRef(null)
   const [techChar, setTechChar] = useState({
-    '1x': "/images/systems/bpla/d_bpla_specifications_en@1x.png",
-    '2x': '/images/systems/bpla/d_bpla_specifications_en@2x.png'
-  });
+    '1x': '/images/systems/bpla/d_bpla_specifications_en@1x.png',
+    '2x': '/images/systems/bpla/d_bpla_specifications_en@2x.png',
+  })
 
-  const isUkr = i18n.language === 'uk';
+  const isUkr = i18n.language === 'uk'
 
   useEffect(() => {
     if (isUkr) {
       setTechChar({
-        '1x': "/images/systems/bpla/d_bpla_specifications_ua@1x.png",
-        '2x': '/images/systems/bpla/d_bpla_specifications_ua@2x.png'
+        '1x': '/images/systems/bpla/d_bpla_specifications_ua@1x.png',
+        '2x': '/images/systems/bpla/d_bpla_specifications_ua@2x.png',
       })
     } else {
       setTechChar({
-        '1x': "/images/systems/bpla/d_bpla_specifications_en@1x.png",
-        '2x': '/images/systems/bpla/d_bpla_specifications_en@2x.png'
+        '1x': '/images/systems/bpla/d_bpla_specifications_en@1x.png',
+        '2x': '/images/systems/bpla/d_bpla_specifications_en@2x.png',
       })
     }
   }, [isUkr])

@@ -2,7 +2,7 @@ import { ParagraphsList } from '@/components/lists/ParagraphsList'
 import { Paragraph, SectionTitle, SubTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import SectionContainer from '@/components/container/SectionContainer'
+import SectionContainer from '@/components/containers/SectionContainer'
 
 export const OfferSection = () => {
   const { t } = useTranslation()

@@ -1,5 +1,5 @@
 import { ImageCard } from '@/components/cards'
-import SectionContainer from '@/components/container/SectionContainer'
+import SectionContainer from '@/components/containers/SectionContainer'
 import { SectionTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'motion/react'
@@ -38,35 +38,35 @@ export const SystemSection = ({ id }: { id?: string }) => {
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
       >
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
-          >
-            <ImageCard
-              title={t('systemMain.cards.bpla.title')}
-              image1x="/images/main/system/d_bpla@1x.png"
-              image2x="/images/main/system/d_bpla@2x.png"
-              description={t('systemMain.cards.bpla.description')}
-              href="systems/bpla"
-            />
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+        >
+          <ImageCard
+            title={t('systemMain.cards.bpla.title')}
+            image1x="/images/main/system/d_bpla@1x.png"
+            image2x="/images/main/system/d_bpla@2x.png"
+            description={t('systemMain.cards.bpla.description')}
+            href="systems/bpla"
+          />
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.35 }}
-          >
-            <ImageCard
-              title={t('systemMain.cards.bpak.title')}
-              image1x="/images/main/system/d_bpka@1x.png"
-              image2x="/images/main/system/d_bpka@2x.png"
-              description={t('systemMain.cards.bpak.description')}
-              href="systems/bpak"
-            />
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.35 }}
+        >
+          <ImageCard
+            title={t('systemMain.cards.bpak.title')}
+            image1x="/images/main/system/d_bpka@1x.png"
+            image2x="/images/main/system/d_bpka@2x.png"
+            description={t('systemMain.cards.bpak.description')}
+            href="systems/bpak"
+          />
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}

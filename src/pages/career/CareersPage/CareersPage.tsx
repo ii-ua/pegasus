@@ -1,4 +1,4 @@
-import MainContainer from '@/components/container/MainContainer'
+import MainContainer from '@/components/containers/MainContainer'
 import { CareersHero } from '@/modules/careers/CareersHero'
 import { FormSection } from '@/modules/common/FormSection'
 // import { CareersListSection } from '@/modules/careers/CareersListSection'
@@ -9,7 +9,7 @@ export const CareersPage = () => {
       <MainContainer>
         <CareersHero />
         {/* <CareersListSection /> */}
-        <FormSection summary/>
+        <FormSection summary />
       </MainContainer>
     </main>
   )
