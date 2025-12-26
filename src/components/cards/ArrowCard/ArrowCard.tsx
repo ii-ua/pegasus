@@ -1,4 +1,4 @@
-import Line from '@/assets/icons/line.svg?react'
+import Line from '@/assets/icons/Line.svg?react'
 import { cn } from '@/common/utils/cn'
 import { Paragraph } from '@/components/text'
 export interface ArrowCardProps {
