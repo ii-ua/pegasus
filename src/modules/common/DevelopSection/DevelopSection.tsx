@@ -4,7 +4,7 @@ import { ButtonPrimary } from '@/components/buttons/ButtonPrimary'
 import { SectionTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'motion/react'
-import SectionContainer from '@/components/containers/SectionContainer'
+import SectionContainer from '@/components/container/SectionContainer'
 
 export const DevelopSection = () => {
   const { t } = useTranslation()

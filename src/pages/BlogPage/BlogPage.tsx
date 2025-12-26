@@ -1,4 +1,4 @@
-import MainContainer from '@/components/containers/MainContainer'
+import MainContainer from '@/components/container/MainContainer'
 import { ArticleOneSection } from '@/modules/blog/ArticleOneSection/ArticleOneSection'
 import { ArticleTwoSection } from '@/modules/blog/ArticleTwoSection/ArticleTwoSection'
 import { ArticleZeroSection } from '@/modules/blog/ArticleZeroSection/ArticleZeroSection'

@@ -1,4 +1,4 @@
-import MainContainer from '@/components/containers/MainContainer'
+import MainContainer from '@/components/container/MainContainer'
 import { CareersHero } from '@/modules/careers/CareersHero'
 import { FormSection } from '@/modules/common/FormSection'
 // import { CareersListSection } from '@/modules/careers/CareersListSection'
