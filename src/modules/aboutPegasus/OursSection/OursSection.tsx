@@ -93,7 +93,7 @@ export const OursSection = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
         >
-          <img src="big_logo.svg" />
+          <img loading="lazy" decoding="async" src="big_logo.svg" />
         </motion.div>
 
         {/* SECOND ROW */}

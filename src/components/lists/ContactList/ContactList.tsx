@@ -108,6 +108,8 @@ const ContactListItem = ({
           className="size-[42px] transition-opacity duration-200"
           src={isHover ? arrowDownRightActive : arrowDownRight}
           width={42}
+          loading="lazy"
+          decoding="async"
           height={42}
           alt="Arrow"
         />
