@@ -1,6 +1,7 @@
 import React from 'react'
 import { cn } from '@/common/utils/cn'
 import CutButton from '@/assets/shapes/cut-button.svg?react'
+import { ClientOnly } from '@tanstack/react-router'
 import { Link } from '@tanstack/react-router'
 
 const baseStyles = `
@@ -47,10 +48,12 @@ export const ButtonPrimary = ({
           aria-hidden
           className="pointer-events-none absolute inset-0 block"
         >
-          <CutButton
-            className="block w-full h-full"
-            preserveAspectRatio="none"
-          />
+          <ClientOnly>
+            <CutButton
+              className="block w-full h-full"
+              preserveAspectRatio="none"
+            />
+          </ClientOnly>
         </span>
       )}
       {children}

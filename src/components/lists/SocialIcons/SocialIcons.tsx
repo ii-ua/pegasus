@@ -4,6 +4,7 @@ import Facebook from '@/assets/icons/facebook.svg?react'
 import Instagram from '@/assets/icons/instagram.svg?react'
 import Youtube from '@/assets/icons/youtube.svg?react'
 import Tiktok from '@/assets/icons/tiktok.svg?react'
+import { ClientOnly } from '@tanstack/react-router'
 
 export const SocialIcons = () => {
   return (
@@ -15,36 +16,44 @@ export const SocialIcons = () => {
       transition={{ duration: 0.45, ease: 'easeOut', delay: 0.12 }}
     >
       <li>
-        <GlowIcon
-          href="https://www.facebook.com/profile.php?id=61559913531013&locale=uk_UA"
-          label="facebook"
-        >
-          <Facebook />
-        </GlowIcon>
+        <ClientOnly>
+          <GlowIcon
+            href="https://www.facebook.com/profile.php?id=61559913531013&locale=uk_UA"
+            label="facebook"
+          >
+            <Facebook />
+          </GlowIcon>
+        </ClientOnly>
       </li>
       <li>
-        <GlowIcon
-          href="https://www.instagram.com/drone.pegasusarms?igsh=MXVyYzV3aGVlbWRoNg%3D%3D&utm_source=qr"
-          label="instagram"
-        >
-          <Instagram />
-        </GlowIcon>
+        <ClientOnly>
+          <GlowIcon
+            href="https://www.instagram.com/drone.pegasusarms?igsh=MXVyYzV3aGVlbWRoNg%3D%3D&utm_source=qr"
+            label="instagram"
+          >
+            <Instagram />
+          </GlowIcon>
+        </ClientOnly>
       </li>
       <li>
-        <GlowIcon
-          href="https://youtube.com/@pegasusarmsukraine?si=phZUjIuPs0lCvMd_"
-          label="youtube"
-        >
-          <Youtube />
-        </GlowIcon>
+        <ClientOnly>
+          <GlowIcon
+            href="https://youtube.com/@pegasusarmsukraine?si=phZUjIuPs0lCvMd_"
+            label="youtube"
+          >
+            <Youtube />
+          </GlowIcon>
+        </ClientOnly>
       </li>
       <li>
-        <GlowIcon
-          href="https://www.tiktok.com/@drone.pegasusarms?_t=ZM-8vlt5EPwJHD"
-          label="tiktok"
-        >
-          <Tiktok />
-        </GlowIcon>
+        <ClientOnly>
+          <GlowIcon
+            href="https://www.tiktok.com/@drone.pegasusarms?_t=ZM-8vlt5EPwJHD"
+            label="tiktok"
+          >
+            <Tiktok />
+          </GlowIcon>
+        </ClientOnly>
       </li>
     </motion.ul>
   )

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import RombPrimary from 'src/assets/icons/romb-primary.svg?react'
 import RombSecondary from 'src/assets/icons/romb-secondary.svg?react'
 import { Paragraph } from '../text'
+import { ClientOnly } from '@tanstack/react-router'
 
 type Item = { title: string; description: string }
 
@@ -38,9 +39,13 @@ export const ScrollTimeline = ({ items }: { items: Item[] }) => {
 
             {/* Ромб */}
             {index === 0 ? (
-              <RombPrimary className="w-[22px] h-[22px]" />
+              <ClientOnly>
+                <RombPrimary className="w-[22px] h-[22px]" />
+              </ClientOnly>
             ) : (
-              <RombSecondary className="w-[22px] h-[22px]" />
+              <ClientOnly>
+                <RombSecondary className="w-[22px] h-[22px]" />
+              </ClientOnly>
             )}
 
             {/* Пунктирна лінія */}

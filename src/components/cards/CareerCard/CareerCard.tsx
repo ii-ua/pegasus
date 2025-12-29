@@ -5,6 +5,7 @@ import Management from '@/assets/icons/management.svg?react'
 import Engineering from '@/assets/icons/engineering.svg?react'
 import Production from '@/assets/icons/production.svg?react'
 import Service from '@/assets/icons/service.svg?react'
+import { ClientOnly } from '@tanstack/react-router'
 
 export interface CareerCardItem {
   description: string
@@ -38,49 +39,65 @@ export const CareerCard = ({ item }: CareerCardProps) => {
       }}
     >
       <div className="w-full flex flex-col gap-4 justify-between">
-        <Paragraph variant="light" text={title} className='uppercase flex items-center justify-between'>
-                <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.45, ease: 'easeOut', delay: 0.15 }}
-      >
-        {icon === 'engineering' && (
-          <Engineering
-            preserveAspectRatio="none"
-            className="w-[56px] h-[54px] desktop:w-[72px] desktop:h-[72px]"
-          />
-        )}
-        {icon === 'production' && (
-          <Production
-            preserveAspectRatio="none"
-            className="w-[56px] h-[54px] desktop:w-[72px] desktop:h-[72px]"
-          />
-        )}
-        {icon === 'service' && (
-          <Service preserveAspectRatio="none" className="w-[56px] h-[54px] desktop:w-[72px] desktop:h-[72px]" />
-        )}
-        {icon === 'management' && (
-          <Management
-            preserveAspectRatio="none"
-            className="w-[56px] h-[54px] desktop:w-[72px] desktop:h-[72px]"
-          />
-        )}
-      </motion.div>
+        <Paragraph
+          variant="light"
+          text={title}
+          className="uppercase flex items-center justify-between"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.45, ease: 'easeOut', delay: 0.15 }}
+          >
+            {icon === 'engineering' && (
+              <ClientOnly>
+                <Engineering
+                  preserveAspectRatio="none"
+                  className="w-[56px] h-[54px] desktop:w-[72px] desktop:h-[72px]"
+                />
+              </ClientOnly>
+            )}
+            {icon === 'production' && (
+              <ClientOnly>
+                <Production
+                  preserveAspectRatio="none"
+                  className="w-[56px] h-[54px] desktop:w-[72px] desktop:h-[72px]"
+                />
+              </ClientOnly>
+            )}
+            {icon === 'service' && (
+              <ClientOnly>
+                <Service
+                  preserveAspectRatio="none"
+                  className="w-[56px] h-[54px] desktop:w-[72px] desktop:h-[72px]"
+                />
+              </ClientOnly>
+            )}
+            {icon === 'management' && (
+              <ClientOnly>
+                <Management
+                  preserveAspectRatio="none"
+                  className="w-[56px] h-[54px] desktop:w-[72px] desktop:h-[72px]"
+                />
+              </ClientOnly>
+            )}
+          </motion.div>
         </Paragraph>
-        <Paragraph variant="grey" className='tablet:h-[272px] desktop:h-[328px] border-gradient pt-4 desktop:pt-6 pb-4 desktop:pb-6'>
-          <ol className='list-disc pl-6 desktop:pl-8'>
-            {descriptionList.map(item => 
-              <li key={item} className=''>
+        <Paragraph
+          variant="grey"
+          className="tablet:h-[272px] desktop:h-[328px] border-gradient pt-4 desktop:pt-6 pb-4 desktop:pb-6"
+        >
+          <ol className="list-disc pl-6 desktop:pl-8">
+            {descriptionList.map((item) => (
+              <li key={item} className="">
                 {item}
               </li>
-            )}
+            ))}
           </ol>
         </Paragraph>
-        <Paragraph variant="grey" text={count} className='text-[#FF6600]' />
+        <Paragraph variant="grey" text={count} className="text-[#FF6600]" />
       </div>
-
-
     </motion.li>
   )
 }

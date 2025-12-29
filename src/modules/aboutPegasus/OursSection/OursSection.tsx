@@ -7,6 +7,7 @@ import Locked from '@/assets/icons/locked.svg?react'
 import { ArrowCard } from '@/components/cards'
 import { motion } from 'framer-motion'
 import SectionContainer from '@/components/container/SectionContainer'
+import { ClientOnly } from '@tanstack/react-router'
 
 export const OursSection = () => {
   const { t } = useTranslation()
@@ -58,10 +59,12 @@ export const OursSection = () => {
               description={t('oursAboutPegasus.cards.reliability.description')}
               arrowClassName="hidden sm:block"
               icon={
-                <Reliability
-                  className="w-full h-full"
-                  preserveAspectRatio="none"
-                />
+                <ClientOnly>
+                  <Reliability
+                    className="w-full h-full"
+                    preserveAspectRatio="none"
+                  />
+                </ClientOnly>
               }
             />
           </motion.div>
@@ -74,7 +77,9 @@ export const OursSection = () => {
               arrowPosition="bottomLeft"
               className="ml-8 sm:ml-0"
               icon={
-                <Fast className="w-full h-full" preserveAspectRatio="none" />
+                <ClientOnly>
+                  <Fast className="w-full h-full" preserveAspectRatio="none" />
+                </ClientOnly>
               }
             />
           </motion.div>
@@ -106,10 +111,12 @@ export const OursSection = () => {
               arrowClassName="max-sm:rotate-[180deg] max-sm:top-[-17] max-sm:right-0"
               arrowPosition="topRight"
               icon={
-                <Stability
-                  className="w-full h-full"
-                  preserveAspectRatio="none"
-                />
+                <ClientOnly>
+                  <Stability
+                    className="w-full h-full"
+                    preserveAspectRatio="none"
+                  />
+                </ClientOnly>
               }
             />
           </motion.div>
@@ -121,7 +128,12 @@ export const OursSection = () => {
               arrowClassName="hidden sm:block"
               arrowPosition="topLeft"
               icon={
-                <Locked className="w-full h-full" preserveAspectRatio="none" />
+                <ClientOnly>
+                  <Locked
+                    className="w-full h-full"
+                    preserveAspectRatio="none"
+                  />
+                </ClientOnly>
               }
             />
           </motion.div>

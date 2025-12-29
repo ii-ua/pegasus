@@ -5,6 +5,7 @@ import { motion } from 'motion/react'
 import Tel from '@/assets/icons/tel.svg?react'
 import Email from '@/assets/icons/email.svg?react'
 import { SocialIcons } from '@/components/lists/SocialIcons/SocialIcons'
+import { ClientOnly } from '@tanstack/react-router'
 
 const NAV_ITEMS = [
   { label: 'systems', href: '/#systems' },
@@ -85,7 +86,10 @@ export const Footer = () => {
                 href="tel:+380986146177"
                 rel="nofollow"
               >
-                <Tel width={32} height={32} /> +380 (98) 614 61 77
+                <ClientOnly>
+                  <Tel width={32} height={32} />
+                </ClientOnly>
+                +38 (098) 614-61-77
               </a>
             </li>
             <li>
@@ -94,7 +98,10 @@ export const Footer = () => {
                 type="email"
                 href="mailto:p.info@pegasusarms.com.ua"
               >
-                <Email width={32} height={32} /> p.info@pegasusarms.com.ua
+                <ClientOnly>
+                  <Email width={32} height={32} />
+                </ClientOnly>
+                p.info@pegasusarms.com.ua
               </a>
             </li>
           </motion.ul>

@@ -8,6 +8,7 @@ import Delivery from '@/assets/icons/delivery.svg?react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import Bomb from '@/assets/icons/bomb.svg?react'
+import { ClientOnly } from '@tanstack/react-router'
 
 export const BplaHero = () => {
   const { t, i18n } = useTranslation()
@@ -179,10 +180,12 @@ export const BplaHero = () => {
             <ArrowStat
               icon={
                 <motion.div variants={svgAnim}>
-                  <Mina
-                    className="size-[120px] tablet:size-[100px] desktop:size-[120px]"
-                    preserveAspectRatio="none"
-                  />
+                  <ClientOnly>
+                    <Mina
+                      className="size-[120px] tablet:size-[100px] desktop:size-[120px]"
+                      preserveAspectRatio="none"
+                    />
+                  </ClientOnly>
                 </motion.div>
               }
               text={t('systems.bpla.hero.cards.0')}
@@ -193,10 +196,12 @@ export const BplaHero = () => {
             <ArrowStat
               icon={
                 <motion.div variants={svgAnim}>
-                  <Munitions
-                    className="size-[120px] tablet:size-[100px] desktop:size-[120px]"
-                    preserveAspectRatio="none"
-                  />
+                  <ClientOnly>
+                    <Munitions
+                      className="size-[120px] tablet:size-[100px] desktop:size-[120px]"
+                      preserveAspectRatio="none"
+                    />
+                  </ClientOnly>
                 </motion.div>
               }
               text={t('systems.bpla.hero.cards.1')}
@@ -208,10 +213,12 @@ export const BplaHero = () => {
             <ArrowStat
               icon={
                 <motion.div variants={svgAnim}>
-                  <Bomb
-                    className="size-[120px]tablet:size-[100px] desktop:size-[120px]"
-                    preserveAspectRatio="none"
-                  />
+                  <ClientOnly>
+                    <Bomb
+                      className="size-[120px]tablet:size-[100px] desktop:size-[120px]"
+                      preserveAspectRatio="none"
+                    />
+                  </ClientOnly>
                 </motion.div>
               }
               text={t('systems.bpla.hero.cards.2')}
@@ -222,10 +229,12 @@ export const BplaHero = () => {
             <ArrowStat
               icon={
                 <motion.div variants={svgAnim}>
-                  <Delivery
-                    className="size-[120px] tablet:size-[100px] desktop:size-[120px]"
-                    preserveAspectRatio="none"
-                  />
+                  <ClientOnly>
+                    <Delivery
+                      className="size-[120px] tablet:size-[100px] desktop:size-[120px]"
+                      preserveAspectRatio="none"
+                    />
+                  </ClientOnly>
                 </motion.div>
               }
               text={t('systems.bpla.hero.cards.3')}

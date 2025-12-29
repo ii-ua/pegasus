@@ -14,11 +14,14 @@ import { motion } from 'motion/react'
 import FormSelect from '../FormSelect'
 import { JOB_OPTIONS } from '@/common/constants/jobs'
 import FileUploadField from '../FormFileUploadField'
+import { ClientOnly } from '@tanstack/react-router'
 
 export const errorMessagesStyle =
   'text-[#FF6600] text-[12px] tablet:text-[14px] desktop:text-[16px] font-normal'
 
-export const FormComponent = ({summary = false}: Readonly<{summary?: boolean}>) => {
+export const FormComponent = ({
+  summary = false,
+}: Readonly<{ summary?: boolean }>) => {
   const { t } = useTranslation()
   return (
     <motion.div
@@ -36,28 +39,33 @@ export const FormComponent = ({summary = false}: Readonly<{summary?: boolean}>) 
         transition={{ duration: 1.2, ease: 'easeOut', delay: 0.1 }}
       >
         {summary ? (
-        <>
-          <VacancyRectangle
-            className="w-full h-full bg-none hidden tablet:block"
-            preserveAspectRatio="none"
-          />
-          <MVacancyRectangle
-            className="block w-full h-full bg-none tablet:hidden"
-            preserveAspectRatio="none"
-          />
-        </>
-      ) : (
-        <>
-          <FormRectangle
-            className="w-full h-full bg-none hidden tablet:block"
-            preserveAspectRatio="none"
-          />
-          <MFormRectangle
-            className="block w-full h-full bg-none tablet:hidden"
-            preserveAspectRatio="none"
-          />
-        </>
-      )}
+          <>
+            <ClientOnly>
+              {' '}
+              <VacancyRectangle
+                className="w-full h-full bg-none hidden tablet:block"
+                preserveAspectRatio="none"
+              />
+              <MVacancyRectangle
+                className="block w-full h-full bg-none tablet:hidden"
+                preserveAspectRatio="none"
+              />
+            </ClientOnly>
+          </>
+        ) : (
+          <>
+            <ClientOnly>
+              <FormRectangle
+                className="w-full h-full bg-none hidden tablet:block"
+                preserveAspectRatio="none"
+              />
+              <MFormRectangle
+                className="block w-full h-full bg-none tablet:hidden"
+                preserveAspectRatio="none"
+              />
+            </ClientOnly>
+          </>
+        )}
       </motion.span>
 
       <motion.h3
@@ -115,7 +123,9 @@ export const FormComponent = ({summary = false}: Readonly<{summary?: boolean}>) 
                   type="text"
                   required={summary}
                   asChild
-                  placeholder={t('formSection.form.inputs.lastName.placeholder')}
+                  placeholder={t(
+                    'formSection.form.inputs.lastName.placeholder',
+                  )}
                 />
                 <Form.Message
                   match="valueMissing"
@@ -193,28 +203,30 @@ export const FormComponent = ({summary = false}: Readonly<{summary?: boolean}>) 
           </FormWrapper>
         </motion.div>
 
-        {summary && <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <FormWrapper>
-            <FormField name="vacancy">
-              <FormLabel isRequired>
-                {t('career.form.inputs.vacancy.label')}
-              </FormLabel>
+        {summary && (
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <FormWrapper>
+              <FormField name="vacancy">
+                <FormLabel isRequired>
+                  {t('career.form.inputs.vacancy.label')}
+                </FormLabel>
                 <FormSelect
                   name="vacancy"
                   required
                   placeholder={t('career.form.inputs.vacancy.placeholder')}
-                  options={JOB_OPTIONS.map(opt => ({
-                      label: t(opt.labelKey),
-                      value: opt.value,
-                    }))}
+                  options={JOB_OPTIONS.map((opt) => ({
+                    label: t(opt.labelKey),
+                    value: opt.value,
+                  }))}
                 />
-            </FormField>
-          </FormWrapper>
-        </motion.div>}
+              </FormField>
+            </FormWrapper>
+          </motion.div>
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -228,7 +240,11 @@ export const FormComponent = ({summary = false}: Readonly<{summary?: boolean}>) 
             <div className="flex flex-col gap-3.5 w-full">
               <FormTextarea
                 required
-                placeholder={summary ? t('career.form.inputs.message.placeholder') : t('formSection.form.inputs.message.placeholder')}
+                placeholder={
+                  summary
+                    ? t('career.form.inputs.message.placeholder')
+                    : t('formSection.form.inputs.message.placeholder')
+                }
               />
               <Form.Message match="valueMissing" className={errorMessagesStyle}>
                 {t('formSection.form.validations.message.valueMissing')}
@@ -240,22 +256,23 @@ export const FormComponent = ({summary = false}: Readonly<{summary?: boolean}>) 
           </FormField>
         </motion.div>
 
-        {summary && <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.6 }}
-        >
-          <FormWrapper>
-            <FormField name="summary">
-              <FormLabel isRequired>
-                {t('career.form.inputs.summary.label')}
-              </FormLabel>
+        {summary && (
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.6 }}
+          >
+            <FormWrapper>
+              <FormField name="summary">
+                <FormLabel isRequired>
+                  {t('career.form.inputs.summary.label')}
+                </FormLabel>
 
-              <FileUploadField />
-              
-            </FormField>
-          </FormWrapper>
-        </motion.div>}
+                <FileUploadField />
+              </FormField>
+            </FormWrapper>
+          </motion.div>
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 70 }}
@@ -264,12 +281,14 @@ export const FormComponent = ({summary = false}: Readonly<{summary?: boolean}>) 
         >
           <Form.Submit asChild>
             <div className="flex justify-center">
-              <ButtonPrimary>{summary ? t('career.form.button') : t('formSection.form.button')}</ButtonPrimary>
+              <ButtonPrimary>
+                {summary
+                  ? t('career.form.button')
+                  : t('formSection.form.button')}
+              </ButtonPrimary>
             </div>
           </Form.Submit>
         </motion.div>
-
-        
       </Form.Root>
     </motion.div>
   )

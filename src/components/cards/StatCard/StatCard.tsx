@@ -1,5 +1,6 @@
 import CutCard from '@/assets/shapes/cut-card.svg?react'
 import { cn } from '@/common/utils/cn'
+import { ClientOnly } from '@tanstack/react-router'
 import React from 'react'
 export interface StatCardProps {
   value: string | React.ReactNode
@@ -22,7 +23,10 @@ export const StatCard = ({
 }: StatCardProps) => {
   return (
     <div className=" relative h-fit max-w-[430px] tablet:max-w-[255px] desktop:max-w-[321px]">
-      <CutCard className="w-full h-full" />
+      <ClientOnly>
+        <CutCard className="w-full h-full" />
+      </ClientOnly>
+
       <div
         className={cn(
           'absolute inset-0 flex flex-col p-4 gap-3.5 justify-between sm:justify-start',

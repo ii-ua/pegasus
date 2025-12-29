@@ -1,6 +1,7 @@
 import Line from '@/assets/icons/Line.svg?react'
 import { cn } from '@/common/utils/cn'
 import { Paragraph } from '@/components/text'
+import { ClientOnly } from '@tanstack/react-router'
 export interface ArrowCardProps {
   title: string
   description?: string
@@ -41,9 +42,11 @@ export const ArrowCard = ({
         </div>
       </div>
       <Paragraph variant="light" text={description ?? ''} />
-      <Line
-        className={cn('absolute', variant[arrowPosition], arrowClassName)}
-      />
+      <ClientOnly>
+        <Line
+          className={cn('absolute', variant[arrowPosition], arrowClassName)}
+        />
+      </ClientOnly>
     </div>
   )
 }

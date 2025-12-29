@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import Brave from '@/assets/logos/brave.svg?react'
 import DotChain from '@/assets/logos/dot_chain.svg?react'
 import { motion } from 'framer-motion'
+import { ClientOnly } from '@tanstack/react-router'
 
 export const IntegrationSection = () => {
   const { t } = useTranslation()
@@ -90,7 +91,9 @@ export const IntegrationSection = () => {
             animate={{ opacity: 1, scale: 1.2 }}
             transition={{ duration: 0.55, ease: 'easeOut' }}
           >
-            <Brave />
+            <ClientOnly>
+              <Brave />
+            </ClientOnly>
           </motion.div>
         </motion.a>
 
@@ -101,7 +104,9 @@ export const IntegrationSection = () => {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.45, ease: 'easeOut', delay: 0.2 }}
         >
-          <DotChain className="scale-[1.1]" />
+          <ClientOnly>
+            <DotChain className="scale-[1.1]" />
+          </ClientOnly>
         </motion.div>
       </motion.div>
     </SectionContainer>

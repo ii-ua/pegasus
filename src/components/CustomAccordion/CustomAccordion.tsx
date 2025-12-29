@@ -4,6 +4,7 @@ import CutAccordionBottomRight from '@/assets/shapes/cut-accordion-bottom-right.
 import arrowDownRight from '@/assets/icons/arrow-down-right.svg'
 import arrowDownRightActive from '@/assets/icons/arrow-down-right-active.svg'
 import arrowUpRight from '@/assets/icons/arrow-up-right.svg'
+import { ClientOnly } from '@tanstack/react-router'
 
 type Item = {
   value: string
@@ -29,10 +30,13 @@ export function CustomAccordion({
       {items?.map(({ value, title, content }) => (
         <Accordion.Item key={value} value={value}>
           <Accordion.Trigger className="group min-h-[60px] relative cursor-pointer">
-            <CutAccordionTopLeft
-              preserveAspectRatio="none"
-              className="h-full w-full block min-h-[60px]"
-            />
+            <ClientOnly>
+              <CutAccordionTopLeft
+                preserveAspectRatio="none"
+                className="h-full w-full block min-h-[60px]"
+              />
+            </ClientOnly>
+
             <div className="absolute inset-0 flex items-center justify-between pl-4 tablet:pl-9 pr-[18px] py-[18px]">
               <h3 className=" m-0 text-left uppercase text-[#FDFFFF] font-normal text-[16px] tablet:text-[20px] desktop:text-[24px]">
                 {title}
@@ -73,10 +77,12 @@ export function CustomAccordion({
               aria-hidden
               className="pointer-events-none absolute inset-0 block"
             >
-              <CutAccordionBottomRight
-                className="block w-full h-full"
-                preserveAspectRatio="none" // <-- ключове!
-              />
+              <ClientOnly>
+                <CutAccordionBottomRight
+                  className="block w-full h-full"
+                  preserveAspectRatio="none" // <-- ключове!
+                />
+              </ClientOnly>
             </span>
 
             {/* контент формує висоту */}
