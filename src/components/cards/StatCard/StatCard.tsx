@@ -44,7 +44,7 @@ export const StatCard = ({
         </span>
         <p
           className={cn(
-            'text-[#D9D9D9] font-normal uppercase text-center',
+            'text-[#D9D9D9] text-[14px] tablet:text-[16px] font-normal uppercase text-center',
             descriptionClassName,
           )}
         >

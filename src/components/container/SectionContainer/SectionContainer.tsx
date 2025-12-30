@@ -19,7 +19,7 @@ const SectionContainer = ({
       data-lang={['uk', 'en'].includes(i18n.language) ? i18n.language : 'uk'}
       id={id}
       className={cn(
-        'py-[54px] desktop:py-[82px] tablet:py-16 gap-4 tablet:gap-6 desktop:gap-8',
+        'py-[28px] tablet:py-[54px] desktop:py-[82px] gap-4 tablet:gap-6 desktop:gap-8',
         className,
       )}
     >
