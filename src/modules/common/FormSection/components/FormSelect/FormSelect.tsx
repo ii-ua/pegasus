@@ -83,6 +83,9 @@ export default function FormSelect({
 
         <Select.Portal>
           <Select.Content
+            position='popper'
+            side='bottom'
+            align='start'
             className="
               z-50 bg-[#5A5A5A]
               w-[207px] tablet:w-[354px] desktop:w-[471px]

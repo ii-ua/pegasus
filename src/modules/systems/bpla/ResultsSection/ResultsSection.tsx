@@ -1,5 +1,5 @@
 import SectionContainer from '@/components/container/SectionContainer'
-import { Paragraph, SectionTitle } from '@/components/text'
+import { Paragraph, SectionTitle, SubTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 
@@ -63,9 +63,13 @@ export const ResultsSection = () => {
         variants={titleAnim}
         className="w-full"
       >
+        <SubTitle
+          title={`${t('systems.bpla.results.title')}`}
+          className="text-left font-bold w-full block tablet:hidden"
+        />
         <SectionTitle
           title={`${t('systems.bpla.results.title')}`}
-          className="text-left w-full"
+          className="text-left w-full hidden tablet:block"
         />
       </motion.div>
 

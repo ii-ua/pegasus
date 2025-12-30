@@ -77,7 +77,7 @@ export const OfferSection = () => {
         <motion.img
           variants={fadeUp}
           custom={3}
-          className="flex-1 w-max-[665px] h-max-[579px] object-contain order-0 tablet:order-1"
+          className="tablet:flex-1 w-max-[665px] h-max-[579px] object-contain order-0 tablet:order-1"
           src="/images/systems/education/d_@1x.jpg"
           alt={t('systems.education.offer.title')}
           srcSet="/images/systems/education/d_@1x.jpg 1x, /images/systems/education/d_@2x.jpg 2x"

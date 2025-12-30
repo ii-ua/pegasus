@@ -1,5 +1,5 @@
 import SectionContainer from '@/components/container/SectionContainer'
-import { Paragraph, SectionTitle } from '@/components/text'
+import { Paragraph, SectionTitle, SubTitle } from '@/components/text'
 import { useTranslation } from 'react-i18next'
 import Brave from '@/assets/logos/brave.svg?react'
 import DotChain from '@/assets/logos/dot_chain.svg?react'
@@ -31,9 +31,13 @@ export const IntegrationSection = () => {
           variants={fadeUp}
           custom={0}
         >
+          <SubTitle
+            title={`${t('systems.bpla.integration.title')}`}
+            className="text-left font-bold w-full block tablet:hidden"
+          />
           <SectionTitle
             title={`${t('systems.bpla.integration.title')}`}
-            className="text-left max-w-[660px] leading-none"
+            className="text-left w-full hidden tablet:block"
           />
         </motion.div>
 
