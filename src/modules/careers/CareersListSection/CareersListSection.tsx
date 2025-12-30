@@ -170,7 +170,7 @@ const JobsLinks = ({
       className="cursor-pointer"
       rel="noreferrer noopener"
     >
-      <img src={iconSrc} alt={alt} />
+      <img loading="lazy" decoding="async" src={iconSrc} alt={alt} />
     </a>
   )
 }

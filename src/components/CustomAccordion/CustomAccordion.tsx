@@ -49,6 +49,8 @@ export function CustomAccordion({
                   src={arrowDownRight}
                   width={42}
                   height={42}
+                  loading="lazy"
+                  decoding="async"
                   alt=""
                   className="block group-hover:hidden group-focus:hidden group-data-[state=open]:hidden"
                 />
@@ -57,12 +59,16 @@ export function CustomAccordion({
                   src={arrowDownRightActive}
                   width={42}
                   height={42}
+                  loading="lazy"
+                  decoding="async"
                   alt=""
                   className="hidden group-hover:block group-focus:block group-data-[state=open]:hidden"
                 />
                 {/* ↑ Відкрито */}
                 <img
                   src={arrowUpRight}
+                  loading="lazy"
+                  decoding="async"
                   width={42}
                   height={42}
                   alt=""

@@ -68,6 +68,8 @@ export const MobileMenu = ({ navItems }: MobileMenuProps) => {
                         src="/logo.png"
                         width={64}
                         height={64}
+                        loading="lazy"
+                        decoding="async"
                         alt="Logo"
                         className="h-[54px] w-[54px]"
                       />
