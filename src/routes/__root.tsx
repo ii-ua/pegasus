@@ -5,12 +5,13 @@ import {
   redirect,
 } from '@tanstack/react-router'
 import '../common/localization/i18n'
-
 import Header from '../modules/common/Header/Header'
 
 import appCss from '../styles.css?url'
 import { Footer } from '@/modules/common/Footer/Footer'
 import MainContainer from '@/components/container/MainContainer'
+import { TanStackDevtools } from '@tanstack/react-devtools'
+import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 
 export const Route = createRootRoute({
   notFoundComponent: () => {
@@ -42,17 +43,27 @@ export const Route = createRootRoute({
         property: 'og:title',
         content: 'Ударний дрон Pegasus Arms 25 | Офіційний сайт виробника',
       },
+      { property: 'og:image', content: '/big_logo.svg' },
       {
         property: 'og:description',
         content:
           'Придбати сертифіковані ударні дроні Pegasus Arms 25 для бойових завдань ЗСУ та Сил оборони. Пегас Армс - український виробник. Дрони сертифіковані Міністерством оборони.',
       },
       {
+        property: 'twitter:title',
+        content: 'Ударний дрон Pegasus Arms 25 | Офіційний сайт виробника',
+      },
+      { property: 'twitter:image', content: '/big_logo.svg' },
+      {
         property: 'og:type',
         content: 'website',
       },
     ],
     links: [
+      {
+        rel: 'icon',
+        href: '/favicon.ico',
+      },
       {
         rel: 'stylesheet',
         href: appCss,
@@ -90,7 +101,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           </MainContainer>
         </div>
 
-        {/* <TanStackDevtools
+        <TanStackDevtools
           config={{
             position: 'bottom-right',
           }}
@@ -100,7 +111,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
               render: <TanStackRouterDevtoolsPanel />,
             },
           ]}
-        /> */}
+        />
         <Scripts />
       </body>
     </html>
