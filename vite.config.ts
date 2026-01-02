@@ -11,24 +11,8 @@ const config = defineConfig({
     host: true,
   },
   plugins: [
-    // this is the plugin that enables path aliases
-    tanstackStart({
-      spa: {
-        enabled: false,
-      },
-      prerender: {
-        enabled: true,
-        crawlLinks: true,
-      },
-      sitemap: {
-        host: 'https://pegasusarms.com.ua',
-      },
-    }),
-    viteTsConfigPaths({
-      projects: ['./tsconfig.json'],
-    }),
-    tailwindcss(),
     ViteImageOptimizer({
+      logStats: true,
       gif: { loop: 0 },
       png: {
         compressionLevel: 8,
@@ -61,8 +45,24 @@ const config = defineConfig({
         quantisationTable: 2, // Хороша компресія для реальних фото (0 — найкраща якість, 3 — майже така сама, але менший розмір)
         mozjpeg: true,
       },
-      exclude: ['gradient.png', 'background.png'], // Exclude gradient images from optimization
     }),
+    // this is the plugin that enables path aliases
+    tanstackStart({
+      spa: {
+        enabled: false,
+      },
+      prerender: {
+        enabled: true,
+        crawlLinks: true,
+      },
+      sitemap: {
+        host: 'https://pegasusarms.com.ua',
+      },
+    }),
+    viteTsConfigPaths({
+      projects: ['./tsconfig.json'],
+    }),
+    tailwindcss(),
 
     viteReact(),
     svgr({

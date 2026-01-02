@@ -24,6 +24,10 @@ export const Route = createRootRoute({
         charSet: 'utf-8',
       },
       {
+        name: 'google-site-verification',
+        content: 'ZDMx6QNsAKVdSFtEPAVo_nGHIP_xgT7COSH4Lh4loKc',
+      },
+      {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
       },

@@ -1,5 +1,5 @@
-import arrowDownRight from '@/assets/icons/arrow-down-right.svg'
-import arrowDownRightActive from '@/assets/icons/arrow-down-right-active.svg'
+import arrowDownRight from '@/assets/icons/arrow-down-right.svg?url'
+import arrowDownRightActive from '@/assets/icons/arrow-down-right-active.svg?url'
 import { motion } from 'motion/react'
 
 interface ImageCardProps {

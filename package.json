@@ -43,6 +43,7 @@
     "@types/react": "^19.2.6",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
+    "baseline-browser-mapping": "^2.9.11",
     "jsdom": "^27.2.0",
     "prettier": "^3.6.2",
     "sharp": "^0.34.5",
