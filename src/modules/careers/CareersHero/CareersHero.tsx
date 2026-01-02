@@ -87,8 +87,8 @@ export const CareersHero = () => {
       >
         <img
           className="w-full"
-          src="/images/careers/career_@1x.jpg"
-          srcSet="/images/career/career_@1x.jpg 1x, /images/career/career_@2x.jpg 2x"
+          src="/images/careers/career_@1x.avif"
+          srcSet="/images/career/career_@1x.avif 1x, /images/career/career_@2x.avif 2x"
           alt="career pegasus arms 25"
            
           decoding="async"
