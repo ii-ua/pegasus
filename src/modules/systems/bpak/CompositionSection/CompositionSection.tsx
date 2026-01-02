@@ -71,9 +71,9 @@ export const CompositionSection = () => {
           variants={fadeUp}
           custom={3}
           className="tablet:flex-1 w-max-[665px] h-max-[452px] object-contain order-0 tablet:order-1"
-          src="/images/systems/bpka/d_bpka_composition@1x.jpg"
+          src="/images/systems/bpka/d_bpka_composition@1x.avif"
           alt={t('systems.bpak.composition.title')}
-          srcSet="/images/systems/bpka/d_bpka_composition@1x.jpg 1x, /images/systems/bpka/d_bpka_composition@2x.jpg 2x"
+          srcSet="/images/systems/bpka/d_bpka_composition@1x.avif 1x, /images/systems/bpka/d_bpka_composition@2x.avif 2x"
           decoding="async"
         />
       </motion.div>

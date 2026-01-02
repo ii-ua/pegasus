@@ -14,8 +14,8 @@ export const BplaHero = () => {
   const { t, i18n } = useTranslation()
   const imageRef = useRef(null)
   const [techChar, setTechChar] = useState({
-    '1x': '/images/systems/bpla/d_bpla_specifications_ua@1x.png',
-    '2x': '/images/systems/bpla/d_bpla_specifications_ua@2x.png',
+    '1x': '/images/systems/bpla/d_bpla_specifications_ua@1x.avif',
+    '2x': '/images/systems/bpla/d_bpla_specifications_ua@2x.avif',
   })
 
   const isUkr = i18n.language === 'uk'
@@ -23,13 +23,13 @@ export const BplaHero = () => {
   useEffect(() => {
     if (isUkr) {
       setTechChar({
-        '1x': '/images/systems/bpla/d_bpla_specifications_ua@1x.png',
-        '2x': '/images/systems/bpla/d_bpla_specifications_ua@2x.png',
+        '1x': '/images/systems/bpla/d_bpla_specifications_ua@1x.avif',
+        '2x': '/images/systems/bpla/d_bpla_specifications_ua@2x.avif',
       })
     } else {
       setTechChar({
-        '1x': '/images/systems/bpla/d_bpla_specifications_en@1x.png',
-        '2x': '/images/systems/bpla/d_bpla_specifications_en@2x.png',
+        '1x': '/images/systems/bpla/d_bpla_specifications_en@1x.avif',
+        '2x': '/images/systems/bpla/d_bpla_specifications_en@2x.avif',
       })
     }
   }, [isUkr])

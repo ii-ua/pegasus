@@ -46,8 +46,8 @@ export const SystemSection = ({ id }: { id?: string }) => {
         >
           <ImageCard
             title={t('systemMain.cards.bpla.title')}
-            image1x="/images/main/system/d_bpla@1x.png"
-            image2x="/images/main/system/d_bpla@2x.png"
+            image1x="/images/main/system/d_bpla@1x.avif"
+            image2x="/images/main/system/d_bpla@2x.avif"
             description={t('systemMain.cards.bpla.description')}
             href="systems/bpla"
           />
@@ -61,8 +61,8 @@ export const SystemSection = ({ id }: { id?: string }) => {
         >
           <ImageCard
             title={t('systemMain.cards.bpak.title')}
-            image1x="/images/main/system/d_bpka@1x.png"
-            image2x="/images/main/system/d_bpka@2x.png"
+            image1x="/images/main/system/d_bpka@1x.avif"
+            image2x="/images/main/system/d_bpka@2x.avif"
             description={t('systemMain.cards.bpak.description')}
             href="systems/bpak"
           />
@@ -76,8 +76,8 @@ export const SystemSection = ({ id }: { id?: string }) => {
         >
           <ImageCard
             title={t('systemMain.cards.education.title')}
-            image1x="/images/main/system/d_education@1x.png"
-            image2x="/images/main/system/d_education@2x.png"
+            image1x="/images/main/system/d_education@1x.avif"
+            image2x="/images/main/system/d_education@2x.avif"
             description={t('systemMain.cards.education.description')}
             href="systems/education"
           />
