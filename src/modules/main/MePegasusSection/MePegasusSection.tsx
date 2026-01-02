@@ -57,7 +57,6 @@ export const MePegasusSection = () => {
             alt="БпЛА"
             width={203}
             height={203}
-            loading="lazy"
             decoding="async"
             initial={{ opacity: 0, scale: 0.6, rotate: -15 }}
             whileInView={{ opacity: 1, scale: 1, rotate: 0 }}

@@ -17,7 +17,7 @@ export const ArticleOneSection = () => {
         />
         <img
           src="/images/blog/article1_@1x.jpg"
-          lloading="lazy"
+          l
           decoding="async"
           srcSet="/images/blog/article1_@1x.jpg 1x, /images/blog/article1_@2x.jpg 2x"
           alt={t('blog.articleOne.title')}

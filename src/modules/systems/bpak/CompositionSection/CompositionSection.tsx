@@ -74,7 +74,6 @@ export const CompositionSection = () => {
           src="/images/systems/bpka/d_bpka_composition@1x.jpg"
           alt={t('systems.bpak.composition.title')}
           srcSet="/images/systems/bpka/d_bpka_composition@1x.jpg 1x, /images/systems/bpka/d_bpka_composition@2x.jpg 2x"
-          loading="lazy"
           decoding="async"
         />
       </motion.div>

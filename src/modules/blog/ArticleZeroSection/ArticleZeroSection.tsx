@@ -18,7 +18,6 @@ export const ArticleZeroSection = () => {
         />
         <img
           src="/images/main/system/d_education@1x.png"
-          loading="lazy"
           decoding="async"
           srcSet="/images/main/system/d_education@1x.png 1x, /images/main/system/d_education@2x.png 2x"
           alt={t('blog.articleZero.title')}

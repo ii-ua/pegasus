@@ -21,7 +21,6 @@ export default function Header() {
               className="w-[54px] h-[54px] desktop:w-16 desktop:h-16"
               width={64}
               height={64}
-              loading="lazy"
               decoding="async"
               src="/big_logo.svg"
               alt="Logo"

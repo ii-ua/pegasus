@@ -46,7 +46,6 @@ export const ImageCard = ({
             sizes="(min-width: 768px) 326px, 100vw"
             alt={title}
             className="h-[212px] desktop:h-[199px] w-full"
-            loading="lazy"
             decoding="async"
           />
         </div>
@@ -86,7 +85,6 @@ export const ImageCard = ({
           <img
             src={arrowDownRight}
             width={32}
-            loading="lazy"
             decoding="async"
             height={32}
             className="
@@ -103,7 +101,6 @@ export const ImageCard = ({
             src={arrowDownRightActive}
             width={32}
             height={32}
-            loading="lazy"
             decoding="async"
             className="
               hidden

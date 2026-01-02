@@ -138,7 +138,6 @@ export const BplaHero = () => {
           src={techChar['1x']}
           srcSet={`${techChar['1x']} 1x, ${techChar['2x']} 2x`}
           alt="Bpla pegasus arms 25"
-          loading="lazy"
           decoding="async"
           className="w-full"
         />

@@ -90,7 +90,7 @@ export const CareersHero = () => {
           src="/images/careers/career_@1x.jpg"
           srcSet="/images/career/career_@1x.jpg 1x, /images/career/career_@2x.jpg 2x"
           alt="career pegasus arms 25"
-          loading="lazy"
+           
           decoding="async"
         />
       </motion.div> */}

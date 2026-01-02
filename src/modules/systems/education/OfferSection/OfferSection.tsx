@@ -81,7 +81,6 @@ export const OfferSection = () => {
           src="/images/systems/education/d_@1x.jpg"
           alt={t('systems.education.offer.title')}
           srcSet="/images/systems/education/d_@1x.jpg 1x, /images/systems/education/d_@2x.jpg 2x"
-          loading="lazy"
           decoding="async"
         />
       </motion.div>
