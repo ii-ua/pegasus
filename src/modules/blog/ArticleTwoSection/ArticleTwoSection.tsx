@@ -16,9 +16,9 @@ export const ArticleTwoSection = () => {
           text={t('blog.articleTwo.date')}
         />
         <img
-          src="/images/blog/article2_@1x.jpg"
+          src="/images/blog/article2_@1x.avif"
           decoding="async"
-          srcSet="/images/blog/article2_@1x.jpg 1x, /images/blog/article2_@2x.jpg 2x"
+          srcSet="/images/blog/article2_@1x.avif 1x, /images/blog/article2_@2x.avif 2x"
           alt={t('blog.articleTwo.title')}
           className="w-full h-auto"
         />

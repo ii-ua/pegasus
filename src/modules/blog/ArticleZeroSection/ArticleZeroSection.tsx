@@ -17,9 +17,9 @@ export const ArticleZeroSection = () => {
           text={t('blog.articleZero.date')}
         />
         <img
-          src="/images/main/system/d_education@1x.png"
+          src="/images/main/system/d_education@1x.avif"
           decoding="async"
-          srcSet="/images/main/system/d_education@1x.png 1x, /images/main/system/d_education@2x.png 2x"
+          srcSet="/images/main/system/d_education@1x.avif 1x, /images/main/system/d_education@2x.avif 2x"
           alt={t('blog.articleZero.title')}
           className="w-full h-auto"
         />
