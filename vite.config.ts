@@ -16,6 +16,13 @@ const config = defineConfig({
       spa: {
         enabled: false,
       },
+      prerender: {
+        enabled: true,
+        crawlLinks: true,
+      },
+      sitemap: {
+        host: 'https://pegasusarms.com.ua',
+      },
     }),
     viteTsConfigPaths({
       projects: ['./tsconfig.json'],
