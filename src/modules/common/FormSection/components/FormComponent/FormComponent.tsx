@@ -15,6 +15,7 @@ import FormSelect from '../FormSelect'
 import { JOB_OPTIONS } from '@/common/constants/jobs'
 import FileUploadField from '../FormFileUploadField'
 import { ClientOnly } from '@tanstack/react-router'
+import { sendFormEmail } from '@/server/sendFormEmail'
 
 export const errorMessagesStyle =
   'text-[#FF6600] text-[12px] tablet:text-[14px] desktop:text-[16px] font-normal'
@@ -23,6 +24,24 @@ export const FormComponent = ({
   summary = false,
 }: Readonly<{ summary?: boolean }>) => {
   const { t } = useTranslation()
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const formData = new FormData(event.currentTarget)
+    formData.append('target', summary ? 'hr' : 'info')
+    const vacancy = formData.get('vacancy')?.toString() ?? ''
+    console.log('Vacancy selected:', vacancy)
+    if (vacancy) {
+      const job = JOB_OPTIONS.find((opt) => opt.value === vacancy)
+      console.log('Job found:', job)
+      if (job) {
+        console.log('Appending vacancy to formData:', t(job.labelKey))
+        formData.set('vacancy', t(job.labelKey))
+      }
+    }
+
+    sendFormEmail({ data: formData })
+  }
   return (
     <motion.div
       className="relative w-full p-4 tablet:p-8 flex flex-col gap-6 tablet:gap-[43px] desktop:gap-[53px]"
@@ -78,9 +97,8 @@ export const FormComponent = ({
       </motion.h3>
 
       <Form.Root
+        onSubmit={handleSubmit}
         name="contact"
-        method="POST"
-        data-netlify="true"
         className="flex flex-col gap-8"
       >
         <motion.div
