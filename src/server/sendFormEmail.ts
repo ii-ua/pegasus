@@ -5,8 +5,8 @@ const { VITE_RESEND_API_KEY } = import.meta.env
 const resend = new Resend(VITE_RESEND_API_KEY!)
 
 const TO_MAP = {
-  hr: 'softlab@ii-ua.com',
-  info: 'softlab@ii-ua.com',
+  hr: 'hr@pegasusarms.com.ua',
+  info: 'p.info@pegasusarms.com.ua',
 } as const
 
 export const sendFormEmail = createServerFn({ method: 'POST' })
