@@ -42,7 +42,11 @@ export const FormComponent = ({ summary = false }: { summary?: boolean }) => {
     }
 
     try {
-      await sendFormEmail({ data: formData })
+      await fetch('/api/send-email', {
+        method: 'POST',
+        body: formData,
+        // НЕ додавай headers — браузер сам поставить правильний multipart boundary
+      })
       setIsSent(true)
     } catch (err) {
       console.error(err)

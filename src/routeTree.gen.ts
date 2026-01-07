@@ -20,6 +20,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as SystemsEducationRouteImport } from './routes/systems/education'
 import { Route as SystemsBplaRouteImport } from './routes/systems/bpla'
 import { Route as SystemsBpakRouteImport } from './routes/systems/bpak'
+import { Route as ApiSendEmailRouteImport } from './routes/api/send-email'
 import { Route as CareerCareerIdRouteRouteImport } from './routes/career/$careerId/route'
 
 const TermsRoute = TermsRouteImport.update({
@@ -77,6 +78,11 @@ const SystemsBpakRoute = SystemsBpakRouteImport.update({
   path: '/bpak',
   getParentRoute: () => SystemsRouteRoute,
 } as any)
+const ApiSendEmailRoute = ApiSendEmailRouteImport.update({
+  id: '/api/send-email',
+  path: '/api/send-email',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CareerCareerIdRouteRoute = CareerCareerIdRouteRouteImport.update({
   id: '/$careerId',
   path: '/$careerId',
@@ -93,6 +99,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/career/$careerId': typeof CareerCareerIdRouteRoute
+  '/api/send-email': typeof ApiSendEmailRoute
   '/systems/bpak': typeof SystemsBpakRoute
   '/systems/bpla': typeof SystemsBplaRoute
   '/systems/education': typeof SystemsEducationRoute
@@ -107,6 +114,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/career/$careerId': typeof CareerCareerIdRouteRoute
+  '/api/send-email': typeof ApiSendEmailRoute
   '/systems/bpak': typeof SystemsBpakRoute
   '/systems/bpla': typeof SystemsBplaRoute
   '/systems/education': typeof SystemsEducationRoute
@@ -122,6 +130,7 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/career/$careerId': typeof CareerCareerIdRouteRoute
+  '/api/send-email': typeof ApiSendEmailRoute
   '/systems/bpak': typeof SystemsBpakRoute
   '/systems/bpla': typeof SystemsBplaRoute
   '/systems/education': typeof SystemsEducationRoute
@@ -138,6 +147,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/terms'
     | '/career/$careerId'
+    | '/api/send-email'
     | '/systems/bpak'
     | '/systems/bpla'
     | '/systems/education'
@@ -152,6 +162,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/terms'
     | '/career/$careerId'
+    | '/api/send-email'
     | '/systems/bpak'
     | '/systems/bpla'
     | '/systems/education'
@@ -166,6 +177,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/terms'
     | '/career/$careerId'
+    | '/api/send-email'
     | '/systems/bpak'
     | '/systems/bpla'
     | '/systems/education'
@@ -180,6 +192,7 @@ export interface RootRouteChildren {
   ContactsRoute: typeof ContactsRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
+  ApiSendEmailRoute: typeof ApiSendEmailRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -261,6 +274,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SystemsBpakRouteImport
       parentRoute: typeof SystemsRouteRoute
     }
+    '/api/send-email': {
+      id: '/api/send-email'
+      path: '/api/send-email'
+      fullPath: '/api/send-email'
+      preLoaderRoute: typeof ApiSendEmailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/career/$careerId': {
       id: '/career/$careerId'
       path: '/$careerId'
@@ -308,6 +328,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactsRoute: ContactsRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
+  ApiSendEmailRoute: ApiSendEmailRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -15,6 +15,8 @@ export const sendFormEmail = createServerFn({ method: 'POST' })
       throw new Error('Expected FormData')
     }
 
+    console.log('Form data received:', Array.from(data.entries()))
+
     const file = data.get('summary')
 
     return {
@@ -29,6 +31,7 @@ export const sendFormEmail = createServerFn({ method: 'POST' })
     }
   })
   .handler(async ({ data }) => {
+    console.log('Processing form data:', data)
     if (data.target == 'hr') {
       const attachments = []
 
