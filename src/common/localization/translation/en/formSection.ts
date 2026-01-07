@@ -57,6 +57,16 @@ const formSection = {
       },
     },
     button: 'SEND',
+    submit: {
+      success: 'Thank you for reaching out. We will get back to you shortly.',
+      successHr:
+        'Thank you for your application. Our HR department will contact you shortly.',
+    },
+    messages: {
+      hr: 'Application sent successfully',
+      info: 'Message sent successfully',
+    },
+    resend: 'Send again',
   },
 }
 
