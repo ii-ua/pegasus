@@ -4,8 +4,8 @@ import { Resend } from 'resend'
 const resend = new Resend(import.meta.env.VITE_RESEND_API_KEY!)
 
 const TO_MAP = {
-  hr: 'softlab@ii-ua.com',
-  info: 'softlab@ii-ua.com',
+  hr: 'hr@pegasusarms.com.ua',
+  info: 'p.info@pegasusarms.com.ua',
 } as const
 
 export const Route = createFileRoute('/api/send-email')({
