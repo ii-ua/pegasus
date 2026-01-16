@@ -63,6 +63,20 @@ export const Route = createRootRoute({
         content: 'website',
       },
     ],
+    scripts: [
+      {
+        async: true,
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-4G7FW4XSS2',
+      },
+      {
+        children: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4G7FW4XSS2');
+        `,
+      },
+    ],
     links: [
       {
         rel: 'icon',
