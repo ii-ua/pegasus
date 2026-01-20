@@ -33,6 +33,10 @@ i18next
     load: 'languageOnly',
     defaultNS,
     interpolation: { escapeValue: false },
+    detection: {
+      order: ['cookie', 'navigator', 'htmlTag', 'path', 'subdomain'],
+      caches: ['cookie', 'localStorage'],
+    },
     resources,
   })
   .catch(console.error)
