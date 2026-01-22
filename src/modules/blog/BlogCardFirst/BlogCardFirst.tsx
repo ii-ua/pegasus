@@ -1,5 +1,6 @@
 import { Paragraph } from '@/components/text'
-import { Link } from '@tanstack/react-router'
+import { getRouteApi, Link } from '@tanstack/react-router'
+import { useTranslation } from 'react-i18next'
 
 export interface BlogCardFirstProps {
   cover: string
@@ -15,6 +16,8 @@ export const BlogCardFirst = ({
   date,
   slug,
 }: BlogCardFirstProps) => {
+  const { t } = useTranslation();
+  const { page } = getRouteApi('/blog').useSearch();
   return (
     <div className="flex flex-col gap-6">
       <Paragraph variant="grey" className="text-[#939393]" text={date} />
@@ -37,10 +40,11 @@ export const BlogCardFirst = ({
       <Link
         to="/blog/$slug"
         params={{ slug }}
+        search={{page}}
         className="decoration-[#FF6600] decoration-1 underline-offset-1 bg-gradient-to-r from-[#CE4906] via-[#FF6600] to-[#FF8B20] bg-clip-text text-transparent mt-2 inline-flex items-center gap-2  font-normal text-[16px] tablet:text-[20px] desktop:text-[24px] 
-                   hover:opacity-80 transition"
+            hover:opacity-80 transition"
       >
-        Детальніше
+        {t('blog.more')}
         <span aria-hidden>→</span>
       </Link>
     </div>

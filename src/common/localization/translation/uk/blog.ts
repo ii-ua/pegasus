@@ -1,6 +1,8 @@
 const blog = {
   title: 'PEGASUS ARMS блог',
   socLinks: 'Ми в соцмережах',
+  back: 'Назад',
+  more: "Детальніше",
   articleZero: {
     date: '25.12.2025',
     title: 'Навчений екіпаж — результативні вильоти: як готують операторів дронів Pegasus Arms 25',

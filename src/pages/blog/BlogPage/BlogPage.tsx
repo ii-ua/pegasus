@@ -1,5 +1,6 @@
 import { IPaginationMeta } from '@/common/interfaces/common'
 import { BlogPostResponse } from '@/common/interfaces/posts'
+import { formatDate } from '@/common/utils/dateTime'
 import MainContainer from '@/components/container/MainContainer'
 import SectionContainer from '@/components/container/SectionContainer'
 import SocialIcons from '@/components/lists/SocialIcons'
@@ -46,9 +47,7 @@ export const BlogPage = ({ posts, meta }: BlogPageProps) => {
                         slug={post.slug_url}
                       />
                       {index < posts.length - 1 && (
-                        <div
-                          className="border-dashed border-b-2 border-b-[#5A5A5A]"
-                        ></div>
+                        <div className='h-[2px] w-full mb-4 desktop:mb-6 mt-5 tablet:mt-4 desktop:mt-6 bg-[repeating-linear-gradient(to_right,#5A5A5A_0_8px,transparent_8px_13px)]'/>
                       )}
                     </div>
                   )
@@ -78,14 +77,4 @@ export const BlogPage = ({ posts, meta }: BlogPageProps) => {
       </MainContainer>
     </main>
   )
-}
-
-const formatDate = (iso: string) => {
-  const d = new Date(iso)
-
-  const day = String(d.getDate()).padStart(2, '0')
-  const month = String(d.getMonth() + 1).padStart(2, '0')
-  const year = d.getFullYear()
-
-  return `${day}.${month}.${year}`
 }

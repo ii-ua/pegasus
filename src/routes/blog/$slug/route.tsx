@@ -4,12 +4,13 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useTranslation } from 'react-i18next'
 
 export const Route = createFileRoute('/blog/$slug')({
-  component: RouteComponent,
+  validateSearch: (search) => ({
+    page: Number(search.page ?? 1),
+  }),
   loader: async ({ params }) => {
-    return await getPostBySlug({
-      data: { slug: params.slug },
-    })
+    return await getPostBySlug({ data: { slug: params.slug } })
   },
+  component: RouteComponent,
 })
 
 function RouteComponent() {
