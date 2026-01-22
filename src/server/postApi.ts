@@ -2,14 +2,27 @@ import { createServerFn } from '@tanstack/react-start'
 
 type GetPostsInput = {
   lang: string
+  page: number
+  limit: number
 }
 
 export const getPublishedPosts = createServerFn({ method: 'GET' })
   .inputValidator((d: GetPostsInput) => d)
-  .handler(async (ctx: { data?: GetPostsInput }) => {
+  .handler(async ({ data }) => {
+    const { page, limit } = data!
 
-    const url = `https://admin.pegasusarms.com.ua/items/posts?fields=*,translations.*&filter[status][_eq]=published&sort=-date_created`
+    const offset = (page - 1) * limit
 
+    const url =
+      `https://admin.pegasusarms.com.ua/items/posts` +
+      `?fields=*,translations.*` +
+      `&filter[status][_eq]=published` +
+      `&sort=-date_created` +
+      `&limit=${limit}` +
+      `&offset=${offset}` +
+      `&meta=total_count`;
+    
+    
     const res = await fetch(url, {
       headers: {
         Accept: 'application/json',
@@ -18,11 +31,14 @@ export const getPublishedPosts = createServerFn({ method: 'GET' })
 
     if (!res.ok) {
       console.error('Failed to fetch posts:', res.statusText)
-      return []
+      return { data: [], total: 0 }
     }
 
     const json = await res.json()
-    return json.data
+    return {
+      data: json.data,
+      total: json.meta?.total_count ?? 0,
+    }
   })
 
 type GetPostBySlugInput = {

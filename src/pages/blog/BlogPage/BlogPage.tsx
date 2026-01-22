@@ -6,9 +6,15 @@ import { BlogCardFirst } from '@/modules/blog/BlogCardFirst/BlogCardFirst'
 import { useTranslation } from 'react-i18next'
 
 export interface BlogPageProps {
-  posts: BlogPostResponse[]
-}
-export const BlogPage = ({ posts }: BlogPageProps) => {
+  posts: BlogPostResponse[],
+  meta: {
+    page: number,
+    total: number,
+    limit: number
+  }
+};
+
+export const BlogPage = ({ posts, meta }: BlogPageProps) => {
   const { i18n, t } = useTranslation()
   return (
     <main className="page-bg">
