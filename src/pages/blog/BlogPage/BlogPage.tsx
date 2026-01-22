@@ -1,8 +1,10 @@
 import { BlogPostResponse } from '@/common/interfaces/posts'
 import MainContainer from '@/components/container/MainContainer'
 import SectionContainer from '@/components/container/SectionContainer'
+import Pagination from '@/components/Pagination'
 import { SectionTitle } from '@/components/text'
 import { BlogCardFirst } from '@/modules/blog/BlogCardFirst/BlogCardFirst'
+import { getRouteApi } from '@tanstack/react-router'
 import { useTranslation } from 'react-i18next'
 
 export interface BlogPageProps {
@@ -15,7 +17,11 @@ export interface BlogPageProps {
 };
 
 export const BlogPage = ({ posts, meta }: BlogPageProps) => {
-  const { i18n, t } = useTranslation()
+  const { i18n, t } = useTranslation();
+  const route = getRouteApi('/blog/');
+
+  const navigate = route.useNavigate();
+
   return (
     <main className="page-bg">
       <MainContainer>
@@ -52,6 +58,16 @@ export const BlogPage = ({ posts, meta }: BlogPageProps) => {
             </article>
           </div>
         </SectionContainer>
+        <Pagination
+          page={meta.page}
+          total={meta.total}
+          limit={meta.limit}
+          onPageChange={(p) =>
+            navigate({
+              search: () => ({ page: p, limit: meta.limit }),
+            })
+          }
+        />
       </MainContainer>
     </main>
   )

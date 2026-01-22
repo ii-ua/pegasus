@@ -19,7 +19,7 @@ export const NavItem = ({
         hash={hash}
         activeOptions={{ includeHash: true }}
         className="group relative z-10 flex items-center gap-[3px] py-3.5 px-2.5 rounded-md
-                   font-medium desktop:text-[20px] text-[16px] uppercase transition-colors duration-200 text-white"
+                  font-medium desktop:text-[20px] text-[16px] uppercase transition-colors duration-200 text-white"
         activeProps={{
           className: 'text-white [&_span]:opacity-100', // активний стан + показати ромб
         }}
