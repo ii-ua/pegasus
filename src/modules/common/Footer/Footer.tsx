@@ -36,7 +36,7 @@ export const Footer = () => {
           alt="Logo"
         />
         <div>
-          <p>{t('footer.copyright')}</p>
+          <p>© {new Date().getFullYear()} {t('footer.copyright')}</p>
           <p>
             {t('footer.terms.text')}
             <a

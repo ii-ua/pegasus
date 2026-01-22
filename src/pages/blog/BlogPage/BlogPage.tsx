@@ -1,26 +1,12 @@
+import { BlogPostResponse } from '@/common/interfaces/posts'
 import MainContainer from '@/components/container/MainContainer'
 import SectionContainer from '@/components/container/SectionContainer'
 import { SectionTitle } from '@/components/text'
-import { BlogCard } from '@/modules/blog/BlogCard/BlogCard'
 import { BlogCardFirst } from '@/modules/blog/BlogCardFirst/BlogCardFirst'
 import { useTranslation } from 'react-i18next'
 
 export interface BlogPageProps {
-  posts: {
-    id: number
-    slug_url: string
-    cover: string
-    translations: {
-      id: number
-      posts_id: number
-      title: string
-      languages_code: string
-      content_short: string
-
-      content: string
-    }[]
-    date_created: string
-  }[]
+  posts: BlogPostResponse[]
 }
 export const BlogPage = ({ posts }: BlogPageProps) => {
   const { i18n, t } = useTranslation()
@@ -41,9 +27,8 @@ export const BlogPage = ({ posts }: BlogPageProps) => {
                   )
                   if (!translation) return null
                   return (
-                    <>
+                    <div key={post.slug_url}>
                       <BlogCardFirst
-                        key={post.id}
                         cover={`https://admin.pegasusarms.com.ua/assets/${post.cover}`}
                         title={translation.title}
                         description={translation.content_short}
@@ -52,11 +37,10 @@ export const BlogPage = ({ posts }: BlogPageProps) => {
                       />
                       {index < posts.length - 1 && (
                         <div
-                          key={post.id}
                           className="border-dashed border-b-2 border-b-[#5A5A5A]"
                         ></div>
                       )}
-                    </>
+                    </div>
                   )
                 })}
             </article>

@@ -7,6 +7,7 @@ type GetPostsInput = {
 export const getPublishedPosts = createServerFn({ method: 'GET' })
   .inputValidator((d: GetPostsInput) => d)
   .handler(async (ctx: { data?: GetPostsInput }) => {
+
     const url = `https://admin.pegasusarms.com.ua/items/posts?fields=*,translations.*&filter[status][_eq]=published&sort=-date_created`
 
     const res = await fetch(url, {

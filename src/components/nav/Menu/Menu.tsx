@@ -36,13 +36,11 @@ export const Menu = ({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: i * 0.1, ease: 'easeOut' }}
           >
-            <li>
-              <NavItem
-                label={t(`navMain.${item.label}`)}
-                href={item.href}
-                hash={item.hash}
-              />
-            </li>
+            <NavItem
+              label={t(`navMain.${item.label}`)}
+              href={item.href}
+              hash={item.hash}
+            />
           </motion.li>
         ))}
       </motion.ul>
