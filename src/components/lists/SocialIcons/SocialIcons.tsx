@@ -5,11 +5,16 @@ import Instagram from '@/assets/icons/instagram.svg?react'
 import Youtube from '@/assets/icons/youtube.svg?react'
 import Tiktok from '@/assets/icons/tiktok.svg?react'
 import { ClientOnly } from '@tanstack/react-router'
+import { cn } from '@/common/utils/cn'
 
-export const SocialIcons = () => {
+interface SocialIconsProps {
+  className?: string;
+}
+
+const SocialIcons = ({className}: Readonly <SocialIconsProps>) => {
   return (
     <motion.ul
-      className="text-white flex gap-3"
+      className={cn("text-white flex gap-3", className)}
       initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -113,3 +118,5 @@ function GlowIcon({
     </motion.a>
   )
 }
+
+export default SocialIcons;

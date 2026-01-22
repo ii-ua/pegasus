@@ -4,8 +4,8 @@ import { motion } from 'motion/react'
 
 import Tel from '@/assets/icons/tel.svg?react'
 import Email from '@/assets/icons/email.svg?react'
-import { SocialIcons } from '@/components/lists/SocialIcons/SocialIcons'
 import { ClientOnly } from '@tanstack/react-router'
+import SocialIcons from '@/components/lists/SocialIcons'
 
 const NAV_ITEMS = [
   { label: 'systems', href: '/#systems' },

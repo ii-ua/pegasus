@@ -1,6 +1,6 @@
 const blog = {
   title: 'PEGASUS ARMS Blog',
-  socLinks: 'we are on social media',
+  socLinks: 'We are on social media',
   articleZero: {
     date: '25.12.2025',
     title: 'A trained crew means effective sorties: how Pegasus Arms 25 drone operators are prepared',
