@@ -1,4 +1,4 @@
-interface BlogPostTranslation {
+export interface BlogPostTranslation {
     id: number
     posts_id: number
     title: string
