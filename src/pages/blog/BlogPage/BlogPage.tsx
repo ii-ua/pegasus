@@ -70,7 +70,7 @@ export const BlogPage = ({ posts, meta }: BlogPageProps) => {
           limit={meta.limit}
           onPageChange={(p) =>
             navigate({
-              search: () => ({ page: p, limit: meta.limit }),
+              search: () => (p > 1 ? { page: p } : {}),
             })
           }
         />

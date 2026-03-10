@@ -1,7 +1,7 @@
 import MainContainer from '@/components/container/MainContainer'
 import SectionContainer from '@/components/container/SectionContainer'
 import { Paragraph, SectionTitle } from '@/components/text'
-import { getRouteApi, Link } from '@tanstack/react-router'
+import { getRouteApi, Link, useLocation } from '@tanstack/react-router'
 import { useTranslation } from 'react-i18next'
 import { formatDate } from '@/common/utils/dateTime'
 import { BlogPostResponse, BlogPostTranslation } from '@/common/interfaces/posts'
@@ -23,7 +23,9 @@ export const PostPage = ({
 }: PostPageProps) => {
   const route = getRouteApi('/blog');
   const navigate = route.useNavigate()
-  const { page } = route.useSearch();
+  const location = useLocation()
+  const pageFromState = Number((location.state as { blogPage?: number } | undefined)?.blogPage)
+  const page = Number.isInteger(pageFromState) && pageFromState > 1 ? pageFromState : 1
   const { t } = useTranslation();
 
   const onInterestingPost = (slug: string) => {
@@ -31,7 +33,8 @@ export const PostPage = ({
       to: '$slug',
       params: {
         slug: slug,
-      }
+      },
+      state: true,
     })
   }
 
@@ -45,7 +48,7 @@ export const PostPage = ({
           <div className="flex flex-col gap-6 max-w-3xl desktop:max-w-[1011px]  pb-6">
             <Link
               to="/blog"
-              search={{ page }}
+              search={page && page > 1 ? { page } : {}}
               className="decoration-[#FF6600] decoration-1 underline-offset-1 bg-gradient-to-r from-[#CE4906] via-[#FF6600] to-[#FF8B20] bg-clip-text text-transparent mt-2 inline-flex items-center gap-2  font-normal text-[16px] tablet:text-[20px] desktop:text-[24px] 
                           hover:opacity-80 transition"
             >

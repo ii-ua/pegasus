@@ -16,8 +16,9 @@ export const BlogCardFirst = ({
   date,
   slug,
 }: BlogCardFirstProps) => {
-  const { t } = useTranslation();
-  const { page } = getRouteApi('/blog').useSearch();
+  const { t } = useTranslation()
+  const { page } = getRouteApi('/blog').useSearch()
+
   return (
     <div className="flex flex-col gap-6">
       <Paragraph variant="grey" className="text-[#939393]" text={date} />
@@ -40,7 +41,7 @@ export const BlogCardFirst = ({
       <Link
         to="/blog/$slug"
         params={{ slug }}
-        search={{page}}
+        state={(prev) => ({ ...prev, blogPage: page ?? 1 })}
         className="decoration-[#FF6600] decoration-1 underline-offset-1 bg-gradient-to-r from-[#CE4906] via-[#FF6600] to-[#FF8B20] bg-clip-text text-transparent mt-2 inline-flex items-center gap-2  font-normal text-[16px] tablet:text-[20px] desktop:text-[24px] 
             hover:opacity-80 transition"
       >
