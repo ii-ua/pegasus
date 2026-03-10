@@ -4,7 +4,7 @@ import { MobileMenu } from '@/components/nav/MobileMenu/MobileMenu'
 import { LangSelect } from '@/components/select'
 
 const NAV_ITEMS = [
-  { label: 'systems', href: '/#systems', hash: 'systems' },
+  { label: 'systems', href: '/#systems' },
   { label: 'aboutUs', href: '/about-us' },
   { label: 'career', href: '/career' },
   { label: 'blog', href: '/blog' },
