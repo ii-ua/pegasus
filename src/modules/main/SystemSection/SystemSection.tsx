@@ -49,7 +49,7 @@ export const SystemSection = ({ id }: { id?: string }) => {
             image1x="/images/main/system/d_bpla@1x.avif"
             image2x="/images/main/system/d_bpla@2x.avif"
             description={t('systemMain.cards.bpla.description')}
-            href="systems/bpla"
+            href="/systems/bpla"
           />
         </motion.div>
 
@@ -64,7 +64,7 @@ export const SystemSection = ({ id }: { id?: string }) => {
             image1x="/images/main/system/d_bpka@1x.avif"
             image2x="/images/main/system/d_bpka@2x.avif"
             description={t('systemMain.cards.bpak.description')}
-            href="systems/bpak"
+            href="/systems/bpak"
           />
         </motion.div>
 
@@ -79,7 +79,7 @@ export const SystemSection = ({ id }: { id?: string }) => {
             image1x="/images/main/system/d_education@1x.avif"
             image2x="/images/main/system/d_education@2x.avif"
             description={t('systemMain.cards.education.description')}
-            href="systems/education"
+            href="/systems/education"
           />
         </motion.div>
       </motion.div>

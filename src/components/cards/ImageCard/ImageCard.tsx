@@ -1,6 +1,8 @@
 import arrowDownRight from '@/assets/icons/arrow-down-right.svg?url'
 import arrowDownRightActive from '@/assets/icons/arrow-down-right-active.svg?url'
 import { motion } from 'motion/react'
+import { useRouterState } from '@tanstack/react-router'
+import { localeFromPathname, localizePath } from '@/common/localization/localePath'
 
 interface ImageCardProps {
   image1x: string
@@ -17,9 +19,14 @@ export const ImageCard = ({
   description,
   href,
 }: ImageCardProps) => {
+  const pathname = useRouterState({ select: (s) => s.location.pathname })
+  const locale = localeFromPathname(pathname)
+  const normalizedHref = href.startsWith('/') ? href : `/${href}`
+  const localizedHref = localizePath(normalizedHref, locale)
+
   return (
     <motion.a
-      href={href}
+      href={localizedHref}
       aria-label={title}
       className="
         group/ImageCard block cursor-pointer
