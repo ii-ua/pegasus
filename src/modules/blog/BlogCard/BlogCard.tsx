@@ -1,5 +1,6 @@
 import { Paragraph } from '@/components/text'
-import { Link } from '@tanstack/react-router'
+import { Link, useRouterState } from '@tanstack/react-router'
+import { localeFromPathname, localizePath } from '@/common/localization/localePath'
 
 export interface BlogCardProps {
   cover: string
@@ -15,6 +16,10 @@ export const BlogCard = ({
   date,
   slug,
 }: BlogCardProps) => {
+  const pathname = useRouterState({ select: (s) => s.location.pathname })
+  const locale = localeFromPathname(pathname)
+  const blogPostPath = localizePath('/blog/$slug', locale)
+
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col md:flex-row gap-6">
@@ -40,7 +45,7 @@ export const BlogCard = ({
       </div>
 
       <Link
-        to="/blog/$slug"
+        to={blogPostPath}
         params={{ slug }}
         className="decoration-[#FF6600] decoration-1 underline-offset-1 bg-gradient-to-r from-[#CE4906] via-[#FF6600] to-[#FF8B20] bg-clip-text text-transparent mt-2 inline-flex items-center gap-2  font-normal text-[16px] tablet:text-[20px] desktop:text-[24px]
              hover:opacity-80 transition"

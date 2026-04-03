@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'motion/react'
 import { useTranslation } from 'react-i18next'
 import { NavItem } from '../NavItem'
 import { LangSelect } from '@/components/select'
+import { useRouterState } from '@tanstack/react-router'
+import { localeFromPathname, localizePath } from '@/common/localization/localePath'
 
 export interface MobileMenuProps {
   navItems: Array<{ label: string; href?: string; hash?: string }>
@@ -12,6 +14,8 @@ export interface MobileMenuProps {
 export const MobileMenu = ({ navItems }: MobileMenuProps) => {
   const [open, setOpen] = useState(false)
   const { t } = useTranslation()
+  const pathname = useRouterState({ select: (s) => s.location.pathname })
+  const locale = localeFromPathname(pathname)
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
@@ -63,7 +67,7 @@ export const MobileMenu = ({ navItems }: MobileMenuProps) => {
                 >
                   {/* LOGO + CLOSE */}
                   <div className="flex items-center justify-between">
-                    <a href="/" className="block">
+                    <a href={localizePath('/', locale)} className="block">
                       <img
                         src="/logo.png"
                         width={64}

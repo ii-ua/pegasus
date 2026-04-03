@@ -2,6 +2,8 @@ import { useTranslation } from 'react-i18next'
 import { NavItem } from '../NavItem'
 import { cn } from '@/common/utils/cn'
 import { motion } from 'motion/react'
+import { useRouterState } from '@tanstack/react-router'
+import { localeFromPathname, localizePath } from '@/common/localization/localePath'
 
 export interface MenuProps {
   navItems?: Array<{ label: string; href?: string; hash?: string }>
@@ -17,6 +19,8 @@ export const Menu = ({
   classNameContainer,
 }: MenuProps) => {
   const { t } = useTranslation()
+  const pathname = useRouterState({ select: (s) => s.location.pathname })
+  const locale = localeFromPathname(pathname)
 
   return (
     <nav
@@ -38,7 +42,7 @@ export const Menu = ({
           >
             <NavItem
               label={t(`navMain.${item.label}`)}
-              href={item.href}
+              href={item.href ? localizePath(item.href, locale) : undefined}
               hash={item.hash}
             />
           </motion.li>

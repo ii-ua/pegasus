@@ -1,12 +1,13 @@
 import MainContainer from '@/components/container/MainContainer'
 import SectionContainer from '@/components/container/SectionContainer'
 import { Paragraph, SectionTitle } from '@/components/text'
-import { getRouteApi, Link, useLocation } from '@tanstack/react-router'
+import { Link, useLocation, useNavigate, useRouterState } from '@tanstack/react-router'
 import { useTranslation } from 'react-i18next'
 import { formatDate } from '@/common/utils/dateTime'
 import { BlogPostResponse, BlogPostTranslation } from '@/common/interfaces/posts'
 import BlogInterestingCard from '@/modules/blog/BlogInterestingCard'
 import { ButtonPrimary } from '@/components/buttons/ButtonPrimary'
+import { localeFromPathname, localizePath } from '@/common/localization/localePath'
 
 export interface PostPageProps {
   cover: string;
@@ -21,8 +22,11 @@ export const PostPage = ({
   date_created,
   lastThreePosts
 }: PostPageProps) => {
-  const route = getRouteApi('/blog');
-  const navigate = route.useNavigate()
+  const navigate = useNavigate()
+  const pathname = useRouterState({ select: (s) => s.location.pathname })
+  const locale = localeFromPathname(pathname)
+  const blogPath = localizePath('/blog', locale)
+  const blogSlugPath = localizePath('/blog/$slug', locale)
   const location = useLocation()
   const pageFromState = Number((location.state as { blogPage?: number } | undefined)?.blogPage)
   const page = Number.isInteger(pageFromState) && pageFromState > 1 ? pageFromState : 1
@@ -30,7 +34,7 @@ export const PostPage = ({
 
   const onInterestingPost = (slug: string) => {
     void navigate({
-      to: '$slug',
+      to: blogSlugPath,
       params: {
         slug: slug,
       },
@@ -47,7 +51,7 @@ export const PostPage = ({
         >
           <div className="flex flex-col gap-6 max-w-3xl desktop:max-w-[1011px]  pb-6">
             <Link
-              to="/blog"
+              to={blogPath}
               search={page && page > 1 ? { page } : {}}
               className="decoration-[#FF6600] decoration-1 underline-offset-1 bg-gradient-to-r from-[#CE4906] via-[#FF6600] to-[#FF8B20] bg-clip-text text-transparent mt-2 inline-flex items-center gap-2  font-normal text-[16px] tablet:text-[20px] desktop:text-[24px] 
                           hover:opacity-80 transition"
@@ -81,7 +85,7 @@ export const PostPage = ({
             {lastThreePosts?.map(post => <BlogInterestingCard key={post.id} cover={post.cover} translations={post.translations} onClick={() => onInterestingPost(post.slug_url)} />)}
           </div>
           <div className="flex justify-center mt-7 tablet:mt-[42px] desktop:mt-[38px]">
-            <ButtonPrimary to='/blog'>
+            <ButtonPrimary to={blogPath}>
               {t('blog.all')}
             </ButtonPrimary>
           </div>

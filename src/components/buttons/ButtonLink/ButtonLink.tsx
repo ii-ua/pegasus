@@ -1,4 +1,6 @@
 import { Link, LinkProps } from '@tanstack/react-router'
+import { useRouterState } from '@tanstack/react-router'
+import { localeFromPathname, localizePath } from '@/common/localization/localePath'
 // або з react-router-dom
 // import { Link } from 'react-router-dom'
 
@@ -9,9 +11,15 @@ export interface ButtonLinkProps
 }
 
 export const ButtonLink = ({ className = '', ...rest }: ButtonLinkProps) => {
+  const pathname = useRouterState({ select: (s) => s.location.pathname })
+  const locale = localeFromPathname(pathname)
+  const localizedTo =
+    typeof rest.to === 'string' ? localizePath(rest.to, locale) : rest.to
+
   return (
     <Link
       {...rest}
+      to={localizedTo}
       className={`
         min-w-[148px] max-w-fit py-3 px-6 font-medium uppercase text-[16px] desktop:text-[20px]
         text-[#101010] cursor-pointer transition-transform duration-200

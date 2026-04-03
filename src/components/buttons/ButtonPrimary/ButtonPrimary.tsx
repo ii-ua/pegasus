@@ -2,7 +2,8 @@ import React from 'react'
 import { cn } from '@/common/utils/cn'
 import CutButton from '@/assets/shapes/cut-button.svg?react'
 import { ClientOnly } from '@tanstack/react-router'
-import { Link } from '@tanstack/react-router'
+import { Link, useRouterState } from '@tanstack/react-router'
+import { localeFromPathname, localizePath } from '@/common/localization/localePath'
 
 const baseStyles = `
   min-w-[148px] max-w-fit py-3 px-6 font-[500] uppercase text-[16px] desktop:text-[20px]
@@ -39,7 +40,11 @@ export const ButtonPrimary = ({
   children,
   ...rest
 }: ButtonPrimaryProps) => {
+  const pathname = useRouterState({ select: (s) => s.location.pathname })
+  const locale = localeFromPathname(pathname)
   const commonClasses = cn(baseStyles, variants[variant], className)
+  const localizedTo = to ? localizePath(to, locale) : undefined
+  const localizedHref = href ? localizePath(href, locale) : undefined
 
   const sharedContent = (
     <>
@@ -61,10 +66,10 @@ export const ButtonPrimary = ({
   )
 
   // Якщо є `to` → TanStack Link
-  if (to) {
+  if (localizedTo) {
     return (
       <Link
-        to={to}
+        to={localizedTo}
         className={commonClasses}
         style={{
           clipPath:
@@ -79,10 +84,10 @@ export const ButtonPrimary = ({
   }
 
   // Якщо є `href` → звичайне <a>
-  if (href) {
+  if (localizedHref) {
     return (
       <a
-        href={href}
+        href={localizedHref}
         className={commonClasses}
         style={{
           clipPath:

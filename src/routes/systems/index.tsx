@@ -2,12 +2,22 @@ import { buildWebsiteSeo, SITE_URL } from '@/common/utils/seo'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/systems/')({
-  head: () =>
-    buildWebsiteSeo({
+  head: () => {
+    const baseSeo = buildWebsiteSeo({
       title: 'Системи Pegasus Arms | Рішення для Сил оборони',
       description:
         'Огляд систем Pegasus Arms: ударні БпЛА, БпАК та навчальні рішення для ефективного виконання бойових завдань.',
       canonical: `${SITE_URL}/systems`,
-    }),
+    })
+
+    return {
+      ...baseSeo,
+      links: [
+        ...baseSeo.links,
+        { rel: 'alternate', hrefLang: 'uk', href: `${SITE_URL}/systems` },
+        { rel: 'alternate', hrefLang: 'en', href: `${SITE_URL}/en/systems` },
+      ],
+    }
+  },
   component: () => null,
 })

@@ -9,7 +9,7 @@ const parsePage = (value: unknown): number | undefined => {
   return parsed
 }
 
-export const Route = createFileRoute('/blog/')({
+export const Route = createFileRoute('/en/blog/')({
   validateSearch: (search) => ({
     page: parsePage(search.page),
   }),
@@ -22,22 +22,23 @@ export const Route = createFileRoute('/blog/')({
         lang: 'all',
         page: deps.page,
         limit: 5,
-      }
+      },
     })
   },
   head: ({ search }) => {
     const page = search?.page ?? 1
     const isFirstPage = page === 1
-    const canonical = isFirstPage ? `${SITE_URL}/blog` : `${SITE_URL}/blog?page=${page}`
-    const alternateEn = isFirstPage
-      ? `${SITE_URL}/en/blog`
-      : `${SITE_URL}/en/blog?page=${page}`
+    const canonical =
+      isFirstPage ? `${SITE_URL}/en/blog` : `${SITE_URL}/en/blog?page=${page}`
+    const alternateUk =
+      isFirstPage ? `${SITE_URL}/blog` : `${SITE_URL}/blog?page=${page}`
+
     const baseSeo = buildWebsiteSeo({
       title: isFirstPage
-        ? 'Блог Pegasus Arms | Новини та аналітика'
-        : `Блог Pegasus Arms — сторінка ${page}`,
+        ? 'Pegasus Arms Blog | News and Analytics'
+        : `Pegasus Arms Blog — page ${page}`,
       description:
-        'Блог Pegasus Arms: новини, технології, результати роботи та аналітика щодо застосування ударних БПЛА.',
+        'Pegasus Arms blog: news, technologies, field results and analysis of strike UAV operations.',
       canonical,
       noIndex: !isFirstPage,
     })
@@ -46,8 +47,8 @@ export const Route = createFileRoute('/blog/')({
       ...baseSeo,
       links: [
         ...baseSeo.links,
-        { rel: 'alternate', hrefLang: 'uk', href: canonical },
-        { rel: 'alternate', hrefLang: 'en', href: alternateEn },
+        { rel: 'alternate', hrefLang: 'uk', href: alternateUk },
+        { rel: 'alternate', hrefLang: 'en', href: canonical },
       ],
     }
   },
@@ -59,8 +60,5 @@ function RouteComponent() {
   const { data, total } = Route.useLoaderData()
   const page = rawPage ?? 1
 
-  return <BlogPage
-    posts={data}
-    meta={{ page, total, limit: 5 }}
-  />
+  return <BlogPage posts={data} meta={{ page, total, limit: 5 }} />
 }

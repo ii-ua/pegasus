@@ -3,6 +3,7 @@ import {
   Scripts,
   createRootRoute,
   redirect,
+  useRouterState,
 } from '@tanstack/react-router'
 import '../common/localization/i18n'
 import Header from '../modules/common/Header/Header'
@@ -12,6 +13,9 @@ import { Footer } from '@/modules/common/Footer/Footer'
 import MainContainer from '@/components/container/MainContainer'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
+import { localeFromPathname } from '@/common/localization/localePath'
+import { useTranslation } from 'react-i18next'
+import { useEffect } from 'react'
 
 export const Route = createRootRoute({
   notFoundComponent: () => {
@@ -38,18 +42,6 @@ export const Route = createRootRoute({
         name: 'description',
         content:
           'Придбати сертифіковані ударні дроні Pegasus Arms 25 для бойових завдань ЗСУ та Сил оборони. Пегас Армс - український виробник. Дрони сертифіковані Міністерством оборони.',
-      },
-      {
-        property: 'og:locale',
-        content: 'uk_UA',
-      },
-      {
-        property: 'og:locale:alternate',
-        content: 'en_US',
-      },
-      {
-        httpEquiv: 'content-language',
-        content: 'uk',
       },
       {
         name: 'twitter:url',
@@ -96,8 +88,26 @@ export const Route = createRootRoute({
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  const pathname = useRouterState({
+    select: (state) => state.location.pathname,
+  })
+  const locale = localeFromPathname(pathname)
+  const { i18n } = useTranslation()
+
+  if (!i18n.language?.startsWith(locale)) {
+    void i18n.changeLanguage(locale)
+  }
+
+  useEffect(() => {
+    if (!i18n.language?.startsWith(locale)) return
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem('i18nextLng', locale)
+      document.cookie = `i18next=${locale}; path=/; max-age=31536000`
+    }
+  }, [i18n, locale])
+
   return (
-    <html lang="uk">
+    <html lang={locale}>
       <head>
         <HeadContent />
       </head>
@@ -112,7 +122,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           </MainContainer>
         </div>
 
-        {/* {import.meta.env.DEV && (
+        {import.meta.env.DEV && (
           <TanStackDevtools
             config={{ position: 'bottom-left' }}
             plugins={[
@@ -122,7 +132,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
               },
             ]}
           />
-        )} */}
+        )}
 
         <Scripts />
       </body>

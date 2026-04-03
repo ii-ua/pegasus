@@ -137,6 +137,7 @@ export const Route = createFileRoute('/blog/$slug')({
       'Матеріал блогу Pegasus Arms.'
     const keywords = stringifyKeywords(seo)
     const canonical = `${SITE_URL}/blog/${params.slug}`
+    const alternateEn = `${SITE_URL}/en/blog/${params.slug}`
     const image = toAssetUrl(seo?.og_image || post?.cover) ?? DEFAULT_OG_IMAGE
 
     return {
@@ -167,6 +168,7 @@ export const Route = createFileRoute('/blog/$slug')({
       links: [
         { rel: 'canonical', href: canonical },
         { rel: 'alternate', hrefLang: 'uk', href: canonical },
+        { rel: 'alternate', hrefLang: 'en', href: alternateEn },
       ],
     }
   },

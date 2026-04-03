@@ -14,17 +14,33 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ContactsRouteImport } from './routes/contacts'
 import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as SystemsRouteRouteImport } from './routes/systems/route'
+import { Route as EnRouteRouteImport } from './routes/en/route'
 import { Route as CareerRouteRouteImport } from './routes/career/route'
 import { Route as BlogRouteRouteImport } from './routes/blog/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SystemsIndexRouteImport } from './routes/systems/index'
+import { Route as EnIndexRouteImport } from './routes/en/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as SystemsEducationRouteImport } from './routes/systems/education'
 import { Route as SystemsBplaRouteImport } from './routes/systems/bpla'
 import { Route as SystemsBpakRouteImport } from './routes/systems/bpak'
+import { Route as EnTermsRouteImport } from './routes/en/terms'
+import { Route as EnPrivacyRouteImport } from './routes/en/privacy'
+import { Route as EnContactsRouteImport } from './routes/en/contacts'
+import { Route as EnAboutUsRouteImport } from './routes/en/about-us'
 import { Route as ApiSendEmailRouteImport } from './routes/api/send-email'
+import { Route as EnSystemsRouteRouteImport } from './routes/en/systems/route'
+import { Route as EnCareerRouteRouteImport } from './routes/en/career/route'
+import { Route as EnBlogRouteRouteImport } from './routes/en/blog/route'
 import { Route as CareerCareerIdRouteRouteImport } from './routes/career/$careerId/route'
 import { Route as BlogSlugRouteRouteImport } from './routes/blog/$slug/route'
+import { Route as EnSystemsIndexRouteImport } from './routes/en/systems/index'
+import { Route as EnBlogIndexRouteImport } from './routes/en/blog/index'
+import { Route as EnSystemsEducationRouteImport } from './routes/en/systems/education'
+import { Route as EnSystemsBplaRouteImport } from './routes/en/systems/bpla'
+import { Route as EnSystemsBpakRouteImport } from './routes/en/systems/bpak'
+import { Route as EnCareerCareerIdRouteRouteImport } from './routes/en/career/$careerId/route'
+import { Route as EnBlogSlugRouteRouteImport } from './routes/en/blog/$slug/route'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -51,6 +67,11 @@ const SystemsRouteRoute = SystemsRouteRouteImport.update({
   path: '/systems',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EnRouteRoute = EnRouteRouteImport.update({
+  id: '/en',
+  path: '/en',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CareerRouteRoute = CareerRouteRouteImport.update({
   id: '/career',
   path: '/career',
@@ -70,6 +91,11 @@ const SystemsIndexRoute = SystemsIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => SystemsRouteRoute,
+} as any)
+const EnIndexRoute = EnIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EnRouteRoute,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/',
@@ -91,10 +117,45 @@ const SystemsBpakRoute = SystemsBpakRouteImport.update({
   path: '/bpak',
   getParentRoute: () => SystemsRouteRoute,
 } as any)
+const EnTermsRoute = EnTermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => EnRouteRoute,
+} as any)
+const EnPrivacyRoute = EnPrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => EnRouteRoute,
+} as any)
+const EnContactsRoute = EnContactsRouteImport.update({
+  id: '/contacts',
+  path: '/contacts',
+  getParentRoute: () => EnRouteRoute,
+} as any)
+const EnAboutUsRoute = EnAboutUsRouteImport.update({
+  id: '/about-us',
+  path: '/about-us',
+  getParentRoute: () => EnRouteRoute,
+} as any)
 const ApiSendEmailRoute = ApiSendEmailRouteImport.update({
   id: '/api/send-email',
   path: '/api/send-email',
   getParentRoute: () => rootRouteImport,
+} as any)
+const EnSystemsRouteRoute = EnSystemsRouteRouteImport.update({
+  id: '/systems',
+  path: '/systems',
+  getParentRoute: () => EnRouteRoute,
+} as any)
+const EnCareerRouteRoute = EnCareerRouteRouteImport.update({
+  id: '/career',
+  path: '/career',
+  getParentRoute: () => EnRouteRoute,
+} as any)
+const EnBlogRouteRoute = EnBlogRouteRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => EnRouteRoute,
 } as any)
 const CareerCareerIdRouteRoute = CareerCareerIdRouteRouteImport.update({
   id: '/$careerId',
@@ -106,11 +167,47 @@ const BlogSlugRouteRoute = BlogSlugRouteRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogRouteRoute,
 } as any)
+const EnSystemsIndexRoute = EnSystemsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EnSystemsRouteRoute,
+} as any)
+const EnBlogIndexRoute = EnBlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EnBlogRouteRoute,
+} as any)
+const EnSystemsEducationRoute = EnSystemsEducationRouteImport.update({
+  id: '/education',
+  path: '/education',
+  getParentRoute: () => EnSystemsRouteRoute,
+} as any)
+const EnSystemsBplaRoute = EnSystemsBplaRouteImport.update({
+  id: '/bpla',
+  path: '/bpla',
+  getParentRoute: () => EnSystemsRouteRoute,
+} as any)
+const EnSystemsBpakRoute = EnSystemsBpakRouteImport.update({
+  id: '/bpak',
+  path: '/bpak',
+  getParentRoute: () => EnSystemsRouteRoute,
+} as any)
+const EnCareerCareerIdRouteRoute = EnCareerCareerIdRouteRouteImport.update({
+  id: '/$careerId',
+  path: '/$careerId',
+  getParentRoute: () => EnCareerRouteRoute,
+} as any)
+const EnBlogSlugRouteRoute = EnBlogSlugRouteRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => EnBlogRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteRouteWithChildren
   '/career': typeof CareerRouteRouteWithChildren
+  '/en': typeof EnRouteRouteWithChildren
   '/systems': typeof SystemsRouteRouteWithChildren
   '/about-us': typeof AboutUsRoute
   '/contacts': typeof ContactsRoute
@@ -118,12 +215,27 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRouteRoute
   '/career/$careerId': typeof CareerCareerIdRouteRoute
+  '/en/blog': typeof EnBlogRouteRouteWithChildren
+  '/en/career': typeof EnCareerRouteRouteWithChildren
+  '/en/systems': typeof EnSystemsRouteRouteWithChildren
   '/api/send-email': typeof ApiSendEmailRoute
+  '/en/about-us': typeof EnAboutUsRoute
+  '/en/contacts': typeof EnContactsRoute
+  '/en/privacy': typeof EnPrivacyRoute
+  '/en/terms': typeof EnTermsRoute
   '/systems/bpak': typeof SystemsBpakRoute
   '/systems/bpla': typeof SystemsBplaRoute
   '/systems/education': typeof SystemsEducationRoute
   '/blog/': typeof BlogIndexRoute
+  '/en/': typeof EnIndexRoute
   '/systems/': typeof SystemsIndexRoute
+  '/en/blog/$slug': typeof EnBlogSlugRouteRoute
+  '/en/career/$careerId': typeof EnCareerCareerIdRouteRoute
+  '/en/systems/bpak': typeof EnSystemsBpakRoute
+  '/en/systems/bpla': typeof EnSystemsBplaRoute
+  '/en/systems/education': typeof EnSystemsEducationRoute
+  '/en/blog/': typeof EnBlogIndexRoute
+  '/en/systems/': typeof EnSystemsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -134,18 +246,32 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRouteRoute
   '/career/$careerId': typeof CareerCareerIdRouteRoute
+  '/en/career': typeof EnCareerRouteRouteWithChildren
   '/api/send-email': typeof ApiSendEmailRoute
+  '/en/about-us': typeof EnAboutUsRoute
+  '/en/contacts': typeof EnContactsRoute
+  '/en/privacy': typeof EnPrivacyRoute
+  '/en/terms': typeof EnTermsRoute
   '/systems/bpak': typeof SystemsBpakRoute
   '/systems/bpla': typeof SystemsBplaRoute
   '/systems/education': typeof SystemsEducationRoute
   '/blog': typeof BlogIndexRoute
+  '/en': typeof EnIndexRoute
   '/systems': typeof SystemsIndexRoute
+  '/en/blog/$slug': typeof EnBlogSlugRouteRoute
+  '/en/career/$careerId': typeof EnCareerCareerIdRouteRoute
+  '/en/systems/bpak': typeof EnSystemsBpakRoute
+  '/en/systems/bpla': typeof EnSystemsBplaRoute
+  '/en/systems/education': typeof EnSystemsEducationRoute
+  '/en/blog': typeof EnBlogIndexRoute
+  '/en/systems': typeof EnSystemsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteRouteWithChildren
   '/career': typeof CareerRouteRouteWithChildren
+  '/en': typeof EnRouteRouteWithChildren
   '/systems': typeof SystemsRouteRouteWithChildren
   '/about-us': typeof AboutUsRoute
   '/contacts': typeof ContactsRoute
@@ -153,12 +279,27 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRouteRoute
   '/career/$careerId': typeof CareerCareerIdRouteRoute
+  '/en/blog': typeof EnBlogRouteRouteWithChildren
+  '/en/career': typeof EnCareerRouteRouteWithChildren
+  '/en/systems': typeof EnSystemsRouteRouteWithChildren
   '/api/send-email': typeof ApiSendEmailRoute
+  '/en/about-us': typeof EnAboutUsRoute
+  '/en/contacts': typeof EnContactsRoute
+  '/en/privacy': typeof EnPrivacyRoute
+  '/en/terms': typeof EnTermsRoute
   '/systems/bpak': typeof SystemsBpakRoute
   '/systems/bpla': typeof SystemsBplaRoute
   '/systems/education': typeof SystemsEducationRoute
   '/blog/': typeof BlogIndexRoute
+  '/en/': typeof EnIndexRoute
   '/systems/': typeof SystemsIndexRoute
+  '/en/blog/$slug': typeof EnBlogSlugRouteRoute
+  '/en/career/$careerId': typeof EnCareerCareerIdRouteRoute
+  '/en/systems/bpak': typeof EnSystemsBpakRoute
+  '/en/systems/bpla': typeof EnSystemsBplaRoute
+  '/en/systems/education': typeof EnSystemsEducationRoute
+  '/en/blog/': typeof EnBlogIndexRoute
+  '/en/systems/': typeof EnSystemsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -166,6 +307,7 @@ export interface FileRouteTypes {
     | '/'
     | '/blog'
     | '/career'
+    | '/en'
     | '/systems'
     | '/about-us'
     | '/contacts'
@@ -173,12 +315,27 @@ export interface FileRouteTypes {
     | '/terms'
     | '/blog/$slug'
     | '/career/$careerId'
+    | '/en/blog'
+    | '/en/career'
+    | '/en/systems'
     | '/api/send-email'
+    | '/en/about-us'
+    | '/en/contacts'
+    | '/en/privacy'
+    | '/en/terms'
     | '/systems/bpak'
     | '/systems/bpla'
     | '/systems/education'
     | '/blog/'
+    | '/en/'
     | '/systems/'
+    | '/en/blog/$slug'
+    | '/en/career/$careerId'
+    | '/en/systems/bpak'
+    | '/en/systems/bpla'
+    | '/en/systems/education'
+    | '/en/blog/'
+    | '/en/systems/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -189,17 +346,31 @@ export interface FileRouteTypes {
     | '/terms'
     | '/blog/$slug'
     | '/career/$careerId'
+    | '/en/career'
     | '/api/send-email'
+    | '/en/about-us'
+    | '/en/contacts'
+    | '/en/privacy'
+    | '/en/terms'
     | '/systems/bpak'
     | '/systems/bpla'
     | '/systems/education'
     | '/blog'
+    | '/en'
     | '/systems'
+    | '/en/blog/$slug'
+    | '/en/career/$careerId'
+    | '/en/systems/bpak'
+    | '/en/systems/bpla'
+    | '/en/systems/education'
+    | '/en/blog'
+    | '/en/systems'
   id:
     | '__root__'
     | '/'
     | '/blog'
     | '/career'
+    | '/en'
     | '/systems'
     | '/about-us'
     | '/contacts'
@@ -207,18 +378,34 @@ export interface FileRouteTypes {
     | '/terms'
     | '/blog/$slug'
     | '/career/$careerId'
+    | '/en/blog'
+    | '/en/career'
+    | '/en/systems'
     | '/api/send-email'
+    | '/en/about-us'
+    | '/en/contacts'
+    | '/en/privacy'
+    | '/en/terms'
     | '/systems/bpak'
     | '/systems/bpla'
     | '/systems/education'
     | '/blog/'
+    | '/en/'
     | '/systems/'
+    | '/en/blog/$slug'
+    | '/en/career/$careerId'
+    | '/en/systems/bpak'
+    | '/en/systems/bpla'
+    | '/en/systems/education'
+    | '/en/blog/'
+    | '/en/systems/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BlogRouteRoute: typeof BlogRouteRouteWithChildren
   CareerRouteRoute: typeof CareerRouteRouteWithChildren
+  EnRouteRoute: typeof EnRouteRouteWithChildren
   SystemsRouteRoute: typeof SystemsRouteRouteWithChildren
   AboutUsRoute: typeof AboutUsRoute
   ContactsRoute: typeof ContactsRoute
@@ -264,6 +451,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SystemsRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/en': {
+      id: '/en'
+      path: '/en'
+      fullPath: '/en'
+      preLoaderRoute: typeof EnRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/career': {
       id: '/career'
       path: '/career'
@@ -291,6 +485,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/systems/'
       preLoaderRoute: typeof SystemsIndexRouteImport
       parentRoute: typeof SystemsRouteRoute
+    }
+    '/en/': {
+      id: '/en/'
+      path: '/'
+      fullPath: '/en/'
+      preLoaderRoute: typeof EnIndexRouteImport
+      parentRoute: typeof EnRouteRoute
     }
     '/blog/': {
       id: '/blog/'
@@ -320,12 +521,61 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SystemsBpakRouteImport
       parentRoute: typeof SystemsRouteRoute
     }
+    '/en/terms': {
+      id: '/en/terms'
+      path: '/terms'
+      fullPath: '/en/terms'
+      preLoaderRoute: typeof EnTermsRouteImport
+      parentRoute: typeof EnRouteRoute
+    }
+    '/en/privacy': {
+      id: '/en/privacy'
+      path: '/privacy'
+      fullPath: '/en/privacy'
+      preLoaderRoute: typeof EnPrivacyRouteImport
+      parentRoute: typeof EnRouteRoute
+    }
+    '/en/contacts': {
+      id: '/en/contacts'
+      path: '/contacts'
+      fullPath: '/en/contacts'
+      preLoaderRoute: typeof EnContactsRouteImport
+      parentRoute: typeof EnRouteRoute
+    }
+    '/en/about-us': {
+      id: '/en/about-us'
+      path: '/about-us'
+      fullPath: '/en/about-us'
+      preLoaderRoute: typeof EnAboutUsRouteImport
+      parentRoute: typeof EnRouteRoute
+    }
     '/api/send-email': {
       id: '/api/send-email'
       path: '/api/send-email'
       fullPath: '/api/send-email'
       preLoaderRoute: typeof ApiSendEmailRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/en/systems': {
+      id: '/en/systems'
+      path: '/systems'
+      fullPath: '/en/systems'
+      preLoaderRoute: typeof EnSystemsRouteRouteImport
+      parentRoute: typeof EnRouteRoute
+    }
+    '/en/career': {
+      id: '/en/career'
+      path: '/career'
+      fullPath: '/en/career'
+      preLoaderRoute: typeof EnCareerRouteRouteImport
+      parentRoute: typeof EnRouteRoute
+    }
+    '/en/blog': {
+      id: '/en/blog'
+      path: '/blog'
+      fullPath: '/en/blog'
+      preLoaderRoute: typeof EnBlogRouteRouteImport
+      parentRoute: typeof EnRouteRoute
     }
     '/career/$careerId': {
       id: '/career/$careerId'
@@ -340,6 +590,55 @@ declare module '@tanstack/react-router' {
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteRouteImport
       parentRoute: typeof BlogRouteRoute
+    }
+    '/en/systems/': {
+      id: '/en/systems/'
+      path: '/'
+      fullPath: '/en/systems/'
+      preLoaderRoute: typeof EnSystemsIndexRouteImport
+      parentRoute: typeof EnSystemsRouteRoute
+    }
+    '/en/blog/': {
+      id: '/en/blog/'
+      path: '/'
+      fullPath: '/en/blog/'
+      preLoaderRoute: typeof EnBlogIndexRouteImport
+      parentRoute: typeof EnBlogRouteRoute
+    }
+    '/en/systems/education': {
+      id: '/en/systems/education'
+      path: '/education'
+      fullPath: '/en/systems/education'
+      preLoaderRoute: typeof EnSystemsEducationRouteImport
+      parentRoute: typeof EnSystemsRouteRoute
+    }
+    '/en/systems/bpla': {
+      id: '/en/systems/bpla'
+      path: '/bpla'
+      fullPath: '/en/systems/bpla'
+      preLoaderRoute: typeof EnSystemsBplaRouteImport
+      parentRoute: typeof EnSystemsRouteRoute
+    }
+    '/en/systems/bpak': {
+      id: '/en/systems/bpak'
+      path: '/bpak'
+      fullPath: '/en/systems/bpak'
+      preLoaderRoute: typeof EnSystemsBpakRouteImport
+      parentRoute: typeof EnSystemsRouteRoute
+    }
+    '/en/career/$careerId': {
+      id: '/en/career/$careerId'
+      path: '/$careerId'
+      fullPath: '/en/career/$careerId'
+      preLoaderRoute: typeof EnCareerCareerIdRouteRouteImport
+      parentRoute: typeof EnCareerRouteRoute
+    }
+    '/en/blog/$slug': {
+      id: '/en/blog/$slug'
+      path: '/$slug'
+      fullPath: '/en/blog/$slug'
+      preLoaderRoute: typeof EnBlogSlugRouteRouteImport
+      parentRoute: typeof EnBlogRouteRoute
     }
   }
 }
@@ -370,6 +669,75 @@ const CareerRouteRouteWithChildren = CareerRouteRoute._addFileChildren(
   CareerRouteRouteChildren,
 )
 
+interface EnBlogRouteRouteChildren {
+  EnBlogSlugRouteRoute: typeof EnBlogSlugRouteRoute
+  EnBlogIndexRoute: typeof EnBlogIndexRoute
+}
+
+const EnBlogRouteRouteChildren: EnBlogRouteRouteChildren = {
+  EnBlogSlugRouteRoute: EnBlogSlugRouteRoute,
+  EnBlogIndexRoute: EnBlogIndexRoute,
+}
+
+const EnBlogRouteRouteWithChildren = EnBlogRouteRoute._addFileChildren(
+  EnBlogRouteRouteChildren,
+)
+
+interface EnCareerRouteRouteChildren {
+  EnCareerCareerIdRouteRoute: typeof EnCareerCareerIdRouteRoute
+}
+
+const EnCareerRouteRouteChildren: EnCareerRouteRouteChildren = {
+  EnCareerCareerIdRouteRoute: EnCareerCareerIdRouteRoute,
+}
+
+const EnCareerRouteRouteWithChildren = EnCareerRouteRoute._addFileChildren(
+  EnCareerRouteRouteChildren,
+)
+
+interface EnSystemsRouteRouteChildren {
+  EnSystemsBpakRoute: typeof EnSystemsBpakRoute
+  EnSystemsBplaRoute: typeof EnSystemsBplaRoute
+  EnSystemsEducationRoute: typeof EnSystemsEducationRoute
+  EnSystemsIndexRoute: typeof EnSystemsIndexRoute
+}
+
+const EnSystemsRouteRouteChildren: EnSystemsRouteRouteChildren = {
+  EnSystemsBpakRoute: EnSystemsBpakRoute,
+  EnSystemsBplaRoute: EnSystemsBplaRoute,
+  EnSystemsEducationRoute: EnSystemsEducationRoute,
+  EnSystemsIndexRoute: EnSystemsIndexRoute,
+}
+
+const EnSystemsRouteRouteWithChildren = EnSystemsRouteRoute._addFileChildren(
+  EnSystemsRouteRouteChildren,
+)
+
+interface EnRouteRouteChildren {
+  EnBlogRouteRoute: typeof EnBlogRouteRouteWithChildren
+  EnCareerRouteRoute: typeof EnCareerRouteRouteWithChildren
+  EnSystemsRouteRoute: typeof EnSystemsRouteRouteWithChildren
+  EnAboutUsRoute: typeof EnAboutUsRoute
+  EnContactsRoute: typeof EnContactsRoute
+  EnPrivacyRoute: typeof EnPrivacyRoute
+  EnTermsRoute: typeof EnTermsRoute
+  EnIndexRoute: typeof EnIndexRoute
+}
+
+const EnRouteRouteChildren: EnRouteRouteChildren = {
+  EnBlogRouteRoute: EnBlogRouteRouteWithChildren,
+  EnCareerRouteRoute: EnCareerRouteRouteWithChildren,
+  EnSystemsRouteRoute: EnSystemsRouteRouteWithChildren,
+  EnAboutUsRoute: EnAboutUsRoute,
+  EnContactsRoute: EnContactsRoute,
+  EnPrivacyRoute: EnPrivacyRoute,
+  EnTermsRoute: EnTermsRoute,
+  EnIndexRoute: EnIndexRoute,
+}
+
+const EnRouteRouteWithChildren =
+  EnRouteRoute._addFileChildren(EnRouteRouteChildren)
+
 interface SystemsRouteRouteChildren {
   SystemsBpakRoute: typeof SystemsBpakRoute
   SystemsBplaRoute: typeof SystemsBplaRoute
@@ -392,6 +760,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogRouteRoute: BlogRouteRouteWithChildren,
   CareerRouteRoute: CareerRouteRouteWithChildren,
+  EnRouteRoute: EnRouteRouteWithChildren,
   SystemsRouteRoute: SystemsRouteRouteWithChildren,
   AboutUsRoute: AboutUsRoute,
   ContactsRoute: ContactsRoute,

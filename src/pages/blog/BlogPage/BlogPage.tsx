@@ -7,7 +7,7 @@ import SocialIcons from '@/components/lists/SocialIcons'
 import Pagination from '@/components/Pagination'
 import { Paragraph, SectionTitle } from '@/components/text'
 import { BlogCardFirst } from '@/modules/blog/BlogCardFirst/BlogCardFirst'
-import { getRouteApi } from '@tanstack/react-router'
+import { useNavigate } from '@tanstack/react-router'
 import { useTranslation } from 'react-i18next'
 
 export interface BlogPageProps {
@@ -17,9 +17,7 @@ export interface BlogPageProps {
 
 export const BlogPage = ({ posts, meta }: BlogPageProps) => {
   const { i18n, t } = useTranslation();
-  const route = getRouteApi('/blog/');
-
-  const navigate = route.useNavigate();
+  const navigate = useNavigate()
 
   return (
     <main className="page-bg">

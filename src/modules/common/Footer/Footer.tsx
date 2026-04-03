@@ -6,6 +6,8 @@ import Tel from '@/assets/icons/tel.svg?react'
 import Email from '@/assets/icons/email.svg?react'
 import { ClientOnly } from '@tanstack/react-router'
 import SocialIcons from '@/components/lists/SocialIcons'
+import { useRouterState } from '@tanstack/react-router'
+import { localeFromPathname, localizePath } from '@/common/localization/localePath'
 
 const NAV_ITEMS = [
   { label: 'systems', href: '/#systems' },
@@ -17,6 +19,9 @@ const NAV_ITEMS = [
 
 export const Footer = () => {
   const { t } = useTranslation()
+  const pathname = useRouterState({ select: (s) => s.location.pathname })
+  const locale = localeFromPathname(pathname)
+
   return (
     <footer className="py-[54px] desktop:py-[82px] tablet:py-16 flex flex-col md:flex-row gap-[54px] tablet:gap-[65px]">
       {/* Ліва колонка: поява знизу */}
@@ -40,14 +45,14 @@ export const Footer = () => {
           <p>
             {t('footer.terms.text')}
             <a
-              href="/terms"
+              href={localizePath('/terms', locale)}
               className="inline-block underline decoration-[#FF6600] decoration-1 underline-offset-1 bg-linear-to-r from-[#CE4906] via-[#FF6600] to-[#FF8B20] bg-clip-text text-transparent"
             >
               {t('footer.terms.links.terms')}
             </a>
             {t('footer.terms.and')}
             <a
-              href="/privacy"
+              href={localizePath('/privacy', locale)}
               className="inline-block underline decoration-[#FF6600] decoration-1 underline-offset-1 bg-gradient-to-r from-[#CE4906] via-[#FF6600] to-[#FF8B20] bg-clip-text text-transparent"
             >
               {t('footer.terms.links.privacy')}

@@ -3,13 +3,23 @@ import { buildWebsiteSeo, SITE_URL } from '@/common/utils/seo'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/contacts')({
-  head: () =>
-    buildWebsiteSeo({
+  head: () => {
+    const baseSeo = buildWebsiteSeo({
       title: 'Контакти Pegasus Arms | Зв’язок з виробником',
       description:
         'Контакти Pegasus Arms для співпраці, запитів та консультацій щодо ударних дронів, навчання операторів і оборонних рішень.',
       canonical: `${SITE_URL}/contacts`,
-    }),
+    })
+
+    return {
+      ...baseSeo,
+      links: [
+        ...baseSeo.links,
+        { rel: 'alternate', hrefLang: 'uk', href: `${SITE_URL}/contacts` },
+        { rel: 'alternate', hrefLang: 'en', href: `${SITE_URL}/en/contacts` },
+      ],
+    }
+  },
   component: RouteComponent,
 })
 

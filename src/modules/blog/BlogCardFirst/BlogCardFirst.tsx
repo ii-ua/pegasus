@@ -1,6 +1,7 @@
 import { Paragraph } from '@/components/text'
-import { getRouteApi, Link } from '@tanstack/react-router'
+import { Link, useRouterState } from '@tanstack/react-router'
 import { useTranslation } from 'react-i18next'
+import { localeFromPathname, localizePath } from '@/common/localization/localePath'
 
 export interface BlogCardFirstProps {
   cover: string
@@ -17,7 +18,12 @@ export const BlogCardFirst = ({
   slug,
 }: BlogCardFirstProps) => {
   const { t } = useTranslation()
-  const { page } = getRouteApi('/blog').useSearch()
+  const pathname = useRouterState({ select: (s) => s.location.pathname })
+  const search = useRouterState({ select: (s) => s.location.search })
+  const locale = localeFromPathname(pathname)
+  const page =
+    typeof search.page === 'number' && search.page > 1 ? search.page : 1
+  const blogPostPath = localizePath('/blog/$slug', locale)
 
   return (
     <div className="flex flex-col gap-6">
@@ -39,7 +45,7 @@ export const BlogCardFirst = ({
         dangerouslySetInnerHTML={{ __html: description }}
       />
       <Link
-        to="/blog/$slug"
+        to={blogPostPath}
         params={{ slug }}
         state={(prev) => ({ ...prev, blogPage: page ?? 1 })}
         className="decoration-[#FF6600] decoration-1 underline-offset-1 bg-gradient-to-r from-[#CE4906] via-[#FF6600] to-[#FF8B20] bg-clip-text text-transparent mt-2 inline-flex items-center gap-2  font-normal text-[16px] tablet:text-[20px] desktop:text-[24px] 
