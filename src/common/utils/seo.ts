@@ -1,6 +1,6 @@
 export const SITE_URL = 'https://pegasusarms.com.ua'
 export const SITE_NAME = 'Pegasus Arms'
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/plug.png`
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/big_logo.svg`
 
 type BuildWebsiteSeoArgs = {
   title: string
@@ -17,7 +17,9 @@ export const buildWebsiteSeo = ({
   image = DEFAULT_OG_IMAGE,
   noIndex = false,
 }: BuildWebsiteSeoArgs) => {
-  const normalizedImage = image.startsWith('http') ? image : `${SITE_URL}${image}`
+  const normalizedImage = image.startsWith('http')
+    ? image
+    : `${SITE_URL}${image}`
 
   return {
     meta: [
