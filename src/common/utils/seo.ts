@@ -1,6 +1,6 @@
 export const SITE_URL = 'https://pegasusarms.com.ua'
 export const SITE_NAME = 'Pegasus Arms'
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/big_logo.svg`
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/big_logo.png`
 
 type BuildWebsiteSeoArgs = {
   title: string
