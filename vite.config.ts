@@ -6,7 +6,45 @@ import tailwindcss from '@tailwindcss/vite'
 import svgr from 'vite-plugin-svgr'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 
-const config = defineConfig({
+type StartPage = {
+  path: string
+  prerender?: {
+    enabled?: boolean
+  }
+  sitemap?: {
+    changefreq?: 'daily' | 'weekly' | 'monthly'
+    priority?: number
+  }
+}
+
+const getBlogPages = async (): Promise<StartPage[]> => {
+  try {
+    const response = await fetch(
+      'https://admin.pegasusarms.com.ua/items/posts?fields=slug_url,date_updated,date_created&filter[status][_eq]=published&sort=-date_created&limit=-1',
+    )
+
+    if (!response.ok) return []
+
+    const json = await response.json()
+    const posts = Array.isArray(json?.data) ? json.data : []
+
+    return posts
+      .map((post: { slug_url?: string }) => post?.slug_url?.trim())
+      .filter((slug: string | undefined): slug is string => Boolean(slug))
+      .map((slug) => ({
+        path: `/blog/${slug}`,
+        prerender: { enabled: true },
+        sitemap: { changefreq: 'weekly', priority: 0.8 },
+      }))
+  } catch {
+    return []
+  }
+}
+
+const config = defineConfig(async () => {
+  const blogPages = await getBlogPages()
+
+  return {
   server: {
     host: true,
   },
@@ -48,6 +86,7 @@ const config = defineConfig({
     }),
     // this is the plugin that enables path aliases
     tanstackStart({
+      pages: blogPages,
       spa: {
         enabled: false,
       },
@@ -107,6 +146,7 @@ const config = defineConfig({
     //   },
     // },
   },
+}
 })
 
 export default config

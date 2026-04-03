@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 export interface BlogCardProps {
     cover: string
     translations: BlogPostTranslation[],
-    onClick: (slug: string) => void
+    onClick: () => void
 }
 export default function BlogInterestingCard ({
     cover,
@@ -13,11 +13,13 @@ export default function BlogInterestingCard ({
     onClick
 }: BlogCardProps) {
     const { i18n } = useTranslation()
-    const translation = translations?.find((t: any) =>
-        t.languages_code.includes(i18n.language),
-    );
+    const translation =
+      translations?.find((t: any) => t.languages_code.includes(i18n.language)) ??
+      translations?.[0]
 
-    const { title, content_short: description } = translation;
+    if (!translation) return null
+
+    const { title, content_short: description } = translation
 
     return (
         <div className="flex flex-col gap-4 flex-1 p-4 desktop:p-6 border-[2px] border-[#FDFFFF] hover:border-[#FF6600] cursor-pointer transition-bg duration-300" onClick={onClick}>

@@ -4,6 +4,7 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import { en, uk } from './translation'
 
 const languageDetector = new LanguageDetector()
+const isBrowser = typeof window !== 'undefined'
 
 export const defaultNS = 'translation'
 
@@ -13,15 +14,26 @@ export const resources = {
 }
 
 languageDetector.init({
-  order: ['localStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
+  order: ['localStorage', 'cookie', 'path', 'subdomain'],
   caches: ['localStorage'],
 })
 
-let detectedLang = languageDetector.detect() as string
+let detectedLang = 'uk'
 
-if (detectedLang === 'ru') {
-  detectedLang = 'uk'
-  localStorage.setItem('i18nextLng', 'uk')
+if (isBrowser) {
+  const browserDetected = languageDetector.detect() as string | undefined
+  if (browserDetected) {
+    detectedLang = browserDetected
+  }
+
+  if (detectedLang === 'ru') {
+    detectedLang = 'uk'
+    localStorage.setItem('i18nextLng', 'uk')
+  }
+
+  if (!['uk', 'en'].some((lang) => detectedLang.startsWith(lang))) {
+    detectedLang = 'uk'
+  }
 }
 
 i18next
@@ -29,12 +41,13 @@ i18next
   .use(initReactI18next)
   .init({
     lng: detectedLang,
-    fallbackLng: 'uk',
+    fallbackLng: ['uk', 'en'],
+    supportedLngs: ['uk', 'en'],
     load: 'languageOnly',
     defaultNS,
     interpolation: { escapeValue: false },
     detection: {
-      order: ['cookie', 'navigator', 'htmlTag', 'path', 'subdomain'],
+      order: ['localStorage', 'cookie', 'path', 'subdomain'],
       caches: ['cookie', 'localStorage'],
     },
     resources,

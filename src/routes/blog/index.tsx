@@ -20,7 +20,7 @@ export const Route = createFileRoute('/blog/')({
   loader: async ({ deps }) => {
     return await getPublishedPosts({
       data: {
-        lang: 'uk',
+        lang: 'all',
         page: deps.page,
         limit: 5,
       }
@@ -45,7 +45,10 @@ export const Route = createFileRoute('/blog/')({
         },
         ...(isFirstPage ? [] : [{ name: 'robots', content: 'noindex,follow' }]),
       ],
-      links: [{ rel: 'canonical', href: canonical }],
+      links: [
+        { rel: 'canonical', href: canonical },
+        { rel: 'alternate', hrefLang: 'uk', href: canonical },
+      ],
     }
   },
   component: RouteComponent,

@@ -69,9 +69,7 @@ export const PostPage = ({
             <Paragraph variant="grey" className="text-[#939393]" text={formatDate(date_created)} />
             <div className='h-[2px] w-full mb-4 desktop:mb-6 bg-[repeating-linear-gradient(to_right,#5A5A5A_0_8px,transparent_8px_13px)]'/>
             <div
-              className="prose prose-invert font-normal 
-              [&_.MsoNormal_span]:![font-size:inherit]
-              [&_.MsoNormal_span]:![line-height:inherit] [&_p]:!m-0 text-[16px] tablet:text-[20px] desktop:text-[24px] max-w-none text-[#d9d9d9] flex flex-col gap-4"
+              className="blog-content font-normal max-w-none text-[#d9d9d9]"
               dangerouslySetInnerHTML={{ __html: translation.content }}
             />
           </div>

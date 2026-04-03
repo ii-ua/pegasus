@@ -63,13 +63,13 @@ export const Route = createFileRoute('/blog/$slug')({
   loader: async ({ params }) => {
     const lastThreePosts = await getPublishedPosts({
           data: {
-            lang: 'uk',
+            lang: 'all',
             page: 1,
             limit: 3,
           }
         })
   
-  const post = await getPostBySlug({ data: { slug: params.slug } })
+  const post = await getPostBySlug({ data: { slug: params.slug, lang: 'all' } })
     return {post, lastThreePosts}
   },
   head: ({ loaderData, params }) => {
@@ -93,7 +93,10 @@ export const Route = createFileRoute('/blog/$slug')({
         { property: 'og:title', content: title },
         { property: 'og:description', content: description },
       ],
-      links: [{ rel: 'canonical', href: canonical }],
+      links: [
+        { rel: 'canonical', href: canonical },
+        { rel: 'alternate', hrefLang: 'uk', href: canonical },
+      ],
     }
   },
   component: RouteComponent,
@@ -102,9 +105,9 @@ export const Route = createFileRoute('/blog/$slug')({
 function RouteComponent() {
   const {post, lastThreePosts} = Route.useLoaderData()
   const { i18n } = useTranslation()
-  const translation = post?.translations?.find((t: any) =>
-    t.languages_code.includes(i18n.language),
-  )
+  const translation =
+    post?.translations?.find((t: any) => t.languages_code.includes(i18n.language)) ??
+    post?.translations?.[0]
 
   useEffect(() => {
     if (!post || !translation) return

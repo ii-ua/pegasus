@@ -62,6 +62,14 @@ export const Route = createRootRoute({
         property: 'og:type',
         content: 'website',
       },
+      {
+        property: 'og:locale',
+        content: 'uk_UA',
+      },
+      {
+        property: 'og:locale:alternate',
+        content: 'en_US',
+      },
     ],
     scripts: [
       {
@@ -104,7 +112,7 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="uk">
       <head>
         <HeadContent />
       </head>
