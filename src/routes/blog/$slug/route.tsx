@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const SITE_URL = 'https://pegasusarms.com.ua'
+const ADMIN_ASSETS_URL = 'https://admin.pegasusarms.com.ua/assets'
 
 const parsePage = (value: unknown): number | undefined => {
   const parsed = Number(value)
@@ -43,6 +44,21 @@ const stripHtml = (html?: string): string => {
   return html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
 }
 
+const findTranslationByLang = (
+  post: BlogPostResponse | null | undefined,
+  lang: string,
+) => post?.translations?.find((t) => t.languages_code?.startsWith(lang))
+
+const toAssetUrl = (value?: string | null): string | undefined => {
+  const normalized = value?.trim()
+  if (!normalized) return undefined
+  if (normalized.startsWith('http://') || normalized.startsWith('https://')) {
+    return normalized
+  }
+  if (normalized.startsWith('/')) return `${SITE_URL}${normalized}`
+  return `${ADMIN_ASSETS_URL}/${normalized}`
+}
+
 const upsertMeta = (name: string, content?: string, property = false) => {
   if (!content) return
   const selector = property ? `meta[property="${name}"]` : `meta[name="${name}"]`
@@ -75,13 +91,16 @@ export const Route = createFileRoute('/blog/$slug')({
   head: ({ loaderData, params }) => {
     const post = loaderData?.post as BlogPostResponse | null | undefined
     const seo = post?.seo
-    const title = seo?.title?.trim() || 'Стаття блогу Pegasus Arms'
+    const ukTranslation =
+      findTranslationByLang(post, 'uk') ?? post?.translations?.[0]
+    const title = ukTranslation?.title?.trim() || seo?.title?.trim() || 'Стаття блогу Pegasus Arms'
     const description =
+      stripHtml(ukTranslation?.content_short) ||
       seo?.meta_description?.trim() ||
-      post?.translations?.[0]?.content_short?.trim() ||
       'Матеріал блогу Pegasus Arms.'
     const keywords = stringifyKeywords(seo)
     const canonical = `${SITE_URL}/blog/${params.slug}`
+    const image = toAssetUrl(seo?.og_image || post?.cover)
 
     return {
       meta: [
@@ -92,6 +111,11 @@ export const Route = createFileRoute('/blog/$slug')({
         { property: 'og:url', content: canonical },
         { property: 'og:title', content: title },
         { property: 'og:description', content: description },
+        ...(image ? [{ property: 'og:image', content: image }] : []),
+        { property: 'twitter:title', content: title },
+        { property: 'twitter:description', content: description },
+        { property: 'twitter:card', content: image ? 'summary_large_image' : 'summary' },
+        ...(image ? [{ property: 'twitter:image', content: image }] : []),
       ],
       links: [
         { rel: 'canonical', href: canonical },
@@ -106,25 +130,28 @@ function RouteComponent() {
   const {post, lastThreePosts} = Route.useLoaderData()
   const { i18n } = useTranslation()
   const translation =
-    post?.translations?.find((t: any) => t.languages_code.includes(i18n.language)) ??
+    findTranslationByLang(post, i18n.language) ??
+    findTranslationByLang(post, i18n.language.split('-')[0] ?? i18n.language) ??
+    findTranslationByLang(post, 'uk') ??
     post?.translations?.[0]
 
   useEffect(() => {
     if (!post || !translation) return
 
-    const isEn = i18n.language.toLowerCase().startsWith('en')
     const translationDescription = stripHtml(translation.content_short)
-    const title = isEn
-      ? translation.title
-      : (post.seo?.title?.trim() || translation.title)
-    const description = isEn
-      ? (translationDescription || post.seo?.meta_description?.trim() || '')
-      : (post.seo?.meta_description?.trim() || translationDescription)
+    const title = translation.title || post.seo?.title?.trim() || ''
+    const description = translationDescription || post.seo?.meta_description?.trim() || ''
+    const image = toAssetUrl(post.seo?.og_image || post.cover)
 
     document.title = title
     upsertMeta('description', description)
     upsertMeta('og:title', title, true)
     upsertMeta('og:description', description, true)
+    upsertMeta('og:image', image, true)
+    upsertMeta('twitter:title', title, true)
+    upsertMeta('twitter:description', description, true)
+    upsertMeta('twitter:card', image ? 'summary_large_image' : 'summary', true)
+    upsertMeta('twitter:image', image, true)
   }, [i18n.language, post, translation])
 
   if (translation) {
