@@ -13,10 +13,12 @@ export const resources = {
   uk: { translation: uk },
 }
 
-languageDetector.init({
-  order: ['localStorage', 'cookie', 'path', 'subdomain'],
-  caches: ['localStorage'],
-})
+if (isBrowser) {
+  languageDetector.init({
+    order: ['localStorage', 'cookie', 'path', 'subdomain'],
+    caches: ['localStorage'],
+  })
+}
 
 let detectedLang = 'uk'
 
@@ -36,20 +38,28 @@ if (isBrowser) {
   }
 }
 
-i18next
-  .use(languageDetector)
-  .use(initReactI18next)
-  .init({
-    lng: detectedLang,
-    fallbackLng: ['uk', 'en'],
-    supportedLngs: ['uk', 'en'],
-    load: 'languageOnly',
-    defaultNS,
-    interpolation: { escapeValue: false },
-    detection: {
-      order: ['localStorage', 'cookie', 'path', 'subdomain'],
-      caches: ['cookie', 'localStorage'],
-    },
-    resources,
-  })
-  .catch(console.error)
+const baseInitConfig = {
+  lng: isBrowser ? detectedLang : 'uk',
+  fallbackLng: ['uk', 'en'],
+  supportedLngs: ['uk', 'en'],
+  load: 'languageOnly',
+  defaultNS,
+  interpolation: { escapeValue: false },
+  resources,
+} as const
+
+if (isBrowser) {
+  i18next
+    .use(languageDetector)
+    .use(initReactI18next)
+    .init({
+      ...baseInitConfig,
+      detection: {
+        order: ['localStorage', 'cookie', 'path', 'subdomain'],
+        caches: ['cookie', 'localStorage'],
+      },
+    })
+    .catch(console.error)
+} else {
+  i18next.use(initReactI18next).init(baseInitConfig).catch(console.error)
+}

@@ -48,6 +48,10 @@ export const Route = createRootRoute({
         content: 'en_US',
       },
       {
+        httpEquiv: 'content-language',
+        content: 'uk',
+      },
+      {
         name: 'twitter:url',
         content: 'https://pegasusarms.com.ua/',
       },
