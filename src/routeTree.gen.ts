@@ -17,6 +17,7 @@ import { Route as SystemsRouteRouteImport } from './routes/systems/route'
 import { Route as CareerRouteRouteImport } from './routes/career/route'
 import { Route as BlogRouteRouteImport } from './routes/blog/route'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SystemsIndexRouteImport } from './routes/systems/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as SystemsEducationRouteImport } from './routes/systems/education'
 import { Route as SystemsBplaRouteImport } from './routes/systems/bpla'
@@ -64,6 +65,11 @@ const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const SystemsIndexRoute = SystemsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => SystemsRouteRoute,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/',
@@ -117,11 +123,11 @@ export interface FileRoutesByFullPath {
   '/systems/bpla': typeof SystemsBplaRoute
   '/systems/education': typeof SystemsEducationRoute
   '/blog/': typeof BlogIndexRoute
+  '/systems/': typeof SystemsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/career': typeof CareerRouteRouteWithChildren
-  '/systems': typeof SystemsRouteRouteWithChildren
   '/about-us': typeof AboutUsRoute
   '/contacts': typeof ContactsRoute
   '/privacy': typeof PrivacyRoute
@@ -133,6 +139,7 @@ export interface FileRoutesByTo {
   '/systems/bpla': typeof SystemsBplaRoute
   '/systems/education': typeof SystemsEducationRoute
   '/blog': typeof BlogIndexRoute
+  '/systems': typeof SystemsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -151,6 +158,7 @@ export interface FileRoutesById {
   '/systems/bpla': typeof SystemsBplaRoute
   '/systems/education': typeof SystemsEducationRoute
   '/blog/': typeof BlogIndexRoute
+  '/systems/': typeof SystemsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -170,11 +178,11 @@ export interface FileRouteTypes {
     | '/systems/bpla'
     | '/systems/education'
     | '/blog/'
+    | '/systems/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/career'
-    | '/systems'
     | '/about-us'
     | '/contacts'
     | '/privacy'
@@ -186,6 +194,7 @@ export interface FileRouteTypes {
     | '/systems/bpla'
     | '/systems/education'
     | '/blog'
+    | '/systems'
   id:
     | '__root__'
     | '/'
@@ -203,6 +212,7 @@ export interface FileRouteTypes {
     | '/systems/bpla'
     | '/systems/education'
     | '/blog/'
+    | '/systems/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -274,6 +284,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/systems/': {
+      id: '/systems/'
+      path: '/'
+      fullPath: '/systems/'
+      preLoaderRoute: typeof SystemsIndexRouteImport
+      parentRoute: typeof SystemsRouteRoute
     }
     '/blog/': {
       id: '/blog/'
@@ -357,12 +374,14 @@ interface SystemsRouteRouteChildren {
   SystemsBpakRoute: typeof SystemsBpakRoute
   SystemsBplaRoute: typeof SystemsBplaRoute
   SystemsEducationRoute: typeof SystemsEducationRoute
+  SystemsIndexRoute: typeof SystemsIndexRoute
 }
 
 const SystemsRouteRouteChildren: SystemsRouteRouteChildren = {
   SystemsBpakRoute: SystemsBpakRoute,
   SystemsBplaRoute: SystemsBplaRoute,
   SystemsEducationRoute: SystemsEducationRoute,
+  SystemsIndexRoute: SystemsIndexRoute,
 }
 
 const SystemsRouteRouteWithChildren = SystemsRouteRoute._addFileChildren(

@@ -1,8 +1,7 @@
 import { BlogPage } from '@/pages/blog/BlogPage/BlogPage'
+import { SITE_URL, buildWebsiteSeo } from '@/common/utils/seo'
 import { getPublishedPosts } from '@/server/postApi'
 import { createFileRoute } from '@tanstack/react-router'
-
-const BLOG_CANONICAL_URL = 'https://pegasusarms.com.ua/blog'
 
 const parsePage = (value: unknown): number | undefined => {
   const parsed = Number(value)
@@ -29,24 +28,21 @@ export const Route = createFileRoute('/blog/')({
   head: ({ search }) => {
     const page = search?.page ?? 1
     const isFirstPage = page === 1
-    const canonical = isFirstPage ? BLOG_CANONICAL_URL : `${BLOG_CANONICAL_URL}?page=${page}`
+    const canonical = isFirstPage ? `${SITE_URL}/blog` : `${SITE_URL}/blog?page=${page}`
+    const baseSeo = buildWebsiteSeo({
+      title: isFirstPage
+        ? 'Блог Pegasus Arms | Новини та аналітика'
+        : `Блог Pegasus Arms — сторінка ${page}`,
+      description:
+        'Блог Pegasus Arms: новини, технології, результати роботи та аналітика щодо застосування ударних БПЛА.',
+      canonical,
+      noIndex: !isFirstPage,
+    })
 
     return {
-      meta: [
-        {
-          title: isFirstPage
-            ? 'Блог Pegasus Arms | Новини та аналітика'
-            : `Блог Pegasus Arms — сторінка ${page}`,
-        },
-        {
-          name: 'description',
-          content:
-            'Блог Pegasus Arms: новини, технології, результати роботи та аналітика щодо застосування ударних БПЛА.',
-        },
-        ...(isFirstPage ? [] : [{ name: 'robots', content: 'noindex,follow' }]),
-      ],
+      ...baseSeo,
       links: [
-        { rel: 'canonical', href: canonical },
+        ...baseSeo.links,
         { rel: 'alternate', hrefLang: 'uk', href: canonical },
       ],
     }

@@ -1,18 +1,15 @@
 import { TermsPage } from '@/pages/TermsPage/TermsPage'
+import { buildWebsiteSeo, SITE_URL } from '@/common/utils/seo'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/terms')({
-  head: () => ({
-    meta: [
-      { title: 'Умови використання | Pegasus Arms' },
-      {
-        name: 'description',
-        content:
-          'Ознайомтесь з умовами використання сайту Pegasus Arms, правами та обов’язками користувачів, а також юридичними положеннями.',
-      },
-    ],
-    links: [{ rel: 'canonical', href: 'https://pegasusarms.com.ua/terms' }],
-  }),
+  head: () =>
+    buildWebsiteSeo({
+      title: 'Умови використання | Pegasus Arms',
+      description:
+        'Ознайомтесь з умовами використання сайту Pegasus Arms, правами та обов’язками користувачів, а також юридичними положеннями.',
+      canonical: `${SITE_URL}/terms`,
+    }),
   component: RouteComponent,
 })
 

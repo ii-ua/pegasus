@@ -40,35 +40,16 @@ export const Route = createRootRoute({
           'Придбати сертифіковані ударні дроні Pegasus Arms 25 для бойових завдань ЗСУ та Сил оборони. Пегас Армс - український виробник. Дрони сертифіковані Міністерством оборони.',
       },
       {
-        property: 'og:url',
-        content: 'https://pegasusarms.com.ua',
-      },
-      {
-        property: 'og:title',
-        content: 'Ударний дрон Pegasus Arms 25 | Офіційний сайт виробника',
-      },
-      { property: 'og:image', content: '/big_logo.svg' },
-      {
-        property: 'og:description',
-        content:
-          'Придбати сертифіковані ударні дроні Pegasus Arms 25 для бойових завдань ЗСУ та Сил оборони. Пегас Армс - український виробник. Дрони сертифіковані Міністерством оборони.',
-      },
-      {
-        property: 'twitter:title',
-        content: 'Ударний дрон Pegasus Arms 25 | Офіційний сайт виробника',
-      },
-      { property: 'twitter:image', content: '/big_logo.svg' },
-      {
-        property: 'og:type',
-        content: 'website',
-      },
-      {
         property: 'og:locale',
         content: 'uk_UA',
       },
       {
         property: 'og:locale:alternate',
         content: 'en_US',
+      },
+      {
+        name: 'twitter:url',
+        content: 'https://pegasusarms.com.ua/',
       },
     ],
     scripts: [
@@ -126,6 +107,18 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             <Footer />
           </MainContainer>
         </div>
+
+        {/* {import.meta.env.DEV && (
+          <TanStackDevtools
+            config={{ position: 'bottom-left' }}
+            plugins={[
+              {
+                name: 'TanStack Router',
+                render: <TanStackRouterDevtoolsPanel />,
+              },
+            ]}
+          />
+        )} */}
 
         <Scripts />
       </body>

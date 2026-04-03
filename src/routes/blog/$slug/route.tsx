@@ -1,4 +1,5 @@
 import type { BlogPostResponse, BlogPostSeo } from '@/common/interfaces/posts'
+import { DEFAULT_OG_IMAGE } from '@/common/utils/seo'
 import { PostPage } from '@/pages/blog/PostPage/PostPage'
 import { getPostBySlug, getPublishedPosts } from '@/server/postApi'
 import { createFileRoute } from '@tanstack/react-router'
@@ -52,10 +53,14 @@ const findTranslationByLang = (
 const toAssetUrl = (value?: string | null): string | undefined => {
   const normalized = value?.trim()
   if (!normalized) return undefined
+
   if (normalized.startsWith('http://') || normalized.startsWith('https://')) {
     return normalized
   }
+
+  if (normalized.startsWith('/assets/')) return `${ADMIN_ASSETS_URL}${normalized.slice('/assets'.length)}`
   if (normalized.startsWith('/')) return `${SITE_URL}${normalized}`
+
   return `${ADMIN_ASSETS_URL}/${normalized}`
 }
 
@@ -100,7 +105,7 @@ export const Route = createFileRoute('/blog/$slug')({
       'Матеріал блогу Pegasus Arms.'
     const keywords = stringifyKeywords(seo)
     const canonical = `${SITE_URL}/blog/${params.slug}`
-    const image = toAssetUrl(seo?.og_image || post?.cover)
+    const image = toAssetUrl(seo?.og_image || post?.cover) ?? DEFAULT_OG_IMAGE
 
     return {
       meta: [
@@ -108,14 +113,19 @@ export const Route = createFileRoute('/blog/$slug')({
         { name: 'description', content: description },
         ...(keywords ? [{ name: 'keywords', content: keywords }] : []),
         ...(seo?.no_index ? [{ name: 'robots', content: 'noindex,follow' }] : []),
+        { property: 'og:type', content: 'article' },
+        { property: 'og:site_name', content: 'Pegasus Arms' },
         { property: 'og:url', content: canonical },
         { property: 'og:title', content: title },
         { property: 'og:description', content: description },
         ...(image ? [{ property: 'og:image', content: image }] : []),
-        { property: 'twitter:title', content: title },
-        { property: 'twitter:description', content: description },
-        { property: 'twitter:card', content: image ? 'summary_large_image' : 'summary' },
-        ...(image ? [{ property: 'twitter:image', content: image }] : []),
+        ...(image ? [{ property: 'og:image:secure_url', content: image }] : []),
+        ...(image ? [{ property: 'og:image:alt', content: title }] : []),
+        { name: 'twitter:url', content: canonical },
+        { name: 'twitter:title', content: title },
+        { name: 'twitter:description', content: description },
+        { name: 'twitter:card', content: image ? 'summary_large_image' : 'summary' },
+        ...(image ? [{ name: 'twitter:image', content: image }] : []),
       ],
       links: [
         { rel: 'canonical', href: canonical },
@@ -141,17 +151,24 @@ function RouteComponent() {
     const translationDescription = stripHtml(translation.content_short)
     const title = translation.title || post.seo?.title?.trim() || ''
     const description = translationDescription || post.seo?.meta_description?.trim() || ''
-    const image = toAssetUrl(post.seo?.og_image || post.cover)
+    const image = toAssetUrl(post.seo?.og_image || post.cover) ?? DEFAULT_OG_IMAGE
 
     document.title = title
     upsertMeta('description', description)
     upsertMeta('og:title', title, true)
     upsertMeta('og:description', description, true)
+    upsertMeta('og:type', 'article', true)
+    upsertMeta('og:site_name', 'Pegasus Arms', true)
+    const canonical = `${SITE_URL}/blog/${post.slug_url}`
+    upsertMeta('og:url', canonical, true)
     upsertMeta('og:image', image, true)
-    upsertMeta('twitter:title', title, true)
-    upsertMeta('twitter:description', description, true)
-    upsertMeta('twitter:card', image ? 'summary_large_image' : 'summary', true)
-    upsertMeta('twitter:image', image, true)
+    upsertMeta('og:image:secure_url', image, true)
+    upsertMeta('og:image:alt', title, true)
+    upsertMeta('twitter:url', canonical)
+    upsertMeta('twitter:title', title)
+    upsertMeta('twitter:description', description)
+    upsertMeta('twitter:card', image ? 'summary_large_image' : 'summary')
+    upsertMeta('twitter:image', image)
   }, [i18n.language, post, translation])
 
   if (translation) {
