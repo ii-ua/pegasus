@@ -20,26 +20,35 @@ if (isBrowser) {
   })
 }
 
-let detectedLang = 'uk'
+const normalizeLang = (value?: string): 'uk' | 'en' => {
+  if (!value) return 'uk'
+  const base = value.split('-')[0]
+  if (base === 'en') return 'en'
+  return 'uk'
+}
 
-if (isBrowser) {
-  const browserDetected = languageDetector.detect() as string | undefined
-  if (browserDetected) {
-    detectedLang = browserDetected
+const getCookieLang = (): string | undefined => {
+  if (!isBrowser) return undefined
+  const match = document.cookie.match(/(?:^|;\s*)i18next=([^;]+)/)
+  return match?.[1]
+}
+
+const getInitialLang = (): 'uk' | 'en' => {
+  if (!isBrowser) return 'uk'
+
+  const localStorageLang = window.localStorage.getItem('i18nextLng') ?? undefined
+  const cookieLang = getCookieLang()
+  const lang = normalizeLang(localStorageLang ?? cookieLang)
+
+  if (lang === 'uk' && localStorageLang === 'ru') {
+    window.localStorage.setItem('i18nextLng', 'uk')
   }
 
-  if (detectedLang === 'ru') {
-    detectedLang = 'uk'
-    localStorage.setItem('i18nextLng', 'uk')
-  }
-
-  if (!['uk', 'en'].some((lang) => detectedLang.startsWith(lang))) {
-    detectedLang = 'uk'
-  }
+  return lang
 }
 
 const baseInitConfig = {
-  lng: isBrowser ? detectedLang : 'uk',
+  lng: getInitialLang(),
   fallbackLng: ['uk', 'en'],
   supportedLngs: ['uk', 'en'],
   load: 'languageOnly',

@@ -211,10 +211,10 @@ function RouteComponent() {
   }, [i18n.language, post, defaultTranslation])
 
   useEffect(() => {
-    if (!post || !translation) return
+    if (!post || !defaultTranslation) return
 
-    const translationDescription = stripHtml(translation.content_short)
-    const title = translation.title || post.seo?.title?.trim() || ''
+    const translationDescription = stripHtml(defaultTranslation.content_short)
+    const title = defaultTranslation.title || post.seo?.title?.trim() || ''
     const description =
       translationDescription || post.seo?.meta_description?.trim() || ''
     const image =
@@ -236,7 +236,7 @@ function RouteComponent() {
     upsertMeta('twitter:description', description)
     upsertMeta('twitter:card', image ? 'summary_large_image' : 'summary')
     upsertMeta('twitter:image', image)
-  }, [post, translation])
+  }, [post, defaultTranslation])
 
   if (translation) {
     return (
