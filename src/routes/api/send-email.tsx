@@ -8,11 +8,56 @@ const TO_MAP = {
   info: 'p.info@pegasusarms.com.ua',
 } as const
 
+const ALLOWED_ORIGINS = new Set([
+  'https://pegasusarms.com.ua',
+  'https://www.pegasusarms.com.ua',
+  'https://martyntech.com',
+  'https://www.martyntech.com',
+])
+
+function corsHeaders(origin: string | null) {
+  const isAllowed = origin ? ALLOWED_ORIGINS.has(origin) : false
+
+  return {
+    ...(isAllowed ? { 'Access-Control-Allow-Origin': origin } : {}),
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    Vary: 'Origin',
+  }
+}
+
 export const Route = createFileRoute('/api/send-email')({
   server: {
     handlers: {
+      OPTIONS: async ({ request }) => {
+        const origin = request.headers.get('origin')
+
+        if (origin && !ALLOWED_ORIGINS.has(origin)) {
+          return new Response(null, {
+            status: 403,
+            headers: corsHeaders(origin),
+          })
+        }
+
+        return new Response(null, { status: 204, headers: corsHeaders(origin) })
+      },
       POST: async ({ request }) => {
         try {
+          const origin = request.headers.get('origin')
+
+          if (origin && !ALLOWED_ORIGINS.has(origin)) {
+            return new Response(
+              JSON.stringify({ error: 'Origin not allowed' }),
+              {
+                status: 403,
+                headers: {
+                  'Content-Type': 'application/json',
+                  ...corsHeaders(origin),
+                },
+              },
+            )
+          }
+
           const data = await request.formData()
 
           console.log('Form data received:', Array.from(data.entries()))
@@ -21,7 +66,10 @@ export const Route = createFileRoute('/api/send-email')({
           if (!target || !TO_MAP[target]) {
             return new Response(JSON.stringify({ error: 'Invalid target' }), {
               status: 400,
-              headers: { 'Content-Type': 'application/json' },
+              headers: {
+                'Content-Type': 'application/json',
+                ...corsHeaders(origin),
+              },
             })
           }
 
@@ -87,15 +135,22 @@ ${message}
 
           return new Response(JSON.stringify({ success: true }), {
             status: 200,
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+              'Content-Type': 'application/json',
+              ...corsHeaders(origin),
+            },
           })
         } catch (error) {
           console.error('Email send error:', error)
+          const origin = request.headers.get('origin')
           return new Response(
             JSON.stringify({ error: 'Failed to send email' }),
             {
               status: 500,
-              headers: { 'Content-Type': 'application/json' },
+              headers: {
+                'Content-Type': 'application/json',
+                ...corsHeaders(origin),
+              },
             },
           )
         }
