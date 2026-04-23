@@ -2,20 +2,21 @@ const blog = {
   title: 'PEGASUS ARMS Blog',
   socLinks: 'We are on social media',
   back: 'Back',
-  more: "Read more",
+  more: 'Read more',
   all: 'All articles',
   interested: 'You may be interested',
   articleZero: {
     date: '25.12.2025',
-    title: 'A trained crew means effective sorties: how Pegasus Arms 25 drone operators are prepared',
+    title:
+      'A trained crew means effective sorties: how Pegasus Arms 25 drone operators are prepared',
     paragraphs: [
       'Learning to fly a drone isn’t difficult. What’s difficult is learning to fly in a way that ensures the number of takeoffs equals the number of landings—and that every sortie delivers results. That’s exactly what trainees are taught at NCVT MIST, a private training center that prepares pilots for heavy bomber drones such as the Pegasus Arms 25.',
       'Becoming a certified heavy-drone pilot takes three weeks. During this time, the crew completes a comprehensive training program that includes:',
-      ],
+    ],
     lists: {
       items: [
-        '▪️ 48 academic hours of theory and practical training;',
-        '▪️ 48 hours of flight training;',
+        '▪️ 36 academic hours of theory and practical training;',
+        '▪️ 36 hours of flight training;',
         '▪️ operating PEGASUS ARMS 25 strike UAVs with various types of payloads;',
         '▪️ executing combat missions and operating in challenging weather conditions;',
         '▪️ countering enemy drones and employing EW/ELINT and anti-drone systems.',
