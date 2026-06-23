@@ -5,7 +5,7 @@ export const FormField = (props: Form.FormFieldProps) => {
   return (
     <Form.Field
       {...props}
-      className={cn('flex flex-1 gap-6 items-end', props.className)}
+      className={cn('relative flex flex-1 gap-6 items-end', props.className)}
     >
       {props.children}
     </Form.Field>

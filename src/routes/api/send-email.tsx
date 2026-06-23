@@ -2,10 +2,11 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Resend } from 'resend'
 
 const resend = new Resend(import.meta.env.VITE_RESEND_API_KEY!)
+const TEST_TURNSTILE_SECRET = '1x0000000000000000000000000000000AA'
 
 const TO_MAP = {
-  hr: 'hr@pegasusarms.com.ua',
-  info: 'p.info@pegasusarms.com.ua',
+  hr: 'softlab@ii-ua.com',
+  info: 'softlab@ii-ua.com',
 } as const
 
 const ALLOWED_ORIGINS = new Set([
@@ -24,6 +25,40 @@ function corsHeaders(origin: string | null) {
     'Access-Control-Allow-Headers': 'Content-Type',
     Vary: 'Origin',
   }
+}
+
+type TurnstileValidation = {
+  success: boolean
+  action?: string
+  'error-codes'?: string[]
+}
+
+async function validateTurnstile(
+  token: string,
+  remoteip: string | null,
+): Promise<TurnstileValidation> {
+  const secret =
+    import.meta.env.TURNSTILE_SECRET_KEY ||
+    (import.meta.env.DEV ? TEST_TURNSTILE_SECRET : '')
+
+  if (!secret) {
+    return { success: false, 'error-codes': ['missing-input-secret'] }
+  }
+
+  const response = await fetch(
+    'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        secret,
+        response: token,
+        remoteip,
+      }),
+    },
+  )
+
+  return response.json()
 }
 
 export const Route = createFileRoute('/api/send-email')({
@@ -71,6 +106,51 @@ export const Route = createFileRoute('/api/send-email')({
                 ...corsHeaders(origin),
               },
             })
+          }
+
+          const turnstileToken = data.get('cf-turnstile-response')?.toString()
+          const expectedAction =
+            target === 'hr' ? 'career_form' : 'contact_form'
+
+          if (!turnstileToken) {
+            return new Response(
+              JSON.stringify({ error: 'CAPTCHA token is required' }),
+              {
+                status: 400,
+                headers: {
+                  'Content-Type': 'application/json',
+                  ...corsHeaders(origin),
+                },
+              },
+            )
+          }
+
+          const turnstile = await validateTurnstile(
+            turnstileToken,
+            request.headers.get('CF-Connecting-IP') ??
+              request.headers.get('X-Forwarded-For')?.split(',')[0].trim() ??
+              null,
+          )
+
+          const hasInvalidAction =
+            turnstile.action !== expectedAction &&
+            !(import.meta.env.DEV && turnstile.action === undefined)
+
+          if (!turnstile.success || hasInvalidAction) {
+            console.warn(
+              'Turnstile validation failed:',
+              turnstile['error-codes'],
+            )
+            return new Response(
+              JSON.stringify({ error: 'CAPTCHA validation failed' }),
+              {
+                status: 403,
+                headers: {
+                  'Content-Type': 'application/json',
+                  ...corsHeaders(origin),
+                },
+              },
+            )
           }
 
           const name = data.get('name')?.toString() ?? ''
