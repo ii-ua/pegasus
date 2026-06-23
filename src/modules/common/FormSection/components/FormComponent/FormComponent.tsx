@@ -65,7 +65,12 @@ export const FormComponent = ({ summary = false }: { summary?: boolean }) => {
       })
 
       if (!response.ok) {
-        throw new Error(`Form submission failed: ${response.status}`)
+        const result = (await response.json().catch(() => null)) as {
+          error?: string
+        } | null
+        throw new Error(
+          result?.error ?? `Form submission failed: ${response.status}`,
+        )
       }
 
       pendingFormData.current = null

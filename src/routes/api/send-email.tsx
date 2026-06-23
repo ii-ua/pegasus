@@ -34,17 +34,10 @@ type TurnstileValidation = {
 }
 
 async function validateTurnstile(
+  secret: string,
   token: string,
   remoteip: string | null,
 ): Promise<TurnstileValidation> {
-  const secret =
-    import.meta.env.TURNSTILE_SECRET_KEY ||
-    (import.meta.env.DEV ? TEST_TURNSTILE_SECRET : '')
-
-  if (!secret) {
-    return { success: false, 'error-codes': ['missing-input-secret'] }
-  }
-
   const response = await fetch(
     'https://challenges.cloudflare.com/turnstile/v0/siteverify',
     {
@@ -125,7 +118,26 @@ export const Route = createFileRoute('/api/send-email')({
             )
           }
 
+          const turnstileSecret =
+            process.env.TURNSTILE_SECRET_KEY ||
+            (import.meta.env.DEV ? TEST_TURNSTILE_SECRET : '')
+
+          if (!turnstileSecret) {
+            console.error('TURNSTILE_SECRET_KEY is not configured')
+            return new Response(
+              JSON.stringify({ error: 'CAPTCHA is not configured' }),
+              {
+                status: 500,
+                headers: {
+                  'Content-Type': 'application/json',
+                  ...corsHeaders(origin),
+                },
+              },
+            )
+          }
+
           const turnstile = await validateTurnstile(
+            turnstileSecret,
             turnstileToken,
             request.headers.get('CF-Connecting-IP') ??
               request.headers.get('X-Forwarded-For')?.split(',')[0].trim() ??
@@ -137,10 +149,11 @@ export const Route = createFileRoute('/api/send-email')({
             !(import.meta.env.DEV && turnstile.action === undefined)
 
           if (!turnstile.success || hasInvalidAction) {
-            console.warn(
-              'Turnstile validation failed:',
-              turnstile['error-codes'],
-            )
+            console.warn('Turnstile validation failed', {
+              errors: turnstile['error-codes'],
+              receivedAction: turnstile.action,
+              expectedAction,
+            })
             return new Response(
               JSON.stringify({ error: 'CAPTCHA validation failed' }),
               {
