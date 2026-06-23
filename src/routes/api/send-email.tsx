@@ -5,8 +5,8 @@ const resend = new Resend(import.meta.env.VITE_RESEND_API_KEY!)
 const TEST_TURNSTILE_SECRET = '1x0000000000000000000000000000000AA'
 
 const TO_MAP = {
-  hr: 'softlab@ii-ua.com',
-  info: 'softlab@ii-ua.com',
+  hr: 'hr@pegasusarms.com.ua',
+  info: 'p.info@pegasusarms.com.ua',
 } as const
 
 const ALLOWED_ORIGINS = new Set([
